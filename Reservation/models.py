@@ -9,18 +9,18 @@ from django.utils.translation import gettext_lazy as _
 
 from Utils.models.BaseModel import BaseModel
 from Reservation.utils.enums import RESERVATION_STATUS
-from User.models import Student
+from User.models import User
 from Event.models import Event
 
 # Create your model
 
 
 class Reservation(BaseModel):
-    student = ForeignKey(
-        Student,
+    registrant = ForeignKey(
+        User,
         on_delete=CASCADE,
         related_name=_("Reservations"),
-        verbose_name=_("Student"),
+        verbose_name=_("Registrant"),
     )
     event = ForeignKey(
         Event,
@@ -50,10 +50,10 @@ class Reservation(BaseModel):
     )
 
     def __str__(self) -> str:
-        return f"{self.pk}-{self.student.user.username}({self.event.title})"
+        return f"{self.pk}-{self.user.username}({self.event.title})"
 
     def __decode__(self) -> str:
-        return f"{self.pk}- {self.student.user.username}({self.event.title})"
+        return f"{self.pk}- {self.user.username}({self.event.title})"
 
     class Meta:
         verbose_name = _("Reservation")

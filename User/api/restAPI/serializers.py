@@ -1,6 +1,6 @@
 from rest_framework.serializers import (
     HyperlinkedModelSerializer,
-    HyperlinkedRelatedField,
+    # HyperlinkedRelatedField,
 )
 
 from Category.api import CategorySerializer

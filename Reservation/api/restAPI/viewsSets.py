@@ -29,7 +29,7 @@ class ReservationViewSet(ModelViewSet):
     ordering_fields = ("id", "created_at", "last_updated")
     filterset_fields = ["id", "created_at", "last_updated"]
     search_fields = [
-        "student",
+        "registrant",
         "event",
         "reservation_status",
         "rating",

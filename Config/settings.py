@@ -72,7 +72,6 @@ MY_APPS = [
     "Reservation",
     "Payment",
     "Notification",
-    "Advertisement",
     ##
     # "Logs",
     ##

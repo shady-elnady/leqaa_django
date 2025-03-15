@@ -16,7 +16,7 @@ class Command(BaseCommand):
 
         reservations = [
             {
-                "student": 1,
+                "registrant": 1,
                 "event": 1,
                 "reservation_status": RESERVATION_STATUS.InitialzationReservation,
                 "rating": 4.5,
@@ -28,7 +28,7 @@ class Command(BaseCommand):
         for reservation in reservations:
             try:
                 Reservation.objects.create(
-                    student=Student.objects.get(pk=reservation["student"]),
+                    registrant=Student.objects.get(pk=reservation["registrant"]),
                     event=Event.objects.get(pk=reservation["event"]),
                     reservation_status=reservation["reservation_status"],
                     rating=reservation["rating"],

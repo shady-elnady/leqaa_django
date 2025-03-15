@@ -2,6 +2,7 @@ from .restAPI.serializers import (
     UserSerializer,  # noqa: F401
     StudentSerializer,  # noqa: F401
     LecturerSerializer,  # noqa: F401
+    InterestSerializer,  # noqa: F401
 )
 from .restAPI.viewSets import (
     UserViewSet,  # noqa: F401

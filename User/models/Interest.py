@@ -3,12 +3,12 @@ from django.utils.translation import gettext_lazy as _
 
 from Category.models import Category
 from Utils.models.BaseModel import BaseModel
-from .Student import Student
+from .User import User
 
 
 class Interest(BaseModel):
-    student = ForeignKey(
-        Student,
+    user = ForeignKey(
+        User,
         on_delete=CASCADE,
         related_name="Interests",
         verbose_name=_("Student"),
@@ -25,10 +25,10 @@ class Interest(BaseModel):
     )
 
     def __str__(self) -> str:
-        return f"{self.student.user.username}>{self.category.name}"
+        return f"{self.user.username}>{self.category.name}"
 
     def __decode__(self) -> str:
-        return f"{self.student.user.username}>{self.category.name}"
+        return f"{self.user.username}>{self.category.name}"
 
     class Meta:
         unique_together = ("student", "category")

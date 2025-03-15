@@ -8,7 +8,7 @@ from User.api import UserSerializer
 
 
 class ReservationSerializer(HyperlinkedModelSerializer):
-    student = UserSerializer(many=False)
+    user = UserSerializer(many=False)
     event = EventSerializer(many=False)
 
     class Meta:
@@ -16,7 +16,7 @@ class ReservationSerializer(HyperlinkedModelSerializer):
         fields = [
             "url",
             "id",
-            "student",
+            "registrant",
             "event",
             "reservation_status",
             "rating",

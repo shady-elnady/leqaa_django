@@ -1,5 +1,5 @@
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.authentication import (
     TokenAuthentication,
     SessionAuthentication,
@@ -8,6 +8,7 @@ from rest_framework.authentication import (
 from rest_framework import filters
 import django_filters.rest_framework
 
+from Api.restAPI.permissions import IsAdmin
 from Category.models import Category
 from .serializers import CategorySerializer
 
@@ -16,6 +17,17 @@ class CategoryViewSet(ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     permission_classes = [IsAuthenticated]
+
+    permission_classes_by_action = {
+        "create": [IsAuthenticated],
+        "list": [AllowAny],
+        "retrieve": [AllowAny],
+        "destroy": [
+            IsAdmin,
+            # IsOwner | IsAdmin,
+        ],
+    }
+
     authentication_classes = [
         TokenAuthentication,
         SessionAuthentication,
