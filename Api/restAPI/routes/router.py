@@ -1,5 +1,5 @@
 from rest_framework import routers
-from Advertisement.api.restAPI.viewsSets import AdvertisementViewSet
+from Advertisement.api import AdvertisementViewSet
 from Event.api import EventAlbumViewSet, EventTypeViewSet, EventViewSet
 from Locale.api import LocaleViewSet, LanguageViewSet, AppLocaleViewSet
 from Category.api import CategoryViewSet

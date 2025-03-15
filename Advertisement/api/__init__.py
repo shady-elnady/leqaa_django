@@ -1,2 +1,2 @@
-from .restAPI.viewsSets import CategoryViewSet  # noqa: F401
-from .restAPI.serializers import CategorySerializer  # noqa: F401
+from .restAPI.viewsSets import AdvertisementViewSet  # noqa: F401
+from .restAPI.serializers import AdvertisementSerializer  # noqa: F401
