@@ -1,0 +1,17 @@
+[
+  {
+    "model": "Payment.PaymentStatus",
+    "pk": 1,
+    "fields": {
+      "payment_status_type": "",
+      "name": "Monetary",
+      "translations": {
+        "en": "Monetary",
+        "fr": "Monétaire",
+        "ar": "نقدى"
+      },
+      "created_at": "2024-09-19 08:10:29:470080",
+      "last_updated": "2024-09-19 08:10:29:470080"
+    }
+  }
+]

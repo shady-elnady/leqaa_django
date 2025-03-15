@@ -1,0 +1,99 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block footer %}
+<div id="footer">
+
+  {% get_language_info_list for LANGUAGES as languages %}
+  {% if LANGUAGE_CODE == languages.0.code %}
+      <form action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <div class="lang-btn">
+          <input name="next" type="hidden" value="{{ redirect_to }}" />
+          <input name="language" type="hidden" value="{{ languages.1.code }}" />
+          <button type="submit"><img width="30" src="{% static 'united-kingdom.png' %}" alt=""></button>
+        </div>
+      </form>
+  {% else %}
+      <form action="{% url 'set_language' %}" method="post">
+      {% csrf_token %}
+          <div class="lang-btn">
+              <input name="next" type="hidden" value="{{ redirect_to }}" />
+              <input name="language" type="hidden" value="{{ languages.0.code }}" />
+              <button type="submit"><img width="30" src="{% static 'images\Flags\Turkey.gif' %}" alt=""></button>
+          </div>
+      </form>
+  {% endif %}
+
+
+
+
+  <form action="{% url 'set_language' %}" method="post">
+    {% csrf_token %}
+    <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" />
+    <ul class="nav navbar-nav navbar-right language menu">
+  
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <li>
+                <button type="submit"
+                        name="language"
+                        value="{{ language.code }}"
+                        class="{% if language.code == LANGUAGE_CODE %}selected{% endif %}">
+                    {{ language.name_local }}
+                </button>
+            </li>
+        {% endfor %}
+    </ul>
+</form>
+
+
+
+
+<form action="{% url 'set_language' %}" method="post">
+  {% csrf_token %}
+  <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" />
+  <select name="language">
+    {% get_language_info_list for LANGUAGES as languages %}
+      {% for language in languages %}
+        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+          {{ language.name_local }} ({{ language.code }})
+        </option>
+      {% endfor %}
+  </select>
+  <input type="submit" value="Change" />
+</form>
+
+
+  <link rel="stylesheet" href="{% static 'css\locale_switcher.css' %}" />
+
+
+</div>
+<script src="{% url 'javascript-catalog' %}"></script> <!-- This line -->
+{% endblock %}
+{% comment %} {% block title %}
+  {% if subtitle %}
+    {{ subtitle }} |
+  {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}
+{% endblock %}
+
+{% block branding %}
+  <div id="site-name">
+    <a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a>
+  </div>
+  {% if user.is_anonymous %}
+    {% include 'admin/color_theme_toggle.html' %}
+  {% endif %}
+{% endblock %}
+
+{% block nav - global %}
+{% endblock %} {% endcomment %}

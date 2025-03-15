@@ -1,0 +1,57 @@
+#!/bin/bash
+
+PROJECT_NAME="Config"
+echo "web: gunicorn $PROJECT_NAME.wsgi --log-file -" > Procfile
+python3 -m venv venv
+source venv/bin/activate
+
+python -V
+echo "${python -V}" > runtime.txt
+
+pip install --upgrade pip
+pip install setuptools --upgrade
+pip list
+pip install django
+pip install django pytz pillow django-polymorphic-tree django-cors-headers djangorestframework django-filter
+pip install pillow
+ 
+pip install djangorestframework 
+pip install django-filter
+pip install psycopg2-binary
+pip install django-environ
+pip install pytz
+pip install celery
+pip install django-celery-results
+pip install redis
+pip install django-celery-beat
+pip uninstall django-debug-toolbar pytz
+# pip install djongo --use-pep517
+# pip uninstall pymongo
+# pip uninstall black
+# pip install pymongo==3.12.3 --use-pep517
+
+pip freeze > requirements.txt
+django-admin startproject $PROJECT_NAME .
+python manage.py startapp User
+python manage.py startapp Category 
+python manage.py startapp Student
+python manage.py startapp Course
+python manage.py startapp Lecture
+python manage.py startapp Instructor
+python manage.py startapp Utils
+python manage.py startapp Tools 
+python manage.py startapp Language 
+
+mkdir Locales
+mkdir DataBase
+mkdir static
+mkdir media
+mkdir templates
+
+# python manage.py makemigrations
+# python manage.py migrate
+# DJANGO_SUPERUSER_PASSWORD=12345 ./manage.py createsuperuser \
+#     --no-input \
+#     --username=Shady \
+#     --email=s@s.com
+# python manage.py runserver

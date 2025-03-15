@@ -1,0 +1,450 @@
+[
+  {
+    "model": "Address.Governorate",
+    "pk": 1,
+    "fields": {
+      "name": "Cairo",
+      "governorate_tel_code": "02",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Cairo",
+        "عربي": "القاهره",
+        "Française": "Caire"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 2,
+    "fields": {
+      "name": "Alexandria",
+      "governorate_tel_code": "03",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Alexandria",
+        "عربي": "الاسكندريه",
+        "Française": "Alexandrie"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 3,
+    "fields": {
+      "name": "Dakahlia",
+      "governorate_tel_code": "050",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Dakahlia",
+        "عربي": "الدقهليه",
+        "Française": "Dakalie"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 4,
+    "fields": {
+      "name": "Aswan",
+      "governorate_tel_code": "097",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Aswan",
+        "عربي": "أسوان",
+        "Française": "Assouan"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 5,
+    "fields": {
+      "name": "Arish",
+      "governorate_tel_code": "068",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Arish",
+        "عربي": "العريش",
+        "Française": "Arish"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 6,
+    "fields": {
+      "name": "Beni Suef",
+      "governorate_tel_code": "082",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Beni Suef",
+        "عربي": "بنى سويف",
+        "Française": "Beni Souef"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 7,
+    "fields": {
+      "name": "Damietta",
+      "governorate_tel_code": "057",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Damietta",
+        "عربي": "دمياط",
+        "Française": "Damiette"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 8,
+    "fields": {
+      "name": "Ismailia",
+      "governorate_tel_code": "064",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Ismailia",
+        "عربي": "اسماعليه",
+        "Française": "Ismaïlia"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 9,
+    "fields": {
+      "name": "Luxor",
+      "governorate_tel_code": "095",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Luxor",
+        "عربي": "الاقصر",
+        "Française": "Louxor"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 9,
+    "fields": {
+      "name": "Monufia",
+      "governorate_tel_code": "048",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Monufia",
+        "عربي": "منوفيه",
+        "Française": "Monoufia"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 10,
+    "fields": {
+      "name": "Port Said",
+      "governorate_tel_code": "066",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Port Said",
+        "عربي": "بورسعيد",
+        "Française": "Port-Saïd"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 11,
+    "fields": {
+      "name": "Red Sea",
+      "governorate_tel_code": "065",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Red Sea",
+        "عربي": "البحرالاحمر",
+        "Française": "Mer Rouge"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 12,
+    "fields": {
+      "name": "Suez",
+      "governorate_tel_code": "062",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Suez",
+        "عربي": "السويس",
+        "Française": "Suez"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 13,
+    "fields": {
+      "name": "El Tour",
+      "governorate_tel_code": "069",
+      "governorate_country": 1,
+      "translations": {
+        "English": "El Tour",
+        "عربي": "الطور",
+        "Française": "Le Tour"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 14,
+    "fields": {
+      "name": "10th of Ramadan",
+      "governorate_tel_code": "055",
+      "governorate_country": 1,
+      "translations": {
+        "English": "10th of Ramadan",
+        "عربي": "العاشر من رمضان",
+        "Française": "10ème Ramadan"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 15,
+    "fields": {
+      "name": "Asyut",
+      "governorate_tel_code": "088",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Asyut",
+        "عربي": "أسيوط",
+        "Française": "Assiout"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 16,
+    "fields": {
+      "name": "Damanhur",
+      "governorate_tel_code": "04",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Damanhur",
+        "عربي": "دمنهور",
+        "Française": "Damanhur"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 17,
+    "fields": {
+      "name": "Faiyum",
+      "governorate_tel_code": "084",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Faiyum",
+        "عربي": "الفيوم",
+        "Française": "Fayoum"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 18,
+    "fields": {
+      "name": "Kafr El Sheikh",
+      "governorate_tel_code": "047",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Kafr El Sheikh",
+        "عربي": "كفرالشيخ",
+        "Française": "Kafr El Sheikh"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 19,
+    "fields": {
+      "name": "Marsa Matruh",
+      "governorate_tel_code": "046",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Marsa Matruh",
+        "عربي": "مرسى مطروح",
+        "Française": "Marsa Matrouh"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 20,
+    "fields": {
+      "name": "Minya",
+      "governorate_tel_code": "086",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Minya",
+        "عربي": "المنيا",
+        "Française": "Minya"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 21,
+    "fields": {
+      "name": "New Valley",
+      "governorate_tel_code": "092",
+      "governorate_country": 1,
+      "translations": {
+        "English": "New Valley",
+        "عربي": "الوادى الجديد",
+        "Française": "Nouvelle Vallée"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 22,
+    "fields": {
+      "name": "Sohag",
+      "governorate_tel_code": "093",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Sohag",
+        "عربي": "سوهاج",
+        "Française": "Sohag"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 23,
+    "fields": {
+      "name": "Qena",
+      "governorate_tel_code": "096",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Qena",
+        "عربي": "قنا",
+        "Française": "Qéna"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 24,
+    "fields": {
+      "name": "Tanta",
+      "governorate_tel_code": "040",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Tanta",
+        "عربي": "طنطا",
+        "Française": "Tanta"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 25,
+    "fields": {
+      "name": "Qalyubia",
+      "governorate_tel_code": "013",
+      "governorate_country": 1,
+      "translations": {
+        "English": "Qalyubia",
+        "عربي": "قليوبيه",
+        "Française": "Qalyubia"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 26,
+    "fields": {
+      "name": "Isle of France",
+      "governorate_tel_code": "1",
+      "governorate_country": 3,
+      "translations": {
+        "English": "Isle of France",
+        "عربي": "جزيرة فرنسا",
+        "Française": "Île de France"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Governorate",
+    "pk": 27,
+    "fields": {
+      "name": "Emirate of Abu Dhabi",
+      "governorate_tel_code": "2",
+      "governorate_country": 3,
+      "translations": {
+        "English": "Emirate of Abu Dhabi",
+        "عربي": "إمارة أبو ظبي",
+        "Française": "Emirat d'Abou Dhabi"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  }
+]

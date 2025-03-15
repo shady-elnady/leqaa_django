@@ -1,0 +1,114 @@
+[
+  {
+    "model": "Address.City",
+    "pk": 1,
+    "fields": {
+      "name": "Cairo",
+      "country": 1,
+      "governorate": 1,
+      "translations": {
+        "English": "Cairo",
+        "عربي": "القاهره",
+        "Française": "Caire"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.City",
+    "pk": 2,
+    "fields": {
+      "name": "Mansoura",
+      "country": 1,
+      "governorate": 3,
+      "translations": {
+        "English": "Mansoura",
+        "عربي": "المنصوره",
+        "Française": "Mansourah"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.City",
+    "pk": 3,
+    "fields": {
+      "name": "Sherbin",
+      "country": 1,
+      "governorate": 3,
+      "translations": {
+        "English": "Sherbin",
+        "عربي": "شربين",
+        "Française": "Sherbine"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.City",
+    "pk": 4,
+    "fields": {
+      "name": "Belqas",
+      "country": 1,
+      "governorate": 3,
+      "translations": {
+        "English": "Belqas",
+        "عربي": "بلقاس",
+        "Française": "Belqase"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.City",
+    "pk": 5,
+    "fields": {
+      "name": "Talkha",
+      "country": 1,
+      "governorate": 3,
+      "translations": {
+        "English": "Talkha",
+        "عربي": "طلخا",
+        "Française": "Talkhae"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.City",
+    "pk": 6,
+    "fields": {
+      "name": "Abu Dhabi",
+      "country": 2,
+      "governorate": 27,
+      "translations": {
+        "English": "Abu Dhabi",
+        "عربي": "أبوظبى",
+        "Française": "Abou Dhabi"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.City",
+    "pk": 7,
+    "fields": {
+      "name": "Paris",
+      "country": 3,
+      "governorate": 26,
+      "translations": {
+        "English": "Paris",
+        "عربي": "باريس",
+        "Française": "Paris"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  }
+]

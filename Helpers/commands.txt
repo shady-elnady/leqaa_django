@@ -1,0 +1,20 @@
+pip install django \
+djangorestframework \
+social-auth-core \
+social-auth-app-django
+
+// For MongoDB
+pip install social-auth-app-django-mongoengine
+
+
+
+https://testdriven.io/blog/multiple-languages-in-django/
+
+django-admin makemessages --all --ignore=env
+django-admin makemessages -l ar_EG
+
+django-admin compilemessages
+django-admin compilemessages --ignore=env
+
+Locale in Ubuntu:
+    sudo dpkg-reconfigure locales

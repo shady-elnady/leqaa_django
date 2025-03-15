@@ -1,0 +1,94 @@
+#!/bin/bash
+
+echo "shady"
+django() {
+
+    project_name=$(basename $PWD)
+    project_path="$PWD"
+    manage_path="${project_path}/manage.py"
+    echo $manage_path 
+    if [ ! -f $manage_path ] ; then  # No project/manage.py
+        echo "Error: Could not locate Django manage.py file."
+        return -1
+    fi
+
+    if [ $# -eq 0 ] ; then
+        echo "Django project detected."
+    fi
+
+    while [ ! $# -eq 0 ]
+        do
+            case "$1" in
+
+                --help | -h)
+                        echo "Django shortcut, unknown commands are forwarded to manage.py"
+                        echo "  -c, --check         Run Django manage.py check."
+                        echo "  --req           Install requirements."
+                        echo "  -r, --run           Run server."
+                        echo "  -s, --shell         Run Django shell plus."
+                        echo "  -sd, --shell            Run Django shell plus. Debug DB (print sql)"
+                        echo ""
+                    ;;
+
+                --check | -c)
+                        python $manage_path check
+                    ;;
+
+                --shell | -s)
+                        python $manage_path shell_plus --bpython
+                    ;;
+
+                --shell | -sd)
+                        python $manage_path shell_plus --bpython --print-sql
+                    ;;
+
+                --run | -r)
+                        python $manage_path runserver
+                    ;;
+
+                --req)
+                        pip install -r $project_path/requirements.txt
+                    ;;
+
+                --mig | -m)
+                        python $manage_path makemigrations
+                        python $manage_path migrate
+                    ;;
+
+                --reset_migrations)
+                        find . -path "*migrations*" -not -regex ".*__init__.py" -a -not -regex ".*migrations" | xargs rm -rf
+                        python $manage_path makemigrations
+                        ;;
+
+                *)
+                    python $manage_path "$@"
+                    ;;
+
+            esac
+            shift
+        done
+
+}
+django
+
+
+#!/bin/bash
+
+python manage.py migrate * zero
+python manage.py migrate --fake-initial
+rm -rf migrations
+find . | grep -E "(/__pycache__$|\.pyc$|\.pyo$)" | xargs rm -rf
+find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+find . -path "*migrations*" -not -regex ".*__init__.py" -a -not -regex ".*migrations" | xargs rm -rf
+find . -path "./*/migrations/*.py" -not -name "__init__.py" -delete
+find . -path "/migrations/.pyc" -delete
+
+
+find . -type d \( -path ./venv -o -path ./vEnv -o -path ./VENV \) -prune -o -path "*/migrations/*.py" -not -name "__init__.py" -delete
+find . -type d \( -path ./venv -o -path ./vEnv -o -path ./VENV \) -prune -o -path "*/migrations/*.py" -not -name "__init__.py" -print
+
+find . -type d \( -path ./venv \) -prune -o -path "*/migrations/*.py" -not -name "__init__.py" -print
+find . -type d -path "./*" -not -name "venv" -print
+
+
+find . -path "*/migrations/*.py" -not -path "./venv/*"  -not -name "__init__.py" -print -delete

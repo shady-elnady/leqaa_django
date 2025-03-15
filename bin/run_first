@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# brew services start mongodb-community@6.0
+# python manage.py makemigrations
+# python manage.py migrate
+# python manage.py createsuperuser
+# python manage.py seedstates
+# python manage.py runserver
+
+python manage.py makemigrations
+python manage.py migrate
+DJANGO_SUPERUSER_PASSWORD=12345 ./manage.py createsuperuser \
+    --no-input \
+    --username=shady \
+    --email=s@s.com
+python manage.py runserver

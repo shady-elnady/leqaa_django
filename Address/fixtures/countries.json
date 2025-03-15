@@ -1,0 +1,122 @@
+[
+  {
+    "model": "Address.Country",
+    "pk": 1,
+    "fields": {
+      "name": "Egypt",
+      "continent": "AF",
+      "flag_emoji": "🇪🇬",
+      "currency": 7,
+      "language": 3,
+      "tel_code": "+02",
+      "time_zones": "UTC+02:00",
+      "translations": {
+        "English": "Egypt",
+        "عربي": "مصر",
+        "Française": "Egypte"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Country",
+    "pk": 2,
+    "fields": {
+      "name": "Kingdom of Saudi Arabia",
+      "continent": "AS",
+      "flag_emoji": "🇦🇪",
+      "currency": 16,
+      "language": 3,
+      "tel_code": "+966",
+      "time_zones": "UTC+02:00",
+      "translations": {
+        "English": "Kingdom of Saudi Arabia",
+        "عربي": "المملكه العربيه السعوديه",
+        "Française": "Royaume d'Arabie Saoudite"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Country",
+    "pk": 3,
+    "fields": {
+      "name": "United Arab Emirates",
+      "continent": "AS",
+      "flag_emoji": "🇦🇪",
+      "currency": 16,
+      "language": 3,
+      "tel_code": "+971",
+      "time_zones": "UTC+02:00",
+      "translations": {
+        "English": "United Arab Emirates",
+        "عربي": "دولة الإمارات العربية المتحدة",
+        "Française": "Emirats Arabes Unis"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Country",
+    "pk": 4,
+    "fields": {
+      "name": "United State of America",
+      "continent": "AS",
+      "flag_emoji": "🇦🇪",
+      "currency": 16,
+      "language": 3,
+      "tel_code": "+1",
+      "time_zones": "UTC+02:00",
+      "translations": {
+        "English": "United State of America",
+        "عربي": "الولايات المتحدة الامريكية",
+        "Française": "États-Unis d'Amérique"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Country",
+    "pk": 5,
+    "fields": {
+      "name": "France",
+      "continent": "EU",
+      "flag_emoji": "🇫🇷",
+      "currency": 4,
+      "language": 2,
+      "tel_code": "33",
+      "time_zones": "UTC+02:00",
+      "translations": {
+        "English": "France",
+        "عربي": "فرنسا",
+        "Française": "République française"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  },
+  {
+    "model": "Address.Country",
+    "pk": 6,
+    "fields": {
+      "name": "Turkia",
+      "continent": "EU",
+      "flag_emoji": "🇫🇷",
+      "currency": 4,
+      "language": 2,
+      "tel_code": "33",
+      "time_zones": "UTC+02:00",
+      "translations": {
+        "English": "Turkia",
+        "عربي": "تركيا",
+        "Française": "Turquie"
+      },
+      "created_at": "2024-09-16T17:41:28+00:00",
+      "last_updated": "2024-09-16T17:41:28+00:00"
+    }
+  }
+]

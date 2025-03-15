@@ -1,0 +1,212 @@
+{% load i18n %}
+{% load l10n %}
+{% load static %}
+{% load to_json %}
+{% load obj_if_none %}
+
+<div style="margin: 2px;padding: 2px;border: 2px solid #E60E0E;border-radius: 5px;">
+  <style>
+    #translations-table {
+      min-width: 500px;
+      width: 80%;
+      margin: 0 auto;
+      background: transparent;
+      text-decoration: none;
+      border: none;
+      margin: 0 auto;
+      box-shadow: none;
+    }
+
+    #translations-table th {
+      background-color: #ad1457;
+      color: #fff;
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+
+    #translations-table tbody td {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding-left: 8px;
+    }
+
+    #translations-table tbody img {
+      width: 28px;
+    }
+
+    #translations-table tbody td[contenteditable=true]:empty:not(:focus)::after {
+      content: "Enter Translation ...";
+      color: grey;
+      font-style: italic;
+    }
+
+    #translations-table td {
+      width: 10vmin;
+      border: solid 1px black;
+      text-align: center;
+    }
+
+    #translations-table .tfooter td{
+      align-items: center;
+      background: #40758F;
+      text-align: center;
+      margin: 0 auto;
+      box-shadow: none;
+    }
+
+    #add_language_button {
+      background-color: #E60E0E;
+      color: #fff;
+      padding: 9px 15px;
+    }
+  </style>
+
+  <table id="translations-table" cellspacing="0" {% include "django/forms/widgets/attrs.html" %} >
+    <thead>
+      <tr>
+        <th>{% translate "Locale" %}</th>
+        <th colspan="2">{% translate "Translation" %}</th>
+      </tr>
+    </thead>
+    <tbody id="translations_table_body" ></tbody>
+    <tfoot class="tfooter">
+      <tr>
+        <td class="dropdown" colspan="3">
+          <button type="button" id="translation-dropdown-btn">
+            <img src="{% static 'svg\flag.svg' %}" alt="locale" /> {% translate "Select Locale" %} <span class="arrow-down"></span>
+          </button>
+          <ul class="dropdown-content" id="translation-dropdown-content"></ul>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <textarea
+    id="{{widget.attrs.id}}"
+    name="{{ widget.name }}"
+    required=""
+    {% include "django/forms/widgets/attrs.html" %}
+    style="display: none"
+  >{{ widget.value }}</textarea>
+
+  <script language="javascript" >
+    const translatedLocales = [];
+    const textarea = document.getElementById("{{widget.attrs.id}}");
+    const translations_table_body_element = document.getElementById('translations_table_body');
+    const translationDropdownBtn = document.getElementById("translation-dropdown-btn");
+    const translationDropdownContent = document.getElementById("translation-dropdown-content");
+
+    var translation_json = new Proxy( {{ widget.value|to_json|obj_if_none|safe }} , {
+      set: function(target, property, value) {
+        if( value == null || value == "") {
+          delete target[property];
+        } else {
+          target[property] = value;
+        }
+        textarea.value=JSON.stringify(target);
+      }
+    });
+    
+    function add_row_language (locale, translate_result="" ) {
+      if(!translatedLocales.includes(locale.locale_code)){
+        translatedLocales.push(locale.locale_code);
+        updateLocaleDropDown();
+        var translation_table_row = document.createElement('tr');
+        translation_table_row.className = 'translations_language_row';
+        translation_table_row.innerHTML =`
+        <td class="translation_language" dir="auto" >
+          <img src="${getFlagSrc(locale.locale_code.split('-')[1], locale.locale_flag)}" />
+          ${locale.language_name} 
+        </td>
+        <td 
+          class="translation_result"
+          dir="auto"
+          name="${locale.locale_code}"
+          id="${locale.locale_code}"
+          contenteditable="true"
+          onkeyup="javascript:on_change_translate_result(this,event);"
+        >
+          ${translate_result}
+        </td>
+        <td
+          style="cursor: pointer;"
+          onclick="javascript:delete_translation_langauge_row(this, '${locale.locale_code}')"
+        >
+          <span>
+            <img src="{% static 'svg/red-trash-can-icon.svg' %}" />
+          </span>
+        </td>
+        `;
+        translations_table_body_element.appendChild(translation_table_row);
+      }else{
+        alert(`Langauge ${freeLocale.language_name} is Exists`);
+      }
+    }
+
+    function delete_translation_langauge_row(tr_element, locale_code) {
+      tr_element?.parentElement?.remove();
+      var index = translatedLocales.indexOf(locale_code);
+      if (index >= 0) {
+        translatedLocales.splice( index, 1 );
+      }
+      updateLocaleDropDown();
+      translation_json[locale_code] = null;
+    }
+
+    function on_change_translate_result(element,event) {
+      translation_json[element.id] = element.textContent;
+    }
+
+    function updateLocaleDropDown() {
+      translationDropdownContent.innerHTML = "";
+      const freeLocales = window.locales.filter((loc) => !translatedLocales.includes(loc.locale_code));
+      if(freeLocales.length > 0){
+        translationDropdownBtn.parentNode.style.display = "table-cell";
+        freeLocales.forEach((freeLocale) => {
+          let languageName, localeFlagURL;
+        
+          if(!freeLocale.language_name){
+            const intlLocale = new Intl.Locale(freeLocale.locale_code);
+            languageName = new Intl.DisplayNames([freeLocale.locale_code], {
+              type: "language",
+            }).of(intlLocale.language);
+          }else{
+            languageName = freeLocale.language_name;
+          }
+          
+          localeFlagURL = getFlagSrc(freeLocale.locale_code.split('-')[1], freeLocale.locale_flag);
+        
+          const listEl = document.createElement("li");
+          listEl.innerHTML = `${languageName}<img src="${localeFlagURL}" />`;
+          listEl.setAttribute("value", freeLocale.locale_code);
+          listEl.setAttribute("name", "language");
+          listEl.addEventListener("mousedown", function () {
+            add_row_language (freeLocale);
+            {% comment %} if(!translatedLocales.includes(freeLocale.locale_code)){
+              translatedLocales.push(freeLocale.locale_code);
+              updateLocaleDropDown();
+              add_row_language (freeLocale);
+            }else{
+              alert(`Langauge ${freeLocale.language_name} is Exists`);
+            } {% endcomment %}
+          });
+          translationDropdownContent.appendChild(listEl);
+        });
+      }else{
+        translationDropdownBtn.parentNode.style.display = "none";
+      }
+    }
+
+    if(Object.keys(translation_json).length > 0){
+      {% with json=widget.value|safe|to_json %}
+        {% for key ,value in json.items %}
+          add_row_language(window.locales.find(el => el.locale_code == "{{ key }}" ), "{{ value }}");
+        {% endfor %}
+      {% endwith %}  
+    }else{
+      updateLocaleDropDown();
+    }
+
+  </script>
+</div>

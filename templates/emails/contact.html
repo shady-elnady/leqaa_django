@@ -1,0 +1,18 @@
+<!-- contact/templates/contact/contact.html -->
+
+{% extends './base.html' %}
+{% comment %} {% load crispy_forms_tags %} {% endcomment %}
+
+{% block body %}
+<div class="mx-auto my-4 text-center">
+    <h1>Contact Us</h1>
+</div>
+<div class="container">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        {% comment %} {{ form | crispy }} {% endcomment %}
+    <button class="btn btn-success my-3" type="submit">Send message</button>
+    </form>
+</div>
+{% endblock %}

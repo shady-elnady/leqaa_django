@@ -1,0 +1,27 @@
+#!/bin/bash
+
+python manage.py migrate --fake-initial
+find . -path "*/migrations/*.py" -not -path "./venv/*"  -not -name "__init__.py" -print -delete
+find . | grep -E "(/__pycache__$|\.pyc$|\.pyo$)" | xargs rm -rf
+rm -rf migrations
+rm DataBase/db.sqlite3
+rmdir media/*
+python manage.py makemigrations
+python manage.py migrate
+DJANGO_SUPERUSER_PASSWORD=12345 ./manage.py createsuperuser \
+    --no-input \
+    --username=s \
+    --email=s@s.com
+
+python manage.py loaddata languages
+python manage.py loaddata currencies
+python manage.py loaddata categories 
+
+rm -r -f -v ./media/
+mkdir media
+mkdir media/Student
+mkdir media/Category
+mkdir media/Instructor
+mkdir media/Course
+python manage.py seedstates 
+python manage.py runserver
