@@ -1,4 +1,5 @@
 from rest_framework import routers
+from Advertisement.api.restAPI.viewsSets import AdvertisementViewSet
 from Event.api import EventAlbumViewSet, EventTypeViewSet, EventViewSet
 from Locale.api import LocaleViewSet, LanguageViewSet, AppLocaleViewSet
 from Category.api import CategoryViewSet
@@ -46,6 +47,8 @@ router.register("locales", LocaleViewSet, basename="locale")
 router.register("currencies", CurrencyViewSet, basename="currency")
 # Category
 router.register("categories", CategoryViewSet, basename="category")
+# Advertisement
+router.register("advertisements", AdvertisementViewSet, basename="advertisement")
 # Address
 router.register("countries", CountryViewSet, basename="country")
 router.register("governorates", GovernorateViewSet, basename="governorate")

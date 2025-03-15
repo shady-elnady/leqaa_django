@@ -1,0 +1,18 @@
+[
+  {
+    "model": "Category.Category",
+    "pk": 1,
+    "fields": {
+      "category_parent": null,
+      "name": "A",
+      "image": "A",
+      "translations": {
+        "en": "",
+        "fr": "",
+        "ar": ""
+      },
+      "created_at": "2023-09-19 08:10:29:470080",
+      "last_updated": "2023-09-19 08:10:29:470080"
+    }
+  }
+]

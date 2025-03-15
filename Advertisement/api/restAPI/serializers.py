@@ -1,19 +1,20 @@
 from rest_framework.serializers import HyperlinkedModelSerializer
 
-from Category.models import Category
+from Advertisement.models import Advertisement
 
 # Serializers define the API representation.
 
 
-class CategorySerializer(HyperlinkedModelSerializer):
+class AdvertisementSerializer(HyperlinkedModelSerializer):
     class Meta:
-        model = Category
+        model = Advertisement
         fields = [
             "url",
             "id",
-            "name",
+            "title",
+            "url",
+            "description",
             "image",
-            "translations",
             "created_at",
             "last_updated",
         ]
