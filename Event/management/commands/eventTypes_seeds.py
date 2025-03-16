@@ -18,7 +18,7 @@ class Command(BaseCommand):
         if not exists(event_types_images_directory):
             makedirs(event_types_images_directory)
 
-        eventTypes = [
+        event_types = [
             {
                 "name": "Occasions",
                 # "image": "images/Event_Types/1.png",
@@ -53,22 +53,24 @@ class Command(BaseCommand):
                 },
             },
         ]
-        id = 1
-        for eventType in eventTypes:
+        event_type_id = 1
+        for event_type in event_types:
             try:
                 EventType.objects.create(
-                    name=eventType["name"],
-                    image=join(event_types_images_directory, f"{id}.png"),
-                    translations=eventType["translations"],
+                    name=event_type["name"],
+                    image=join(event_types_images_directory, f"{event_type_id}.png"),
+                    translations=event_type["translations"],
                 )
                 self.stdout.write(
-                    self.style.SUCCESS(f"Successfully insert {self.data} > {eventType}")
+                    self.style.SUCCESS(
+                        f"Successfully insert {self.data} > {event_type}"
+                    )
                 )
-                id = id + 1
+                event_type_id = event_type_id + 1
             except Exception as e:
                 self.stdout.write(
                     self.style.ERROR(
-                        f"Failed insert {self.data} > {eventType} , \n \t Error is: \t \t{e}"
+                        f"Failed insert {self.data} > {event_type} , \n \t Error is: \t \t{e}"
                     )
                 )
         self.stdout.write(self.style.WARNING(f"Finish Created initial {self.data}"))

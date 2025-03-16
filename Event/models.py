@@ -6,6 +6,7 @@ from django.db.models import (
     DateTimeField,
     FloatField,
     PositiveSmallIntegerField,
+    URLField,
 )
 from django.utils.translation import gettext_lazy as _
 
@@ -57,6 +58,8 @@ class Event(BaseModel, BaseImageModel):
     )
     university = ForeignKey(
         University,
+        null=True,
+        blank=True,
         on_delete=CASCADE,
         related_name=_("Events"),
         verbose_name=_("University"),
@@ -83,26 +86,41 @@ class Event(BaseModel, BaseImageModel):
         verbose_name=_("Lecturer Financial Dues"),
     )
     lecturer_financial_system = CharField(
-        max_length=100,
+        max_length=2,
         choices=LecturerFinancialSystem.choices,
         default=LecturerFinancialSystem.Enlist,
         verbose_name=_("Hall"),
     )
     event_paid_status = CharField(
-        max_length=100,
+        max_length=2,
         choices=EventPaidStatus.choices,
         default=EventPaidStatus.Free,
         verbose_name=_("Event Paid Status"),
     )
-    description = TextField(
+    short_description = TextField(
         null=True,
         blank=True,
-        verbose_name=_("Description"),
+        verbose_name=_("Short Description"),
+    )
+    complete_description = TextField(
+        null=True,
+        blank=True,
+        verbose_name=_("Complete Description"),
     )
     start_date_time = DateTimeField(
         null=True,
         blank=True,
         verbose_name=_("Start Date Time"),
+    )
+    end_date_time = DateTimeField(
+        null=True,
+        blank=True,
+        verbose_name=_("End Date Time"),
+    )
+    registration_link = URLField(
+        null=True,
+        blank=True,
+        verbose_name=_("Registration link"),
     )
 
     def __str__(self) -> str:

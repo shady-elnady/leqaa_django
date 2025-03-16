@@ -2,7 +2,11 @@
 from django.db.models import CharField, ImageField, URLField, TextField
 from django.utils.translation import gettext_lazy as _
 
-from Utils.models.BaseModel import BaseAutoIncrementModel, BaseImageModel
+from Utils.models.BaseModel import (
+    BaseAutoIncrementModel,
+    BaseImageModel,
+    BaseTimeStampModel,
+)
 from os.path import join
 from django.db.models import Max
 
@@ -27,7 +31,7 @@ def upload_image_to(instance, file_name):
     )
 
 
-class Advertisement(BaseAutoIncrementModel, BaseImageModel):
+class Advertisement(BaseAutoIncrementModel, BaseImageModel, BaseTimeStampModel):
     title = CharField(
         max_length=1100,
         verbose_name=_("Title"),

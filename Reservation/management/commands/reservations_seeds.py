@@ -2,7 +2,7 @@ from django.core.management.base import BaseCommand
 
 from Reservation.models import Reservation
 from Reservation.utils.enums import RESERVATION_STATUS
-from User.models import Student
+from User.models import User
 from Event.models import Event
 
 
@@ -28,7 +28,7 @@ class Command(BaseCommand):
         for reservation in reservations:
             try:
                 Reservation.objects.create(
-                    registrant=Student.objects.get(pk=reservation["registrant"]),
+                    registrant=User.objects.get(pk=reservation["registrant"]),
                     event=Event.objects.get(pk=reservation["event"]),
                     reservation_status=reservation["reservation_status"],
                     rating=reservation["rating"],

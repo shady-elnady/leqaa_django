@@ -22,63 +22,7 @@ class Command(BaseCommand):
 
         categories = [
             {
-                "name": "Medicine",
-                # "image": "images/Categories/1.png",
-                "translations": {
-                    "en-US": "Medicine",
-                    "ar-AS": "الطب",
-                    "ar-EG": "الطب",
-                    "fr-FR": "Médecine",
-                    "tr-TR": "Tıp",
-                },
-            },
-            {
-                "name": "Science",
-                # "image": "images/Categories/2.png",
-                "translations": {
-                    "en-US": "Science",
-                    "ar-AS": "العلوم",
-                    "ar-EG": "العلوم",
-                    "fr-FR": "les Sciences",
-                    "tr-TR": "Bilim",
-                },
-            },
-            {
-                "name": "Engineering",
-                # "image": "images/Categories/3.png",
-                "translations": {
-                    "en-US": "Engineering",
-                    "ar-AS": "الهندسه",
-                    "ar-EG": "الهندسه",
-                    "fr-FR": "Ingénierie",
-                    "tr-TR": "Mühendislik",
-                },
-            },
-            {
-                "name": "Culture & Arts",
-                # "image": "images/Categories/4.png",
-                "translations": {
-                    "en-US": "Culture & Arts",
-                    "ar-AS": "الثقافه والفنون",
-                    "ar-EG": "الثقافه والفنون",
-                    "fr-FR": "Culture et Arts",
-                    "tr-TR": "Kültür ve Sanat",
-                },
-            },
-            {
-                "name": "Technology",
-                # "image": "images/Categories/5.png",
-                "translations": {
-                    "en-US": "Technology",
-                    "ar-AS": "التكنولوجيا",
-                    "ar-EG": "التكنولوجيا",
-                    "fr-FR": "Technologie",
-                    "tr-TR": "Teknoloji",
-                },
-            },
-            {
                 "name": "Agriculture",
-                # "image": "images/Categories/6.png",
                 "translations": {
                     "en-US": "Agriculture",
                     "ar-AS": "الزراعه",
@@ -88,8 +32,27 @@ class Command(BaseCommand):
                 },
             },
             {
+                "name": "Law",
+                "translations": {
+                    "en-US": "Law",
+                    "ar-AS": "القانون",
+                    "ar-EG": "القانون",
+                    "fr-FR": "la Loi",
+                    "tr-TR": "Huku",
+                },
+            },
+            {
+                "name": "Engineering",
+                "translations": {
+                    "en-US": "Engineering",
+                    "ar-AS": "الهندسه",
+                    "ar-EG": "الهندسه",
+                    "fr-FR": "Ingénierie",
+                    "tr-TR": "Mühendislik",
+                },
+            },
+            {
                 "name": "Sports",
-                # "image": "images/Categories/7.png",
                 "translations": {
                     "en-US": "Sports",
                     "ar-AS": "الرياضه",
@@ -99,29 +62,58 @@ class Command(BaseCommand):
                 },
             },
             {
-                "name": "Law",
-                # "image": "images/Categories/8.png",
+                "name": "Technology",
                 "translations": {
-                    "en-US": "Law",
-                    "ar-AS": "القانون",
-                    "ar-EG": "القانون",
-                    "fr-FR": "la Loi",
-                    "tr-TR": "Huku",
+                    "en-US": "Technology",
+                    "ar-AS": "التكنولوجيا",
+                    "ar-EG": "التكنولوجيا",
+                    "fr-FR": "Technologie",
+                    "tr-TR": "Teknoloji",
+                },
+            },
+            {
+                "name": "Entrepreneurship",
+                "translations": {
+                    "en-US": "Entrepreneurship",
+                    "ar-AS": "ريادة أعمال",
+                    "ar-EG": "ريادة أعمال",
+                    "fr-FR": "Entrepreneuriat",
+                    "tr-TR": "Girişimcilik",
+                },
+            },
+            {
+                "name": "Science",
+                "translations": {
+                    "en-US": "Science",
+                    "ar-AS": "العلوم",
+                    "ar-EG": "العلوم",
+                    "fr-FR": "les Sciences",
+                    "tr-TR": "Bilim",
+                },
+            },
+            {
+                "name": "Health",
+                "translations": {
+                    "en-US": "Health",
+                    "ar-AS": "الصحه",
+                    "ar-EG": "الصحه",
+                    "fr-FR": "Santé",
+                    "tr-TR": "Sağlık",
                 },
             },
         ]
-        id = 1
+        category_id = 1
         for category in categories:
             try:
                 Category.objects.create(
                     name=category["name"],
-                    image=join(categories_images_directory, f"{id}.png"),
+                    image=join(categories_images_directory, f"{category_id}.png"),
                     translations=category["translations"],
                 )
                 self.stdout.write(
                     self.style.SUCCESS(f"Successfully insert {self.data} > {category}")
                 )
-                id = id + 1
+                category_id = category_id + 1
             except Exception as e:
                 self.stdout.write(
                     self.style.ERROR(

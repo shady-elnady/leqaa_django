@@ -11,7 +11,7 @@ class Interest(BaseModel):
         User,
         on_delete=CASCADE,
         related_name="Interests",
-        verbose_name=_("Student"),
+        verbose_name=_("User"),
     )
     category = ForeignKey(
         Category,
@@ -31,6 +31,6 @@ class Interest(BaseModel):
         return f"{self.user.username}>{self.category.name}"
 
     class Meta:
-        unique_together = ("student", "category")
+        unique_together = ("user", "category")
         verbose_name = _("Interest")
         verbose_name_plural = _("Interests")

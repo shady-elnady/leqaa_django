@@ -16,7 +16,7 @@ class ProfileInline(
 
 class InterestInline(TabularInline):
     model = Interest
-    extra = 1
+    extra = 2
 
 
 @register(User)
@@ -26,16 +26,13 @@ class UserAdmin(ModelAdmin):
     extra = 1
     inlines = [
         ProfileInline,
+        InterestInline,
     ]
 
 
 @register(Student)
 class StudentAdmin(ModelAdmin):
     model = Student
-    extra = 1
-    inlines = [
-        InterestInline,
-    ]
 
 
 #########################################################################################
