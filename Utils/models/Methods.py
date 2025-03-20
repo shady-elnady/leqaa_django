@@ -56,7 +56,7 @@ def upload_image_to(instance, filename):
                 "images",
                 MODEL_FOLDR_NAME,
                 f"{instance.event.id}",
-                f"{next_id}.{filename.split(".")[-1]}",
+                f"{next_id}.{filename.split('.')[-1]}",
             )
         )
     else:
@@ -64,7 +64,7 @@ def upload_image_to(instance, filename):
             join(
                 "images",
                 MODEL_FOLDR_NAME,
-                f"{next_id}.{filename.split(".")[-1]}",
+                f"{next_id}.{filename.split('.')[-1]}",
             )
         )
 
@@ -87,5 +87,5 @@ def upload_avatar_to(instance, filename):
         "images",
         "Avatars",
         USER_TYPE_PATH,
-        f"{instance.user.id}.{filename.split(".")[-1]}",
+        f"{instance.user.id}.{filename.split('.')[-1]}",
     )
