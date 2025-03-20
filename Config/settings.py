@@ -36,10 +36,10 @@ AUTH_USER_MODEL = "User.User"
 AUTH_PROFILE_MODEL = "User.Profile"
 
 ALLOWED_HOSTS = [
-    "*",
-    "localhost",
-    "127.0.0.1",
-    "herokuapp.com",
+    # "*",
+    # "localhost",
+    # "127.0.0.1",
+    # "herokuapp.com",
 ]
 
 APPEND_SLASH = True
