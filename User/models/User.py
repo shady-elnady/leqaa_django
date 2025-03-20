@@ -122,12 +122,15 @@ class User(
             in [
                 USERS_TYPES.Staff,
                 USERS_TYPES.Admin,
+                USERS_TYPES.SuperUser,
             ]
         )
         self.is_admin = bool(
             self.user_type in [USERS_TYPES.Admin, USERS_TYPES.SuperUser]
         )
-        self.is_superuser = bool(self.user_type == USERS_TYPES.SuperUser)
+        self.is_superuser = bool(
+            self.user_type in [USERS_TYPES.Admin, USERS_TYPES.SuperUser]
+        )
         if not self.otp:
             self.otp = "".join(random.choice(string.digits) for _ in range(4))
         return super(User, self).save(*args, **kwargs)

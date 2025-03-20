@@ -30,9 +30,9 @@ class Command(BaseCommand):
 
         users = [
             {
-                "username": "أحمد محمود",
+                "username": "Lecturer",
                 "user_type": USERS_TYPES.Lecturer,
-                "email": "shadyelnady0@g.com",
+                "email": "lecturer@g.com",
                 "mobile": "+201011111111",
                 "password": "password",
                 "Profile": {

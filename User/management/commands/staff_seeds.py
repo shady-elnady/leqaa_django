@@ -30,7 +30,7 @@ class Command(BaseCommand):
             {
                 "username": "Staff",
                 "email": "staff@g.com",
-                "password": "12345678",
+                "password": "password",
                 "Profile": {
                     "full_name": "شادى رافت سعد",
                     "national_id": "01232222222222",

@@ -28,9 +28,9 @@ class Command(BaseCommand):
 
         users = [
             {
-                "username": "طارق الجيد",
+                "username": "Student",
                 "user_type": USERS_TYPES.Student,
-                "email": "shadyelnady1@g.com",
+                "email": "student@g.com",
                 "mobile": "+201022222222",
                 "password": "password",
                 "Profile": {

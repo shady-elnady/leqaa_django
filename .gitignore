@@ -8,6 +8,9 @@ env.bak/
 venv.bak/
 
 # Django #
+url.txt
+
+# Django #
 *.log
 *.pot
 *.pyc

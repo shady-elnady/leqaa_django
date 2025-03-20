@@ -32,9 +32,9 @@ class Command(BaseCommand):
 
         superusers = [
             {
-                "username": "Shady",
-                "email": "shady@g.com",
-                "password": "12345678",
+                "username": "Super User",
+                "email": "superuser@g.com",
+                "password": "password",
                 "Profile": {
                     "full_name": "شادى رافت سعد",
                     "national_id": "02222222222222",
