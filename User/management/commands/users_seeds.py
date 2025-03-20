@@ -19,6 +19,9 @@ class Command(BaseCommand):
             makedirs(users_images_directory)
 
         commands = [
+            "superusers_seeds",
+            "admins_seeds",
+            "staff_seeds",
             "lecturers_seeds",
             "students_seeds",
         ]

@@ -1,6 +1,5 @@
 from rest_framework.serializers import HyperlinkedModelSerializer
 
-from Event.api import EventSerializer
 from Reservation.models import Reservation
 from User.api import UserSerializer
 
@@ -9,14 +8,13 @@ from User.api import UserSerializer
 
 class ReservationSerializer(HyperlinkedModelSerializer):
     user = UserSerializer(many=False)
-    event = EventSerializer(many=False)
 
     class Meta:
         model = Reservation
         fields = [
             "url",
             "id",
-            "registrant",
+            "user",
             "event",
             "reservation_status",
             "rating",

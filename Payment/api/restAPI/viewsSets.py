@@ -7,6 +7,7 @@ from rest_framework.authentication import (
 )
 from rest_framework import filters
 import django_filters.rest_framework
+from Api.restAPI.permissions import IsAdminOrReadOnlyForUser
 
 from Payment.models import PaymentMethod, PaymentStatus, Transaction
 from .serializers import (
@@ -19,7 +20,7 @@ from .serializers import (
 class PaymentMethodViewSet(ModelViewSet):
     queryset = PaymentMethod.objects.all()
     serializer_class = PaymentMethodSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminOrReadOnlyForUser]
     authentication_classes = [
         TokenAuthentication,
         SessionAuthentication,
@@ -43,7 +44,7 @@ class PaymentMethodViewSet(ModelViewSet):
 class PaymentStatusViewSet(ModelViewSet):
     queryset = PaymentStatus.objects.all()
     serializer_class = PaymentStatusSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminOrReadOnlyForUser]
     authentication_classes = [
         TokenAuthentication,
         SessionAuthentication,
@@ -67,7 +68,7 @@ class PaymentStatusViewSet(ModelViewSet):
 class TransactionViewSet(ModelViewSet):
     queryset = Transaction.objects.all()
     serializer_class = TransactionSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminOrReadOnlyForUser]
     authentication_classes = [
         TokenAuthentication,
         SessionAuthentication,

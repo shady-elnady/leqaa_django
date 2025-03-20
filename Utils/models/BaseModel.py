@@ -1,5 +1,8 @@
 # from django.db import models
 import uuid
+from os.path import join, exists
+from os import remove, rename
+
 from django.db.models import (
     Model,
     UUIDField,
@@ -11,6 +14,7 @@ from django.db.models import (
 from django.utils.translation import gettext_lazy as _
 from django.utils.text import slugify
 
+from User.utils.enums import USERS_TYPES
 from Utils.Widgets.Custom_Fields import BarCodeField
 from .Methods import (
     upload_avatar_to,
@@ -237,3 +241,37 @@ class BasAvatarModel(Model):
 
     class Meta:
         abstract = True
+
+    # # This is a custom save method to handle the renaming of the image
+    # def save(self, *args, **kwargs):
+    #     super().save(*args, **kwargs)  # Save the object first to get the PK
+    #     if self.avatar:
+    #         old_path = self.avatar.name
+    #         new_filename = f'{self.pk}.{self.avatar.name.split(".")[-1]}'
+    #         USER_TYPE_PATH = ""
+    #         if self.user.user_type == USERS_TYPES.Lecturer:
+    #             USER_TYPE_PATH = "Lecturers"
+    #         elif self.user.user_type == USERS_TYPES.Student:
+    #             USER_TYPE_PATH = "Students"
+    #         elif self.user.user_type == USERS_TYPES.Admin:
+    #             USER_TYPE_PATH = "Admins"
+    #         elif self.user.user_type == USERS_TYPES.SuperUser:
+    #             USER_TYPE_PATH = "SuperUser"
+    #         elif self.user.user_type == USERS_TYPES.Staff:
+    #             USER_TYPE_PATH = "Staff"
+    #         else:
+    #             USER_TYPE_PATH = "Users"
+
+    #         new_path = join("images", "Avatars", USER_TYPE_PATH, new_filename)
+    #         try:
+    #             rename(self.avatar.path, join(self.avatar.storage.location, new_path))
+    #             self.avatar.name = new_path
+    #             super().save(
+    #                 update_fields=["avatar"]
+    #             )  # Save again to update the image path
+    #         except FileNotFoundError:
+    #             pass  # Handle the case where the file might not exist yet
+    # def delete(self, *args, **kwargs):
+    #     if self.avatar and exists(self.avatar.path):
+    #         remove(self.avatar.path)
+    #     super().delete(*args, **kwargs)

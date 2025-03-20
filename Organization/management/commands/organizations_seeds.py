@@ -17,9 +17,9 @@ class Command(BaseCommand):
 
         IMAGES_ROOT = join(settings.MEDIA_ROOT, "images")
 
-        Organizations_images_directory = join(IMAGES_ROOT, "Organizations")
-        if not exists(Organizations_images_directory):
-            makedirs(Organizations_images_directory)
+        organizations_images_directory = join(IMAGES_ROOT, "Organizations")
+        if not exists(organizations_images_directory):
+            makedirs(organizations_images_directory)
 
         commands = [
             "organizationTypes_seeds",
@@ -41,34 +41,42 @@ class Command(BaseCommand):
         organizations = [
             {
                 "organization_type": 1,
-                "name": "Family of Culture",
-                # "logo": join(Organizations_images_directory, f"{id}.png"),
+                "name": "اسره الثقافه",
                 "university": 1,
                 "affiliated_to": None,
-                "translations": {
-                    "ar-AS": "اسره الثقافه",
-                    "ar-EG": "اسره الثقافه",
-                    "en-US": "Family of Culture",
-                    "fr-FR": "Famille culturelle",
-                    "tr-TR": "Kültür Ailesi",
-                },
+                # "translations": {
+                #     "ar-AS": "اسره الثقافه",
+                #     "ar-EG": "اسره الثقافه",
+                #     "en-US": "Family of Culture",
+                #     "fr-FR": "Famille culturelle",
+                #     "tr-TR": "Kültür Ailesi",
+                # },
             },
             {
                 "organization_type": 1,
-                "name": "The light Family",
-                # "logo": "Images/Organizations/2.png",
+                "name": "أسره النور",
                 "university": 1,
                 "affiliated_to": None,
-                "translations": {
-                    "ar-AS": "أسره النور",
-                    "ar-EG": "أسره النور",
-                    "en-US": "The light Family",
-                    "fr-FR": "La lumière l'a capturé",
-                    "tr-TR": "Işık ailesi",
-                },
+                # "translations": {
+                #     "ar-AS": "أسره النور",
+                #     "ar-EG": "أسره النور",
+                #     "en-US": "The light Family",
+                #     "fr-FR": "La lumière l'a capturé",
+                #     "tr-TR": "Işık ailesi",
+                # },
+            },
+            {
+                "organization_type": 1,
+                "name": "مركز الإبداع الرقمي",
+                "university": 1,
+                "affiliated_to": None,
+                # "translations": {
+                #     "ar-AS": "مركز الإبداع الرقمي",
+                #     "ar-EG": "مركز الإبداع الرقمي",
+                # },
             },
         ]
-        id = 1
+        organization_id = 1
         for organization in organizations:
             try:
                 Organization.objects.create(
@@ -76,17 +84,15 @@ class Command(BaseCommand):
                         pk=organization["organization_type"]
                     ),
                     name=organization["name"],
-                    logo=join(Organizations_images_directory, f"{id}.png"),
+                    logo=join(organizations_images_directory, f"{organization_id}.png"),
                     university=University.objects.get(pk=organization["university"]),
-                    # affiliated_to=organization["affiliated_to"],
-                    translations=organization["translations"],
                 )
                 self.stdout.write(
                     self.style.SUCCESS(
                         f"Successfully insert {self.data} > {organization}"
                     )
                 )
-                id = id + 1
+                organization_id = organization_id + 1
             except Exception as e:
                 self.stdout.write(
                     self.style.ERROR(

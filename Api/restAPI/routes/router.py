@@ -24,7 +24,9 @@ from Payment.api import (
     PaymentStatusViewSet,
     TransactionViewSet,
 )
-from Reservation.api import ReservationViewSet
+from Reservation.api import ReservationViewSet, UserReservationsViewSet
+from Notification.api import NotificationViewSet, UserNotificationsViewSet
+from Favorite.api import FavoriteViewSet, UserFavoritesViewSet
 from User.api import (
     ProfileViewSet,
     UserViewSet,
@@ -32,52 +34,70 @@ from User.api import (
     LecturerViewSet,
     UserAlbumViewSet,
     InterestViewSet,
+    UserInterestsViewSet,
+    UserMyProfileViewSet,
 )
-from Api.restAPI import RegisterViewSet
+from Api.restAPI import RegisterViewSet, UserRegisterViewSet
 
 router = routers.DefaultRouter()
 
 # Api
-router.register("register", RegisterViewSet, basename="register")
+router.register(r"register", RegisterViewSet, basename="register")
+router.register(r"user/register", UserRegisterViewSet, basename="user-register")
 # Locale
-router.register("languages", LanguageViewSet, basename="language")
-router.register("app-locales", AppLocaleViewSet, basename="app-locale")
-router.register("locales", LocaleViewSet, basename="locale")
+router.register(r"languages", LanguageViewSet, basename="language")
+router.register(r"app-locales", AppLocaleViewSet, basename="app-locale")
+router.register(r"locales", LocaleViewSet, basename="locale")
 # Currency
-router.register("currencies", CurrencyViewSet, basename="currency")
+router.register(r"currencies", CurrencyViewSet, basename="currency")
 # Category
-router.register("categories", CategoryViewSet, basename="category")
+router.register(r"categories", CategoryViewSet, basename="category")
 # Advertisement
-router.register("advertisements", AdvertisementViewSet, basename="advertisement")
+router.register(r"advertisements", AdvertisementViewSet, basename="advertisement")
 # Address
-router.register("countries", CountryViewSet, basename="country")
-router.register("governorates", GovernorateViewSet, basename="governorate")
-router.register("cities", CityViewSet, basename="city")
-router.register("localities", LocalityViewSet, basename="locality")
-router.register("states", StateViewSet, basename="state")
-router.register("streets", StreetViewSet, basename="street")
-router.register("address", AddressViewSet, basename="address")
+router.register(r"countries", CountryViewSet, basename="country")
+router.register(r"governorates", GovernorateViewSet, basename="governorate")
+router.register(r"cities", CityViewSet, basename="city")
+router.register(r"localities", LocalityViewSet, basename="locality")
+router.register(r"states", StateViewSet, basename="state")
+router.register(r"streets", StreetViewSet, basename="street")
+router.register(r"address", AddressViewSet, basename="address")
 # User
-router.register("users", UserViewSet, basename="user")
-router.register("students", StudentViewSet, basename="student")
-router.register("lecturers", LecturerViewSet, basename="lecturer")
-router.register("Users-Albums", UserAlbumViewSet)
-router.register("profiles", ProfileViewSet, basename="profile")
-router.register("interests", InterestViewSet, basename="interest")
-# Organization
-router.register("organizations", OrganizationViewSet, basename="organization")
-router.register("organizations-types", OrganizationTypeViewSet)
-router.register("colleges", CollegeViewSet, basename="college")
-router.register("universities", UniversityViewSet, basename="university")
-# Event
-router.register("events", EventViewSet, basename="event")
-router.register("events-types", EventTypeViewSet)
-router.register("events-Albums", EventAlbumViewSet)
-# Reservation
-router.register("reservations", ReservationViewSet, basename="reservation")
-# Payment
-router.register("payment-methods", PaymentMethodViewSet)
-router.register("payment-statuses", PaymentStatusViewSet)
-router.register("transactions", TransactionViewSet, basename="transaction")
+router.register(r"users", UserViewSet, basename="user")
+router.register(r"students", StudentViewSet, basename="student")
+router.register(r"lecturers", LecturerViewSet, basename="lecturer")
+router.register(r"Users-Albums", UserAlbumViewSet)
+router.register(r"profiles", ProfileViewSet, basename="profile")
+router.register(r"interests", InterestViewSet, basename="interest")
+# router.register(
+#     r"users/(?P<user_id>\d+)/interests", UserInterestsViewSet, basename="user-interests"
+# )
+router.register(r"user/my-interests", UserInterestsViewSet, basename="user-interests")
+router.register(r"user/my-profile", UserMyProfileViewSet, basename="user-profile")
 
+# Organization
+router.register(r"organizations", OrganizationViewSet, basename="organization")
+router.register(r"organizations-types", OrganizationTypeViewSet)
+router.register(r"colleges", CollegeViewSet, basename="college")
+router.register(r"universities", UniversityViewSet, basename="university")
+# Event
+router.register(r"events", EventViewSet, basename="event")
+router.register(r"events-types", EventTypeViewSet)
+router.register(r"events-Albums", EventAlbumViewSet)
+# Reservation
+router.register(r"reservations", ReservationViewSet, basename="reservation")
+router.register(
+    r"user/my-reservations", UserReservationsViewSet, basename="user-reservations"
+)
+# Payment
+router.register(r"payment-methods", PaymentMethodViewSet)
+router.register(r"payment-statuses", PaymentStatusViewSet)
+router.register(r"transactions", TransactionViewSet, basename="transaction")
 # Notification
+router.register(r"notifications", NotificationViewSet, basename="notification")
+router.register(
+    r"user/my-notifications", UserNotificationsViewSet, basename="user-notifications"
+)
+# Favorite
+router.register(r"favorites", FavoriteViewSet, basename="favorite")
+router.register(r"user/my-favorites", UserFavoritesViewSet, basename="user-favorites")

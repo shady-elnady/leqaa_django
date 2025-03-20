@@ -1,5 +1,6 @@
 from .restAPI.serializers import (
     UserSerializer,  # noqa: F401
+    UserAlbumSerializer,  # noqa: F401
     StudentSerializer,  # noqa: F401
     LecturerSerializer,  # noqa: F401
     InterestSerializer,  # noqa: F401
@@ -11,4 +12,6 @@ from .restAPI.viewSets import (
     StudentViewSet,  # noqa: F401
     UserAlbumViewSet,  # noqa: F401
     InterestViewSet,  # noqa: F401
+    UserInterestsViewSet,  # noqa: F401
+    UserMyProfileViewSet,  # noqa: F401
 )

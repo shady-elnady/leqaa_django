@@ -1,14 +1,13 @@
 from django.db.models import ForeignKey, CASCADE
 from django.utils.translation import gettext_lazy as _
 
-from Locale.models.BaseTranslationModel import BaseTranslationModel
+from Utils.models.BaseModel import BaseAutoIncrementNameModel, BaseLogoModel
 from Organization.models import OrganizationType, University
-from Utils.models.BaseModel import BaseLogoModel
 
 # Create your models here.
 
 
-class Organization(BaseTranslationModel, BaseLogoModel):
+class Organization(BaseAutoIncrementNameModel, BaseLogoModel):
 
     organization_type = ForeignKey(
         OrganizationType,

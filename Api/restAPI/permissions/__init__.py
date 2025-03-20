@@ -5,5 +5,6 @@ from .permissions import (
     IsAdmin,  # noqa: F401
     IsSuperUser,  # noqa: F401
     IsDeveloper,  # noqa: F401
-    IsOwner,  # noqa: F401
+    IsAdminOrReadOnly,  # noqa: F401
+    IsAdminOrReadOnlyForUser,  # noqa: F401
 )

@@ -28,7 +28,7 @@ class RegisterSerializer(ModelSerializer):
         ],
     )
     email = EmailField(
-        required=True,
+        required=False,
         validators=[
             UniqueValidator(
                 queryset=User.objects.all(),
@@ -64,6 +64,67 @@ class RegisterSerializer(ModelSerializer):
         model = User
         fields = [
             "user_type",
+            "username",
+            "email",
+            "mobile",
+            "password",
+        ]
+        extra_kwargs = {
+            "id": {"read_only": True},
+            "password": {
+                "required": True,
+                "write_only": True,
+            },
+        }
+
+
+class UserRegisterSerializer(ModelSerializer):
+    username = CharField(
+        max_length=100,
+        required=True,
+        validators=[
+            UniqueValidator(
+                queryset=User.objects.all(),
+                message=_("User Name is Used. choose Another"),
+            ),
+        ],
+    )
+    email = EmailField(
+        required=False,
+        validators=[
+            UniqueValidator(
+                queryset=User.objects.all(),
+                message=_(
+                    "E-Mail is Used.",
+                ),
+            ),
+        ],
+    )
+    mobile = CharField(
+        required=False,
+        validators=[
+            UniqueValidator(
+                queryset=User.objects.all(),
+                message=_(
+                    "Mobile is Used. choose Another",
+                ),
+            ),
+            UserRegexValidators.mobile_regex,
+        ],
+    )
+    password = CharField(
+        write_only=True,
+        required=True,
+        validators=[validate_password],
+    )
+
+    def create(self, validated_data) -> "User":
+        user: User = User.objects.create_user(**validated_data)
+        return user
+
+    class Meta:
+        model = User
+        fields = [
             "username",
             "email",
             "mobile",

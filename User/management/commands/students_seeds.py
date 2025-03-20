@@ -1,5 +1,7 @@
 from django.core.management.base import BaseCommand
-from os.path import join
+from django.conf import settings
+from os.path import join, exists
+from os import makedirs
 
 from User.models import User, UserAlbum, Profile
 from User.utils.enums import USERS_TYPES, TITLES, GENDERS
@@ -14,16 +16,25 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.WARNING(f"Start {self.help}"))
 
+        IMAGES_ROOT = join(settings.MEDIA_ROOT, "images")
+
+        students_albums_images_directory = join(IMAGES_ROOT, "Users Albums", "Students")
+        if not exists(students_albums_images_directory):
+            makedirs(students_albums_images_directory)
+
+        students_profile_images_directory = join(IMAGES_ROOT, "Avatars", "Students")
+        if not exists(students_profile_images_directory):
+            makedirs(students_profile_images_directory)
+
         users = [
             {
-                "username": "شادى رأفت",
+                "username": "طارق الجيد",
                 "user_type": USERS_TYPES.Student,
-                "email": "shadyelnady1@gmail.com",
-                "mobile": "+01022222222",
+                "email": "shadyelnady1@g.com",
+                "mobile": "+201022222222",
                 "password": "password",
                 "Profile": {
-                    # "avatar": "Images/Users/3/Avatar_3.png",
-                    "full_name": "شادى رافت سعد النادى",
+                    "full_name": "طارق أحمد محمود الجيد",
                     "national_id": "22222222222222",
                     "birth_date": None,
                     "title": TITLES.Student,
@@ -38,19 +49,11 @@ class Command(BaseCommand):
                         "lng": 4.33333,
                     },
                 },
-                # "UserPhotosAlbum": [
-                #     {
-                #         "photo": "Images/Users/3/3_3.png",
-                #     },
-                #     {
-                #         "photo": "Images/Users/3/3_4.png",
-                #     },
-                # ],
             },
         ]
         for user in users:
             try:
-                userInstance: User = User.objects.create_user(
+                user_instance: User = User.objects.create_user(
                     username=user["username"],
                     user_type=user["user_type"],
                     email=user["email"],
@@ -64,13 +67,11 @@ class Command(BaseCommand):
                 )
                 try:
                     Profile.objects.update_or_create(
-                        user=userInstance,
+                        user=user_instance,
                         defaults={
                             "avatar": join(
-                                "images",
-                                "Users",
-                                f"{userInstance.id}",
-                                f"Avatar_{userInstance.id}.png",
+                                students_profile_images_directory,
+                                f"{user_instance.id}.png",
                             ),
                             "full_name": user["Profile"]["full_name"],
                             "national_id": user["Profile"]["national_id"],
@@ -99,26 +100,25 @@ class Command(BaseCommand):
                             f"Failed Create Student Profile with Name > {user['username']} , \n \t Error is: \t \t{e}"
                         )
                     )
-                for id in range(2):
+                for id in range(1, 3):
                     try:
                         UserAlbum.objects.create(
-                            user=userInstance,
+                            user=user_instance,
                             photo=join(
-                                "images",
-                                "Users",
-                                f"{userInstance.id}",
-                                f"{userInstance.id}_{id}.png",
+                                students_albums_images_directory,
+                                f"{user_instance.id}",
+                                f"{id}.png",
                             ),
                         )
                         self.stdout.write(
                             self.style.SUCCESS(
-                                f"Successfully  Create Photo for Student with Name > {userInstance.username}"
+                                f"Successfully  Create Photo for Student with Name > {user_instance.username}"
                             )
                         )
                     except Exception as e:
                         self.stdout.write(
                             self.style.ERROR(
-                                f"Failed Create Photo for Student with Name > {userInstance.username} , \n \t Error is: \t \t{e}"
+                                f"Failed Create Photo for Student with Name > {user_instance.username} , \n \t Error is: \t \t{e}"
                             )
                         )
             except Exception as e:

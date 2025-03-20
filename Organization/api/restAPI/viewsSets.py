@@ -7,6 +7,7 @@ from rest_framework.authentication import (
 )
 from rest_framework import filters
 import django_filters.rest_framework
+from Api.restAPI.permissions import IsAdminOrReadOnlyForUser
 
 from Organization.models import Organization, OrganizationType, College, University
 from .serializers import (
@@ -20,7 +21,7 @@ from .serializers import (
 class OrganizationViewSet(ModelViewSet):
     queryset = Organization.objects.all()
     serializer_class = OrganizationSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminOrReadOnlyForUser]
     authentication_classes = [
         TokenAuthentication,
         SessionAuthentication,
@@ -41,7 +42,7 @@ class OrganizationViewSet(ModelViewSet):
 class OrganizationTypeViewSet(ModelViewSet):
     queryset = OrganizationType.objects.all()
     serializer_class = OrganizationTypeSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminOrReadOnlyForUser]
     authentication_classes = [
         TokenAuthentication,
         SessionAuthentication,
@@ -62,7 +63,7 @@ class OrganizationTypeViewSet(ModelViewSet):
 class CollegeViewSet(ModelViewSet):
     queryset = College.objects.all()
     serializer_class = CollegeSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminOrReadOnlyForUser]
     authentication_classes = [
         TokenAuthentication,
         SessionAuthentication,
@@ -83,7 +84,7 @@ class CollegeViewSet(ModelViewSet):
 class UniversityViewSet(ModelViewSet):
     queryset = University.objects.all()
     serializer_class = UniversitySerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminOrReadOnlyForUser]
     authentication_classes = [
         TokenAuthentication,
         SessionAuthentication,

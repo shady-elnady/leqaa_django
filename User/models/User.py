@@ -12,7 +12,6 @@ from django.db.models import (
 )
 from django.utils.translation import gettext_lazy as _
 
-# from PIL import Image
 
 from User.utils.userRegexValidators import UserRegexValidators
 from User.utils.enums import USERS_TYPES
@@ -31,9 +30,7 @@ class User(
     USERNAME_FIELD = "email"
     EMAIL_FIELD = "email"
     REQUIRED_FIELDS = [
-        # "user_type",
         "username",
-        "mobile",
         "password",
     ]
 
@@ -42,6 +39,7 @@ class User(
     user_type = CharField(
         max_length=2,
         choices=USERS_TYPES.choices,
+        default=USERS_TYPES.User,
         verbose_name=_("User Type"),
     )
     username = CharField(
@@ -59,13 +57,14 @@ class User(
     mobile = CharField(
         max_length=16,
         unique=True,
+        blank=True,
+        null=True,
         error_messages={"unique": UserMessages.MOBILE_UNIQUE_VALIDATION},
         validators=[UserRegexValidators.mobile_regex],
         verbose_name=_("Mobile"),
     )
     otp = CharField(
         max_length=4,
-        null=True,
         blank=True,
         verbose_name=_("OTP"),
     )
@@ -92,27 +91,24 @@ class User(
         default=False,
         verbose_name=_("is Blocked"),
     )
-
-    @property
-    def is_admin(self) -> bool:
-        return self.user_type in [
-            USERS_TYPES.Developer,
-            USERS_TYPES.SuperUser,
-            USERS_TYPES.Admin,
-        ]
-
-    @property
-    def is_superuser(self) -> bool:
-        return self.user_type == USERS_TYPES.SuperUser
-
-    @property
-    def is_staff(self) -> bool:
-        return self.user_type in [
-            USERS_TYPES.Developer,
-            USERS_TYPES.SuperUser,
-            USERS_TYPES.Admin,
-            USERS_TYPES.Staff,
-        ]
+    is_staff = BooleanField(
+        default=False,
+        editable=False,
+        help_text=_("Designates whether the user can log into this Staff Site."),
+        verbose_name=_("Staff Status"),
+    )
+    is_admin = BooleanField(
+        default=False,
+        editable=False,
+        help_text=_("Designates whether the user can log into this admin Site."),
+        verbose_name=_("Admin Status"),
+    )
+    is_superuser = BooleanField(
+        default=False,
+        editable=False,
+        help_text=_("Designates that this user has Super User permissions"),
+        verbose_name=_("Super User Status"),
+    )
 
     def __str__(self) -> str:
         return f"{self.username}"
@@ -121,6 +117,17 @@ class User(
         return f"{self.username}"
 
     def save(self, *args, **kwargs):
+        self.is_staff = bool(
+            self.user_type
+            in [
+                USERS_TYPES.Staff,
+                USERS_TYPES.Admin,
+            ]
+        )
+        self.is_admin = bool(
+            self.user_type in [USERS_TYPES.Admin, USERS_TYPES.SuperUser]
+        )
+        self.is_superuser = bool(self.user_type == USERS_TYPES.SuperUser)
         if not self.otp:
             self.otp = "".join(random.choice(string.digits) for _ in range(4))
         return super(User, self).save(*args, **kwargs)
@@ -149,12 +156,15 @@ class UserAlbum(BaseModel, BasePhotoModel):
     def __decode__(self) -> str:
         return f"{self.pk}-{self.user.username}"
 
+    # # importing required modules
+    # from os.path import join, exists
+    # from os import remove, rename
+    # from PIL import Image
+
     # # resizing images
     # def save(self, *args, **kwargs):
     #     super().save()
-
     #     img = Image.open(self.photo.path)
-
     #     if img.height > 100 or img.width > 100:
     #         new_img = (100, 100)
     #         img.thumbnail(new_img)
@@ -162,4 +172,4 @@ class UserAlbum(BaseModel, BasePhotoModel):
 
     class Meta:
         verbose_name = _("User Album")
-        verbose_name_plural = _("Users Album")
+        verbose_name_plural = _("Users Albums")

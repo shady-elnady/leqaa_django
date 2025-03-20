@@ -16,11 +16,11 @@ from Event.models import Event
 
 
 class Reservation(BaseModel):
-    registrant = ForeignKey(
+    user = ForeignKey(
         User,
         on_delete=CASCADE,
         related_name=_("Reservations"),
-        verbose_name=_("Registrant"),
+        verbose_name=_("User"),
     )
     event = ForeignKey(
         Event,

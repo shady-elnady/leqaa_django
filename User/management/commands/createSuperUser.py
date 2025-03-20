@@ -3,8 +3,6 @@ Management utility to create superusers.
 """
 
 import sys
-
-# from django.contrib.auth import get_user_model
 from django.core.management.base import BaseCommand, CommandError
 from django.db import DEFAULT_DB_ALIAS
 
@@ -21,7 +19,6 @@ class Command(BaseCommand):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # User = get_user_model()
         self.username_field = User._meta.get_field(User.USERNAME_FIELD)
 
     def add_arguments(self, parser):

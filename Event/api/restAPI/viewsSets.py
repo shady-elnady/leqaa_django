@@ -5,11 +5,17 @@ from rest_framework.authentication import (
     SessionAuthentication,
     BasicAuthentication,
 )
-from rest_framework import filters
-import django_filters.rest_framework
+from rest_framework.filters import SearchFilter, OrderingFilter
+
+from django_filters import rest_framework as filters
+
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from rest_framework import status
 
+from Api.restAPI.permissions import IsAdminOrReadOnlyForUser
+from Category.api.restAPI.serializers import CategorySerializer
+from Category.models import Category
 from Event.models import Event, EventType, EventAlbum
 from .serializers import (
     EventSerializer,
@@ -22,16 +28,16 @@ from .serializers import (
 class EventTypeViewSet(ModelViewSet):
     queryset = EventType.objects.all()
     serializer_class = EventTypeSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminOrReadOnlyForUser]
     authentication_classes = [
         TokenAuthentication,
         SessionAuthentication,
         BasicAuthentication,
     ]
     filter_backends = (
-        filters.OrderingFilter,  # http://example.com/api/users?ordering=account,username
-        filters.SearchFilter,  # http://example.com/api/users?search=russell
-        django_filters.rest_framework.DjangoFilterBackend,
+        OrderingFilter,  # http://example.com/api/users?ordering=account,username
+        SearchFilter,  # http://example.com/api/users?search=russell
+        filters.DjangoFilterBackend,
     )
     ordering_fields = ("id", "created_at", "last_updated")
     filterset_fields = ["id", "created_at", "last_updated"]
@@ -40,40 +46,62 @@ class EventTypeViewSet(ModelViewSet):
     ordering = "-last_updated"
 
 
+class EventFilter(filters.FilterSet):
+    category__in = filters.ModelMultipleChoiceFilter(
+        field_name="category",
+        queryset=Category.objects.all(),
+        lookup_expr="in",
+        method="filter_category",
+    )
+
+    def filter_category(self, queryset, name, value):
+        if value:
+            return queryset.filter(category__in=value)
+        return queryset
+
+    class Meta:
+        model = Event
+        fields = ["category__in", "category__id"]
+
+
 class EventViewSet(ModelViewSet):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminOrReadOnlyForUser]
     authentication_classes = [
         TokenAuthentication,
         SessionAuthentication,
         BasicAuthentication,
     ]
     filter_backends = (
-        filters.OrderingFilter,  # http://example.com/api/users?ordering=account,username
-        filters.SearchFilter,  # http://example.com/api/users?search=russell
-        django_filters.rest_framework.DjangoFilterBackend,
+        OrderingFilter,  # http://example.com/api/users?ordering=account,username
+        SearchFilter,  # http://example.com/api/users?search=russell
+        filters.DjangoFilterBackend,
     )
+    filterset_class = EventFilter
     ordering_fields = ("id", "created_at", "last_updated")
-    filterset_fields = ["id", "created_at", "last_updated"]
     search_fields = ["title"]
     # This will be used as the default ordering
     ordering = "-last_updated"
+
+    # def list(self, request, *args, **kwargs):
+    #     print(request.query_params)  # Add this line
+    #     return super().list(request, *args, **kwargs)
 
 
 class EventAlbumViewSet(ModelViewSet):
     queryset = EventAlbum.objects.all()
     serializer_class = EventAlbumSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminOrReadOnlyForUser]
     authentication_classes = [
         TokenAuthentication,
         SessionAuthentication,
         BasicAuthentication,
     ]
     filter_backends = (
-        filters.OrderingFilter,  # http://example.com/api/users?ordering=account,username
-        filters.SearchFilter,  # http://example.com/api/users?search=russell
-        django_filters.rest_framework.DjangoFilterBackend,
+        OrderingFilter,  # http://example.com/api/users?ordering=account,username
+        SearchFilter,  # http://example.com/api/users?search=russell
+        filters.DjangoFilterBackend,
     )
     ordering_fields = ("id", "created_at", "last_updated")
     filterset_fields = ["id", "created_at", "last_updated"]

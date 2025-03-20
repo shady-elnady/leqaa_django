@@ -12,6 +12,7 @@ from Organization.api import (
     OrganizationSerializer,
     UniversitySerializer,
 )
+from Reservation.api import ReservationSerializer
 from User.api import LecturerSerializer
 
 # Serializers define the API representation.
@@ -34,9 +35,9 @@ class EventAlbumSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = EventAlbum
         fields = [
-            "url",
-            "id",
-            "event",
+            # "url",
+            # "id",
+            # "event",
             "photo",
             "order",
             "created_at",
@@ -49,13 +50,14 @@ class MultipleImageEventAlbumSerializer(Serializer):
 
 
 class EventSerializer(HyperlinkedModelSerializer):
-    event_type = EventTypeSerializer(many=False)
-    category = CategorySerializer(many=False)
-    lecturer = LecturerSerializer(many=False)
-    university = UniversitySerializer(many=False)
-    college = CollegeSerializer(many=False)
-    organizer = OrganizationSerializer(many=False)
+    # event_type = EventTypeSerializer(many=False)
+    # category = CategorySerializer(many=False)
+    # lecturer = LecturerSerializer(many=False)
+    # college = CollegeSerializer(many=False)
+    # organizer = OrganizationSerializer(many=False)
+    university = UniversitySerializer(many=False, read_only=True)
     EventPhotosAlbum = EventAlbumSerializer(many=True)
+    Reservations = ReservationSerializer(many=True, read_only=True)
 
     class Meta:
         model = Event
@@ -73,6 +75,7 @@ class EventSerializer(HyperlinkedModelSerializer):
             "lecturer_financial_dues",
             "lecturer_financial_system",
             "event_paid_status",
+            "on_or_off_line",
             "short_description",
             "complete_description",
             "end_date_time",
@@ -80,6 +83,7 @@ class EventSerializer(HyperlinkedModelSerializer):
             "registration_link",
             "image",
             "EventPhotosAlbum",
+            "Reservations",
             "created_at",
             "last_updated",
         ]

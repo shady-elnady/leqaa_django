@@ -12,3 +12,9 @@ class EventPaidStatus(TextChoices):
     Free = "F", _("Completely ")
     Partially = "P", _("Partially Paid")
     Paid = "C", _("Completely Paid")
+
+
+class OnOrOffLineStatus(TextChoices):
+    OnLine = "N", _("On Line ")
+    OffLine = "F", _("Off Line")
+    Any = "A", _("Any")

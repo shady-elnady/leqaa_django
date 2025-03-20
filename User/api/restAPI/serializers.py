@@ -1,5 +1,6 @@
 from rest_framework.serializers import (
     HyperlinkedModelSerializer,
+    PrimaryKeyRelatedField,
     # HyperlinkedRelatedField,
 )
 
@@ -26,23 +27,32 @@ class UserAlbumSerializer(HyperlinkedModelSerializer):
 
 
 class InterestSerializer(HyperlinkedModelSerializer):
-    category = CategorySerializer(many=False)
+    # category = CategorySerializer(many=False)
+    # user = PrimaryKeyRelatedField(
+    #     queryset=User.objects.all(),
+    #     required=False,  # Make category optional
+    #     allow_null=True,  # make category accept null values.
+    # )
 
     class Meta:
         model = Interest
         fields = [
             "url",
             "id",
-            "student",
+            # "user",
             "category",
             "order",
             "created_at",
             "last_updated",
         ]
+        extra_kwargs = {
+            "url": {"view_name": "interest-detail"},
+        }
 
 
 class UserSerializer(HyperlinkedModelSerializer):
     UserPhotosAlbum = UserAlbumSerializer(many=True)
+    Interests = InterestSerializer(many=True, read_only=True)
 
     class Meta:
         model = User
@@ -54,9 +64,16 @@ class UserSerializer(HyperlinkedModelSerializer):
             "email",
             "mobile",
             "password",
+            "Interests",
             "UserPhotosAlbum",
         ]
-        extra_kwargs = {"password": {"write_only": True}}
+        extra_kwargs = {
+            "password": {
+                "write_only": True,
+                "style": {"input_type": "password"},
+            },
+            "url": {"view_name": "user-detail"},
+        }
 
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data)
@@ -105,8 +122,8 @@ class LecturerSerializer(HyperlinkedModelSerializer):
 
 class ProfileSerializer(HyperlinkedModelSerializer):
     user = UserSerializer(many=False)
-    language = LanguageSerializer(many=False)
-    currency = CurrencySerializer(many=False)
+    # language = LanguageSerializer(many=False)
+    # currency = CurrencySerializer(many=False)
 
     class Meta:
         model = Profile

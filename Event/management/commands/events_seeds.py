@@ -24,7 +24,7 @@ class Command(BaseCommand):
         if not exists(events_images_directory):
             makedirs(events_images_directory)
 
-        events_album_images_directory = join(IMAGES_ROOT, "Events_Albums")
+        events_album_images_directory = join(IMAGES_ROOT, "Events Albums")
         if not exists(events_album_images_directory):
             makedirs(events_album_images_directory)
 
@@ -52,10 +52,12 @@ class Command(BaseCommand):
         DESCRIPTTION = (
             """تنظم جامعة المنصورة ملتقى التوظيف السنوي، وهو فعالية تهدف إلى تعزيز فرص العمل للخريجين وتهيئتهم لسوق العمل. يقام الملتقى تحت رعاية رئيس الجامعة د. شريف يوسف خاطر، ويشمل مشاركة العديد من الشركات والمؤسسات من مختلف القطاعات.الملتقى يوفر منصة للخريجين للتفاعل مع أصحاب العمل، والاستفادة من ورش العمل والجلسات النقاشية التي تركز على تنمية المهارات المهنية والشخصية، مما يعزز من فرص التوظيف الفعلية للخريجين.كما يتضمن الملتقى جلسات حول استراتيجيات التوظيف ورؤية مصر 2030، حيث يتم تناول موضوعات مثل المشروعات القومية ومدن الجيل الرابع، وريادة الأعمال، والدور المجتمعي لمؤسسات العمل  ويشمل مشاركة العديد من الشركات والمؤسسات من مختلف القطاعات""",
         )
+        OTHER_DESCRIPTTION = (
+            """ملتقى البحث العلمي هو حدث يعرض فيه الطلاب والباحثون أبحاثهم، ويهدف إلى تعزيز التفاعل الأكاديمي وتطوير المهارات البحثية.""",
+        )
 
         events = [
             {
-                # "image": "images/Events/1.png",
                 "title": "الثقافه و الفنون",
                 "hall": "Occasions",
                 "event_type": 1,
@@ -67,9 +69,9 @@ class Command(BaseCommand):
                 "lecturer_financial_dues": None,
                 "lecturer_financial_system": LecturerFinancialSystem.Enlist,
                 "event_paid_status": EventPaidStatus.Free,
+                "description": DESCRIPTTION,
             },
             {
-                # "image": "images/Events/2.png",
                 "title": "ملتقى التوظيف",
                 "hall": "Occasions",
                 "event_type": 1,
@@ -81,9 +83,9 @@ class Command(BaseCommand):
                 "lecturer_financial_dues": None,
                 "lecturer_financial_system": LecturerFinancialSystem.Enlist,
                 "event_paid_status": EventPaidStatus.Free,
+                "description": DESCRIPTTION,
             },
             {
-                # "image": "images/Events/3.png",
                 "title": "لغه انجليزيه",
                 "hall": "Occasions",
                 "event_type": 2,
@@ -95,9 +97,9 @@ class Command(BaseCommand):
                 "lecturer_financial_dues": None,
                 "lecturer_financial_system": LecturerFinancialSystem.Enlist,
                 "event_paid_status": EventPaidStatus.Free,
+                "description": DESCRIPTTION,
             },
             {
-                # "image": "images/Events/4.png",
                 "title": "إداره موارد بشريه",
                 "hall": "Occasions",
                 "event_type": 2,
@@ -109,6 +111,21 @@ class Command(BaseCommand):
                 "lecturer_financial_dues": None,
                 "lecturer_financial_system": LecturerFinancialSystem.Enlist,
                 "event_paid_status": EventPaidStatus.Free,
+                "description": DESCRIPTTION,
+            },
+            {
+                "title": "ملتقي البحث العلمي",
+                "hall": "Occasions",
+                "event_type": 2,
+                "category": 1,
+                "lecturer": 1,
+                "university": 1,
+                "college": 1,
+                "organizer": 3,
+                "lecturer_financial_dues": None,
+                "lecturer_financial_system": LecturerFinancialSystem.Enlist,
+                "event_paid_status": EventPaidStatus.Free,
+                "description": OTHER_DESCRIPTTION,
             },
         ]
         event_id = 1
@@ -127,8 +144,8 @@ class Command(BaseCommand):
                     lecturer_financial_dues=event["lecturer_financial_dues"],
                     lecturer_financial_system=event["lecturer_financial_system"],
                     event_paid_status=event["event_paid_status"],
-                    complete_description=DESCRIPTTION,
-                    short_description=DESCRIPTTION,
+                    complete_description=event["description"],
+                    short_description=event["description"],
                     start_date_time=datetime.strptime(
                         START_EVENT_DATE_TIME,
                         DATE_FORMAT_CONSTANT,
@@ -144,13 +161,14 @@ class Command(BaseCommand):
                         f"Successfully insert {self.data} > {event_instance.title}"
                     )
                 )
-                for album_id in range(13):
+                for album_id in range(1, 13):
                     try:
                         EventAlbum.objects.create(
                             event=event_instance,
                             photo=join(
-                                events_images_directory,
-                                f"{event_instance.id}_{album_id}.png",
+                                events_album_images_directory,
+                                f"{event_instance.id}",
+                                f"{album_id}.png",
                             ),
                         )
                         self.stdout.write(

@@ -10,7 +10,11 @@ from django.db.models import (
 )
 from django.utils.translation import gettext_lazy as _
 
-from Event.utils.enums import EventPaidStatus, LecturerFinancialSystem
+from Event.utils.enums import (
+    EventPaidStatus,
+    LecturerFinancialSystem,
+    OnOrOffLineStatus,
+)
 from Utils.models.BaseModel import BaseImageModel, BaseModel, BasePhotoModel
 from Locale.models.BaseTranslationModel import BaseTranslationModel
 from Category.models import Category
@@ -50,7 +54,6 @@ class Event(BaseModel, BaseImageModel):
     )
     lecturer = ForeignKey(
         Lecturer,
-        null=True,
         blank=True,
         on_delete=CASCADE,
         related_name=_("Events"),
@@ -97,6 +100,12 @@ class Event(BaseModel, BaseImageModel):
         default=EventPaidStatus.Free,
         verbose_name=_("Event Paid Status"),
     )
+    on_or_off_line = CharField(
+        max_length=2,
+        choices=OnOrOffLineStatus.choices,
+        default=OnOrOffLineStatus.Any,
+        verbose_name=_("on|Off Line"),
+    )
     short_description = TextField(
         null=True,
         blank=True,
@@ -108,17 +117,14 @@ class Event(BaseModel, BaseImageModel):
         verbose_name=_("Complete Description"),
     )
     start_date_time = DateTimeField(
-        null=True,
         blank=True,
         verbose_name=_("Start Date Time"),
     )
     end_date_time = DateTimeField(
-        null=True,
         blank=True,
         verbose_name=_("End Date Time"),
     )
     registration_link = URLField(
-        null=True,
         blank=True,
         verbose_name=_("Registration link"),
     )

@@ -23,7 +23,6 @@ class Command(BaseCommand):
         colleges = [
             {
                 "name": "College of Commerce",
-                # "logo": "Images/Colleges/1.png",
                 "university": 1,
                 "translations": {
                     "ar-AS": "كليه تجاره",
@@ -34,19 +33,19 @@ class Command(BaseCommand):
                 },
             },
         ]
-        id = 1
+        college_id = 1
         for college in colleges:
             try:
                 College.objects.create(
                     name=college["name"],
-                    logo=join(colleges_images_directory, f"{id}.png"),
+                    logo=join(colleges_images_directory, f"{college_id}.png"),
                     university=University.objects.get(pk=college["university"]),
                     translations=college["translations"],
                 )
                 self.stdout.write(
                     self.style.SUCCESS(f"Successfully insert {self.data} > {college}")
                 )
-                id = id + 1
+                college_id = college_id + 1
             except Exception as e:
                 self.stdout.write(
                     self.style.ERROR(

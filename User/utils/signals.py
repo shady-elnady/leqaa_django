@@ -13,13 +13,16 @@ from User.utils.enums import USERS_TYPES
 @receiver(post_save, sender=User)
 def create_signal(sender, instance: User, created: bool, **kwargs):
     if created:
-        Profile.objects.create(user=instance)
         Token.objects.create(user=instance)
 
         if instance.user_type == USERS_TYPES.Student:
             Student.objects.create(user=instance)
         elif instance.user_type == USERS_TYPES.Lecturer:
             Lecturer.objects.create(user=instance)
+
+        if not hasattr(instance, "Profile"):
+            Profile.objects.create(user=instance)
+            instance.Profile.save()
 
         if not instance.email_verified_at:
 
@@ -35,11 +38,6 @@ def create_signal(sender, instance: User, created: bool, **kwargs):
                 fail_silently=False,
                 html_message=notice_html,
             )
-    instance.Profile.save()
-
-
-# leqaa
-# uliy cfbt wmqq zdrm
 
 
 """

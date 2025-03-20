@@ -1,24 +1,60 @@
-# from django.core.management.base import BaseCommand
-# from django.core.management import call_command
+from django.core.management.base import BaseCommand
+
+from Notification.models import Notification
+from User.models import User
+from Event.models import Event
 
 
-# class Command(BaseCommand):
-#     help = "Creates initial Notifictions Load Data"
+class Command(BaseCommand):
+    data = "Notifications"
+    help = f"Creates initial {data} model"
 
-#     def handle(self, *args, **options):
-#         load_data = [
-#             "languages.json",
-#             "locales.json",
-#         ]
-#         for data in load_data:
-#             try:
-#                 call_command("loaddata", data)
-#                 self.stdout.write(self.style.SUCCESS(f"Successfully {data} Load Data"))
-#             except Exception as e:
-#                 self.stdout.write(
-#                     self.style.ERROR(
-#                         f"Load Data Failed from {data} , \n \t Error is: \t \t{e}"
-#                     )
-#                 )
+    def handle(self, *args, **options):
 
-#         self.stdout.write(self.style.SUCCESS("Successfully initial Address Load Data"))
+        self.stdout.write(self.style.WARNING(f"Start {self.help}"))
+
+        notifications = [
+            {
+                "user": 1,
+                "event": 1,
+            },
+            {
+                "user": 1,
+                "event": 2,
+            },
+            {
+                "user": 1,
+                "event": 3,
+            },
+            {
+                "user": 2,
+                "event": 1,
+            },
+            {
+                "user": 2,
+                "event": 2,
+            },
+            {
+                "user": 2,
+                "event": 3,
+            },
+        ]
+
+        for notification in notifications:
+            try:
+                Notification.objects.create(
+                    user=User.objects.get(pk=notification["user"]),
+                    event=Event.objects.get(pk=notification["event"]),
+                )
+                self.stdout.write(
+                    self.style.SUCCESS(
+                        f"Successfully insert {self.data} > {notification}"
+                    )
+                )
+            except Exception as e:
+                self.stdout.write(
+                    self.style.ERROR(
+                        f"Failed insert {self.data} > {notification} , \n \t Error is: \t \t{e}"
+                    )
+                )
+        self.stdout.write(self.style.WARNING(f"Finish Created initial {self.data}"))

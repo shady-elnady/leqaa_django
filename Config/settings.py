@@ -73,6 +73,7 @@ MY_APPS = [
     "Payment",
     "Advertisement",
     "Notification",
+    "Favorite",
     ##
     # "Logs",
     ##
@@ -88,7 +89,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # "django.contrib.sites",  # NEW
+    "django.contrib.sites",  # NEW
     ## 3rd Libraraies
     *THIRD_LIBRARIES,
     ## My Apps
@@ -96,7 +97,9 @@ INSTALLED_APPS = [
     "django.forms",
 ]
 
-SITE_ID = 1
+SITE_ID = 2
+
+USE_HTTPS = False
 
 INTERNAL_IPS = [
     # ...
@@ -279,9 +282,9 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.IsAuthenticated",
     ],
     "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.TokenAuthentication",
         "rest_framework.authentication.BasicAuthentication",
         "rest_framework.authentication.SessionAuthentication",
-        "rest_framework.authentication.TokenAuthentication",
         # "FireBase.utils.authentication.FirebaseAuthentication",  # Custom fireBase Authentiction
     ],
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",

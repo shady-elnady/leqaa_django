@@ -8,7 +8,6 @@ class GENDERS(TextChoices):
 
 
 class USERS_TYPES(TextChoices):
-    Developer = "D", _("Developer")
     SuperUser = "SU", _("Super User")
     Admin = "A", _("Admin")
     Lecturer = "L", _("Lecturer")

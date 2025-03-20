@@ -1,9 +1,10 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import (
+    IsAdminUser,
     IsAuthenticated,
     IsAuthenticatedOrReadOnly,
-    IsAdminUser,
 )  # noqa: F401
+from Api.restAPI.permissions import IsAdminOrReadOnly
 from rest_framework.authentication import (
     TokenAuthentication,
     SessionAuthentication,
@@ -19,7 +20,7 @@ from .serializers import LocaleSerializer, LanguageSerializer, AppLocaleSerializ
 class LanguageViewSet(ModelViewSet):
     queryset = Language.objects.all()
     serializer_class = LanguageSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminOrReadOnly]
     authentication_classes = [
         TokenAuthentication,
         SessionAuthentication,
@@ -45,7 +46,7 @@ class LanguageViewSet(ModelViewSet):
 class LocaleViewSet(ModelViewSet):
     queryset = Locale.objects.all()
     serializer_class = LocaleSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAdminOrReadOnly]
     authentication_classes = [
         TokenAuthentication,
         SessionAuthentication,
@@ -70,10 +71,9 @@ class LocaleViewSet(ModelViewSet):
 class AppLocaleViewSet(ModelViewSet):
     queryset = Locale.objects.all()
     serializer_class = AppLocaleSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAdminOrReadOnly]
     authentication_classes = [
         TokenAuthentication,
         SessionAuthentication,
         BasicAuthentication,
     ]
-

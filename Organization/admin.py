@@ -2,25 +2,14 @@ from django.contrib.admin import ModelAdmin, register
 from django.db.models import JSONField
 
 from Locale.widgets.myTranslation_json_widget import MyTranslationWidget
-from Organization.models import Organization, OrganizationType, College, University
+from Organization.models import OrganizationType, College, University
 from .forms import (
-    OrganizationAdminForm,
     OrganizationTypeAdminForm,
     CollegeAdminForm,
     UniversityAdminForm,
 )
 
 # Register your models here.
-
-
-@register(Organization)
-class OrganizationAdmin(ModelAdmin):
-    form = OrganizationAdminForm
-    formfield_overrides = {
-        JSONField: {
-            "widget": MyTranslationWidget,
-        },
-    }
 
 
 @register(OrganizationType)

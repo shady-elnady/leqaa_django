@@ -11,34 +11,44 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.WARNING(f"Start {self.help}"))
 
-        organizationTypes = [
+        organization_types = [
             {
                 "name": "Family",
                 "translations": {
-                    "ar-AS": "اسره ",
+                    "ar-AS": "اسره",
                     "ar-EG": "اسره",
                     "en-US": "Family",
                     "fr-FR": "Famille",
                     "tr-TR": "Aile",
                 },
             },
+            {
+                "name": "Educational Center",
+                "translations": {
+                    "ar-AS": "سنتر تعليمى",
+                    "ar-EG": "سنتر تعليمى",
+                    "en-US": "Educational Center",
+                    "fr-FR": "Centre éducatif",
+                    "tr-TR": "Eğitim Merkezi",
+                },
+            },
         ]
 
-        for organizationType in organizationTypes:
+        for organization_type in organization_types:
             try:
                 OrganizationType.objects.create(
-                    name=organizationType["name"],
-                    translations=organizationType["translations"],
+                    name=organization_type["name"],
+                    translations=organization_type["translations"],
                 )
                 self.stdout.write(
                     self.style.SUCCESS(
-                        f"Successfully insert {self.data} > {organizationType}"
+                        f"Successfully insert {self.data} > {organization_type}"
                     )
                 )
             except Exception as e:
                 self.stdout.write(
                     self.style.ERROR(
-                        f"Failed insert {self.data} > {organizationType} , \n \t Error is: \t \t{e}"
+                        f"Failed insert {self.data} > {organization_type} , \n \t Error is: \t \t{e}"
                     )
                 )
         self.stdout.write(self.style.WARNING(f"Finish Created initial {self.data}"))

@@ -1,6 +1,8 @@
 from django.db.models import Max
 from os.path import join
 
+from User.utils.enums import USERS_TYPES
+
 
 # def upload_image_to(instance, fileName):
 #     extention = fileName.split(".")[-1]
@@ -15,53 +17,75 @@ from os.path import join
 #     )
 
 
-def upload_image_to(instance, fileName):
+def upload_image_to(instance, filename):
 
-    all = instance.__class__.objects.all()
+    ALL = instance.__class__.objects.all()
     # might be possible model has no records so make sure to handle None
-    next_id = all.aggregate(Max("id"))["id__max"] + 1 if all else 1
+    next_id = ALL.aggregate(Max("id"))["id__max"] + 1 if ALL else 1
 
-    extention = fileName.split(".")[-1]
-    imgName = getattr(instance, f"{next_id}", f"{instance.name}")
-    newName = f"{imgName}.{extention}"
+    MODEL_FOLDR_NAME = f"{instance._meta.verbose_name_plural}".strip().replace("_", " ")
 
-    if instance.user:
+    if bool(getattr(instance, "user", False)):
+        USER_TYPE_PATH = ""
+        if instance.user.user_type == USERS_TYPES.Lecturer:
+            USER_TYPE_PATH = "Lecturers"
+        elif instance.user.user_type == USERS_TYPES.Student:
+            USER_TYPE_PATH = "Students"
+        elif instance.user.user_type == USERS_TYPES.Admin:
+            USER_TYPE_PATH = "Admins"
+        elif instance.user.user_type == USERS_TYPES.SuperUser:
+            USER_TYPE_PATH = "Super Users"
+        elif instance.user.user_type == USERS_TYPES.Staff:
+            USER_TYPE_PATH = "Staff"
+        elif instance.user.user_type == USERS_TYPES.Developer:
+            USER_TYPE_PATH = "Developer"
+        else:
+            USER_TYPE_PATH = "Users"
         return str(
             join(
                 "images",
-                "Users",
+                MODEL_FOLDR_NAME,
+                USER_TYPE_PATH,
                 f"{instance.user.id}",
-                f"{instance.user.id}_{newName}",
+                f"{getattr(instance, f"{next_id}", f"{instance.name}")}.{filename.split(".")[-1]}",
             )
         )
-    elif instance.event:
-        imgName = getattr(instance, f"{instance.id}", f"{instance.title}")
+    elif bool(getattr(instance, "event", False)):
         return str(
             join(
                 "images",
-                "Events",
-                f"{instance.event.id}_{newName}",
+                MODEL_FOLDR_NAME,
+                f"{instance.event.id}",
+                f"{next_id}.{filename.split(".")[-1]}",
             )
         )
     else:
         return str(
             join(
                 "images",
-                f"{instance._meta.verbose_name_plural}".strip().replace(" ", "_"),
-                newName,
+                MODEL_FOLDR_NAME,
+                f"{next_id}.{filename.split(".")[-1]}",
             )
         )
 
 
-def upload_avatar_to(instance, fileName):
-
-    extention = fileName.split(".")[-1]
-    newName = f"Avatar_{instance.user.id}.{extention}"
-    return str(
-        join(
-            "images",
-            "Users",
-            f"{instance.user.id}",
-            newName,
-        )
+def upload_avatar_to(instance, filename):
+    USER_TYPE_PATH = ""
+    if instance.user.user_type == USERS_TYPES.Lecturer:
+        USER_TYPE_PATH = "Lecturers"
+    elif instance.user.user_type == USERS_TYPES.Student:
+        USER_TYPE_PATH = "Students"
+    elif instance.user.user_type == USERS_TYPES.Admin:
+        USER_TYPE_PATH = "Admins"
+    elif instance.user.user_type == USERS_TYPES.SuperUser:
+        USER_TYPE_PATH = "Super Users"
+    elif instance.user.user_type == USERS_TYPES.Staff:
+        USER_TYPE_PATH = "Staff"
+    else:
+        USER_TYPE_PATH = "Users"
+    return join(
+        "images",
+        "Avatars",
+        USER_TYPE_PATH,
+        f"{instance.user.id}.{filename.split(".")[-1]}",
     )

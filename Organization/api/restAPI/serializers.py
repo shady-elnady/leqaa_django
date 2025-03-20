@@ -47,7 +47,6 @@ class OrganizationSerializer(HyperlinkedModelSerializer):
             "organization_type",
             "university",
             "affiliated_to",
-            "translations",
             "created_at",
             "last_updated",
         ]

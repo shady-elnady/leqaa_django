@@ -13,6 +13,7 @@ class Interest(BaseModel):
         related_name="Interests",
         verbose_name=_("User"),
     )
+
     category = ForeignKey(
         Category,
         on_delete=CASCADE,

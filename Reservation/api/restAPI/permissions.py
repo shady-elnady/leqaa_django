@@ -11,4 +11,4 @@ class IsRegistrant(BasePermission):
 
     def has_object_permission(self, request, view, reservation: Reservation):
         # Instance must have an attribute named `owner`.
-        return reservation.registrant == request.user
+        return reservation.user == request.user

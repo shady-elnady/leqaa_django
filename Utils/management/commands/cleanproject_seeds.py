@@ -48,12 +48,12 @@ class Command(BaseCommand):
     def delete_database(self):
         if exists(join(settings.BASE_DIR, "Database")):
             shutil.rmtree(join(settings.BASE_DIR, "Database"))
-        makedirs(join(settings.BASE_DIR, "Database"))
+        makedirs(join(settings.BASE_DIR, "Database"), exist_ok=True)
 
     def delete_static_root(self):
         if exists(settings.STATIC_ROOT):
             shutil.rmtree(settings.STATIC_ROOT)
-        makedirs(settings.STATIC_ROOT)
+        makedirs(settings.STATIC_ROOT, exist_ok=True)
 
     def clean_migrations(self):
         for item in listdir(settings.BASE_DIR):
@@ -112,7 +112,7 @@ class Command(BaseCommand):
         ]
         for media_file in media_files:
             if not exists(join(settings.MEDIA_ROOT, media_file)):
-                makedirs(join(settings.MEDIA_ROOT, media_file))
+                makedirs(join(settings.MEDIA_ROOT, media_file), exist_ok=True)
                 self.stdout.write(
                     self.style.SUCCESS(
                         f"Successfully Create Folder>> {join(settings.MEDIA_ROOT, media_file)}"

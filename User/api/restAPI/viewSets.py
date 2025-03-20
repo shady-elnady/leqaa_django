@@ -5,6 +5,9 @@ from rest_framework.authentication import (
 )
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.exceptions import NotFound
+from rest_framework.response import Response
+from rest_framework import status
 
 from User.models import Profile, User, UserAlbum, Student, Lecturer, Interest
 from .serializers import (
@@ -53,7 +56,7 @@ class StudentViewSet(ModelViewSet):
 class ProfileViewSet(ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminUser]
     authentication_classes = [
         TokenAuthentication,
         SessionAuthentication,
@@ -61,8 +64,65 @@ class ProfileViewSet(ModelViewSet):
     ]
 
 
+class UserMyProfileViewSet(ModelViewSet):
+    serializer_class = ProfileSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        try:
+            instance = self.get_queryset().get(pk=self.request.user.pk)
+            serializer = self.get_serializer(instance)
+            return Response(serializer.data)
+        except Profile.DoesNotExist:
+            raise NotFound("Profile not found")
+
+    def perform_create(self, serializer):
+        if serializer.validated_data.get("user") is None:
+            serializer.save(user=self.request.user)
+        else:
+            serializer.save()
+
+    def retrieve(self, request, *args, **kwargs):
+        try:
+            instance = self.get_queryset().get(pk=kwargs["pk"])
+            serializer = self.get_serializer(instance)
+            return Response(serializer.data)
+        except Profile.DoesNotExist:
+            raise NotFound("Profile not found")
+
+    def update(self, request, *args, **kwargs):
+        try:
+            instance = self.get_queryset().get(pk=kwargs["pk"])
+            serializer = self.get_serializer(instance, data=request.data)
+            serializer.is_valid(raise_exception=True)
+            self.perform_update(serializer)
+            return Response(serializer.data)
+        except Profile.DoesNotExist:
+            raise NotFound("Profile not found")
+
+    def destroy(self, request, *args, **kwargs):
+        try:
+            _ = self.get_queryset().get(pk=kwargs["pk"])
+            raise NotFound("Cant Delete Your Profile")
+        except Profile.DoesNotExist:
+            raise NotFound("Profile not found")
+
+
+# class InterestViewSet(ModelViewSet):
+#     queryset = Interest.objects.all()
+#     serializer_class = InterestSerializer
+#     permission_classes = [IsAdminUser]
+#     authentication_classes = [
+#         TokenAuthentication,
+#         SessionAuthentication,
+#         BasicAuthentication,
+#     ]
+
+#     # def get_queryset(self):
+#     #     return Interest.objects.all().filter(user=self.request.user)
+
+
 class InterestViewSet(ModelViewSet):
-    queryset = Interest.objects.all()
     serializer_class = InterestSerializer
     permission_classes = [IsAuthenticated]
     authentication_classes = [
@@ -71,11 +131,136 @@ class InterestViewSet(ModelViewSet):
         BasicAuthentication,
     ]
 
+    def get_queryset(self):
+        if self.request.user.is_admin:  # Check for admin user
+            return Interest.objects.all()  # Admin can see all interests
+        else:
+            return Interest.objects.filter(
+                user=self.request.user
+            )  # regular user only sees their own interests
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+    def retrieve(self, request, *args, **kwargs):
+        try:
+            instance = self.get_queryset().get(pk=kwargs["pk"])
+            serializer = self.get_serializer(instance)
+            return Response(serializer.data)
+        except Interest.DoesNotExist:
+            raise NotFound("Interest not found")
+
+    def update(self, request, *args, **kwargs):
+        try:
+            instance = self.get_queryset().get(pk=kwargs["pk"])
+            serializer = self.get_serializer(instance, data=request.data)
+            serializer.is_valid(raise_exception=True)
+            self.perform_update(serializer)
+            return Response(serializer.data)
+        except Interest.DoesNotExist:
+            raise NotFound("Interest not found")
+
+    def destroy(self, request, *args, **kwargs):
+        try:
+            instance = self.get_queryset().get(pk=kwargs["pk"])
+            self.perform_destroy(instance)
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        except Interest.DoesNotExist:
+            raise NotFound("Interest not found")
+
+
+# class UserInterestsViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+#     serializer_class = InterestSerializer
+#     permission_classes = [IsAuthenticated]
+#     authentication_classes = [
+#         TokenAuthentication,
+#         SessionAuthentication,
+#         BasicAuthentication,
+#     ]
+
+#     def get_queryset(self):
+#         user_id = self.kwargs["user_id"]
+#         try:
+#             user = User.objects.get(pk=user_id)
+#         except User.DoesNotExist:
+#             raise NotFound("User not found")
+
+#         if self.request.user.is_admin or self.request.user.id == int(user_id):
+#             return Interest.objects.filter(user=user)
+#         else:
+#             return Interest.objects.filter(user=self.request.user)
+
+#     def list(self, request, *args, **kwargs):
+#         queryset = self.get_queryset()
+#         serializer = self.get_serializer(queryset, many=True)
+#         return Response(serializer.data)
+
+
+class UserInterestsViewSet(ModelViewSet):
+    serializer_class = InterestSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Interest.objects.filter(user=self.request.user)
+
+    def perform_create(self, serializer):
+        print(100 * "*")
+        print(self.request.user.email)
+        print(100 * "*")
+        if serializer.validated_data.get("user") is None:
+            serializer.save(user=self.request.user)
+        else:
+            serializer.save()
+
+    def retrieve(self, request, *args, **kwargs):
+        try:
+            instance = self.get_queryset().get(pk=kwargs["pk"])
+            serializer = self.get_serializer(instance)
+            return Response(serializer.data)
+        except Interest.DoesNotExist:
+            raise NotFound("Interest not found")
+
+    def update(self, request, *args, **kwargs):
+        try:
+            instance = self.get_queryset().get(pk=kwargs["pk"])
+            serializer = self.get_serializer(instance, data=request.data)
+            serializer.is_valid(raise_exception=True)
+            self.perform_update(serializer)
+            return Response(serializer.data)
+        except Interest.DoesNotExist:
+            raise NotFound("Interest not found")
+
+    def destroy(self, request, *args, **kwargs):
+        try:
+            instance = self.get_queryset().get(pk=kwargs["pk"])
+            self.perform_destroy(instance)
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        except Interest.DoesNotExist:
+            raise NotFound("Interest not found")
+
+
+# class UserInterestsViewSet(mixins.ListModelMixin, GenericViewSet):
+#     serializer_class = InterestSerializer
+#     permission_classes = [IsAuthenticated]
+#     authentication_classes = [
+#         TokenAuthentication,
+#         SessionAuthentication,
+#         BasicAuthentication,
+#     ]
+
+#     def get_queryset(self):
+#         return Interest.objects.filter(user=self.request.user)
+
+#     def list(self, request, *args, **kwargs):
+#         queryset = self.get_queryset()
+#         serializer = self.get_serializer(queryset, many=True)
+#         return Response(serializer.data)
+
 
 class UserViewSet(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsAdminUser]
+    permission_classes = [IsAuthenticated]
     authentication_classes = [
         TokenAuthentication,
         SessionAuthentication,

@@ -1,15 +1,12 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework import filters
-from rest_framework.permissions import IsAuthenticated
+from Api.restAPI.permissions import IsAdminOrReadOnlyForUser
 from rest_framework.authentication import (
     TokenAuthentication,
     SessionAuthentication,
     BasicAuthentication,
 )
 import django_filters.rest_framework
-from django.conf import settings
-
-from Locale.models.Language import Language
 
 from Currency.models import Currency
 from .serializers import CurrencySerializer
@@ -18,7 +15,7 @@ from .serializers import CurrencySerializer
 class CurrencyViewSet(ModelViewSet):
     queryset = Currency.objects.all()
     serializer_class = CurrencySerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminOrReadOnlyForUser]
     authentication_classes = [
         TokenAuthentication,
         SessionAuthentication,
