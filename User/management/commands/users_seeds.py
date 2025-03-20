@@ -1,8 +1,9 @@
 from django.core.management.base import BaseCommand
 from django.core.management import call_command
-from django.conf import settings
-from os.path import join, exists
-from os import makedirs
+
+# from django.conf import settings
+# from os.path import join, exists
+# from os import makedirs
 
 
 class Command(BaseCommand):
@@ -12,11 +13,11 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.WARNING(f"Start {self.help}"))
 
-        IMAGES_ROOT = join(settings.MEDIA_ROOT, "images")
+        # IMAGES_ROOT = join(settings.MEDIA_ROOT, "images")
 
-        users_images_directory = join(IMAGES_ROOT, "Users")
-        if not exists(users_images_directory):
-            makedirs(users_images_directory)
+        # users_images_directory = join(IMAGES_ROOT, "Users")
+        # if not exists(users_images_directory):
+        #     makedirs(users_images_directory)
 
         commands = [
             "superusers_seeds",

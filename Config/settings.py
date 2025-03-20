@@ -37,9 +37,9 @@ AUTH_PROFILE_MODEL = "User.Profile"
 
 ALLOWED_HOSTS = [
     # "*",
-    # "localhost",
-    # "127.0.0.1",
-    # "herokuapp.com",
+    "localhost",
+    "127.0.0.1",
+    "Shady.pythonanywhere.com",
 ]
 
 APPEND_SLASH = True

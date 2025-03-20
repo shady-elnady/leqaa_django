@@ -52,4 +52,4 @@ class Command(BaseCommand):
             call_command("createsuperuser")
             return call_command("runserver")
         except Exception:
-            return
+            return None

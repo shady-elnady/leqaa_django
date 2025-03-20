@@ -35,11 +35,11 @@ class Command(BaseCommand):
                 "password": "password",
                 "Profile": {
                     "full_name": "طارق أحمد محمود الجيد",
-                    "national_id": "22222222222222",
+                    "national_id": "22222222422222",
                     "birth_date": None,
                     "title": TITLES.Student,
                     "gender": GENDERS.MALE,
-                    "university_number": "22222222222222",
+                    "university_number": "22222222422222",
                     "is_graduate": True,
                     "currency": 1,
                     "language": 1,
@@ -55,10 +55,10 @@ class Command(BaseCommand):
             try:
                 user_instance: User = User.objects.create_user(
                     username=user["username"],
-                    user_type=user["user_type"],
                     email=user["email"],
-                    mobile=user["mobile"],
                     password=user["password"],
+                    user_type=user["user_type"],
+                    mobile=user["mobile"],
                 )
                 self.stdout.write(
                     self.style.SUCCESS(

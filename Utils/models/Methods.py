@@ -47,7 +47,7 @@ def upload_image_to(instance, filename):
                 MODEL_FOLDR_NAME,
                 USER_TYPE_PATH,
                 f"{instance.user.id}",
-                f"{getattr(instance, f"{next_id}", f"{instance.name}")}.{filename.split(".")[-1]}",
+                f"{getattr(instance, f'{next_id}', f'{instance.name}')}.{filename.split('.')[-1]}",
             )
         )
     elif bool(getattr(instance, "event", False)):
