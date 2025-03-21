@@ -24,6 +24,7 @@ class Command(BaseCommand):
         "advertisements_seeds",
         "notifications_seeds",
         # "chats_seeds",
+        "createsuperuser",
         ## End
         "end",
     ]
@@ -44,7 +45,7 @@ class Command(BaseCommand):
                         self.style.ERROR(f"{command} Failed  \n \t \t Error is: {e}")
                     )
                     if command == "cleanproject_seeds":
-                        return call_command("runserver")
+                        return self.create_superuser_and_run_server()
         return self.create_superuser_and_run_server()
 
     def create_superuser_and_run_server(self):
