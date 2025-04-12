@@ -5,6 +5,7 @@ from rest_framework.authentication import (
     SessionAuthentication,
     BasicAuthentication,
 )
+from App.messages import AuthMessages
 from rest_framework import filters
 import django_filters.rest_framework
 from rest_framework.exceptions import NotFound
@@ -33,7 +34,7 @@ class NotificationViewSet(ModelViewSet):
     filterset_fields = ["id", "created_at", "last_updated"]
     search_fields = [
         "user",
-        "event",
+        "category",
     ]
     # This will be used as the default ordering
     ordering = "-last_updated"
@@ -58,7 +59,7 @@ class UserNotificationsViewSet(ModelViewSet):
             serializer = self.get_serializer(instance)
             return Response(serializer.data)
         except Notification.DoesNotExist:
-            raise NotFound("Notification not found")
+            raise NotFound(AuthMessages.NOT_FOUND)
 
     def update(self, request, *args, **kwargs):
         try:
@@ -68,7 +69,7 @@ class UserNotificationsViewSet(ModelViewSet):
             self.perform_update(serializer)
             return Response(serializer.data)
         except Notification.DoesNotExist:
-            raise NotFound("Notification not found")
+            raise NotFound(AuthMessages.NOT_FOUND)
 
     def destroy(self, request, *args, **kwargs):
         try:
@@ -76,4 +77,4 @@ class UserNotificationsViewSet(ModelViewSet):
             self.perform_destroy(instance)
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Notification.DoesNotExist:
-            raise NotFound("Notification not found")
+            raise NotFound(AuthMessages.NOT_FOUND)

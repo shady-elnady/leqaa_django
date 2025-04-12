@@ -1,20 +1,20 @@
 from django.db.models import TextChoices
-from django.utils.translation import gettext_lazy as _
+from App.messages import ChoicesMessages
 
 
 class LecturerFinancialSystem(TextChoices):
-    All = "A", _("All Event")
-    Each = "E", _("Each Student")
-    Enlist = "N", _("Enlist")  # تطوع
+    All = "A", ChoicesMessages.ALL_EVENT
+    Each = "E", ChoicesMessages.EACH_STUDENT
+    Enlist = "N", ChoicesMessages.ENLIST
 
 
 class EventPaidStatus(TextChoices):
-    Free = "F", _("Completely ")
-    Partially = "P", _("Partially Paid")
-    Paid = "C", _("Completely Paid")
+    Free = "F", ChoicesMessages.COMPLETELY_FREE
+    Partially = "P", ChoicesMessages.PARTIALLY_PAID
+    Paid = "C", ChoicesMessages.COMPLETELY_PAID
 
 
 class OnOrOffLineStatus(TextChoices):
-    OnLine = "N", _("On Line ")
-    OffLine = "F", _("Off Line")
-    Any = "A", _("Any")
+    OnLine = "N", ChoicesMessages.ON_LINE
+    OffLine = "F", ChoicesMessages.OFF_LINE
+    Any = "A", ChoicesMessages.ANY

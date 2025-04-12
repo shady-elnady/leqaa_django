@@ -1,7 +1,6 @@
-# from django.db.models import CharField, ForeignKey, OneToOneField, CASCADE, TextChoices
-from django.utils.translation import gettext_lazy as _
+from App.messages import ModelsMessages
 
-from Locale.models.BaseTranslationModel import BaseTranslationModel
+from Language.models import BaseTranslationModel
 
 # Create your models here.
 
@@ -9,5 +8,5 @@ from Locale.models.BaseTranslationModel import BaseTranslationModel
 class OrganizationType(BaseTranslationModel):
 
     class Meta:
-        verbose_name = _("Organization Type")
-        verbose_name_plural = _("Organizations Types")
+        verbose_name = ModelsMessages.ORGANIZATION_TYPE
+        verbose_name_plural = ModelsMessages.ORGANIZATION_TYPES

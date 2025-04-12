@@ -1,23 +1,24 @@
 from django.db.models import TextChoices
-from django.utils.translation import gettext_lazy as _
+
+from App.messages import ChoicesMessages
 
 
-class STATES_TYPES(TextChoices):
-    TALUK = "T", _("Taluk")
-    VILLAGE = "V", _("Village")  # القرية
-    DISTRICT = "D", _("District")  # المنطقة
-    MANOR = "M", _("Manor")  # عزبه
-    RESIDENTIAL_QUARTER = "RQ", _("Residential Quarter")  # حى سكنى
-    HOUSING = "H", _("Housing")  # مساكن
-    FEUDALISM = "F", _("Feudalism")  # اقطاعيه
-    REGION = "R", _("Region")  # منطقه
+class StateTypes(TextChoices):
+    TALUK = "T", ChoicesMessages.TALUK
+    VILLAGE = "V", ChoicesMessages.VILLAGE  # القرية
+    DISTRICT = "D", ChoicesMessages.DISTRICT  # المنطقة
+    MANOR = "M", ChoicesMessages.MANOR  # عزبه
+    RESIDENTIAL_QUARTER = "RQ", ChoicesMessages.RESIDENTIAL_QUARTER  # حى سكنى
+    HOUSING = "H", ChoicesMessages.HOUSING  # مساكن
+    FEUDALISM = "F", ChoicesMessages.FEUDALISM  # اقطاعيه
+    REGION = "R", ChoicesMessages.REGION  # منطقه
 
 
 class CONTINENTS(TextChoices):
-    AFRICA = "AF", _("Africa")
-    ASIA = "AS", _("Asia")
-    EUROPE = "EU", _("Europe")
-    NORTH_AMERICA = "NA", _("North America")
-    OCEANIA = "OC", _("Oceania")
-    SOUTH_AMERICA = "SA", _("South America")
-    ANTARCTICA = "AN", _("Antarctica")
+    AFRICA = "AF", ChoicesMessages.AFRICA
+    ASIA = "AS", ChoicesMessages.ASIA
+    EUROPE = "EU", ChoicesMessages.EUROPE
+    NORTH_AMERICA = "NA", ChoicesMessages.NORTH_AMERICA
+    OCEANIA = "OC", ChoicesMessages.OCEANIA
+    SOUTH_AMERICA = "SA", ChoicesMessages.SOUTH_AMERICA
+    ANTARCTICA = "AN", ChoicesMessages.ANTARCTICA

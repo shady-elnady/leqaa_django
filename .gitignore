@@ -2,13 +2,21 @@
 .env
 .venv
 env/
+secure/
+# for Windows #
 venv/
-ENV/
+# for LINUX #
+virtualEnv/
+# for MAC #
+vEnv/
 env.bak/
 venv.bak/
 
 # Django #
 url.txt
+
+# FireBase #
+firebase_config.json
 
 # Django #
 *.log
@@ -74,3 +82,5 @@ settings.ini
 **/__pycache__/**
 **__init__.py/**
 __pycache__/
+
+logs/

@@ -5,9 +5,9 @@ from django.db.models import (
     ForeignKey,
     CASCADE,
 )
-from django.utils.translation import gettext_lazy as _
 
-from Utils.models.BaseModel import BaseModel
+from App.models import BaseModel
+from App.messages import ModelsMessages, FieldsMessages
 from Reservation.utils.enums import RESERVATION_STATUS
 from User.models import User
 from Event.models import Event
@@ -19,34 +19,34 @@ class Reservation(BaseModel):
     user = ForeignKey(
         User,
         on_delete=CASCADE,
-        related_name=_("Reservations"),
-        verbose_name=_("User"),
+        related_name="Reservations",
+        verbose_name=ModelsMessages.USER,
     )
     event = ForeignKey(
         Event,
         on_delete=CASCADE,
-        related_name=_("Reservations"),
-        verbose_name=_("Event"),
+        related_name="Reservations",
+        verbose_name=ModelsMessages.EVENT,
     )
     reservation_status = CharField(
         max_length=2,
         choices=RESERVATION_STATUS.choices,
-        default=RESERVATION_STATUS.InitialzationReservation,
-        verbose_name=_("Reservation Status"),
+        default=RESERVATION_STATUS.InitializationReservation,
+        verbose_name=ModelsMessages.RESERVATION_STATUS,
     )
     rating = FloatField(
         default=0,
-        verbose_name=_("Rating"),
+        verbose_name=FieldsMessages.RATING,
     )
     canceled_reason = TextField(
         null=True,
         blank=True,
-        verbose_name=_("Canceled Reason"),
+        verbose_name=FieldsMessages.CANCELED_REASON,
     )
     comment = TextField(
         null=True,
         blank=True,
-        verbose_name=_("Comment"),
+        verbose_name=FieldsMessages.COMMENT,
     )
 
     def __str__(self) -> str:
@@ -56,5 +56,5 @@ class Reservation(BaseModel):
         return f"{self.pk}- {self.user.username}({self.event.title})"
 
     class Meta:
-        verbose_name = _("Reservation")
-        verbose_name_plural = _("Reservations")
+        verbose_name = ModelsMessages.RESERVATION
+        verbose_name_plural = ModelsMessages.RESERVATIONS

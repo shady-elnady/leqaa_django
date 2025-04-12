@@ -3,6 +3,7 @@ from django.conf import settings
 from os.path import join, exists
 from os import makedirs
 
+from App.tools import get_model_name_from_class
 from Organization.models import College, University
 
 
@@ -14,34 +15,40 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.WARNING(f"Start {self.help}"))
 
-        IMAGES_ROOT = join(settings.MEDIA_ROOT, "images")
-
-        colleges_images_directory = join(IMAGES_ROOT, "Colleges")
-        if not exists(colleges_images_directory):
-            makedirs(colleges_images_directory)
+        if not exists(
+            join(settings.MEDIA_ROOT, "images", get_model_name_from_class(College))
+        ):
+            makedirs(
+                join(settings.MEDIA_ROOT, "images", get_model_name_from_class(College))
+            )
 
         colleges = [
             {
                 "name": "College of Commerce",
                 "university": 1,
                 "translations": {
-                    "ar-AS": "كليه تجاره",
-                    "ar-EG": "كليه تجاره",
-                    "en-US": "College of Commerce",
-                    "fr-FR": "Collège de Commerce",
-                    "tr-TR": "Ticaret Koleji",
+                    "ar_AS": "كليه تجاره",
+                    "ar_EG": "كليه تجاره",
+                    "en_US": "College of Commerce",
+                    "fr_FR": "Collège de Commerce",
+                    "tr_TR": "Ticaret Koleji",
                 },
             },
         ]
         college_id = 1
         for college in colleges:
             try:
-                College.objects.create(
+                college: "College" = College.objects.create(
                     name=college["name"],
-                    logo=join(colleges_images_directory, f"{college_id}.png"),
                     university=University.objects.get(pk=college["university"]),
+                    image=join(
+                        "images",
+                        get_model_name_from_class(College),
+                        f"{college_id}.png",
+                    ),
                     translations=college["translations"],
                 )
+
                 self.stdout.write(
                     self.style.SUCCESS(f"Successfully insert {self.data} > {college}")
                 )

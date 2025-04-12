@@ -15,21 +15,21 @@ class Command(BaseCommand):
             {
                 "name": "Family",
                 "translations": {
-                    "ar-AS": "اسره",
-                    "ar-EG": "اسره",
-                    "en-US": "Family",
-                    "fr-FR": "Famille",
-                    "tr-TR": "Aile",
+                    "ar_AS": "اسره",
+                    "ar_EG": "اسره",
+                    "en_US": "Family",
+                    "fr_FR": "Famille",
+                    "tr_TR": "Aile",
                 },
             },
             {
                 "name": "Educational Center",
                 "translations": {
-                    "ar-AS": "سنتر تعليمى",
-                    "ar-EG": "سنتر تعليمى",
-                    "en-US": "Educational Center",
-                    "fr-FR": "Centre éducatif",
-                    "tr-TR": "Eğitim Merkezi",
+                    "ar_AS": "سنتر تعليمى",
+                    "ar_EG": "سنتر تعليمى",
+                    "en_US": "Educational Center",
+                    "fr_FR": "Centre éducatif",
+                    "tr_TR": "Eğitim Merkezi",
                 },
             },
         ]

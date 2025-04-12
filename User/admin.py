@@ -4,7 +4,6 @@ from django.contrib.admin import (
     StackedInline,
     register,
 )
-from django.utils.translation import gettext_lazy as _  # noqa: F401
 
 # # Not Imported
 # from django.template.loader import get_template

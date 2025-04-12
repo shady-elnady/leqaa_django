@@ -1,7 +1,7 @@
 from django.contrib.admin import ModelAdmin, register
 from django.db.models import JSONField
 
-from Locale.widgets.myTranslation_json_widget import MyTranslationWidget
+from Language.widgets.myTranslation_json_widget import MyTranslationWidget
 from Organization.models import OrganizationType, College, University
 from .forms import (
     OrganizationTypeAdminForm,

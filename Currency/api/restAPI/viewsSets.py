@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework import filters
-from Api.restAPI.permissions import IsAdminOrReadOnlyForUser
+from Api.permissions import IsAdminOrReadOnlyForUser
 from rest_framework.authentication import (
     TokenAuthentication,
     SessionAuthentication,
@@ -36,14 +36,3 @@ class CurrencyViewSet(ModelViewSet):
     ]
     # This will be used as the default ordering
     ordering = "-last_updated"
-
-    # def get_serializer_context(self):
-    #     context = super().get_serializer_context()
-    #     if self.request.LANGUAGE_CODE:
-    #         user_lang_code = self.request.LANGUAGE_CODE
-    #     else:
-    #         user_lang_code = settings.LANGUAGE_CODE
-    #     context.update(
-    #         {"user_language": Language.objects.get(iso_639_1=user_lang_code).name}
-    #     )
-    #     return context

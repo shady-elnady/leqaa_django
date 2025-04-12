@@ -1,7 +1,9 @@
 from django.forms import ModelForm
+from django.contrib.admin.widgets import AdminFileWidget
 
-from Address.models import Country, Governorate, City, State, Locality, Street, Address
-from Locale.widgets.myTranslation_json_widget import MyTranslationWidget
+from Address.models import Country, Governorate, City, State, Locality, Street, Location
+from Language.widgets.myTranslation_json_widget import MyTranslationWidget
+from Firebase.widgets import FirebaseImageWidget
 
 
 class CountryAdminForm(ModelForm):
@@ -14,13 +16,19 @@ class CountryAdminForm(ModelForm):
             "continent",
             "capital",
             "flag_emoji",
-            "flag",
+            "image",
+            # "firebase_image_url",
             "currency",
             "language",
             "tel_code",
             "time_zone",
             "translations",
         ]
+        widgets = {
+            "firebase_image_url": FirebaseImageWidget(),
+            "image": AdminFileWidget(),  # Regular widget for the flag field
+            "translations": MyTranslationWidget,
+        }
 
 
 class GovernorateAdminForm(ModelForm):
@@ -82,15 +90,15 @@ class StreetAdminForm(ModelForm):
         ]
 
 
-class AddressAdminForm(ModelForm):
+class LocationAdminForm(ModelForm):
     class Meta:
-        model = Address
+        model = Location
         fields = [
             "id",
             "name",
             "locality",
             "street",
-            "details",
+            "address",
             "translations",
         ]
         widgets = {"translations": MyTranslationWidget}

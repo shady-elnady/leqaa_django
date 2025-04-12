@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand
 
-from Address.models.Country import Country
-from Address.models.City import City
+from Address.models.country_model import Country
+from Address.models.city_model import City
 
 
 class Command(BaseCommand):

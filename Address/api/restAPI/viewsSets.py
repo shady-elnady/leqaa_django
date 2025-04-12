@@ -3,9 +3,17 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework import filters
 import django_filters.rest_framework
 
-from Address.models import Address, Locality, Street, State, City, Governorate, Country
+from Address.models import (
+    Location,
+    Locality,
+    Street,
+    State,
+    City,
+    Governorate,
+    Country,
+)
 from .serializers import (
-    AddressSerializer,
+    LocationSerializer,
     StateSerializer,
     LocalitySerializer,
     CitySerializer,
@@ -14,17 +22,15 @@ from .serializers import (
     StreetSerializer,
 )
 
-# import pyotp
 
-
-class AddressViewSet(ModelViewSet):
+class LocationViewSet(ModelViewSet):
     """
-    API endpoint that allows Addresss to be viewed or edited.
+    API endpoint that allows Locations to be viewed or edited.
     """
 
-    queryset = Address.objects.all()
-    serializer_class = AddressSerializer
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    queryset = Location.objects.all()
+    serializer_class = LocationSerializer
+    permission_classes = [IsAuthenticated]
     filter_backends = (
         filters.OrderingFilter,  # http://example.com/api/users?ordering=account,username
         filters.SearchFilter,  # http://example.com/api/users?search=russell

@@ -1,12 +1,12 @@
 from django.core.management.base import BaseCommand
-from django.conf import settings
-from os.path import join, exists
-from os import makedirs
+from datetime import datetime
+from os.path import join
 
+from App.tools import get_model_name_from_class
 from User.models import User, UserAlbum, Profile
 from User.utils.enums import TITLES, GENDERS
 from Currency.models import Currency
-from Locale.models import Language
+from Language.models import Language
 
 
 class Command(BaseCommand):
@@ -16,25 +16,15 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.WARNING(f"Start {self.help}"))
 
-        IMAGES_ROOT = join(settings.MEDIA_ROOT, "images")
-
-        staffs_albums_images_directory = join(IMAGES_ROOT, "Users Albums", "Staff")
-        if not exists(staffs_albums_images_directory):
-            makedirs(staffs_albums_images_directory)
-
-        staffs_profile_images_directory = join(IMAGES_ROOT, "Avatars", "Staff")
-        if not exists(staffs_profile_images_directory):
-            makedirs(staffs_profile_images_directory)
-
         staff_list = [
             {
-                "username": "Staff",
+                "username": "موظف",
                 "email": "staff@g.com",
                 "password": "password",
                 "Profile": {
-                    "full_name": "شادى رافت سعد",
+                    "full_name": "الموظف الأول",
                     "national_id": "01232222222222",
-                    "birth_date": None,
+                    "birth_date": datetime(1982, 5, 11),
                     "title": TITLES.Doctor,
                     "gender": GENDERS.MALE,
                     "university_number": "01223222222222",
@@ -62,20 +52,20 @@ class Command(BaseCommand):
                     )
                 )
                 try:
-                    Profile.objects.update_or_create(
+                    profile, _ = Profile.objects.update_or_create(
                         user=staff_instance,
                         defaults={
-                            "avatar": join(
-                                staffs_profile_images_directory,
-                                f"{staff_instance.id}.png",
-                            ),
                             "full_name": staff["Profile"]["full_name"],
                             "national_id": staff["Profile"]["national_id"],
-                            "birth_date": staff["Profile"]["birth_date"],
                             "title": staff["Profile"]["title"],
                             "gender": staff["Profile"]["gender"],
                             "university_number": staff["Profile"]["university_number"],
                             "is_graduate": staff["Profile"]["is_graduate"],
+                            "image": join(
+                                "images",
+                                get_model_name_from_class(Profile),
+                                f"{staff_instance.id}.png",
+                            ),
                             "currency": Currency.objects.get(
                                 pk=staff["Profile"]["currency"]
                             ),
@@ -85,6 +75,9 @@ class Command(BaseCommand):
                             "contact_info": staff["Profile"]["contact_info"],
                         },
                     )
+
+                    profile.birth_date_property = staff["Profile"]["birth_date"]
+                    profile.save()
                     self.stdout.write(
                         self.style.SUCCESS(
                             f"Successfully  Create Staff Profile with Name > {staff['username']}"
@@ -100,8 +93,9 @@ class Command(BaseCommand):
                     try:
                         UserAlbum.objects.create(
                             user=staff_instance,
-                            photo=join(
-                                staffs_albums_images_directory,
+                            image=join(
+                                "images",
+                                get_model_name_from_class(UserAlbum),
                                 f"{staff_instance.id}",
                                 f"{id}.png",
                             ),

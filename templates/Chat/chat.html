@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+  <head>
+    <title>Realtime Chat</title>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+    <style>
+      /* Basic WhatsApp-like styling (will be expanded later) */
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      .chat-container {
+        width: 100%;
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+      }
+      .chat-header {
+        background-color: #008069;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-weight: bold;
+      }
+      .chat-messages {
+        flex-grow: 1;
+        padding: 10px;
+        overflow-y: auto;
+      }
+      .message {
+        margin-bottom: 10px;
+        padding: 8px 12px;
+        border-radius: 5px;
+        word-break: break-word;
+      }
+      .user-message {
+        background-color: #dcf8c6;
+        align-self: flex-end;
+      }
+      .other-message {
+        background-color: #e9edef;
+        align-self: flex-start;
+      }
+      .message-sender {
+        font-size: 0.8em;
+        color: #777;
+        margin-bottom: 2px;
+      }
+      .message-text {
+        font-size: 1em;
+      }
+      .chat-input {
+        display: flex;
+        padding: 10px;
+        border-top: 1px solid #ccc;
+        background-color: #f8f8f8;
+      }
+      #message-input {
+        flex-grow: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+      #send-button {
+        padding: 10px 15px;
+        background-color: #008069;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="chat-header">Chat with Someone</div>
+      <div class="chat-messages" id="chat-messages"></div>
+      <div class="chat-input">
+        <input type="text" id="message-input" placeholder="Type your message..." />
+        <button id="send-button">Send</button>
+      </div>
+    </div>
+
+    <script>
+      // Initialize Firebase
+      const firebaseConfig = {
+        apiKey: 'AIzaSyAOQD6hoK5ECzMxFHdItTLceLKvu72PYz0',
+        authDomain: 'healthy-unit.firebaseapp.com',
+        databaseURL: 'https://healthy-unit-default-rtdb.firebaseio.com',
+        projectId: 'healthy-unit',
+        storageBucket: 'healthy-unit.appspot.com',
+        messagingSenderId: '590929307616',
+        appId: '1:590929307616:web:6603091065034b52332d85',
+        measurementId: 'G-3K32G8VXVT'
+      }
+      
+      firebase.initializeApp(firebaseConfig)
+      const database = firebase.database()
+      const messagesRef = database.ref('/messages') // Path in your Realtime Database
+      
+      const chatMessagesDiv = document.getElementById('chat-messages')
+      const messageInput = document.getElementById('message-input')
+      const sendButton = document.getElementById('send-button')
+      
+      // Assuming you have a way to identify the current user (e.g., from Django session)
+      const currentUser = {
+        uid: '{{ user.id|default:"guest" }}', // Use Django user ID if logged in, otherwise 'guest'
+        username: '{{ user.username|default:"Guest" }}'
+      }
+      
+      // Function to display a message
+      function displayMessage(sender, text, isCurrentUser) {
+        const messageDiv = document.createElement('div')
+        messageDiv.classList.add('message')
+        if (isCurrentUser) {
+          messageDiv.classList.add('user-message')
+        } else {
+          messageDiv.classList.add('other-message')
+        }
+        messageDiv.innerHTML = `
+                                                                <div class="message-sender">
+                                                                    <span class="math-inline">
+                                                                        {{ sender }}
+                                                                    </span>
+                                                                </div>
+                                                                <div class="message-text">{text}</div>`
+        chatMessagesDiv.appendChild(messageDiv)
+        chatMessagesDiv.scrollTop = chatMessagesDiv.scrollHeight // Auto-scroll to bottom
+      }
+      
+      // Listen for new messages
+      messagesRef.on('child_added', (snapshot) => {
+        const message = snapshot.val()
+        const isCurrentUser = message.userId === currentUser.uid
+        displayMessage(message.username, message.text, isCurrentUser)
+      })
+      
+      // Send a message
+      sendButton.addEventListener('click', () => {
+        const messageText = messageInput.value.trim()
+        if (messageText) {
+          const newMessage = {
+            userId: currentUser.uid,
+            username: currentUser.username,
+            text: messageText,
+            timestamp: Date.now()
+          }
+          messagesRef.push(newMessage) // Push the message to Firebase
+          messageInput.value = ''
+        }
+      })
+      
+      // Handle Enter key to send message
+      messageInput.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+          sendButton.click()
+        }
+      })
+    </script>
+  </body>
+</html>

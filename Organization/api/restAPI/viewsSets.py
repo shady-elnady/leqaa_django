@@ -7,7 +7,7 @@ from rest_framework.authentication import (
 )
 from rest_framework import filters
 import django_filters.rest_framework
-from Api.restAPI.permissions import IsAdminOrReadOnlyForUser
+from Api.permissions import IsAdminOrReadOnlyForUser
 
 from Organization.models import Organization, OrganizationType, College, University
 from .serializers import (

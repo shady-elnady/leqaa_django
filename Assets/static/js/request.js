@@ -8,9 +8,12 @@ xhr.onload = () => {
     console.log(`Error: ${xhr.status}`);
   }
   setSelectedLocale(
-    window.locales.find(
-      (locale) =>
-        locale.locale_code.toLowerCase() === `{{ LANGUAGE_CODE }}`.toLowerCase()
-    )
+    window.locales
+      .find(
+        (locale) =>
+          locale.locale_code.toLowerCase() ===
+          `{{ LANGUAGE_CODE }}`.replace("-", "_")
+      )
+      .toLowerCase()
   );
 };

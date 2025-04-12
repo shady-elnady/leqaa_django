@@ -1,0 +1,64 @@
+{% load i18n static %}
+
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+<html class="no-js" lang="{{ LANGUAGE_CODE|default:'en-us' }}" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr,auto' }}">
+  {% comment %} <html class="no-js" lang="zxx">
+    {% endcomment %}
+    <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="x-ua-compatible" content="ie=edge" />
+      <title>
+        {% block title %}
+
+        {% endblock %}
+      </title>
+      <meta name="description" content="" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      {% comment %} <link rel="manifest" href="site.webmanifest" /> {% endcomment %}
+      <link rel="shortcut icon" type="image/x-icon" href="{% static 'event_master/assets/img/favicon.ico' %}" />
+
+      {% include 'event_master/includes/styles.html' %}
+
+      {% block extrastyle %}
+
+      {% endblock %}
+    </head>
+    <body>
+      <!-- ? Preloader Start -->
+      {% block loader %}
+        {% include 'event_master/includes/loader.html' %}
+      {% endblock %}
+      <!-- Preloader Start -->
+
+      <!-- ? Header Start -->
+      {% block header %}
+        {% include 'event_master/includes/navigation.html' %}
+      {% endblock %}
+      <!-- Header End -->
+
+      <main>
+        {% block content %}
+
+        {% endblock %}
+      </main>
+
+      {% block footer %}
+        {% include 'event_master/includes/footer.html' %}
+      {% endblock %}
+
+      <!-- Scroll Up -->
+      {% block scroll %}
+        {% include 'event_master/includes/scroll.html' %}
+      {% endblock %}
+
+      <!-- JS here -->
+      {% include 'event_master/includes/scripts.html' %}
+
+      {% block extra_js %}
+
+      {% endblock %}
+    </body>
+  </html>
+</html>

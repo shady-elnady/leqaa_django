@@ -1,0 +1,3092 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-10 21:50+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French (France) <fr_FR@li.org>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Your old password was entered incorrectly. Please enter it again."
+msgstr "Votre ancien mot de passe est incorrect. Veuillez le saisir à nouveau."
+
+msgid "Invalid value"
+msgstr "Valeur invalide"
+
+msgid "This URL is Post Request To Register "
+msgstr "Cette URL est une requête POST pour l'enregistrement"
+
+msgid "Database or Temporary authentication system issue"
+msgstr "Problème de base de données ou de système d'authentification temporaire"
+
+msgid ""
+"User Registered successfully. Verification Code sent to (Mobile ~ E-Mail)."
+msgstr "Utilisateur enregistré avec succès. Code de vérification envoyé à (Mobile ~ Email)."
+
+msgid "Registration Failed "
+msgstr "Échec de l'enregistrement"
+
+msgid "Invalid registration Data"
+msgstr "Données d'enregistrement invalides"
+
+msgid "User Already Exists"
+msgstr "L'utilisateur existe déjà"
+
+msgid ""
+"Registration complete but verification email failed. Please contact support."
+msgstr "Enregistrement terminé mais l'email de vérification a échoué. Veuillez contacter le support."
+
+msgid "Sign In Successfully."
+msgstr "Connexion réussie."
+
+msgid "Failed Sign In.Error is >> "
+msgstr "Échec de la connexion. L'erreur est >> "
+
+msgid "Account Not Found."
+msgstr "Compte non trouvé."
+
+msgid "Incorrect Password"
+msgstr "Mot de passe incorrect"
+
+msgid "Please Verfy Your Account before logging in."
+msgstr "Veuillez vérifier votre compte avant de vous connecter."
+
+msgid "Sign Out Successfully."
+msgstr "Déconnexion réussie."
+
+msgid "Error occurred during logout"
+msgstr "Une erreur s'est produite lors de la déconnexion"
+
+msgid "Password Reset E-Mail sent if account exists"
+msgstr "Email de réinitialisation du mot de passe envoyé si le compte existe"
+
+msgid "Failed Reset Password .Error is >> "
+msgstr "Échec de la réinitialisation du mot de passe. L'erreur est >> "
+
+msgid "Passwords do not match"
+msgstr "Les mots de passe ne correspondent pas"
+
+msgid "Invalid Password Reset link"
+msgstr "Lien de réinitialisation du mot de passe invalide"
+
+msgid "Token Invalid or Expired"
+msgstr "Jeton invalide ou expiré"
+
+msgid "Password Reset Successfully."
+msgstr "Mot de passe réinitialisé avec succès."
+
+msgid "Password Reset failed"
+msgstr "Échec de la réinitialisation du mot de passe"
+
+msgid "Password must be at least 8 characters"
+msgstr "Le mot de passe doit contenir au moins 8 caractères"
+
+msgid "Password must contain at least one number"
+msgstr "Le mot de passe doit contenir au moins un chiffre"
+
+msgid "Password must contain at least one uppercase letter"
+msgstr "Le mot de passe doit contenir au moins une lettre majuscule"
+
+msgid "Invalid Credentials Error"
+msgstr "Erreur d'identifiants invalides"
+
+msgid "Email verified successfully"
+msgstr "Email vérifié avec succès"
+
+msgid "Invalid verification code"
+msgstr "Code de vérification invalide"
+
+msgid "Error verifying email"
+msgstr "Erreur lors de la vérification de l'email"
+
+msgid "Validation error"
+msgstr "Erreur de validation"
+
+msgid "Verification code has expired"
+msgstr "Le code de vérification a expiré"
+
+msgid "Email is already verified"
+msgstr "L'email est déjà vérifié"
+
+msgid "Mobile verified successfully"
+msgstr "Mobile vérifié avec succès"
+
+msgid "Mobile must include country code (+XX...)"
+msgstr "Le mobile doit inclure le code pays (+XX...)"
+
+msgid "Invalid verification token"
+msgstr "Jeton de vérification invalide"
+
+msgid "Mobile verification failed"
+msgstr "Échec de la vérification du mobile"
+
+msgid "This mobile number is already associated with another account"
+msgstr "Ce numéro de mobile est déjà associé à un autre compte"
+
+msgid "Try Again"
+msgstr "Réessayer"
+
+msgid "Correct"
+msgstr "Correct"
+
+msgid "Topic Subscription"
+msgstr "Abonnement au sujet"
+
+msgid "Permission Denied"
+msgstr "Permission refusée"
+
+msgid "Firebase User"
+msgstr "Utilisateur Firebase"
+
+msgid "Firebase Admin"
+msgstr "Administrateur Firebase"
+
+msgid "Firebase authentication error"
+msgstr "Erreur d'authentification Firebase"
+
+msgid "Firebase Image URL"
+msgstr "URL d'image Firebase"
+
+msgid "Claims"
+msgstr "Revendications"
+
+msgid "System temporarily unavailable. Please try again later."
+msgstr "Système temporairement indisponible. Veuillez réessayer plus tard."
+
+msgid "Error revoking Firebase session"
+msgstr "Erreur lors de la révocation de la session Firebase"
+
+msgid "Resource already exists"
+msgstr "La ressource existe déjà"
+
+msgid "Resource not found"
+msgstr "Ressource non trouvée"
+
+msgid "Invalid argument provided"
+msgstr "Argument fourni invalide"
+
+msgid "Firebase operation Error: "
+msgstr "Erreur d'opération Firebase : "
+
+msgid "An unexpected error occurred: "
+msgstr "Une erreur inattendue s'est produite : "
+
+msgid "Firebase configuration missing"
+msgstr "Configuration Firebase manquante"
+
+msgid "Firebase initialization failed"
+msgstr "Échec de l'initialisation de Firebase"
+
+msgid "Email already in use"
+msgstr "Email déjà utilisé"
+
+msgid "Phone number already in use"
+msgstr "Numéro de téléphone déjà utilisé"
+
+msgid "Invalid token audience"
+msgstr "Audience du jeton invalide"
+
+msgid "Pyrebase"
+msgstr "Pyrebase"
+
+msgid "Firebase communication error"
+msgstr "Erreur de communication Firebase"
+
+msgid "Firebase operation failed"
+msgstr "Échec de l'opération Firebase"
+
+msgid "Invalid email address"
+msgstr "Adresse email invalide"
+
+msgid "Invalid password"
+msgstr "Mot de passe invalide"
+
+msgid "Authentication failed"
+msgstr "Échec de l'authentification"
+
+msgid "Not Found"
+msgstr "Non trouvé"
+
+msgid "Unknown error"
+msgstr "Erreur inconnue"
+
+msgid "Success"
+msgstr "Succès"
+
+msgid "it is Required,must be Set."
+msgstr "Ceci est requis, doit être défini."
+
+msgid "Admin"
+msgstr "Administrateur"
+
+msgid "Admins"
+msgstr "Administrateurs"
+
+msgid "Super User"
+msgstr "Super utilisateur"
+
+msgid "Super Users"
+msgstr "Super utilisateurs"
+
+msgid "Student"
+msgstr "Étudiant"
+
+msgid "Students"
+msgstr "Étudiants"
+
+msgid "Lecturer"
+msgstr "Conférencier"
+
+msgid "Lecturers"
+msgstr "Conférenciers"
+
+msgid "College"
+msgstr "Collège"
+
+msgid "Colleges"
+msgstr "Collèges"
+
+msgid "Staff"
+msgstr "Personnel"
+
+msgid "Doctor"
+msgstr "Docteur"
+
+msgid "Engineer"
+msgstr "Ingénieur"
+
+msgid "Professor"
+msgstr "Professeur"
+
+msgid "Teacher"
+msgstr "Enseignant"
+
+msgid "Teachers"
+msgstr "Enseignants"
+
+msgid "Male"
+msgstr "Homme"
+
+msgid "Female"
+msgstr "Femme"
+
+msgid "Virgin"
+msgstr "Vierge"
+
+msgid "Bachelor"
+msgstr "Célibataire"
+
+msgid "Married"
+msgstr "Marié"
+
+msgid "Widower"
+msgstr "Veuf"
+
+msgid "Divorde"
+msgstr "Divorcé"
+
+msgid "English"
+msgstr "Anglais"
+
+msgid "Arabic"
+msgstr "Arabe"
+
+msgid "Arabic Egypt"
+msgstr "Arabe (Égypte)"
+
+msgid "French"
+msgstr "Français"
+
+msgid "Turkish"
+msgstr "Turc"
+
+msgid "Taluk"
+msgstr "Taluk"
+
+msgid "Village"
+msgstr "Village"
+
+msgid "District"
+msgstr "District"
+
+msgid "Manor"
+msgstr "Manoir"
+
+msgid "Residential Quarter"
+msgstr "Quartier résidentiel"
+
+msgid "Housing"
+msgstr "Logement"
+
+msgid "Feudalism"
+msgstr "Féodalisme"
+
+msgid "Region"
+msgstr "Région"
+
+msgid "Africa"
+msgstr "Afrique"
+
+msgid "Asia"
+msgstr "Asie"
+
+msgid "Europe"
+msgstr "Europe"
+
+msgid "North America"
+msgstr "Amérique du Nord"
+
+msgid "Oceania"
+msgstr "Océanie"
+
+msgid "South America"
+msgstr "Amérique du Sud"
+
+msgid "Antarctica"
+msgstr "Antarctique"
+
+msgid "Saturday"
+msgstr "Samedi"
+
+msgid "Sunday"
+msgstr "Dimanche"
+
+msgid "Monday"
+msgstr "Lundi"
+
+msgid "Tuesday"
+msgstr "Mardi"
+
+msgid "Wednesday"
+msgstr "Mercredi"
+
+msgid "Thursday"
+msgstr "Jeudi"
+
+msgid "Friday"
+msgstr "Vendredi"
+
+msgid "Laboratory"
+msgstr "Laboratoire"
+
+msgid "Main Laboratory"
+msgstr "Laboratoire principal"
+
+msgid "Association"
+msgstr "Association"
+
+msgid "Dispensary"
+msgstr "Dispensaire"
+
+msgid "Scientific Company"
+msgstr "Société scientifique"
+
+msgid "Pharmaceutical Company"
+msgstr "Société pharmaceutique"
+
+msgid "Supplier"
+msgstr "Fournisseur"
+
+msgid "Dental Clinic"
+msgstr "Clinique dentaire"
+
+msgid "Private Clinic"
+msgstr "Clinique privée"
+
+msgid "Grocery Store"
+msgstr "Épicerie"
+
+msgid "Bookstore"
+msgstr "Librairie"
+
+msgid "Coffee"
+msgstr "Café"
+
+msgid "Bakery"
+msgstr "Boulangerie"
+
+msgid "Delicatessen"
+msgstr "Charcuterie"
+
+msgid "School"
+msgstr "École"
+
+msgid "Café"
+msgstr "Café"
+
+msgid "Laundromat"
+msgstr "Laverie"
+
+msgid "Hotel"
+msgstr "Hôtel"
+
+msgid "Butcher"
+msgstr "Boucher"
+
+msgid "Supermarket"
+msgstr "Supermarché"
+
+msgid "Gift Shop"
+msgstr "Boutique de cadeaux"
+
+msgid "Flower Shop"
+msgstr "Fleuriste"
+
+msgid "Sporting Goods Store"
+msgstr "Magasin d'articles de sport"
+
+msgid "Electronics Store"
+msgstr "Magasin d'électronique"
+
+msgid "Barber"
+msgstr "Coiffeur"
+
+msgid "Pharmacy"
+msgstr "Pharmacie"
+
+msgid "Medical Facility"
+msgstr "Établissement médical"
+
+msgid "Mobile Network Company"
+msgstr "Société de réseau mobile"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "Same Day"
+msgstr "Le même jour"
+
+msgid "Next Day"
+msgstr "Le lendemain"
+
+msgid "After 2 Days"
+msgstr "Après 2 jours"
+
+msgid "After 4 Days"
+msgstr "Après 4 jours"
+
+msgid "After 10 Days"
+msgstr "Après 10 jours"
+
+msgid "After Week"
+msgstr "Après une semaine"
+
+msgid "After Two Weeks"
+msgstr "Après deux semaines"
+
+msgid "After Month"
+msgstr "Après un mois"
+
+msgid "Imported Products"
+msgstr "Produits importés"
+
+msgid "Exported Products"
+msgstr "Produits exportés"
+
+msgid "Android"
+msgstr "Android"
+
+msgid "iOS"
+msgstr "iOS"
+
+msgid "Windows"
+msgstr "Windows"
+
+msgid "Linux"
+msgstr "Linux"
+
+msgid "Web Browser"
+msgstr "Navigateur web"
+
+msgid "Mobile"
+msgstr "Mobile"
+
+msgid "Tablet"
+msgstr "Tablette"
+
+msgid "Laptop"
+msgstr "Ordinateur portable"
+
+msgid "Mac"
+msgstr "Mac"
+
+msgid "Upload"
+msgstr "Téléverser"
+
+msgid "Download"
+msgstr "Télécharger"
+
+msgid "Parent"
+msgstr "Parent"
+
+msgid "Children"
+msgstr "Enfants"
+
+msgid "Create"
+msgstr "Créer"
+
+msgid "Update"
+msgstr "Mettre à jour"
+
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "GET"
+msgstr "GET"
+
+msgid "POST"
+msgstr "POST"
+
+msgid "PUT"
+msgstr "PUT"
+
+msgid "PATCH"
+msgstr "PATCH"
+
+msgid "Sign In"
+msgstr "Se connecter"
+
+msgid "Log In"
+msgstr "Se connecter"
+
+msgid "Sign Out"
+msgstr "Se déconnecter"
+
+msgid "Register"
+msgstr "S'inscrire"
+
+msgid "All Event"
+msgstr "Tous les événements"
+
+msgid "Each Student"
+msgstr "Chaque étudiant"
+
+msgid "Enlist"
+msgstr "Enrôler"
+
+msgid "Completely Free"
+msgstr "Complètement gratuit"
+
+msgid "Partially Paid"
+msgstr "Partiellement payé"
+
+msgid "Completely Paid"
+msgstr "Complètement payé"
+
+msgid "On Line"
+msgstr "En ligne"
+
+msgid "Off Line"
+msgstr "Hors ligne"
+
+msgid "Any"
+msgstr "N'importe"
+
+msgid "Initialization Reservation"
+msgstr "Réservation d'initialisation"
+
+msgid "Canceled Reservation"
+msgstr "Réservation annulée"
+
+msgid "Confirmed Reservation"
+msgstr "Réservation confirmée"
+
+msgid "Hold Reservation"
+msgstr "Réservation en attente"
+
+msgid "Monetary"
+msgstr "Monétaire"
+
+msgid "Credit Card"
+msgstr "Carte de crédit"
+
+msgid "Bank Transfer"
+msgstr "Virement bancaire"
+
+msgid "Check"
+msgstr "Chèque"
+
+msgid "Money Transfer"
+msgstr "Transfert d'argent"
+
+msgid "Mobile Cash"
+msgstr "Argent mobile"
+
+msgid "Paid"
+msgstr "Payé"
+
+msgid "Pay later"
+msgstr "Payer plus tard"
+
+msgid "Revenues"
+msgstr "Revenus"
+
+msgid "Expenses"
+msgstr "Dépenses"
+
+msgid "Debts"
+msgstr "Dettes"
+
+msgid "Dues"
+msgstr "Cotisations"
+
+msgid "Translation"
+msgstr "Traduction"
+
+msgid "Translations"
+msgstr "Traductions"
+
+msgid "Name"
+msgstr "Nom"
+
+msgid "User Name"
+msgstr "Nom d'utilisateur"
+
+msgid "Password"
+msgstr "Mot de passe"
+
+msgid "Password Confirmation"
+msgstr "Confirmation du mot de passe"
+
+msgid "National ID"
+msgstr "ID national"
+
+msgid "Flag"
+msgstr "Drapeau"
+
+msgid "Emoji"
+msgstr "Émoji"
+
+msgid "Success Status"
+msgstr "Statut de succès"
+
+msgid "Created At"
+msgstr "Créé à"
+
+msgid "Last Update"
+msgstr "Dernière mise à jour"
+
+msgid "Barcode"
+msgstr "Code-barres"
+
+msgid "Photo URL"
+msgstr "URL de la photo"
+
+msgid "Native Name"
+msgstr "Nom natif"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "IP Address"
+msgstr "Adresse IP"
+
+msgid "Content Type"
+msgstr "Type de contenu"
+
+msgid "Content Types"
+msgstr "Types de contenu"
+
+msgid "Token"
+msgstr "Jeton"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "UID"
+msgstr "UID"
+
+msgid "File"
+msgstr "Fichier"
+
+msgid "Document"
+msgstr "Document"
+
+msgid "Image"
+msgstr "Image"
+
+msgid "Logo"
+msgstr "Logo"
+
+msgid "Photo"
+msgstr "Photo"
+
+msgid "Avatar"
+msgstr "Avatar"
+
+msgid "Audio"
+msgstr "Audio"
+
+msgid "Vedio"
+msgstr "Vidéo"
+
+msgid "Latitude"
+msgstr "Latitude"
+
+msgid "Longitude"
+msgstr "Longitude"
+
+msgid "Location"
+msgstr "Emplacement"
+
+msgid "Continent Name"
+msgstr "Nom du continent"
+
+msgid "Continents"
+msgstr "Continents"
+
+msgid "Code"
+msgstr "Code"
+
+msgid "Capital"
+msgstr "Capitale"
+
+msgid "Telphone"
+msgstr "Téléphone"
+
+msgid "Telphone Code"
+msgstr "Code téléphonique"
+
+msgid "Time Zones"
+msgstr "Fuseaux horaires"
+
+msgid "State Type"
+msgstr "Type d'état"
+
+msgid "State Types"
+msgstr "Types d'état"
+
+msgid "Postal Code"
+msgstr "Code postal"
+
+msgid "Telephone Code"
+msgstr "Code téléphonique"
+
+msgid "ISO Code"
+msgstr "Code ISO"
+
+msgid "Symbol"
+msgstr "Symbole"
+
+msgid "Order"
+msgstr "Commande"
+
+msgid "Advertisement URL"
+msgstr "URL de publicité"
+
+msgid "Exchange to Currency"
+msgstr "Échanger contre une devise"
+
+msgid "Rate"
+msgstr "Taux"
+
+msgid "Rating"
+msgstr "Évaluation"
+
+msgid "Exchange Rates"
+msgstr "Taux de change"
+
+msgid "Title"
+msgstr "Titre"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Short Description"
+msgstr "Description courte"
+
+msgid "Complete Description"
+msgstr "Description complète"
+
+msgid "Start Date Time"
+msgstr "Date et heure de début"
+
+msgid "End Date Time"
+msgstr "Date et heure de fin"
+
+msgid "Language ISO Code"
+msgstr "Code ISO de la langue"
+
+msgid "Bidirectional Status"
+msgstr "Statut bidirectionnel"
+
+msgid "Application Support Status"
+msgstr "Statut de support de l'application"
+
+msgid "Organizer"
+msgstr "Organisateur"
+
+msgid "on|Off Line"
+msgstr "En ligne|Hors ligne"
+
+msgid "Hall"
+msgstr "Salle"
+
+msgid "Lecturer Financial Dues"
+msgstr "Droits financiers du conférencier"
+
+msgid "Lecturer Financial System"
+msgstr "Système financier du conférencier"
+
+msgid "Registration link"
+msgstr "Lien d'inscription"
+
+msgid "Event Paid Status"
+msgstr "Statut payé de l'événement"
+
+msgid "Affiliated To"
+msgstr "Affilié à"
+
+msgid "Details"
+msgstr "Détails"
+
+msgid "Address"
+msgstr "Adresse"
+
+msgid "Payment Method Type"
+msgstr "Type de méthode de paiement"
+
+msgid "Payment Status Type"
+msgstr "Type de statut de paiement"
+
+msgid "Transactor"
+msgstr "Transacteur"
+
+msgid "Transaction Status"
+msgstr "Statut de la transaction"
+
+msgid "Transaction Statuses"
+msgstr "Statuts des transactions"
+
+msgid "Transaction Type"
+msgstr "Type de transaction"
+
+msgid "Transaction Types"
+msgstr "Types de transactions"
+
+msgid "Transaction Method"
+msgstr "Méthode de transaction"
+
+msgid "Transaction Methods"
+msgstr "Méthodes de transaction"
+
+msgid "Due Date"
+msgstr "Date d'échéance"
+
+msgid "Notified Days"
+msgstr "Jours notifiés"
+
+msgid "Reference Number"
+msgstr "Numéro de référence"
+
+msgid "Bank Deposit Date"
+msgstr "Date de dépôt bancaire"
+
+msgid "Bank Name"
+msgstr "Nom de la banque"
+
+msgid "Comment"
+msgstr "Commentaire"
+
+msgid "Total Required Amount"
+msgstr "Montant total requis"
+
+msgid "Amount"
+msgstr "Montant"
+
+msgid "Canceled Reason"
+msgstr "Raison annulée"
+
+msgid "Staff Status"
+msgstr "Statut du personnel"
+
+msgid "Admin Status"
+msgstr "Statut d'administrateur"
+
+msgid "Super User Status"
+msgstr "Statut de super utilisateur"
+
+msgid "Blocked Status"
+msgstr "Statut bloqué"
+
+msgid "Phone Number"
+msgstr "Numéro de téléphone"
+
+msgid "Mobile Number"
+msgstr "Numéro de mobile"
+
+msgid "Mobile Verified At"
+msgstr "Mobile vérifié à"
+
+msgid "User Type"
+msgstr "Type d'utilisateur"
+
+msgid "E-Mail"
+msgstr "Email"
+
+msgid "E-Mail Verified At"
+msgstr "Email vérifié à"
+
+msgid "OTP Key"
+msgstr "Clé OTP"
+
+msgid "Specialized to Category"
+msgstr "Spécialisé dans la catégorie"
+
+msgid "Interesting  Notifiable Categories"
+msgstr "Catégories notifiables intéressantes"
+
+msgid " Notifiable Status"
+msgstr "Statut notifiable"
+
+msgid "Favorite Events"
+msgstr "Événements favoris"
+
+msgid "University Number"
+msgstr "Numéro d'université"
+
+msgid "Day"
+msgstr "Jour"
+
+msgid "Month"
+msgstr "Mois"
+
+msgid "Year"
+msgstr "Année"
+
+msgid "Graduate STATUS"
+msgstr "Statut de diplômé"
+
+msgid "Contact Info"
+msgstr "Informations de contact"
+
+msgid "Full Name"
+msgstr "Nom complet"
+
+msgid "FCM Device Token"
+msgstr "Jeton d'appareil FCM"
+
+msgid "Activity Status"
+msgstr "Statut d'activité"
+
+msgid "Birth Date"
+msgstr "Date de naissance"
+
+msgid "Gender"
+msgstr "Genre"
+
+msgid "Last Login"
+msgstr "Dernière connexion"
+
+msgid "Firebase UID"
+msgstr "UID Firebase"
+
+msgid "Block List"
+msgstr "Liste de blocage"
+
+msgid "Block Lists"
+msgstr "Listes de blocage"
+
+msgid "Country"
+msgstr "Pays"
+
+msgid "Country Code"
+msgstr "Code du pays"
+
+msgid "Countries"
+msgstr "Pays"
+
+msgid "Governorate"
+msgstr "Gouvernorat"
+
+msgid "Governorates"
+msgstr "Gouvernorats"
+
+msgid "City"
+msgstr "Ville"
+
+msgid "Cities"
+msgstr "Villes"
+
+msgid "State"
+msgstr "État"
+
+msgid "States"
+msgstr "États"
+
+msgid "Locality"
+msgstr "Localité"
+
+msgid "Localities"
+msgstr "Localités"
+
+msgid "Street"
+msgstr "Rue"
+
+msgid "Streets"
+msgstr "Rues"
+
+msgid "Addresses"
+msgstr "Adresses"
+
+msgid "Locations"
+msgstr "Emplacements"
+
+msgid "Advertisement"
+msgstr "Publicité"
+
+msgid "Advertisements"
+msgstr "Publicités"
+
+msgid "Category"
+msgstr "Catégorie"
+
+msgid "Categories"
+msgstr "Catégories"
+
+msgid "Chat"
+msgstr "Chat"
+
+msgid "Chats"
+msgstr "Chats"
+
+msgid "Currency"
+msgstr "Devise"
+
+msgid "Currencies"
+msgstr "Devises"
+
+msgid "Currency Exchange Rate"
+msgstr "Taux de change"
+
+msgid "Currency Exchange Rates"
+msgstr "Taux de change"
+
+msgid "Event"
+msgstr "Événement"
+
+msgid "Events"
+msgstr "Événements"
+
+msgid "Event Type"
+msgstr "Type d'événement"
+
+msgid "Event Types"
+msgstr "Types d'événements"
+
+msgid "Event Album"
+msgstr "Album d'événement"
+
+msgid "Event Albums"
+msgstr "Albums d'événements"
+
+msgid "Event Master"
+msgstr "Maître d'événement"
+
+msgid "Event Masters"
+msgstr "Maîtres d'événements"
+
+msgid "Favorite"
+msgstr "Favori"
+
+msgid "Favorites"
+msgstr "Favoris"
+
+msgid "Firebase"
+msgstr "Firebase"
+
+msgid "Language"
+msgstr "Langue"
+
+msgid "Languages"
+msgstr "Langues"
+
+msgid "Locale"
+msgstr "Locale"
+
+msgid "Locales"
+msgstr "Locales"
+
+msgid "Log"
+msgstr "Journal"
+
+msgid "Logs"
+msgstr "Journaux"
+
+msgid "Notification"
+msgstr "Notification"
+
+msgid "Notifications"
+msgstr "Notifications"
+
+msgid "Organization"
+msgstr "Organisation"
+
+msgid "Organizations"
+msgstr "Organisations"
+
+msgid "Organization Type"
+msgstr "Type d'organisation"
+
+msgid "Organization Types"
+msgstr "Types d'organisation"
+
+msgid "University"
+msgstr "Université"
+
+msgid "Universities"
+msgstr "Universités"
+
+msgid "Payment"
+msgstr "Paiement"
+
+msgid "Payments"
+msgstr "Paiements"
+
+msgid "Payment Method"
+msgstr "Méthode de paiement"
+
+msgid "Payment Methods"
+msgstr "Méthodes de paiement"
+
+msgid "Payment Status"
+msgstr "Statut de paiement"
+
+msgid "Payment Statuses"
+msgstr "Statuts de paiement"
+
+msgid "Transaction"
+msgstr "Transaction"
+
+msgid "Transactions"
+msgstr "Transactions"
+
+msgid "Reservation"
+msgstr "Réservation"
+
+msgid "Reservation Status"
+msgstr "Statut de réservation"
+
+msgid "Reservations"
+msgstr "Réservations"
+
+msgid "Developer"
+msgstr "Développeur"
+
+msgid "Developers"
+msgstr "Développeurs"
+
+msgid "User"
+msgstr "Utilisateur"
+
+msgid "Users"
+msgstr "Utilisateurs"
+
+msgid "User Album"
+msgstr "Album utilisateur"
+
+msgid "User Albums"
+msgstr "Albums utilisateur"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Profiles"
+msgstr "Profils"
+
+msgid "Interest"
+msgstr "Intérêt"
+
+msgid "Interests"
+msgstr "Intérêts"
+
+msgid "❌"
+msgstr "❌"
+
+msgid "Governorate Telephone Code must be from 1 t 3 digits allowed. ❌"
+msgstr "Le code téléphonique du gouvernorat doit être de 1 à 3 chiffres autorisés. ❌"
+
+msgid ""
+"❌ Enter valid Mobile.Like (+20 10 123 4567|+20101234567|+20-10-123-4567)"
+msgstr ""
+"❌ Entrez un mobile valide. Comme (+20 10 123 4567|+20101234567|+20-10-123-4567)"
+
+msgid "❌ Mobile is Used. choose Another"
+msgstr "❌ Mobile est utilisé. Choisissez un autre"
+
+msgid "❌ Mobile Number is Required"
+msgstr "❌ Le numéro de mobile est requis"
+
+msgid ""
+"❌ Enter valid Phone.Like +91 98765 43210  | +1 415 555 1234 | +44 20 7946 "
+"0958 | +49 176 1234 5678 | +81 90 1234 5678 | +61 412 345 678 | +33 6 12 34 "
+"56 78 | 971501234567 | 65-6123-4567 | 852.5123.4567"
+msgstr ""
+"❌ Entrez un téléphone valide. Comme +91 98765 43210  | +1 415 555 1234 | +44 20 7946 "
+"0958 | +49 176 1234 5678 | +81 90 1234 5678 | +61 412 345 678 | +33 6 12 34 "
+"56 78 | 971501234567 | 65-6123-4567 | 852.5123.4567"
+
+msgid "❌ User Name is Used. Choose Another"
+msgstr "❌ Le nom d'utilisateur est utilisé. Choisissez un autre"
+
+msgid "❌ E-Mail is Used. Choose Another"
+msgstr "❌ L'email est utilisé. Choisissez un autre"
+
+msgid ""
+"❌ Invalid Password, it must contain one or more Upper Case Char, one or "
+"more Lower Case Char, one or more from [@, $ ,!, %, *, ?, &]; between 8 to "
+"32 Chars"
+msgstr ""
+"❌ Mot de passe invalide, il doit contenir un ou plusieurs caractères majuscules, un ou "
+"plusieurs caractères minuscules, un ou plusieurs parmi [@, $, !, %, *, ?, &] ; entre 8 et "
+"32 caractères"
+
+msgid ""
+"❌ Invalid mobile format. ℹ️ Examples: \n"
+"• +201012345678 (Egypt)\n"
+"• +966501234567 (Saudi)\n"
+"• +971501234567 (UAE)\n"
+"⚠️ Include country code, no spaces or special chars"
+msgstr ""
+"❌ Format de mobile invalide. ℹ️ Exemples : \n"
+"• +201012345678 (Égypte)\n"
+"• +966501234567 (Arabie Saoudite)\n"
+"• +971501234567 (Émirats)\n"
+"⚠️ Inclure le code pays, pas d'espaces ou de caractères spéciaux"
+
+msgid ""
+"❌ Mobile already registered\n"
+" ⚠️ Use password recovery or try another number"
+msgstr ""
+"❌ Mobile déjà enregistré\n"
+" ⚠️ Utilisez la récupération de mot de passe ou essayez un autre numéro"
+
+msgid ""
+"❌ Mobile number required\n"
+" ℹ️ Needed for account verification"
+msgstr ""
+"❌ Numéro de mobile requis\n"
+" ℹ️ Nécessaire pour la vérification du compte"
+
+msgid ""
+"❌ Invalid verification code\n"
+" ⚠️ Check SMS and enter {} -digit code"
+msgstr ""
+"❌ Code de vérification invalide\n"
+" ⚠️ Vérifiez le SMS et entrez un code à {} chiffres"
+
+msgid ""
+"❌ Invalid code length\n"
+" ℹ️ Enter a {}-digit code sent to your E-Mail"
+msgstr ""
+"❌ Longueur de code invalide\n"
+" ℹ️ Entrez un code à {} chiffres envoyé à votre email"
+
+msgid ""
+"❌ Code expired\n"
+" ℹ️ Request new code (valid for 10 mins)"
+msgstr ""
+"❌ Code expiré\n"
+" ℹ️ Demandez un nouveau code (valable 10 minutes)"
+
+msgid ""
+"❌ Invalid national ID\n"
+"⚠️ Must be 14 digits (Egypt) or your country's standard format"
+msgstr ""
+"❌ ID national invalide\n"
+"⚠️ Doit être 14 chiffres (Égypte) ou le format standard de votre pays"
+
+msgid ""
+"❌ ID already registered\n"
+" ⚠️ Contact support if this is your ID"
+msgstr ""
+"❌ ID déjà enregistré\n"
+" ⚠️ Contactez le support si c'est votre ID"
+
+msgid ""
+"❌ Weak password\n"
+"✅ Requirements:\n"
+"- 8-32 characters\n"
+"- Upper + lowercase\n"
+"- Number (123)\n"
+"- Symbol (@$!%*?&)"
+msgstr ""
+"❌ Mot de passe faible\n"
+"✅ Exigences :\n"
+"- 8-32 caractères\n"
+"- Majuscules + minuscules\n"
+"- Chiffre (123)\n"
+"- Symbole (@$!%*?&)"
+
+msgid ""
+"❌ Username unavailable\n"
+" ℹ️ Try adding numbers (ahmed123)"
+msgstr ""
+"❌ Nom d'utilisateur indisponible\n"
+" ℹ️ Essayez d'ajouter des chiffres (ahmed123)"
+
+msgid ""
+"❌ Email already registered\n"
+" ⚠️ Use password recovery if this is yours"
+msgstr ""
+"❌ Email déjà enregistré\n"
+" ⚠️ Utilisez la récupération de mot de passe si c'est le vôtre"
+
+msgid ""
+"❌ Invalid email format\n"
+" ℹ️ Example: user@example.com"
+msgstr ""
+"❌ Format d'email invalide\n"
+" ℹ️ Exemple : user@example.com"
+
+msgid ""
+"❌ Invalid country code\n"
+" ℹ️ Must be 1-3 digits (20 for Egypt)"
+msgstr ""
+"❌ Code pays invalide\n"
+" ℹ️ Doit être 1-3 chiffres (20 pour l'Égypte)"
+
+msgid ""
+"❌ Invalid region code\n"
+" ℹ️ Example: 02 for Cairo, 03 for Alexandria"
+msgstr ""
+"❌ Code de région invalide\n"
+" ℹ️ Exemple : 02 pour Le Caire, 03 pour Alexandrie"
+
+msgid ""
+"❌ Required field missing\n"
+" ⚠️ Please complete all marked fields"
+msgstr ""
+"❌ Champ requis manquant\n"
+" ⚠️ Veuillez compléter tous les champs marqués"
+
+msgid ""
+"❌ Invalid selection\n"
+" ℹ️ Choose from available options"
+msgstr ""
+"❌ Sélection invalide\n"
+" ℹ️ Choisissez parmi les options disponibles"
+
+msgid ""
+"✅ All inputs valid\n"
+" ℹ️ You may proceed"
+msgstr ""
+"✅ Toutes les entrées valides\n"
+" ℹ️ Vous pouvez continuer"
+
+msgid "Run the selected action"
+msgstr "Exécuter l'action sélectionnée"
+
+msgid "Go"
+msgstr "Aller"
+
+msgid "Click here to select the objects across all pages"
+msgstr "Cliquez ici pour sélectionner les objets sur toutes les pages"
+
+#, python-format
+msgid ""
+"\n"
+"                            Select all %(total_count)s %(module_name)s"
+msgstr ""
+"\n"
+"                            Sélectionner tous les %(total_count)s %(module_name)s"
+
+msgid "Clear selection"
+msgstr "Effacer la sélection"
+
+msgid ""
+"First, enter a username and password. Then, you'll be able to edit more user "
+"options."
+msgstr ""
+"Tout d'abord, entrez un nom d'utilisateur et un mot de passe. Ensuite, vous pourrez modifier plus d'options utilisateur."
+
+msgid "Enter a username and password."
+msgstr "Entrez un nom d'utilisateur et un mot de passe."
+
+msgid "Change password"
+msgstr "Changer le mot de passe"
+
+#, python-format
+msgid ""
+"\n"
+"                            Enter a new password for the user\n"
+"                            <strong>%(username)s</strong>.\n"
+"                        "
+msgstr ""
+"\n"
+"                            Entrez un nouveau mot de passe pour l'utilisateur\n"
+"                            <strong>%(username)s</strong>.\n"
+"                        "
+
+msgid "Change my password"
+msgstr "Changer mon mot de passe"
+
+msgid "Please correct the error below."
+msgstr "Veuillez corriger l'erreur ci-dessous."
+
+msgid "Please correct the errors below."
+msgstr "Veuillez corriger les erreurs ci-dessous."
+
+#, python-format
+msgid ""
+"Add\n"
+"                                %(name)s"
+msgstr ""
+"Ajouter\n"
+"                                %(name)s"
+
+#, python-format
+msgid "Add %(name)s"
+msgstr "Ajouter %(name)s"
+
+msgid "History"
+msgstr "Historique"
+
+msgid "View on site"
+msgstr "Voir sur le site"
+
+msgid "Filter"
+msgstr "Filtrer"
+
+msgid "Remove from sorting"
+msgstr "Retirer du tri"
+
+#, python-format
+msgid "Sorting priority: %(priority_number)s"
+msgstr "Priorité de tri : %(priority_number)s"
+
+msgid "Toggle sorting"
+msgstr "Basculer le tri"
+
+#, python-format
+msgid ""
+"\n"
+"                                        Deleting the %(object_name)s "
+"'%(escaped_object)s' would result in deleting\n"
+"                                        related objects, but your account "
+"doesn't have permission to delete the\n"
+"                                        following types of objects:\n"
+"                                    "
+msgstr ""
+"\n"
+"                                        La suppression de %(object_name)s "
+"'%(escaped_object)s' entraînerait la suppression\n"
+"                                        d'objets associés, mais votre compte "
+"n'a pas la permission de supprimer les\n"
+"                                        types d'objets suivants :\n"
+"                                    "
+
+#, python-format
+msgid ""
+"\n"
+"                                        Deleting the %(object_name)s ' "
+"%(escaped_object)s' would require deleting\n"
+"                                        the following protected related "
+"objects:\n"
+"                                    "
+msgstr ""
+"\n"
+"                                        La suppression de %(object_name)s ' "
+"%(escaped_object)s' nécessiterait la suppression\n"
+"                                        des objets associés protégés suivants :\n"
+"                                    "
+
+#, python-format
+msgid ""
+"\n"
+"                                        Are you sure you want to delete the "
+"%(object_name)s \"%(escaped_object)s\"?\n"
+"                                        All of the following related items "
+"will be deleted:\n"
+"                                    "
+msgstr ""
+"\n"
+"                                        Êtes-vous sûr de vouloir supprimer "
+"%(object_name)s \"%(escaped_object)s\" ?\n"
+"                                        Tous les éléments associés suivants seront supprimés :\n"
+"                                    "
+
+msgid "Objects"
+msgstr "Objets"
+
+msgid "Yes, I'm sure"
+msgstr "Oui, je suis sûr"
+
+msgid "No, take me back"
+msgstr "Non, ramenez-moi en arrière"
+
+msgid "Delete multiple objects"
+msgstr "Supprimer plusieurs objets"
+
+#, python-format
+msgid ""
+"\n"
+"                                        Deleting the selected "
+"%(objects_name)s would result in deleting related\n"
+"                                        objects, but your account doesn't "
+"have permission to delete the following\n"
+"                                        types of objects:\n"
+"                                    "
+msgstr ""
+"\n"
+"                                        La suppression des "
+"%(objects_name)s sélectionnés entraînerait la suppression\n"
+"                                        d'objets associés, mais votre compte "
+"n'a pas la permission de supprimer les\n"
+"                                        types d'objets suivants :\n"
+"                                    "
+
+#, python-format
+msgid ""
+"\n"
+"                                        Deleting the selected "
+"%(objects_name)s would require deleting the\n"
+"                                        following protected related "
+"objects:\n"
+"                                    "
+msgstr ""
+"\n"
+"                                        La suppression des "
+"%(objects_name)s sélectionnés nécessiterait la suppression\n"
+"                                        des objets associés protégés suivants :\n"
+"                                    "
+
+#, python-format
+msgid ""
+"\n"
+"                                        Are you sure you want to delete the "
+"selected %(objects_name)s? All of the\n"
+"                                        following objects and their related "
+"items will be deleted:\n"
+"                                    "
+msgstr ""
+"\n"
+"                                        Êtes-vous sûr de vouloir supprimer les "
+"%(objects_name)s sélectionnés ? Tous les\n"
+"                                        objets suivants et leurs éléments associés seront supprimés :\n"
+"                                    "
+
+msgid "Change"
+msgstr "Changer"
+
+msgid "View"
+msgstr "Voir"
+
+msgid "Delete?"
+msgstr "Supprimer ?"
+
+#, python-format
+msgid " By %(filter_title)s "
+msgstr " Par %(filter_title)s "
+
+msgid "Summary"
+msgstr "Résumé"
+
+msgid ""
+"Something's wrong with your database installation. Make sure the appropriate "
+"database tables have been created, and make sure the database is readable by "
+"the appropriate user."
+msgstr ""
+"Quelque chose ne va pas avec votre installation de base de données. Assurez-"
+"vous que les tables appropriées ont été créées et que la base de données est "
+"accessible par l'utilisateur approprié."
+
+msgid "Action"
+msgstr "Action"
+
+msgid "Date/time"
+msgstr "Date/heure"
+
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
+msgstr ""
+"Cet objet n'a pas d'historique de modifications. Il n'a probablement pas été "
+"ajouté via ce site d'administration."
+
+msgid "Show all"
+msgstr "Afficher tout"
+
+msgid "Save"
+msgstr "Enregistrer"
+
+msgid "Search"
+msgstr "Rechercher"
+
+#, python-format
+msgid ""
+"\n"
+"                                    %(counter)s result\n"
+"                                "
+msgid_plural ""
+"\n"
+"                                    %(counter)s results\n"
+"                                "
+msgstr[0] ""
+"\n"
+"                                    %(counter)s résultat\n"
+"                                "
+msgstr[1] ""
+"\n"
+"                                    %(counter)s résultats\n"
+"                                "
+
+#, python-format
+msgid ""
+"\n"
+"                                    %(full_result_count)s total\n"
+"                                "
+msgstr ""
+"\n"
+"                                    %(full_result_count)s total\n"
+"                                "
+
+msgid "Save as new"
+msgstr "Enregistrer comme nouveau"
+
+msgid "Save and add another"
+msgstr "Enregistrer et ajouter un autre"
+
+msgid "Save and continue editing"
+msgstr "Enregistrer et continuer l'édition"
+
+msgid "Save and view"
+msgstr "Enregistrer et voir"
+
+msgid "Close"
+msgstr "Fermer"
+
+msgid "Log in"
+msgstr "Se connecter"
+
+msgid "Thanks for spending some quality time with the Web site today."
+msgstr "Merci d'avoir passé un moment de qualité sur le site Web aujourd'hui."
+
+msgid "Log in again"
+msgstr "Se reconnecter"
+
+msgid "Documentation"
+msgstr "Documentation"
+
+msgid "Log out"
+msgstr "Se déconnecter"
+
+msgid "Password change"
+msgstr "Changement de mot de passe"
+
+msgid "Your password was changed."
+msgstr "Votre mot de passe a été changé."
+
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+"Veuillez entrer votre ancien mot de passe, pour des raisons de sécurité, puis "
+"entrez votre nouveau mot de passe deux fois pour vérifier que vous l'avez "
+"correctement saisi."
+
+msgid "About Us"
+msgstr "À propos de nous"
+
+msgid ""
+"Heaven frucvitful doesn't cover lesser dvsays appear creeping seasons so "
+"behold."
+msgstr ""
+"Le ciel fructueux ne couvre pas les jours moindres qui apparaissent rampants, "
+"alors voyez."
+
+msgid "Phone"
+msgstr "Téléphone"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Important Link"
+msgstr "Lien important"
+
+msgid "View Project"
+msgstr "Voir le projet"
+
+msgid "Contact Us"
+msgstr "Contactez-nous"
+
+msgid "Testimonial"
+msgstr "Témoignage"
+
+msgid "Proparties"
+msgstr "Propriétés"
+
+msgid "Support"
+msgstr "Support"
+
+msgid "Newsletter"
+msgstr "Newsletter"
+
+msgid "Heaven fruitful doesn't over lesser in days. Appear creeping."
+msgstr "Le ciel fructueux ne dépasse pas les moindres en jours. Apparaît rampant."
+
+msgid "Email Address"
+msgstr "Adresse e-mail"
+
+msgid "Home"
+msgstr "Accueil"
+
+msgid "About"
+msgstr "À propos"
+
+msgid "Spakers"
+msgstr "Intervenants"
+
+msgid "Schedule"
+msgstr "Programme"
+
+msgid "Blog"
+msgstr "Blog"
+
+msgid "Blog Details"
+msgstr "Détails du blog"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Elements"
+msgstr "Éléments"
+
+msgid "Join"
+msgstr "Rejoindre"
+
+msgid "Wasla"
+msgstr "Wasla"
+
+msgid "Login with Google"
+msgstr "Se connecter avec Google"
+
+msgid "Login with Mobile"
+msgstr "Se connecter avec un mobile"
+
+msgid "Send Code"
+msgstr "Envoyer le code"
+
+msgid "Login canceled by user."
+msgstr "Connexion annulée par l'utilisateur."
+
+msgid "Google login error"
+msgstr "Erreur de connexion Google"
+
+msgid "Enter verification code"
+msgstr "Entrez le code de vérification"
+
+msgid "Phone login error"
+msgstr "Erreur de connexion par téléphone"
+
+msgid "Login successful!"
+msgstr "Connexion réussie !"
+
+msgid "Login failed"
+msgstr "Échec de la connexion"
+
+msgid "Network error"
+msgstr "Erreur réseau"
+
+msgid "Skip to main content"
+msgstr "Passer au contenu principal"
+
+msgid "Welcome,"
+msgstr "Bienvenue,"
+
+msgid "View site"
+msgstr "Voir le site"
+
+msgid "Breadcrumbs"
+msgstr "Fil d'Ariane"
+
+msgid "Django site admin"
+msgstr "Administration du site Django"
+
+msgid "Django administration"
+msgstr "Administration Django"
+
+msgid "Toggle navigation"
+msgstr "Basculer la navigation"
+
+msgid "Sidebar"
+msgstr "Barre latérale"
+
+msgid "Start typing to filter…"
+msgstr "Commencez à taper pour filtrer…"
+
+msgid "Filter navigation items"
+msgstr "Filtrer les éléments de navigation"
+
+msgid "Select Locale"
+msgstr "Sélectionner la langue"
+
+#, python-brace-format
+msgid "{editor}: Editing failed"
+msgstr "{editor} : Échec de l'édition"
+
+#, python-brace-format
+msgid "{editor}: Editing failed: {e}"
+msgstr "{editor} : Échec de l'édition : {e}"
+
+msgid "Aborted!"
+msgstr "Abandonné !"
+
+#, python-brace-format
+msgid "(Deprecated) {text}"
+msgstr "(Obsolète) {text}"
+
+msgid "Options"
+msgstr "Options"
+
+#, python-brace-format
+msgid "Got unexpected extra argument ({args})"
+msgid_plural "Got unexpected extra arguments ({args})"
+msgstr[0] "Argument supplémentaire inattendu ({args})"
+msgstr[1] "Arguments supplémentaires inattendus ({args})"
+
+msgid "DeprecationWarning: The command {name!r} is deprecated."
+msgstr "Avertissement d'obsolescence : La commande {name!r} est obsolète."
+
+msgid "Commands"
+msgstr "Commandes"
+
+msgid "Missing command."
+msgstr "Commande manquante."
+
+msgid "No such command {name!r}."
+msgstr "Aucune commande {name!r}."
+
+msgid "Value must be an iterable."
+msgstr "La valeur doit être itérable."
+
+#, python-brace-format
+msgid "Takes {nargs} values but 1 was given."
+msgid_plural "Takes {nargs} values but {len} were given."
+msgstr[0] "Prend {nargs} valeurs mais 1 a été donné."
+msgstr[1] "Prend {nargs} valeurs mais {len} ont été données."
+
+#, python-brace-format
+msgid "env var: {var}"
+msgstr "variable d'environnement : {var}"
+
+msgid "(dynamic)"
+msgstr "(dynamique)"
+
+#, python-brace-format
+msgid "default: {default}"
+msgstr "par défaut : {default}"
+
+msgid "required"
+msgstr "requis"
+
+#, python-format
+msgid "%(prog)s, version %(version)s"
+msgstr "%(prog)s, version %(version)s"
+
+msgid "Show the version and exit."
+msgstr "Afficher la version et quitter."
+
+msgid "Show this message and exit."
+msgstr "Afficher ce message et quitter."
+
+#, python-brace-format
+msgid "Error: {message}"
+msgstr "Erreur : {message}"
+
+#, python-brace-format
+msgid "Try '{command} {option}' for help."
+msgstr "Essayez '{command} {option}' pour obtenir de l'aide."
+
+#, python-brace-format
+msgid "Invalid value: {message}"
+msgstr "Valeur invalide : {message}"
+
+#, python-brace-format
+msgid "Invalid value for {param_hint}: {message}"
+msgstr "Valeur invalide pour {param_hint} : {message}"
+
+msgid "Missing argument"
+msgstr "Argument manquant"
+
+msgid "Missing option"
+msgstr "Option manquante"
+
+msgid "Missing parameter"
+msgstr "Paramètre manquant"
+
+#, python-brace-format
+msgid "Missing {param_type}"
+msgstr "{param_type} manquant"
+
+#, python-brace-format
+msgid "Missing parameter: {param_name}"
+msgstr "Paramètre manquant : {param_name}"
+
+#, python-brace-format
+msgid "No such option: {name}"
+msgstr "Aucune option {name}"
+
+#, python-brace-format
+msgid "Did you mean {possibility}?"
+msgid_plural "(Possible options: {possibilities})"
+msgstr[0] "Vouliez-vous dire {possibility} ?"
+msgstr[1] "(Options possibles : {possibilities})"
+
+msgid "unknown error"
+msgstr "erreur inconnue"
+
+msgid "Could not open file {filename!r}: {message}"
+msgstr "Impossible d'ouvrir le fichier {filename!r} : {message}"
+
+msgid "Argument {name!r} takes {nargs} values."
+msgstr "L'argument {name!r} prend {nargs} valeurs."
+
+msgid "Option {name!r} does not take a value."
+msgstr "L'option {name!r} ne prend pas de valeur."
+
+msgid "Option {name!r} requires an argument."
+msgid_plural "Option {name!r} requires {nargs} arguments."
+msgstr[0] "L'option {name!r} nécessite un argument."
+msgstr[1] "L'option {name!r} nécessite {nargs} arguments."
+
+msgid "Shell completion is not supported for Bash versions older than 4.4."
+msgstr ""
+"La complétion du shell n'est pas prise en charge pour les versions de Bash "
+"antérieures à 4.4."
+
+msgid "Couldn't detect Bash version, shell completion is not supported."
+msgstr ""
+"Impossible de détecter la version de Bash, la complétion du shell n'est pas "
+"prise en charge."
+
+msgid "Repeat for confirmation"
+msgstr "Répéter pour confirmation"
+
+msgid "Error: The value you entered was invalid."
+msgstr "Erreur : La valeur que vous avez entrée est invalide."
+
+#, python-brace-format
+msgid "Error: {e.message}"
+msgstr "Erreur : {e.message}"
+
+msgid "Error: The two entered values do not match."
+msgstr "Erreur : Les deux valeurs entrées ne correspondent pas."
+
+msgid "Error: invalid input"
+msgstr "Erreur : entrée invalide"
+
+msgid "Press any key to continue..."
+msgstr "Appuyez sur une touche pour continuer..."
+
+#, python-brace-format
+msgid ""
+"Choose from:\n"
+"\t{choices}"
+msgstr ""
+"Choisissez parmi :\n"
+"\t{choices}"
+
+msgid "{value!r} is not {choice}."
+msgid_plural "{value!r} is not one of {choices}."
+msgstr[0] "{value!r} n'est pas {choice}."
+msgstr[1] "{value!r} ne fait pas partie de {choices}."
+
+msgid "{value!r} does not match the format {format}."
+msgid_plural "{value!r} does not match the formats {formats}."
+msgstr[0] "{value!r} ne correspond pas au format {format}."
+msgstr[1] "{value!r} ne correspond pas aux formats {formats}."
+
+msgid "{value!r} is not a valid {number_type}."
+msgstr "{value!r} n'est pas un {number_type} valide."
+
+#, python-brace-format
+msgid "{value} is not in the range {range}."
+msgstr "{value} n'est pas dans la plage {range}."
+
+msgid "{value!r} is not a valid boolean."
+msgstr "{value!r} n'est pas un booléen valide."
+
+msgid "{value!r} is not a valid UUID."
+msgstr "{value!r} n'est pas un UUID valide."
+
+msgid "file"
+msgstr "fichier"
+
+msgid "directory"
+msgstr "répertoire"
+
+msgid "path"
+msgstr "chemin"
+
+msgid "{name} {filename!r} does not exist."
+msgstr "{name} {filename!r} n'existe pas."
+
+msgid "{name} {filename!r} is a file."
+msgstr "{name} {filename!r} est un fichier."
+
+msgid "{name} {filename!r} is a directory."
+msgstr "{name} {filename!r} est un répertoire."
+
+msgid "{name} {filename!r} is not readable."
+msgstr "{name} {filename!r} n'est pas lisible."
+
+msgid "{name} {filename!r} is not writable."
+msgstr "{name} {filename!r} n'est pas accessible en écriture."
+
+msgid "{name} {filename!r} is not executable."
+msgstr "{name} {filename!r} n'est pas exécutable."
+
+#, python-brace-format
+msgid "{len_type} values are required, but {len_value} was given."
+msgid_plural "{len_type} values are required, but {len_value} were given."
+msgstr[0] "{len_type} valeurs sont requises, mais {len_value} a été donné."
+msgstr[1] "{len_type} valeurs sont requises, mais {len_value} ont été données."
+
+msgid "Messages"
+msgstr "Messages"
+
+msgid "Site Maps"
+msgstr "Plans de site"
+
+msgid "Static Files"
+msgstr "Fichiers statiques"
+
+msgid "Syndication"
+msgstr "Syndication"
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+msgid "…"
+msgstr "…"
+
+msgid "That page number is not an integer"
+msgstr "Ce numéro de page n'est pas un entier"
+
+msgid "That page number is less than 1"
+msgstr "Ce numéro de page est inférieur à 1"
+
+msgid "That page contains no results"
+msgstr "Cette page ne contient aucun résultat"
+
+msgid "Enter a valid value."
+msgstr "Entrez une valeur valide."
+
+msgid "Enter a valid domain name."
+msgstr "Entrez un nom de domaine valide."
+
+msgid "Enter a valid URL."
+msgstr "Entrez une URL valide."
+
+msgid "Enter a valid integer."
+msgstr "Entrez un entier valide."
+
+msgid "Enter a valid email address."
+msgstr "Entrez une adresse e-mail valide."
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+"Entrez un “slug” valide composé de lettres, chiffres, tirets bas ou tirets."
+
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+"Entrez un “slug” valide composé de lettres Unicode, chiffres, tirets bas ou "
+"tirets."
+
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr "Entrez une adresse %(protocol)s valide."
+
+msgid "IPv4"
+msgstr "IPv4"
+
+msgid "IPv6"
+msgstr "IPv6"
+
+msgid "IPv4 or IPv6"
+msgstr "IPv4 ou IPv6"
+
+msgid "Enter only digits separated by commas."
+msgstr "Entrez uniquement des chiffres séparés par des virgules."
+
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+"Assurez-vous que cette valeur est %(limit_value)s (elle est %(show_value)s)."
+
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+"Assurez-vous que cette valeur est inférieure ou égale à %(limit_value)s."
+
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+"Assurez-vous que cette valeur est supérieure ou égale à %(limit_value)s."
+
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+"Assurez-vous que cette valeur est un multiple de la taille de pas "
+"%(limit_value)s."
+
+#, python-format
+msgid ""
+"Ensure this value is a multiple of step size %(limit_value)s, starting from "
+"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr ""
+"Assurez-vous que cette valeur est un multiple de la taille de pas "
+"%(limit_value)s, à partir de %(offset)s, par exemple %(offset)s, "
+"%(valid_value1)s, %(valid_value2)s, etc."
+
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+"Assurez-vous que cette valeur a au moins %(limit_value)d caractère (elle en a "
+"%(show_value)d)."
+msgstr[1] ""
+"Assurez-vous que cette valeur a au moins %(limit_value)d caractères (elle en "
+"a %(show_value)d)."
+
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+"Assurez-vous que cette valeur a au plus %(limit_value)d caractère (elle en a "
+"%(show_value)d)."
+msgstr[1] ""
+"Assurez-vous que cette valeur a au plus %(limit_value)d caractères (elle en a "
+"%(show_value)d)."
+
+msgid "Enter a number."
+msgstr "Entrez un nombre."
+
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] "Assurez-vous qu'il n'y a pas plus de %(max)s chiffre au total."
+msgstr[1] "Assurez-vous qu'il n'y a pas plus de %(max)s chiffres au total."
+
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] "Assurez-vous qu'il n'y a pas plus de %(max)s décimale."
+msgstr[1] "Assurez-vous qu'il n'y a pas plus de %(max)s décimales."
+
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+"Assurez-vous qu'il n'y a pas plus de %(max)s chiffre avant la virgule."
+msgstr[1] ""
+"Assurez-vous qu'il n'y a pas plus de %(max)s chiffres avant la virgule."
+
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+"L'extension de fichier “%(extension)s” n'est pas autorisée. Les extensions "
+"autorisées sont : %(allowed_extensions)s."
+
+msgid "Null characters are not allowed."
+msgstr "Les caractères nuls ne sont pas autorisés."
+
+msgid "and"
+msgstr "et"
+
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr "%(model_name)s avec ce %(field_labels)s existe déjà."
+
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr "La contrainte “%(name)s” est violée."
+
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr "La valeur %(value)r n'est pas un choix valide."
+
+msgid "This field cannot be null."
+msgstr "Ce champ ne peut pas être nul."
+
+msgid "This field cannot be blank."
+msgstr "Ce champ ne peut pas être vide."
+
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr "%(model_name)s avec ce %(field_label)s existe déjà."
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+"%(field_label)s doit être unique pour %(date_field_label)s %(lookup_type)s."
+
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr "Champ de type : %(field_type)s"
+
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr "La valeur “%(value)s” doit être soit True soit False."
+
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr "La valeur “%(value)s” doit être soit True, False, soit None."
+
+msgid "Boolean (Either True or False)"
+msgstr "Booléen (soit True soit False)"
+
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr "Chaîne (jusqu'à %(max_length)s)"
+
+msgid "String (unlimited)"
+msgstr "Chaîne (illimitée)"
+
+msgid "Comma-separated integers"
+msgstr "Entiers séparés par des virgules"
+
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+"La valeur “%(value)s” a un format de date invalide. Elle doit être au format "
+"AAAA-MM-JJ."
+
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+"La valeur “%(value)s” a le format correct (AAAA-MM-JJ) mais c'est une date "
+"invalide."
+
+msgid "Date (without time)"
+msgstr "Date (sans heure)"
+
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+"La valeur “%(value)s” a un format invalide. Elle doit être au format AAAA-MM-"
+"JJ HH:MM[:ss[.uuuuuu]][TZ]."
+
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+"La valeur “%(value)s” a le format correct (AAAA-MM-JJ HH:MM[:ss[.uuuuuu]]"
+"[TZ]) mais c'est une date/heure invalide."
+
+msgid "Date (with time)"
+msgstr "Date (avec heure)"
+
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr "La valeur “%(value)s” doit être un nombre décimal."
+
+msgid "Decimal number"
+msgstr "Nombre décimal"
+
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
+"uuuuuu] format."
+msgstr ""
+"La valeur “%(value)s” a un format invalide. Elle doit être au format [JJ] "
+"[[HH:]MM:]ss[.uuuuuu]."
+
+msgid "Duration"
+msgstr "Durée"
+
+msgid "Email address"
+msgstr "Adresse e-mail"
+
+msgid "File path"
+msgstr "Chemin du fichier"
+
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr "La valeur “%(value)s” doit être un nombre flottant."
+
+msgid "Floating point number"
+msgstr "Nombre à virgule flottante"
+
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr "La valeur “%(value)s” doit être un entier."
+
+msgid "Integer"
+msgstr "Entier"
+
+msgid "Big (8 byte) integer"
+msgstr "Grand entier (8 octets)"
+
+msgid "Small integer"
+msgstr "Petit entier"
+
+msgid "IPv4 address"
+msgstr "Adresse IPv4"
+
+msgid "IP address"
+msgstr "Adresse IP"
+
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr "La valeur “%(value)s” doit être soit None, True ou False."
+
+msgid "Boolean (Either True, False or None)"
+msgstr "Booléen (soit True, False ou None)"
+
+msgid "Positive big integer"
+msgstr "Grand entier positif"
+
+msgid "Positive integer"
+msgstr "Entier positif"
+
+msgid "Positive small integer"
+msgstr "Petit entier positif"
+
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr "Slug (jusqu'à %(max_length)s)"
+
+msgid "Text"
+msgstr "Texte"
+
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+"La valeur “%(value)s” a un format invalide. Elle doit être au format HH:MM[:"
+"ss[.uuuuuu]]."
+
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+"La valeur “%(value)s” a le format correct (HH:MM[:ss[.uuuuuu]]) mais c'est "
+"une heure invalide."
+
+msgid "Time"
+msgstr "Heure"
+
+msgid "Raw binary data"
+msgstr "Données binaires brutes"
+
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr "“%(value)s” n'est pas un UUID valide."
+
+msgid "Universally unique identifier"
+msgstr "Identifiant universel unique"
+
+msgid "A JSON object"
+msgstr "Un objet JSON"
+
+msgid "Value must be valid JSON."
+msgstr "La valeur doit être un JSON valide."
+
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr "L'instance %(model)s avec %(field)s %(value)r n'existe pas."
+
+msgid "Foreign Key (type determined by related field)"
+msgstr "Clé étrangère (type déterminé par le champ lié)"
+
+msgid "One-to-one relationship"
+msgstr "Relation un-à-un"
+
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr "Relation %(from)s-%(to)s"
+
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr "Relations %(from)s-%(to)s"
+
+msgid "Many-to-many relationship"
+msgstr "Relation plusieurs-à-plusieurs"
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+msgid ":?.!"
+msgstr ":?.!"
+
+msgid "This field is required."
+msgstr "Ce champ est obligatoire."
+
+msgid "Enter a whole number."
+msgstr "Entrez un nombre entier."
+
+msgid "Enter a valid date."
+msgstr "Entrez une date valide."
+
+msgid "Enter a valid time."
+msgstr "Entrez une heure valide."
+
+msgid "Enter a valid date/time."
+msgstr "Entrez une date/heure valide."
+
+msgid "Enter a valid duration."
+msgstr "Entrez une durée valide."
+
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr "Le nombre de jours doit être entre {min_days} et {max_days}."
+
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr "Aucun fichier n'a été soumis. Vérifiez le type d'encodage sur le formulaire."
+
+msgid "No file was submitted."
+msgstr "Aucun fichier n'a été soumis."
+
+msgid "The submitted file is empty."
+msgstr "Le fichier soumis est vide."
+
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+"Assurez-vous que ce nom de fichier a au plus %(max)d caractère (il en a "
+"%(length)d)."
+msgstr[1] ""
+"Assurez-vous que ce nom de fichier a au plus %(max)d caractères (il en a "
+"%(length)d)."
+
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+"Veuillez soit soumettre un fichier, soit cocher la case de suppression, mais "
+"pas les deux."
+
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+"Téléversez une image valide. Le fichier que vous avez téléversé n'est pas une "
+"image ou est une image corrompue."
+
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+"Sélectionnez un choix valide. %(value)s ne fait pas partie des choix "
+"disponibles."
+
+msgid "Enter a list of values."
+msgstr "Entrez une liste de valeurs."
+
+msgid "Enter a complete value."
+msgstr "Entrez une valeur complète."
+
+msgid "Enter a valid UUID."
+msgstr "Entrez un UUID valide."
+
+msgid "Enter a valid JSON."
+msgstr "Entrez un JSON valide."
+
+#. Translators: This is the default suffix added to form field labels
+msgid ":"
+msgstr ":"
+
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr "(Champ caché %(name)s) %(error)s"
+
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+"Les données de ManagementForm sont manquantes ou ont été altérées. Champs "
+"manquants : %(field_names)s. Vous devrez peut-être signaler un bug si le "
+"problème persiste."
+
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] "Veuillez soumettre au plus %(num)d formulaire."
+msgstr[1] "Veuillez soumettre au plus %(num)d formulaires."
+
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] "Veuillez soumettre au moins %(num)d formulaire."
+msgstr[1] "Veuillez soumettre au moins %(num)d formulaires."
+
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr "Veuillez corriger les données en double pour %(field)s."
+
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+"Veuillez corriger les données en double pour %(field)s, qui doivent être "
+"uniques."
+
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+"Veuillez corriger les données en double pour %(field_name)s, qui doivent être "
+"uniques pour %(lookup)s dans %(date_field)s."
+
+msgid "Please correct the duplicate values below."
+msgstr "Veuillez corriger les valeurs en double ci-dessous."
+
+msgid "The inline value did not match the parent instance."
+msgstr "La valeur en ligne ne correspond pas à l'instance parente."
+
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+"Sélectionnez un choix valide. Ce choix ne fait pas partie des options "
+"disponibles."
+
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr "“%(pk)s” n'est pas une valeur valide."
+
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+"%(datetime)s n'a pas pu être interprété dans le fuseau horaire "
+"%(current_timezone)s ; il peut être ambigu ou ne pas exister."
+
+msgid "Clear"
+msgstr "Effacer"
+
+msgid "Currently"
+msgstr "Actuellement"
+
+msgid "Unknown"
+msgstr "Inconnu"
+
+msgid "Yes"
+msgstr "Oui"
+
+msgid "No"
+msgstr "Non"
+
+#. Translators: Please do not add spaces around commas.
+msgid "yes,no,maybe"
+msgstr "oui,non,peut-être"
+
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] "%(size)d octet"
+msgstr[1] "%(size)d octets"
+
+#, python-format
+msgid "%s KB"
+msgstr "%s Ko"
+
+#, python-format
+msgid "%s MB"
+msgstr "%s Mo"
+
+#, python-format
+msgid "%s GB"
+msgstr "%s Go"
+
+#, python-format
+msgid "%s TB"
+msgstr "%s To"
+
+#, python-format
+msgid "%s PB"
+msgstr "%s Po"
+
+msgid "p.m."
+msgstr "p.m."
+
+msgid "a.m."
+msgstr "a.m."
+
+msgid "PM"
+msgstr "PM"
+
+msgid "AM"
+msgstr "AM"
+
+msgid "midnight"
+msgstr "minuit"
+
+msgid "noon"
+msgstr "midi"
+
+msgid "Mon"
+msgstr "Lun"
+
+msgid "Tue"
+msgstr "Mar"
+
+msgid "Wed"
+msgstr "Mer"
+
+msgid "Thu"
+msgstr "Jeu"
+
+msgid "Fri"
+msgstr "Ven"
+
+msgid "Sat"
+msgstr "Sam"
+
+msgid "Sun"
+msgstr "Dim"
+
+msgid "January"
+msgstr "Janvier"
+
+msgid "February"
+msgstr "Février"
+
+msgid "March"
+msgstr "Mars"
+
+msgid "April"
+msgstr "Avril"
+
+msgid "May"
+msgstr "Mai"
+
+msgid "June"
+msgstr "Juin"
+
+msgid "July"
+msgstr "Juillet"
+
+msgid "August"
+msgstr "Août"
+
+msgid "September"
+msgstr "Septembre"
+
+msgid "October"
+msgstr "Octobre"
+
+msgid "November"
+msgstr "Novembre"
+
+msgid "December"
+msgstr "Décembre"
+
+msgid "jan"
+msgstr "jan"
+
+msgid "feb"
+msgstr "fév"
+
+msgid "mar"
+msgstr "mar"
+
+msgid "apr"
+msgstr "avr"
+
+msgid "may"
+msgstr "mai"
+
+msgid "jun"
+msgstr "jun"
+
+msgid "jul"
+msgstr "jul"
+
+msgid "aug"
+msgstr "aoû"
+
+msgid "sep"
+msgstr "sep"
+
+msgid "oct"
+msgstr "oct"
+
+msgid "nov"
+msgstr "nov"
+
+msgid "dec"
+msgstr "déc"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Janv."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Févr."
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Mars"
+
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "Avril"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Mai"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Juin"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Juillet"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "Août"
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "Sept."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Oct."
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Nov."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "Déc."
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "Janvier"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "Février"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "Mars"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "Avril"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Mai"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "Juin"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "Juillet"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "Août"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "Septembre"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "Octobre"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "Novembre"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "Décembre"
+
+msgid "This is not a valid IPv6 address."
+msgstr "Ce n'est pas une adresse IPv6 valide."
+
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr "%(truncated_text)s…"
+
+msgid "or"
+msgstr "ou"
+
+#. Translators: This string is used as a separator between list elements
+msgid ", "
+msgstr ", "
+
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] "%(num)d an"
+msgstr[1] "%(num)d ans"
+
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] "%(num)d mois"
+msgstr[1] "%(num)d mois"
+
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] "%(num)d semaine"
+msgstr[1] "%(num)d semaines"
+
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] "%(num)d jour"
+msgstr[1] "%(num)d jours"
+
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] "%(num)d heure"
+msgstr[1] "%(num)d heures"
+
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] "%(num)d minute"
+msgstr[1] "%(num)d minutes"
+
+msgid "Forbidden"
+msgstr "Interdit"
+
+msgid "CSRF verification failed. Request aborted."
+msgstr "La vérification CSRF a échoué. Requête abandonnée."
+
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+"Vous voyez ce message parce que ce site HTTPS nécessite l'envoi d'un en-tête "
+"“Referer” par votre navigateur, mais aucun n'a été envoyé. Cet en-tête est "
+"requis pour des raisons de sécurité, afin de s'assurer que votre navigateur "
+"n'est pas détourné par des tiers."
+
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+"Si vous avez configuré votre navigateur pour désactiver les en-têtes "
+"“Referer”, veuillez les réactiver, au moins pour ce site, ou pour les "
+"connexions HTTPS, ou pour les requêtes “same-origin”."
+
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+"Si vous utilisez la balise <meta name=\"referrer\" content=\"no-referrer\"> "
+"ou incluez l'en-tête “Referrer-Policy: no-referrer”, veuillez les supprimer. "
+"La protection CSRF nécessite l'en-tête “Referer” pour effectuer une "
+"vérification stricte du référent. Si vous êtes soucieux de la vie privée, "
+"utilisez des alternatives comme <a rel=\"noreferrer\" …> pour les liens vers "
+"des sites tiers."
+
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+"Vous voyez ce message parce que ce site nécessite un cookie CSRF lors de la "
+"soumission de formulaires. Ce cookie est requis pour des raisons de sécurité, "
+"afin de s'assurer que votre navigateur n'est pas détourné par des tiers."
+
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+"Si vous avez configuré votre navigateur pour désactiver les cookies, veuillez "
+"les réactiver, au moins pour ce site, ou pour les requêtes “same-origin”."
+
+msgid "More information is available with DEBUG=True."
+msgstr "Plus d'informations sont disponibles avec DEBUG=True."
+
+msgid "No year specified"
+msgstr "Aucune année spécifiée"
+
+msgid "Date out of range"
+msgstr "Date hors plage"
+
+msgid "No month specified"
+msgstr "Aucun mois spécifié"
+
+msgid "No day specified"
+msgstr "Aucun jour spécifié"
+
+msgid "No week specified"
+msgstr "Aucune semaine spécifiée"
+
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr "Aucun %(verbose_name_plural)s disponible"
+
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+"Les %(verbose_name_plural)s futurs ne sont pas disponibles car "
+"%(class_name)s.allow_future est False."
+
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr "Chaîne de date invalide “%(datestr)s” avec le format “%(format)s”"
+
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr "Aucun %(verbose_name)s trouvé correspondant à la requête"
+
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr "La page n'est pas “last” et ne peut pas être convertie en entier."
+
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr "Page invalide (%(page_number)s) : %(message)s"
+
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr "Liste vide et “%(class_name)s.allow_empty” est False."
+
+msgid "Directory indexes are not allowed here."
+msgstr "Les index de répertoire ne sont pas autorisés ici."
+
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr "“%(path)s” n'existe pas"
+
+#, python-format
+msgid "Index of %(directory)s"
+msgstr "Index de %(directory)s"
+
+msgid "The install worked successfully! Congratulations!"
+msgstr "L'installation a réussi ! Félicitations !"
+
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/4.2/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+"Voir les <a href=\"https://docs.djangoproject.com/en/4.2/releases/\" "
+"target=\"_blank\" rel=\"noopener\">notes de version</a> pour Django %(version)s"
+
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr ""
+"Vous voyez cette page parce que <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> est dans votre fichier de paramètres et vous "
+"n'avez configuré aucune URL."
+
+msgid "Django Documentation"
+msgstr "Documentation Django"
+
+msgid "Topics, references, &amp; how-to’s"
+msgstr "Sujets, références et guides pratiques"
+
+msgid "Tutorial: A Polling App"
+msgstr "Tutoriel : Une application de sondage"
+
+msgid "Get started with Django"
+msgstr "Commencer avec Django"
+
+msgid "Django Community"
+msgstr "Communauté Django"
+
+msgid "Connect, get help, or contribute"
+msgstr "Connectez-vous, obtenez de l'aide ou contribuez"
+
+#, python-format
+msgid "Content purported to be compressed with %s but failed to decompress."
+msgstr ""
+"Le contenu supposé être compressé avec %s n'a pas pu être décompressé."
+
+#, python-format
+msgid "Unsupported value for qop: %s."
+msgstr "Valeur non prise en charge pour qop : %s."
+
+#, python-format
+msgid "Unsupported value for algorithm: %s."
+msgstr "Valeur non prise en charge pour algorithm : %s."
+
+msgid "The challenge doesn't contain a server nonce, or this one is empty."
+msgstr "Le défi ne contient pas de nonce serveur, ou celui-ci est vide."
+
+#, python-format
+msgid "Unsupported value for pw-algorithm: %s."
+msgstr "Valeur non prise en charge pour pw-algorithm : %s."
+
+msgid "Redirected but the response is missing a Location: header."
+msgstr "Redirigé mais la réponse manque l'en-tête Location:."
+
+#, python-format
+msgid "Attempting to connect to qpid with SASL mechanism %s"
+msgstr "Tentative de connexion à qpid avec le mécanisme SASL %s"
+
+#, python-format
+msgid "Connected to qpid with SASL mechanism %s"
+msgstr "Connecté à qpid avec le mécanisme SASL %s"
+
+#, python-format
+msgid "Unable to connect to qpid with SASL mechanism %s"
+msgstr "Impossible de se connecter à qpid avec le mécanisme SASL %s"

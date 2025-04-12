@@ -1,0 +1,15 @@
+{
+  "short_name": "Wasla",
+  "name": "Wasla Web App",
+  "icons": [
+    {
+      "src": "/event_master/static/assets/img/logo/logo.png",
+      "sizes": "141x29",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000"
+}

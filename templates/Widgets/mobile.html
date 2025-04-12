@@ -1,0 +1,38 @@
+<input
+    type="{{ widget.type }}"
+    name="{{ widget.name }}" 
+    {% if widget.value != None %} 
+        value="{{ widget.value|stringformat:'s' }}"
+    {% endif %}
+    {% include "django/forms/widgets/attrs.html" %}
+/>
+<div class="mb-3">
+    <label class="form-label">Button with Dropdown</label>
+    <div class="input-group">
+        <button
+            type="button"
+            class="btn btn-secondary dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            fdprocessedid="jh9t5m"
+        >
+            Dropdown
+        </button>
+        <div class="dropdown-menu" style="">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+        <input
+            type="text"
+            class="form-control"
+            placeholder="Left Dropdown"
+            fdprocessedid="ryl0vc"
+            data-has-listeners="true"
+        />
+    </div>
+</div>
+<script></script>

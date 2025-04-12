@@ -14,4 +14,5 @@ from .restAPI.viewSets import (
     InterestViewSet,  # noqa: F401
     UserInterestsViewSet,  # noqa: F401
     UserMyProfileViewSet,  # noqa: F401
+    MyAccountViewSet,  # noqa: F401
 )

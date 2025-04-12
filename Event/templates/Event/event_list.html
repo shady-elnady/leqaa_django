@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event List</title>
+</head>
+<body>
+    <h1>Event List</h1>
+    <div id="event-container">
+        <ul>
+            {% for event in events %}
+                <li class="event-item">
+                    <h2>{{ event.title }}</h2>
+                     {% if event.image %}
+                        <img src="{{ event.image.url }}" alt="{{ event.title }}" style="max-width: 200px; max-height: 200px;">
+                    {% endif %}
+                    <p>Hall: {{ event.hall }}</p>
+                    <p>Event Type: {{ event.event_type }}</p>
+                    <p>Category: {{ event.category }}</p>
+
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <button id="load-more-btn">Load More</button>
+
+    <script>
+        const loadMoreBtn = document.getElementById('load-more-btn');
+        const eventContainer = document.getElementById('event-container');
+        let offset = {{ events|length }}; // Start from the number of events already loaded.
+        const limit = 2; // Load 2 events at a time.
+        const apiUrl = 'http://127.0.0.1:8000/api/events/';
+
+        loadMoreBtn.addEventListener('click', () => {
+            fetch(`${apiUrl}?offset=${offset}&limit=${limit}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.results.length > 0) {
+                        data.results.forEach(event => {
+                            const eventItem = document.createElement('li');
+                            eventItem.classList.add('event-item');
+                            eventItem.innerHTML = `
+                                <h2>${event.title}</h2>
+                                ${event.image ? `<img src="${event.image}" alt="${event.title}" style="max-width: 200px; max-height: 200px;">` : ''}
+                                <p>Hall: ${event.hall}</p>
+                                <p>Event Type: ${event.event_type}</p>
+                                <p>Category: ${event.category}</p>
+
+                            `;
+                            eventContainer.querySelector('ul').appendChild(eventItem);
+                        });
+                    } else {
+                        loadMoreBtn.disabled = true; // Disable button when no more events.
+                        loadMoreBtn.textContent = 'No more events';
+                    }
+                })
+                .catch(error => console.error('Error fetching events:', error));
+        });
+    </script>
+</body>
+</html>

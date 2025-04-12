@@ -12,14 +12,70 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from os.path import join, exists, dirname  # noqa: F401
+from os import makedirs
 import django
 from django.urls import reverse_lazy  # noqa: F401
-from django.utils.translation import gettext_lazy as _
+from App.messages import ChoicesMessages
+from Firebase.helpers import FirebaseAdminHelper
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 ASSETS_DIR = join(BASE_DIR, "Assets")
+
+
+#######################################################################################
+##################################  FIREBASE  #########################################
+#######################################################################################
+FIREBASE_ADMIN_SDK_INITIALIZED = False
+
+FIREBASE_STORAGE_BUCKET = "healthy-unit.appspot.com"  # gs://healthy-unit.appspot.com
+
+FIREBASE_DATABASE_URL = "https://healthy-unit-default-rtdb.firebaseio.com"
+
+# # For Pyrebase4
+PYREBASE_CONFIG = {
+    "apiKey": "AIzaSyAOQD6hoK5ECzMxFHdItTLceLKvu72PYz0",
+    "authDomain": "healthy-unit.firebaseapp.com",
+    "databaseURL": "https://healthy-unit-default-rtdb.firebaseio.com",
+    "projectId": "healthy-unit",
+    "storageBucket": "healthy-unit.appspot.com",
+    "messagingSenderId": "590929307616",
+    "appId": "1:590929307616:web:6603091065034b52332d85",
+    "measurementId": "G-3K32G8VXVT",
+}
+
+FIREBASE_CONFIG_ADMIN_SDK_PATH = join(BASE_DIR, "firebase_config.json")
+
+# import firebase_admin
+# from firebase_admin import credentials
+# try:
+#     FIREBASE_ADMIN_SDK_PATH = join(BASE_DIR, "firebase_config.json")
+
+#     cred = credentials.Certificate(FIREBASE_ADMIN_SDK_PATH)
+#     firebase_admin.initialize_app(
+#         cred,
+#         {"storageBucket": FIREBASE_STORAGE_BUCKET},
+#     )
+#     FIREBASE_ADMIN_SDK_INITIALIZED = True
+#     print("Firebase Admin SDK initialized successfully.")
+# except FileNotFoundError:
+#     print("firebase_config.json not found. Firebase functionality disabled.")
+#     FIREBASE_ADMIN_SDK_INITIALIZED = False
+# except Exception as e:
+#     print(f"Error initializing Firebase Admin SDK: {e}")
+#     FIREBASE_ADMIN_SDK_INITIALIZED = False
+
+# # FIREBASE INITIALIZED
+try:
+    FIREBASE_ADMIN_HELPER = FirebaseAdminHelper()
+    FIREBASE_ADMIN_SDK_INITIALIZED = True
+    print("Firebase Admin SDK initialized successfully.")
+except Exception as e:
+    print(f"Error initializing Firebase Admin SDK: {e}")
+    FIREBASE_ADMIN_SDK_INITIALIZED = False
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -29,23 +85,44 @@ SECRET_KEY = "django-insecure-51v+!c+^ay(#p^)i#r5vg#00us2c@$2^7@frouj!n94j&-s%k=
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+#######################################################################################
+##################################     User   #########################################
+#######################################################################################
 AUTH_USER_MODEL = "User.User"
 
 # # for Access User Profile example(profile = request.user.get_profile())
 AUTH_PROFILE_MODEL = "User.Profile"
+
+# Email settings for error notifications
+SERVER_EMAIL = "shadyelnady@gmail.com"  # From address for error emails
+
+ADMINS = (("Shady", SERVER_EMAIL),)
+
+MANAGERS = ADMINS
+
+EXTERNAL_USER = "Shady"
+
+AUTHENTICATION_BACKENDS = [
+    "User.utils.backend.UserBackend",
+    # "django.contrib.auth.backends.ModelBackend",  # Default backend
+]
+
+
+EMAIL_SUBJECT_PREFIX = "[Wasla]"
+
+PASSWORD_RESET_TIMEOUT = 86400  # 24 hours in seconds
 
 ALLOWED_HOSTS = [
     # "*",
     "localhost",
     "127.0.0.1",
     "Shady.pythonanywhere.com",
+    "shadyElNady.pythonanywhere.com",
 ]
 
 APPEND_SLASH = True
 
 ## Application definition
-
 # 3rd Libraries
 THIRD_LIBRARIES = [
     "polymorphic_tree",
@@ -57,12 +134,15 @@ THIRD_LIBRARIES = [
     # "corsheaders",
     # the debug toolbar
     "debug_toolbar",
+    # Admin dashboard
+    # "admin_berry",
+    "event_master",
 ]
 
 # My Applications
 MY_APPS = [
-    "Utils",
-    "Locale",
+    "App",
+    "Language",
     "Currency",
     "Address",
     "Category",
@@ -75,14 +155,16 @@ MY_APPS = [
     "Notification",
     "Favorite",
     ##
-    # "Logs",
+    # "Log",
     ##
-    # "FireBase",
+    "Firebase",
     ## Api RestFrameWork & GraphQL
     "Api",
 ]
 
 INSTALLED_APPS = [
+    # "admin_berry.apps.AdminBerryConfig",
+    # #
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -97,14 +179,29 @@ INSTALLED_APPS = [
     "django.forms",
 ]
 
-SITE_ID = 2
+SITE_ID = 1  # Should match your Site object in admin
 
 USE_HTTPS = False
 
 INTERNAL_IPS = [
     # ...
+    "localhost",
     "127.0.0.1",  # Add your development machine's IP address here
 ]
+
+# Remove or comment these in development:
+SECURE_SSL_REDIRECT = False  # Disable HTTPS redirect
+SESSION_COOKIE_SECURE = False  # Allow session cookies over HTTP
+CSRF_COOKIE_SECURE = False  # Allow CSRF cookies over HTTP
+
+if DEBUG:
+    EMAIL_VERIFICATION_URL_PROTOCOL = "http"
+
+# # settings for https
+# SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SECURE_SSL_REDIRECT = True
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -118,20 +215,21 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    # "Locale.middleware.userLanguage.UserLanguageMiddleware",  # Custom Middleware for App Locale
+    "Language.middlewares.regional_locale_middleware.RegionalLocaleMiddleware",  # Add your custom middlewarefor App Locale
 ]
+
 
 ROOT_URLCONF = "Config.urls"
 
 FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
 
-TEMPLATE_DIR = join(BASE_DIR, "templates")  # ROOT dir for templates
+BASE_TEMPLATE_DIR = join(BASE_DIR, "templates")  # ROOT dir for templates
 
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            TEMPLATE_DIR,
+            BASE_TEMPLATE_DIR,
             django.__path__[0] + "/forms/templates",
         ],
         "APP_DIRS": True,
@@ -142,14 +240,17 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.template.context_processors.i18n",  # for Multi Languages & Translation
                 "django.contrib.messages.context_processors.messages",
+                "Language.context_processors.context_app_locales",  # Custom to Load Locales
             ],
         },
     },
 ]
 
 WSGI_APPLICATION = "Config.wsgi.application"
-
-# Database
+#######################################################################################
+##################################  Database  #########################################
+#######################################################################################
+#
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
@@ -177,10 +278,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#######################################################################################
+##################################   Locale   #########################################
+#######################################################################################
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
+# from django.conf import global_settings
+# print(global_settings.LANGUAGES)
 
-LANGUAGE_CODE = "en-US"
+# First import Django's language data
+from django.conf import global_settings, settings  # noqa: E402
 
 TIME_ZONE = "UTC"
 
@@ -190,33 +297,65 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-PHONENUMBER_DEFAULT_REGION = "EG"
-
 # Supported Languages
 LANGUAGES = [
-    ("en-US", _("English")),
-    ("ar-AS", _("Arabic")),
-    ("ar-EG", _("Arabic")),
-    ("fr-FR", _("French")),
-    ("tr-TR", _("Turkish")),
+    ("ar", ChoicesMessages.ARABIC),  # Base Arabic code
+    ("en", ChoicesMessages.ENGLISH),
+    ("fr", ChoicesMessages.FRENCH),
+    ("tr", ChoicesMessages.TURKISH),
 ]
+
+# Default language must be from LANGUAGES
+LANGUAGE_CODE = "ar"
+
+# Custom setting for your regional variants
+REGIONAL_LANGUAGES = {
+    "ar": ["ar_AS", "ar_EG"],  # Arabic variants
+    "en": ["en_US"],  # English variants
+    "fr": ["fr_FR"],  # French variants
+    "tr": ["tr_TR"],  # Turkish variants
+}
 
 # True for right-to-left languages like Arabic, and to False otherwise
 # LANGUAGE_BIDI = False
 # Languages using BiDi (right-to-left) layout
 LANGUAGES_BIDI = [
-    "ar-AS",
-    "ar-EG",
-    # "he", "ar-dz", "fa", "ur"
+    "ar",
 ]
 
+LOCALE_PATH = join(ASSETS_DIR, "locales")
+
 LOCALE_PATHS = [
-    join(ASSETS_DIR, "Locales"),
-    # "/home/www/project/common_files/locale",
+    LOCALE_PATH,
     # "/var/local/translations/locale",
 ]
 
+# Initialize APP_LOCALES as empty if not set
+if not hasattr(settings, "APP_LOCALES"):
+    APP_LOCALES = {
+        "is_set": False,
+        "data": None,
+        # "en_US": {
+        #     "is_bidi": False,
+        #     "code": "en",
+        #     "flag": "",
+        #     "name": "English",
+        #     "native_name": "English",
+        # },
+        # "ar_EG": {
+        #     "is_bidi": True,
+        #     "code": "ar",
+        #     "flag": "",
+        #     "name": "Arabic",
+        #     "native_name": "العربيّة",
+        # },
+    }
+
+PHONENUMBER_DEFAULT_REGION = "EG"
+
+#######################################################################################
+###############################   Static files   ######################################
+#######################################################################################
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
@@ -232,8 +371,6 @@ STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 )
 
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
 MEDIA_URL = "/media/"
 
 MEDIA_ROOT = join(ASSETS_DIR, "media")
@@ -243,14 +380,13 @@ MEDIA_ROOT = join(ASSETS_DIR, "media")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-####
-ADMINS = (("Shady", "shadyelnady@gmail.com"),)
+OTP_CHARACTER_LENGTH = 6  # Length of the OTP code
 
-MANAGERS = ADMINS
 
-EXTERNAL_USER = "Shady"
-
-## Currency
+#######################################################################################
+################################   Currency   #########################################
+#######################################################################################
+##
 CURRENCIES = (
     "USD",
     "EUR",
@@ -262,17 +398,10 @@ CURRENCY_CHOICES = [
 
 DEFAULT_CURRENCY = "EG"
 
+#######################################################################################
+###############################   REST_FRAMEWORK  #####################################
+#######################################################################################
 ##
-# LOGIN_URL = reverse_lazy("User:Log_In")
-# LOGIN_REDIRECT_URL = reverse_lazy("Logs:Home")
-# LOGOUT_REDIRECT_URL = reverse_lazy("User:Log_In")
-# LOGOUT_URL = reverse_lazy("Logs:LogOut")
-
-
-# AUTHENTICATION_BACKENDS = ["User.utils.backend.UserBackend"]
-
-
-## REST_FRAMEWORK
 REST_FRAMEWORK = {
     # "DATE_FORMAT": "%d/%m/%Y",
     # Use Django"s standard `django.contrib.auth` permissions,
@@ -285,8 +414,21 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.TokenAuthentication",
         "rest_framework.authentication.BasicAuthentication",
         "rest_framework.authentication.SessionAuthentication",
-        # "FireBase.utils.authentication.FirebaseAuthentication",  # Custom fireBase Authentiction
+        # "Firebase.api.restAPI.authentication.FirebaseAuthentication",  # Custom fireBase Authentiction
     ],
+    "DEFAULT_THROTTLE_CLASSES": [
+        "rest_framework.throttling.AnonRateThrottle",
+    ],
+    "DEFAULT_THROTTLE_RATES": {
+        "anon": "100/day",  # Global anonymous rate limit
+        "api_log_in": "5/hour",  # Specific to login endpoint
+        "firebase_log_in_by_id_token": "10/hour",  # For Firebase token authentication
+        "password_reset": "3/hour",
+        "forgot_password": "4/hour",
+        "verify_email_by_otp": "6/hour",  # Rate limiting for verification attempts
+        "verify_email_by_url": "7/hour",  # Rate limiting for verification attempts
+        "mobile_verification": "2/hour",  # Rate limiting for verification attempts
+    },
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 10,
     "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
@@ -296,30 +438,168 @@ REST_FRAMEWORK = {
     # "EXCEPTION_HANDLER": "API.exceptions.django_error_handler"  ## Excepitions
 }
 
-APP_LOCALES = {
-    "is_set": False,
-    "data": None,
-    # "en-US": {
-    #     "is_bidi": False,
-    #     "code": "en",
-    #     "flag": "",
-    #     "name": "English",
-    #     "native_name": "English",
-    # },
-    # "ar-EG": {
-    #     "is_bidi": True,
-    #     "code": "ar",
-    #     "flag": "",
-    #     "name": "Arabic",
-    #     "native_name": "العربيّة",
-    # },
-}
 
+#######################################################################################
+###############################       CACHES      #####################################
+#######################################################################################
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "unique-snowflake",
+    }
+}
+#######################################################################################
+###############################   EMAIL_BACKEND   #####################################
+#######################################################################################
 # Email
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "shadyelnady@gmail.com"
+EMAIL_HOST_USER = SERVER_EMAIL
 EMAIL_HOST_PASSWORD = "uliycfbtwmqqzdrm"
 EMAIL_USE_SSL = False
+
+EMAIL_VERIFICATION_TIMEOUT_HOURS = 24  # Token expiration time
+
+#######################################################################################
+##################################   URL   ########################################
+#######################################################################################
+LOGIN_REDIRECT_URL = reverse_lazy("event_master:Home")
+LOGOUT_REDIRECT_URL = reverse_lazy("event_master:Splash")
+LOGOUT_URL = reverse_lazy("User:LogOut")
+
+####### CORS Headers
+# LOGIN_URL = reverse_lazy("User:Log_In")
+# LOGIN_REDIRECT_URL = reverse_lazy("Logs:Home")
+# LOGOUT_REDIRECT_URL = reverse_lazy("User:Log_In")
+# LOGOUT_URL = reverse_lazy("Logs:LogOut")
+
+#######################################################################################
+##################################   CELERY   #########################################
+#######################################################################################
+# # CELERY
+# Celery Configuration Options
+CELERY_TASK_TRACK_STARTED = True
+CELERY_TASK_TIME_LIMIT = 30 * 60
+CELERY_TIMEZONE = "UTC"  # Or your desired timezone "Australia/Tasmania"
+CELERY_BROKER_URL = "redis://localhost:6379/0"  # Replace with your Redis connection details if different
+CELERY_RESULT_BACKEND = (
+    "redis://localhost:6379/0"  # Optional, but recommended for tracking task results
+)
+
+CELERY_ACCEPT_CONTENT = ["json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_SERIALIZER = "json"
+
+#######################################################################################
+##################################   LOGGING   ########################################
+#######################################################################################
+# Install required package for JSON logging
+# pip install python-json-logger
+# Ensure the logs directory exists
+LOG_DIR = join(BASE_DIR, "logs")
+makedirs(LOG_DIR, exist_ok=True)
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "{levelname} {asctime} {module} {process:d} {thread:d} {message}",
+            "style": "{",
+        },
+        "simple": {
+            "format": "{levelname} {message}",
+            "style": "{",
+        },
+        "json": {
+            "()": "pythonjsonlogger.jsonlogger.JsonFormatter",
+            "format": """
+                asctime: %(asctime)s
+                levelname: %(levelname)s
+                message: %(message)s
+                module: %(module)s
+                pathname: %(pathname)s
+                process: %(process)d
+                thread: %(thread)d
+                extra: %(extra)s
+            """,
+        },
+    },
+    "filters": {
+        "require_debug_false": {
+            "()": "django.utils.log.RequireDebugFalse",
+        },
+        "require_debug_true": {
+            "()": "django.utils.log.RequireDebugTrue",
+        },
+    },
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            "filters": ["require_debug_true"],
+            "class": "logging.StreamHandler",
+            "formatter": "simple",
+        },
+        "file": {
+            "level": "INFO",
+            "class": "logging.handlers.RotatingFileHandler",
+            "filename": "logs/api.log",
+            "maxBytes": 1024 * 1024 * 15,  # 15MB
+            "backupCount": 10,
+            "formatter": "verbose",
+        },
+        "security_file": {
+            "level": "WARNING",
+            "class": "logging.handlers.TimedRotatingFileHandler",
+            "filename": "logs/security.log",
+            "when": "midnight",
+            "backupCount": 30,
+            "formatter": "json",
+        },
+        "mail_admins": {
+            "level": "ERROR",
+            "filters": ["require_debug_false"],
+            "class": "django.utils.log.AdminEmailHandler",
+            "include_html": True,
+        },
+        "registration_file": {
+            "level": "INFO",
+            "class": "logging.handlers.TimedRotatingFileHandler",
+            "filename": "logs/registration.log",
+            "when": "midnight",  # Rotate daily
+            "backupCount": 7,  # Keep 7 days of logs
+            "formatter": "verbose",
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console", "file"],
+            "level": "INFO",
+        },
+        "django.request": {
+            "handlers": ["file", "mail_admins"],
+            "level": "ERROR",
+            "propagate": False,
+        },
+        "django.security": {
+            "handlers": ["security_file", "mail_admins"],
+            "level": "WARNING",
+            "propagate": False,
+        },
+        "Api": {
+            "handlers": ["file", "security_file", "mail_admins"],
+            "level": "DEBUG",
+            "propagate": False,
+        },
+        "User": {
+            "handlers": ["file", "security_file"],
+            "level": "INFO",
+            "propagate": False,
+        },
+    },
+}
+#######################################################################################
+##################################   Locale   #########################################
+#######################################################################################

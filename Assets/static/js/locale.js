@@ -1,27 +1,27 @@
 const locales = [
-  "en-GB",
-  "ar-SA",
-  "zh-CN",
-  "de-DE",
-  "es-ES",
-  "fr-FR",
-  "hi-IN",
-  "it-IT",
-  "in-ID",
-  "ja-JP",
-  "ko-KR",
-  "nl-NL",
-  "no-NO",
-  "pl-PL",
-  "pt-BR",
-  "sv-SE",
-  "fi-FI",
-  "th-TH",
-  "tr-TR",
-  "uk-UA",
-  "vi-VN",
-  "ru-RU",
-  "he-IL",
+  "en_GB",
+  "ar_SA",
+  "zh_CN",
+  "de_DE",
+  "es_ES",
+  "fr_FR",
+  "hi_IN",
+  "it_IT",
+  "in_ID",
+  "ja_JP",
+  "ko_KR",
+  "nl_NL",
+  "no_NO",
+  "pl_PL",
+  "pt_BR",
+  "sv_SE",
+  "fi_FI",
+  "th_TH",
+  "tr_TR",
+  "uk_UA",
+  "vi_VN",
+  "ru_RU",
+  "he_IL",
 ];
 
 jQuery.ajax({
@@ -78,7 +78,6 @@ function setSelectedLocale(locale) {
 
 setSelectedLocale(locales[0]);
 const browserLang = new Intl.Locale(navigator.language).language;
-console.log(navigator.language);
 for (const locale of locales) {
   const localeLang = new Intl.Locale(locale).language;
   if (localeLang === browserLang) {

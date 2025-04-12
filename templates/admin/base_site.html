@@ -1,0 +1,20 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block title %}
+  {% if subtitle %}
+    {{ subtitle }} |
+  {% endif %}{{ title }} | {{ site_title|default:_('Wasla') }}
+{% endblock %}
+
+{% block branding %}
+  <h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+      {% comment %} {{ ''|default:_('Wasla') }} {% endcomment %}
+      <img src="{% static 'event_master/assets/img/logo/logo2_footer.png' %}" alt="My Logo" height="40px" />
+    </a>
+  </h1>
+  {% if user.is_anonymous %}
+    {% include 'admin/color_theme_toggle.html' %}
+  {% endif %}
+{% endblock %}

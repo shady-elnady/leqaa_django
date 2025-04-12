@@ -1,8 +1,8 @@
 from django.db.models import ForeignKey, OneToOneField, CASCADE, PROTECT
-from django.utils.translation import gettext_lazy as _
 
+from App.models import BaseModel
+from App.messages import ModelsMessages
 from Organization.models import College, University
-from Utils.models.BaseModel import BaseModel
 from User.models import User
 
 
@@ -11,7 +11,7 @@ class Student(BaseModel):
         User,
         on_delete=CASCADE,
         related_name="Student",
-        verbose_name=_("User"),
+        verbose_name=ModelsMessages.USER,
     )
     university = ForeignKey(
         University,
@@ -19,7 +19,7 @@ class Student(BaseModel):
         blank=True,
         on_delete=PROTECT,
         related_name="Students",
-        verbose_name=_("University"),
+        verbose_name=ModelsMessages.UNIVERSITY,
     )
     college = ForeignKey(
         College,
@@ -27,7 +27,7 @@ class Student(BaseModel):
         blank=True,
         on_delete=PROTECT,
         related_name="Students",
-        verbose_name=_("College"),
+        verbose_name=ModelsMessages.COLLEGE,
     )
 
     def __str__(self) -> str:
@@ -37,5 +37,5 @@ class Student(BaseModel):
         return f"{self.user.username}"
 
     class Meta:
-        verbose_name = _("Student")
-        verbose_name_plural = _("Students")
+        verbose_name = ModelsMessages.STUDENT
+        verbose_name_plural = ModelsMessages.STUDENTS

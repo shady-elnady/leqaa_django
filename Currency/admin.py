@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.db import models
 
-from Locale.widgets.myTranslation_json_widget import MyTranslationWidget
+from Language.widgets.myTranslation_json_widget import MyTranslationWidget
 from .forms import CurrencyAdminForm
 from .models import Currency
 

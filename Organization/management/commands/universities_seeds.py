@@ -3,6 +3,7 @@ from django.conf import settings
 from os.path import join, exists
 from os import makedirs
 
+from App.tools.get_model_name import get_model_name_from_class
 from Organization.models import University
 
 
@@ -14,22 +15,24 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.WARNING(f"Start {self.help}"))
 
-        IMAGES_ROOT = join(settings.MEDIA_ROOT, "images")
-
-        universities_images_directory = join(IMAGES_ROOT, "Universities")
-        if not exists(universities_images_directory):
-            makedirs(universities_images_directory)
-
+        if not exists(
+            join(settings.MEDIA_ROOT, "images", get_model_name_from_class(University))
+        ):
+            makedirs(
+                join(
+                    settings.MEDIA_ROOT, "images", get_model_name_from_class(University)
+                )
+            )
         universities = [
             {
                 "name": "Mansoura University",
                 "email": 1,
                 "translations": {
-                    "ar-AS": "جامعه المنصوره",
-                    "ar-EG": "جامعه المنصوره",
-                    "en-US": "Mansoura University",
-                    "fr-FR": "Université de Mansourah",
-                    "tr-TR": "Mansoura Üniversitesi",
+                    "ar_AS": "جامعه المنصوره",
+                    "ar_EG": "جامعه المنصوره",
+                    "en_US": "Mansoura University",
+                    "fr_FR": "Université de Mansourah",
+                    "tr_TR": "Mansoura Üniversitesi",
                 },
             },
         ]
@@ -38,7 +41,11 @@ class Command(BaseCommand):
             try:
                 University.objects.create(
                     name=university["name"],
-                    logo=join(universities_images_directory, f"{university_id}.png"),
+                    image=join(
+                        "images",
+                        get_model_name_from_class(University),
+                        f"{university_id}.png",
+                    ),
                     email=university["email"],
                     translations=university["translations"],
                 )

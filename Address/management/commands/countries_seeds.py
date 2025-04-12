@@ -4,8 +4,9 @@ from os.path import join, exists
 from os import makedirs
 
 from Address.models import Country
+from App.tools import get_model_name_from_class
 from Currency.models import Currency
-from Locale.models import Language
+from Language.models import Language
 
 
 class Command(BaseCommand):
@@ -13,11 +14,16 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
-        IMAGES_ROOT = join(settings.MEDIA_ROOT, "images")
-
-        countries_images_directory = join(IMAGES_ROOT, "Countries")
-        if not exists(countries_images_directory):
-            makedirs(countries_images_directory)
+        if not exists(
+            join(settings.MEDIA_ROOT, "images", get_model_name_from_class(Country))
+        ):
+            makedirs(
+                join(
+                    settings.MEDIA_ROOT,
+                    "images",
+                    get_model_name_from_class(Country),
+                )
+            )
 
         self.stdout.write(self.style.WARNING(f"Start {self.help}"))
 
@@ -32,11 +38,11 @@ class Command(BaseCommand):
                 "tel_code": "+1",
                 "time_zone": "UTC+02:00",
                 "translations": {
-                    "en-US": "United State of America",
-                    "ar-AS": "الولايات المتحدة الامريكية",
-                    "ar-EG": "الولايات المتحدة الامريكية",
-                    "fr-FR": "États-Unis d'Amérique",
-                    "tr-TR": "Amerika Birleşik Devletleri",
+                    "en_US": "United State of America",
+                    "ar_AS": "الولايات المتحدة الامريكية",
+                    "ar_EG": "الولايات المتحدة الامريكية",
+                    "fr_FR": "États-Unis d'Amérique",
+                    "tr_TR": "Amerika Birleşik Devletleri",
                 },
             },
             {
@@ -49,11 +55,11 @@ class Command(BaseCommand):
                 "tel_code": "+966",
                 "time_zone": "UTC+02:00",
                 "translations": {
-                    "en-US": "Kingdom of Saudi Arabia",
-                    "ar-AS": "المملكه العربيه السعوديه",
-                    "ar-EG": "المملكه العربيه السعوديه",
-                    "fr-FR": "Royaume d'Arabie Saoudite",
-                    "tr-TR": "Suudi Arabistan Krallığı",
+                    "en_US": "Kingdom of Saudi Arabia",
+                    "ar_AS": "المملكه العربيه السعوديه",
+                    "ar_EG": "المملكه العربيه السعوديه",
+                    "fr_FR": "Royaume d'Arabie Saoudite",
+                    "tr_TR": "Suudi Arabistan Krallığı",
                 },
             },
             {
@@ -66,11 +72,11 @@ class Command(BaseCommand):
                 "tel_code": "+02",
                 "time_zone": "UTC+02:00",
                 "translations": {
-                    "en-US": "Egypt",
-                    "ar-AS": "مصر",
-                    "ar-EG": "مصر",
-                    "fr-FR": "Egypte",
-                    "tr-TR": "Mısır",
+                    "en_US": "Egypt",
+                    "ar_AS": "مصر",
+                    "ar_EG": "مصر",
+                    "fr_FR": "Egypte",
+                    "tr_TR": "Mısır",
                 },
             },
             {
@@ -83,11 +89,11 @@ class Command(BaseCommand):
                 "tel_code": "33",
                 "time_zone": "UTC+02:00",
                 "translations": {
-                    "en-US": "France",
-                    "ar-AS": "فرنسا",
-                    "ar-EG": "فرنسا",
-                    "fr-FR": "République française",
-                    "tr-TR": "Fransa",
+                    "en_US": "France",
+                    "ar_AS": "فرنسا",
+                    "ar_EG": "فرنسا",
+                    "fr_FR": "République française",
+                    "tr_TR": "Fransa",
                 },
             },
             {
@@ -100,11 +106,11 @@ class Command(BaseCommand):
                 "tel_code": "33",
                 "time_zone": "UTC+02:00",
                 "translations": {
-                    "en-US": "Turkia",
-                    "ar-AS": "تركيا",
-                    "ar-EG": "تركيا",
-                    "fr-FR": "Turquie",
-                    "tr-TR": "Türkiye",
+                    "en_US": "Turkia",
+                    "ar_AS": "تركيا",
+                    "ar_EG": "تركيا",
+                    "fr_FR": "Turquie",
+                    "tr_TR": "Türkiye",
                 },
             },
             {
@@ -117,16 +123,16 @@ class Command(BaseCommand):
                 "tel_code": "+971",
                 "time_zone": "UTC+02:00",
                 "translations": {
-                    "en-US": "United Arab Emirates",
-                    "ar-AS": "دولة الإمارات العربية المتحدة",
-                    "ar-EG": "دولة الإمارات العربية المتحدة",
-                    "fr-FR": "Emirats Arabes Unis",
-                    "tr-TR": "Birleşik Arap Emirlikleri",
+                    "en_US": "United Arab Emirates",
+                    "ar_AS": "دولة الإمارات العربية المتحدة",
+                    "ar_EG": "دولة الإمارات العربية المتحدة",
+                    "fr_FR": "Emirats Arabes Unis",
+                    "tr_TR": "Birleşik Arap Emirlikleri",
                 },
             },
         ]
 
-        id = 1
+        country_id = 1
         for country in countries:
             try:
                 Country.objects.create(
@@ -134,14 +140,18 @@ class Command(BaseCommand):
                     country_code=country["country_code"],
                     continent=country["continent"],
                     flag_emoji=country["flag_emoji"],
-                    flag=join(countries_images_directory, f"{id}.png"),
+                    image=join(
+                        "images",
+                        get_model_name_from_class(Country),
+                        f"{country_id}.png",
+                    ),
                     currency=Currency.objects.get(pk=country["currency"]),
                     language=Language.objects.get(pk=country["language"]),
                     tel_code=country["tel_code"],
                     time_zone=country["time_zone"],
                     translations=country["translations"],
                 )
-                id = id + 1
+                country_id = country_id + 1
                 self.stdout.write(
                     self.style.SUCCESS(f"Successfully Create {country['name']}")
                 )

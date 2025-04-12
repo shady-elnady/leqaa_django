@@ -4,6 +4,7 @@ from django.conf import settings
 from os.path import join, exists
 from os import makedirs
 
+from App.tools import get_model_name_from_class
 from Organization.models import Organization, OrganizationType, University
 
 
@@ -15,11 +16,16 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.WARNING(f"Start {self.help}"))
 
-        IMAGES_ROOT = join(settings.MEDIA_ROOT, "images")
-
-        organizations_images_directory = join(IMAGES_ROOT, "Organizations")
-        if not exists(organizations_images_directory):
-            makedirs(organizations_images_directory)
+        if not exists(
+            join(settings.MEDIA_ROOT, "images", get_model_name_from_class(Organization))
+        ):
+            makedirs(
+                join(
+                    settings.MEDIA_ROOT,
+                    "images",
+                    get_model_name_from_class(Organization),
+                )
+            )
 
         commands = [
             "organizationTypes_seeds",
@@ -45,11 +51,11 @@ class Command(BaseCommand):
                 "university": 1,
                 "affiliated_to": None,
                 # "translations": {
-                #     "ar-AS": "اسره الثقافه",
-                #     "ar-EG": "اسره الثقافه",
-                #     "en-US": "Family of Culture",
-                #     "fr-FR": "Famille culturelle",
-                #     "tr-TR": "Kültür Ailesi",
+                #     "ar_AS": "اسره الثقافه",
+                #     "ar_EG": "اسره الثقافه",
+                #     "en_US": "Family of Culture",
+                #     "fr_FR": "Famille culturelle",
+                #     "tr_TR": "Kültür Ailesi",
                 # },
             },
             {
@@ -58,11 +64,11 @@ class Command(BaseCommand):
                 "university": 1,
                 "affiliated_to": None,
                 # "translations": {
-                #     "ar-AS": "أسره النور",
-                #     "ar-EG": "أسره النور",
-                #     "en-US": "The light Family",
-                #     "fr-FR": "La lumière l'a capturé",
-                #     "tr-TR": "Işık ailesi",
+                #     "ar_AS": "أسره النور",
+                #     "ar_EG": "أسره النور",
+                #     "en_US": "The light Family",
+                #     "fr_FR": "La lumière l'a capturé",
+                #     "tr_TR": "Işık ailesi",
                 # },
             },
             {
@@ -71,8 +77,8 @@ class Command(BaseCommand):
                 "university": 1,
                 "affiliated_to": None,
                 # "translations": {
-                #     "ar-AS": "مركز الإبداع الرقمي",
-                #     "ar-EG": "مركز الإبداع الرقمي",
+                #     "ar_AS": "مركز الإبداع الرقمي",
+                #     "ar_EG": "مركز الإبداع الرقمي",
                 # },
             },
         ]
@@ -84,7 +90,11 @@ class Command(BaseCommand):
                         pk=organization["organization_type"]
                     ),
                     name=organization["name"],
-                    logo=join(organizations_images_directory, f"{organization_id}.png"),
+                    image=join(
+                        "images",
+                        get_model_name_from_class(Organization),
+                        f"{organization_id}.png",
+                    ),
                     university=University.objects.get(pk=organization["university"]),
                 )
                 self.stdout.write(
@@ -92,11 +102,11 @@ class Command(BaseCommand):
                         f"Successfully insert {self.data} > {organization}"
                     )
                 )
-                organization_id = organization_id + 1
             except Exception as e:
                 self.stdout.write(
                     self.style.ERROR(
                         f"Failed insert {self.data} > {organization} , \n \t Error is: \t \t{e}"
                     )
                 )
+            organization_id = organization_id + 1
         self.stdout.write(self.style.WARNING(f"Finish Created initial {self.data}"))

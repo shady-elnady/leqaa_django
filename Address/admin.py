@@ -1,8 +1,9 @@
 from django.contrib.admin import ModelAdmin, register
 from django.db.models import JSONField
+from django.utils.safestring import mark_safe
 
-from Locale.widgets.myTranslation_json_widget import MyTranslationWidget
-from Address.models import Country, Governorate, City, State, Locality, Street, Address
+from Language.widgets.myTranslation_json_widget import MyTranslationWidget
+from Address.models import Country, Governorate, City, State, Locality, Street, Location
 
 from .forms import (
     CountryAdminForm,
@@ -11,7 +12,7 @@ from .forms import (
     StateAdminForm,
     LocalityAdminForm,
     StreetAdminForm,
-    AddressAdminForm,
+    LocationAdminForm,
 )
 
 # Register your models here.
@@ -20,11 +21,27 @@ from .forms import (
 @register(Country)
 class CountryAdmin(ModelAdmin):
     form = CountryAdminForm
-    formfield_overrides = {
-        JSONField: {
-            "widget": MyTranslationWidget,
-        },
-    }
+    list_display = ("name", "country_code", "show_flag")
+
+    def show_flag(self, obj: "Country"):
+        if obj.firebase_image_url:
+            return mark_safe(
+                f'<img src="{obj.firebase_image_url}" style="max-height: 50px;" />'
+            )
+        return "No flag"
+
+    show_flag.short_description = "Flag Preview"
+
+    class Media:
+        css = {
+            "all": (
+                "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",
+            )
+        }
+        js = (
+            "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js",
+            "admin/js/firebase_upload.js",  # We'll create this next
+        )
 
 
 @register(Governorate)
@@ -77,6 +94,6 @@ class StreetAdmin(ModelAdmin):
     }
 
 
-@register(Address)
-class AddressAdmin(ModelAdmin):
-    form = AddressAdminForm
+@register(Location)
+class LocationAdmin(ModelAdmin):
+    form = LocationAdminForm

@@ -4,30 +4,27 @@
 
 <link rel="stylesheet" href="{% static 'css/locale.css' %}" />
 
-<div class="dropdown" tab-index="0">
+<div class="dropdown" tab-index="0">  
   <button id="dropdown-btn"></button>
   <ul class="dropdown-content" id="dropdown-content"></ul>
   <script type="text/javascript">
     const dropdownBtn = document.getElementById("dropdown-btn");
     const dropdownContent = document.getElementById("dropdown-content");
     window.locales = [];
-
     
-    {% get_app_locales as appLocales %}
-      {% for appLocale in appLocales %}
+
+    {% for appLocale in app_locales %}
       window.locales.push({
         "language_name": `{{ appLocale.language_name }}`,
         "language_code": `{{ appLocale.language_code }}`,
         "language_is_bidir": `{{ appLocale.language_is_bidir }}`,
         "locale_code": `{{ appLocale.locale_code }}`,
         "locale_flag": getFlagSrc("US", `{{ appLocale.locale_flag }}`),
-      });
-        
+      });        
       {% endfor %}
-      
       setSelectedLocale(
         window.locales.find(
-          locale => locale.locale_code.toLowerCase() === `{{ LANGUAGE_CODE }}`.toLowerCase(),
+          locale => locale.locale_code.toLowerCase() === `{{ LANGUAGE_CODE }}`.replace('-', '_').toLowerCase(),
           ),
       );
 
@@ -49,7 +46,7 @@
         langName = appLocale.language_name;
       }
 
-      flagURL = getFlagSrc(appLocale.locale_code.split('-')[1], appLocale.locale_flag);
+      flagURL = getFlagSrc(appLocale.locale_code.split('_')[1], appLocale.locale_flag);
 
       dropdownContent.innerHTML = "";
   
@@ -67,7 +64,7 @@
           otherLangName = otherAppLocale.language_name;
         }
         
-        otherFlagURL = getFlagSrc(otherAppLocale.locale_code.split('-')[1], otherAppLocale.locale_flag);
+        otherFlagURL = getFlagSrc(otherAppLocale.locale_code.split('_')[1], otherAppLocale.locale_flag);
       
         const listEl = document.createElement("li");
         listEl.innerHTML = `${otherLangName}<img src="${otherFlagURL}" />`;
@@ -77,7 +74,7 @@
           setSelectedLocale(otherAppLocale);
           
           let location = window.location;
-          location.pathname = location.pathname.replace(location.pathname.split('/')[1], otherAppLocale.locale_code.toLowerCase());
+          location.pathname = location.pathname.replace(location.pathname.split('/')[1], otherAppLocale.locale_code.replace('_', '-').toLowerCase());
         });
         dropdownContent.appendChild(listEl);
       });

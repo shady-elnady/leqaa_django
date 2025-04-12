@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>
+      {% block title %}
+
+      {% endblock %}| Walsa
+    </title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+
+    <link rel="canonical" href="https://app-generator.dev/product/berry-dashboard/django/" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Berry is made using Bootstrap 5 design framework. Download the free admin template & use it for your project." />
+    <meta name="keywords" content="Berry, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Bootstrap Admin Template" />
+    <meta name="author" content="CodedThemes" />
+
+    {% include 'includes/styles.html' %}
+
+    {% block extrastyle %}
+
+    {% endblock %}
+  </head>
+  <body>
+    {% block loader %}
+      {% include 'includes/loader.html' %}
+    {% endblock %}
+    {% block header %}
+      {% include 'includes/navigation.html' %}
+    {% endblock %}
+    {% block sidebar %}
+      {% include 'includes/sidebar.html' %}
+    {% endblock %}
+    {% block content %}
+
+    {% endblock %}
+
+    {% block footer %}
+      {% include 'includes/footer.html' %}
+    {% endblock %}
+
+    {% include 'includes/scripts.html' %}
+
+    {% block extra_js %}
+
+    {% endblock %}
+    <script>
+      // Initialize Firebase (replace with your config)
+      const firebaseConfig = {
+        apiKey: 'AIzaSyAOQD6hoK5ECzMxFHdItTLceLKvu72PYz0',
+        authDomain: 'healthy-unit.firebaseapp.com',
+        databaseURL: 'https://healthy-unit-default-rtdb.firebaseio.com',
+        projectId: 'healthy-unit',
+        storageBucket: 'healthy-unit.appspot.com',
+        messagingSenderId: '590929307616',
+        appId: '1:590929307616:web:6603091065034b52332d85',
+        measurementId: 'G-3K32G8VXVT'
+      }
+      
+      firebase.initializeApp(firebaseConfig)
+      const auth = firebase.auth()
+      
+      // Add this to your admin's base template or create a custom admin template
+      // Then modify the upload code:
+      const file = e.target.files[0];
+      const storageRef = firebase.storage().ref();
+      const fileRef = storageRef.child('country_flags/' + file.name);
+
+      fileRef.put(file).then((snapshot) => {
+          return snapshot.ref.getDownloadURL();
+      }).then((downloadURL) => {
+          // Update the card with the new image
+          if (card) {
+              card.innerHTML = `
+                  <img src="${downloadURL}" class="card-img-top" style="max-height: 200px; object-fit: contain;">
+                  <div class="card-body">
+                      <h5 class="card-title">New Image</h5>
+                      <input
+                        type="file"
+                        name="{{ input.name }}"
+                        class="form-control"
+                        id="{{ input.id }}"
+                      />
+                  </div>
+              `;
+              
+              // Update the hidden URL field
+              const urlInput = document.querySelector('input[name="firebase_image_url"]');
+              if (urlInput) {
+                  urlInput.value = downloadURL;
+              }
+          }
+      }).catch((error) => {
+          console.error("Upload failed:", error);
+          // Show error message
+          if (card) {
+              card.innerHTML = `
+                  <div class="alert alert-danger">
+                      Upload failed: ${error.message}
+                      <input type="file" name="${input.name}" class="form-control mt-2" id="${input.id}">
+                  </div>
+              `;
+          }
+      });
+    </script>
+  </body>
+</html>

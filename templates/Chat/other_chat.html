@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+  <head>
+    <title>Chat</title>
+    <link rel="stylesheet" href="{% static 'Chat/css/other_chat.css' %}" />
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="chat-header">
+        <h2>Chat</h2>
+      </div>
+      <div class="chat-messages" id="chat-messages"></div>
+      <div class="chat-input-area">
+        <input type="text" id="message-input" placeholder="Type your message..." />
+        <button id="send-button">Send</button>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+    <script src="{% static 'Chat/js/other_chat.js' %}"></script>
+  </body>
+</html>

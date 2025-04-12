@@ -2,14 +2,14 @@ from rest_framework.serializers import HyperlinkedModelSerializer
 
 from Notification.models import Notification
 from User.api import UserSerializer
-from Event.api import EventSerializer
+from Category.api import CategorySerializer
 
 # Serializers define the API representation.
 
 
 class NotificationSerializer(HyperlinkedModelSerializer):
     user = UserSerializer(many=False)
-    event = EventSerializer(many=False)
+    category = CategorySerializer(many=False)
 
     class Meta:
         model = Notification
@@ -17,7 +17,7 @@ class NotificationSerializer(HyperlinkedModelSerializer):
             "url",
             "id",
             "user",
-            "event",
+            "category",
             "created_at",
             "last_updated",
         ]

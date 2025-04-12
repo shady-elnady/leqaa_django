@@ -1,12 +1,12 @@
 from django.core.management.base import BaseCommand
-from django.conf import settings
-from os.path import join, exists
-from os import makedirs
+from datetime import datetime
+from os.path import join
 
+from App.tools import get_model_name_from_class
 from User.models import User, UserAlbum, Profile
 from User.utils.enums import TITLES, GENDERS
 from Currency.models import Currency
-from Locale.models import Language
+from Language.models import Language
 
 
 class Command(BaseCommand):
@@ -16,25 +16,15 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.WARNING(f"Start {self.help}"))
 
-        IMAGES_ROOT = join(settings.MEDIA_ROOT, "images")
-
-        admins_albums_images_directory = join(IMAGES_ROOT, "Users Albums", "Admins")
-        if not exists(admins_albums_images_directory):
-            makedirs(admins_albums_images_directory)
-
-        admins_profile_images_directory = join(IMAGES_ROOT, "Avatars", "Admins")
-        if not exists(admins_profile_images_directory):
-            makedirs(admins_profile_images_directory)
-
         admins = [
             {
-                "username": "Admin",
+                "username": "الأدمن",
                 "email": "admin@g.com",
-                "password": "12345678",
+                "password": "password",
                 "Profile": {
-                    "full_name": "شادى رافت سعد",
+                    "full_name": "الأدمن الأول",
                     "national_id": "01222222222222",
-                    "birth_date": None,
+                    "birth_date": datetime(1982, 5, 11),
                     "title": TITLES.Doctor,
                     "gender": GENDERS.MALE,
                     "university_number": "01222222222222",
@@ -62,20 +52,20 @@ class Command(BaseCommand):
                     )
                 )
                 try:
-                    Profile.objects.update_or_create(
+                    profile, _ = Profile.objects.update_or_create(
                         user=admin_instance,
                         defaults={
-                            "avatar": join(
-                                admins_profile_images_directory,
-                                f"{admin_instance.id}.png",
-                            ),
                             "full_name": admin["Profile"]["full_name"],
                             "national_id": admin["Profile"]["national_id"],
-                            "birth_date": admin["Profile"]["birth_date"],
                             "title": admin["Profile"]["title"],
                             "gender": admin["Profile"]["gender"],
                             "university_number": admin["Profile"]["university_number"],
                             "is_graduate": admin["Profile"]["is_graduate"],
+                            "image": join(
+                                "images",
+                                get_model_name_from_class(Profile),
+                                f"{admin_instance.id}.png",
+                            ),
                             "currency": Currency.objects.get(
                                 pk=admin["Profile"]["currency"]
                             ),
@@ -85,6 +75,9 @@ class Command(BaseCommand):
                             "contact_info": admin["Profile"]["contact_info"],
                         },
                     )
+
+                    profile.birth_date_property = admin["Profile"]["birth_date"]
+                    profile.save()
                     self.stdout.write(
                         self.style.SUCCESS(
                             f"Successfully  Create AdminProfile with Name > {admin['username']}"
@@ -100,8 +93,9 @@ class Command(BaseCommand):
                     try:
                         UserAlbum.objects.create(
                             user=admin_instance,
-                            photo=join(
-                                admins_albums_images_directory,
+                            image=join(
+                                "images",
+                                get_model_name_from_class(UserAlbum),
                                 f"{admin_instance.id}",
                                 f"{id}.png",
                             ),

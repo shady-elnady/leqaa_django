@@ -11,31 +11,18 @@ class Command(BaseCommand):
             "countries_seeds",
             "governorates_seeds",
             "cities_seeds",
-            "capitals_seeds",
+            "states_seeds",
+            "localities_seeds",
+            "streets_seeds",
+            "locations_seeds",
         ]
-        for addressSeed in address_seeds:
+        for address_seed in address_seeds:
             try:
-                call_command(addressSeed)
-                self.stdout.write(self.style.SUCCESS(f"Successfully {addressSeed}"))
+                call_command(address_seed)
+                self.stdout.write(self.style.SUCCESS(f"Successfully {address_seed}"))
             except Exception as e:
                 self.stdout.write(
-                    self.style.ERROR(f"{addressSeed} Failed  \n \t \t Error is: {e}")
+                    self.style.ERROR(f"{address_seed} Failed  \n \t \t Error is: {e}")
                 )
-
-        # load_data = [
-        #     "countries.json",
-        #     "governorates.json",
-        #     "cities.json",
-        # ]
-        # for data in load_data:
-        #     try:
-        #         call_command("loaddata", data)
-        #         self.stdout.write(self.style.SUCCESS(f"Successfully {data} Load Data"))
-        #     except Exception as e:
-        #         self.stdout.write(
-        #             self.style.ERROR(
-        #                 f"Load Data Failed from {data} , \n \t Error is: \t \t{e}"
-        #             )
-        #         )
 
         self.stdout.write(self.style.WARNING("Finish Created Address Initial Data"))

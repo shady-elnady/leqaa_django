@@ -3,17 +3,19 @@ from rest_framework.serializers import (
     Serializer,
     ListField,
     ImageField,
+    ValidationError,
 )
 
-from Category.api import CategorySerializer
+from Address.api import LocationSerializer
+from App.fields import DateTimeDRFField
 from Event.models import Event, EventType, EventAlbum
-from Organization.api import (
-    CollegeSerializer,
-    OrganizationSerializer,
-    UniversitySerializer,
-)
-from Reservation.api import ReservationSerializer
-from User.api import LecturerSerializer
+
+# # Imports may needed
+# from django.utils.dateparse import parse_datetime
+# from Organization.api import (
+#     UniversitySerializer,
+# )
+# from Reservation.api import ReservationSerializer
 
 # Serializers define the API representation.
 
@@ -38,7 +40,7 @@ class EventAlbumSerializer(HyperlinkedModelSerializer):
             # "url",
             # "id",
             # "event",
-            "photo",
+            "image",
             "order",
             "created_at",
             "last_updated",
@@ -50,14 +52,12 @@ class MultipleImageEventAlbumSerializer(Serializer):
 
 
 class EventSerializer(HyperlinkedModelSerializer):
-    # event_type = EventTypeSerializer(many=False)
-    # category = CategorySerializer(many=False)
-    # lecturer = LecturerSerializer(many=False)
-    # college = CollegeSerializer(many=False)
-    # organizer = OrganizationSerializer(many=False)
-    university = UniversitySerializer(many=False, read_only=True)
-    EventPhotosAlbum = EventAlbumSerializer(many=True)
-    Reservations = ReservationSerializer(many=True, read_only=True)
+    # university = UniversitySerializer(many=False, read_only=True)
+    # EventPhotosAlbum = EventAlbumSerializer(many=True)
+    # Reservations = ReservationSerializer(many=True, read_only=True)
+    location = LocationSerializer(many=False, read_only=True)
+    start_date_time = DateTimeDRFField()
+    end_date_time = DateTimeDRFField()
 
     class Meta:
         model = Event
@@ -72,6 +72,7 @@ class EventSerializer(HyperlinkedModelSerializer):
             "university",
             "college",
             "organizer",
+            "location",
             "lecturer_financial_dues",
             "lecturer_financial_system",
             "event_paid_status",
@@ -87,3 +88,16 @@ class EventSerializer(HyperlinkedModelSerializer):
             "created_at",
             "last_updated",
         ]
+
+    def validate(self, data):
+        """Validate datetime logic at serializer level"""
+        start = data.get("start_date_time")
+        end = data.get("end_date_time")
+
+        if start and end and end <= start:
+            raise ValidationError(
+                {
+                    "end_date_time": "Must be after start date time",
+                },
+            )
+        return data

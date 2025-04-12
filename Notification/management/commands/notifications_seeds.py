@@ -1,8 +1,8 @@
 from django.core.management.base import BaseCommand
 
-from Notification.models import Notification
 from User.models import User
-from Event.models import Event
+from Category.models import Category
+from Notification.models import Notification
 
 
 class Command(BaseCommand):
@@ -16,27 +16,27 @@ class Command(BaseCommand):
         notifications = [
             {
                 "user": 1,
-                "event": 1,
+                "category": 1,
             },
             {
                 "user": 1,
-                "event": 2,
+                "category": 2,
             },
             {
                 "user": 1,
-                "event": 3,
+                "category": 3,
             },
             {
                 "user": 2,
-                "event": 1,
+                "category": 1,
             },
             {
                 "user": 2,
-                "event": 2,
+                "category": 2,
             },
             {
                 "user": 2,
-                "event": 3,
+                "category": 3,
             },
         ]
 
@@ -44,7 +44,7 @@ class Command(BaseCommand):
             try:
                 Notification.objects.create(
                     user=User.objects.get(pk=notification["user"]),
-                    event=Event.objects.get(pk=notification["event"]),
+                    category=Category.objects.get(pk=notification["category"]),
                 )
                 self.stdout.write(
                     self.style.SUCCESS(

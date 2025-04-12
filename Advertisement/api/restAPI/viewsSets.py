@@ -9,13 +9,14 @@ from rest_framework import filters
 import django_filters.rest_framework
 
 from Advertisement.models import Advertisement
+from Api.permissions import IsAdminOrReadOnlyForUser
 from .serializers import AdvertisementSerializer
 
 
 class AdvertisementViewSet(ModelViewSet):
     queryset = Advertisement.objects.all()
     serializer_class = AdvertisementSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsAdminOrReadOnlyForUser]
     authentication_classes = [
         TokenAuthentication,
         SessionAuthentication,

@@ -3,6 +3,7 @@ from django.conf import settings
 from os.path import join, exists
 from os import makedirs
 
+from App.tools import get_model_name_from_class
 from Event.models import EventType
 
 
@@ -12,44 +13,47 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
-        IMAGES_ROOT = join(settings.MEDIA_ROOT, "images")
-
-        event_types_images_directory = join(IMAGES_ROOT, "Event_Types")
-        if not exists(event_types_images_directory):
-            makedirs(event_types_images_directory)
+        if not exists(
+            join(settings.MEDIA_ROOT, "images", get_model_name_from_class(EventType))
+        ):
+            makedirs(
+                join(
+                    settings.MEDIA_ROOT, "images", get_model_name_from_class(EventType)
+                )
+            )
 
         event_types = [
             {
                 "name": "Occasions",
                 # "image": "images/Event_Types/1.png",
                 "translations": {
-                    "ar-AS": "مناسبات",
-                    "ar-EG": "مناسبات",
-                    "en-US": "Occasions",
-                    "fr-FR": "Occasions",
-                    "tr-TR": "Fırsatlar",
+                    "ar_AS": "مناسبات",
+                    "ar_EG": "مناسبات",
+                    "en_US": "Occasions",
+                    "fr_FR": "Occasions",
+                    "tr_TR": "Fırsatlar",
                 },
             },
             {
                 "name": "Courses",
                 # "image": "images/Event_Types/2.png",
                 "translations": {
-                    "ar-AS": "كورسات",
-                    "ar-EG": "كورسات",
-                    "en-US": "Courses",
-                    "fr-FR": "Cours",
-                    "tr-TR": "Kurslar",
+                    "ar_AS": "كورسات",
+                    "ar_EG": "كورسات",
+                    "en_US": "Courses",
+                    "fr_FR": "Cours",
+                    "tr_TR": "Kurslar",
                 },
             },
             {
                 "name": "Traning",
                 # "image": "images/Event_Types/3.png",
                 "translations": {
-                    "ar-AS": "تدريب",
-                    "ar-EG": "تدريب",
-                    "en-US": "Traning",
-                    "fr-FR": "Formation",
-                    "tr-TR": "Eğitim",
+                    "ar_AS": "تدريب",
+                    "ar_EG": "تدريب",
+                    "en_US": "Traning",
+                    "fr_FR": "Formation",
+                    "tr_TR": "Eğitim",
                 },
             },
         ]
@@ -58,7 +62,11 @@ class Command(BaseCommand):
             try:
                 EventType.objects.create(
                     name=event_type["name"],
-                    image=join(event_types_images_directory, f"{event_type_id}.png"),
+                    image=join(
+                        "images",
+                        get_model_name_from_class(EventType),
+                        f"{event_type_id}.png",
+                    ),
                     translations=event_type["translations"],
                 )
                 self.stdout.write(

@@ -1,9 +1,9 @@
 from django.db.models import TextChoices
-from django.utils.translation import gettext_lazy as _
+from App.messages import ChoicesMessages
 
 
 class RESERVATION_STATUS(TextChoices):
-    InitialzationReservation = "I", _("Initialzation Reservation")
-    CanceledReservation = "C", _("Canceled Reservation")
-    ConfirmedReservation = "R", _("Confirmed Reservation")
-    HoldReservation = "H", _("Hold Reservation")
+    InitializationReservation = "I", ChoicesMessages.INITIALIZATION_RESERVATION
+    CanceledReservation = "C", ChoicesMessages.CANCELED_RESERVATION
+    ConfirmedReservation = "R", ChoicesMessages.CONFIRMED_RESERVATION
+    HoldReservation = "H", ChoicesMessages.HOLD_RESERVATION

@@ -5,7 +5,7 @@ from rest_framework.authentication import (
 )
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.exceptions import NotFound
+from rest_framework.exceptions import NotFound, APIException
 from rest_framework.response import Response
 from rest_framework import status
 
@@ -204,9 +204,6 @@ class UserInterestsViewSet(ModelViewSet):
         return Interest.objects.filter(user=self.request.user)
 
     def perform_create(self, serializer):
-        print(100 * "*")
-        print(self.request.user.email)
-        print(100 * "*")
         if serializer.validated_data.get("user") is None:
             serializer.save(user=self.request.user)
         else:
@@ -239,28 +236,10 @@ class UserInterestsViewSet(ModelViewSet):
             raise NotFound("Interest not found")
 
 
-# class UserInterestsViewSet(mixins.ListModelMixin, GenericViewSet):
-#     serializer_class = InterestSerializer
-#     permission_classes = [IsAuthenticated]
-#     authentication_classes = [
-#         TokenAuthentication,
-#         SessionAuthentication,
-#         BasicAuthentication,
-#     ]
-
-#     def get_queryset(self):
-#         return Interest.objects.filter(user=self.request.user)
-
-#     def list(self, request, *args, **kwargs):
-#         queryset = self.get_queryset()
-#         serializer = self.get_serializer(queryset, many=True)
-#         return Response(serializer.data)
-
-
 class UserViewSet(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminUser]
     authentication_classes = [
         TokenAuthentication,
         SessionAuthentication,
@@ -341,25 +320,36 @@ class UserViewSet(ModelViewSet):
     #     return Response(serializer.data)
 
 
-"""
-    def post(
-        self,
-        request,
-    ):
-        username = request.data.get("username")
-        password = request.data.get("password")
-        user = authenticate(username=username, password=password)
-        if user:
-            return Response(
-                {
-                    "token": user.auth_token.key,
-                },
-            )
-        else:
-            return Response(
-                {
-                    "error": "Wrong Credentials",
-                },
-                status=status.HTTP_400_BAD_REQUEST,
-            )
-"""
+class MyAccountViewSet(ModelViewSet):
+    serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        # In this context, the queryset should only return the currently authenticated user.
+        # We don't want to list all users.
+        return [self.request.user]
+
+    def perform_create(self, serializer):
+        raise APIException("You need to register to create a user.")
+
+    def retrieve(self, request, *args, **kwargs):
+        try:
+            instance = self.get_queryset()[0]  # Get the single authenticated user
+            serializer = self.get_serializer(instance)
+            return Response(serializer.data)
+        except (
+            IndexError
+        ):  # If the queryset is empty (shouldn't happen with IsAuthenticated)
+            raise NotFound("User not found")
+
+    def update(self, request, *args, **kwargs):
+        # Prevent updating the user's account
+        raise APIException("You are not allowed to update your account.")
+
+    def destroy(self, request, *args, **kwargs):
+        # Prevent deleting the user's account
+        raise APIException("You are not allowed to delete your account.")
+
+    # You can optionally remove the default list functionality
+    def list(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)

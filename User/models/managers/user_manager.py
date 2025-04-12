@@ -1,6 +1,6 @@
 from django.contrib.auth.models import BaseUserManager
 from django.core.exceptions import ObjectDoesNotExist
-from django.utils.translation import gettext_lazy as _
+from App.messages import AuthMessages
 from django.utils.timezone import now
 from typing import TYPE_CHECKING, Any  # , Optional
 from django.db import transaction
@@ -25,7 +25,7 @@ class UserManager(BaseUserManager):
 
         for field_name, value in field_value_map.items():
             if not value:
-                raise ValueError(f"{_('The')} {field_name} {_('value must be set')}.")
+                raise ValueError(f"{field_name} {AuthMessages.REQUIRED}.")
 
         with transaction.atomic():
             user: User = self.model(
@@ -47,6 +47,7 @@ class UserManager(BaseUserManager):
         **extra_fields,
     ) -> "User":
         extra_fields.setdefault("is_active", True)
+        extra_fields.setdefault("email_verified_at", now())
         return self.create_user(username, email, password, user_type, **extra_fields)
 
     def create_admin(
@@ -78,4 +79,10 @@ class UserManager(BaseUserManager):
                 **extra_fields,
             )
         except ObjectDoesNotExist:
-            raise ValueError(_("User is Not Exist."))
+            raise ValueError(AuthMessages.USER_NOT_FOUND)
+
+    def delete(self, *args, **kwargs):
+        for user in self.all():
+            with transaction.atomic():
+                user.delete()  # Will roll back if either deletion fails
+        # Alternatively, you could implement bulk Firebase deletion here

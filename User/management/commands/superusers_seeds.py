@@ -1,12 +1,12 @@
 from django.core.management.base import BaseCommand
-from django.conf import settings
-from os.path import join, exists
-from os import makedirs
+from datetime import datetime
+from os.path import join
 
+from App.tools.get_model_name import get_model_name_from_class
 from User.models import User, UserAlbum, Profile
 from User.utils.enums import TITLES, GENDERS
 from Currency.models import Currency
-from Locale.models import Language
+from Language.models import Language
 
 
 class Command(BaseCommand):
@@ -16,29 +16,15 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.WARNING(f"Start {self.help}"))
 
-        IMAGES_ROOT = join(settings.MEDIA_ROOT, "images")
-
-        superusers_albums_images_directory = join(
-            IMAGES_ROOT, "Users Albums", "Super Users"
-        )
-        if not exists(superusers_albums_images_directory):
-            makedirs(superusers_albums_images_directory)
-
-        superusers_profile_images_directory = join(
-            IMAGES_ROOT, "Avatars", "Super Users"
-        )
-        if not exists(superusers_profile_images_directory):
-            makedirs(superusers_profile_images_directory)
-
         superusers = [
             {
-                "username": "Super User",
+                "username": "سوبريوزر",
                 "email": "superuser@g.com",
                 "password": "password",
                 "Profile": {
-                    "full_name": "شادى رافت سعد",
+                    "full_name": "سوبريوزر الأول",
                     "national_id": "02222222222222",
-                    "birth_date": None,
+                    "birth_date": datetime(1981, 5, 11),
                     "title": TITLES.Doctor,
                     "gender": GENDERS.MALE,
                     "university_number": "02222222222222",
@@ -62,25 +48,25 @@ class Command(BaseCommand):
                 )
                 self.stdout.write(
                     self.style.SUCCESS(
-                        f"Successfully  CreateSuper User with Name > {superuser['username']}"
+                        f"Successfully  Create Super User with Name > {superuser['username']}"
                     )
                 )
                 try:
-                    Profile.objects.update_or_create(
+                    profile, _ = Profile.objects.update_or_create(
                         user=superuser_instance,
                         defaults={
-                            "avatar": join(
-                                superusers_profile_images_directory,
-                                f"{superuser_instance.id}.png",
-                            ),
                             "full_name": superuser["Profile"]["full_name"],
                             "national_id": superuser["Profile"]["national_id"],
-                            "birth_date": superuser["Profile"]["birth_date"],
                             "title": superuser["Profile"]["title"],
                             "gender": superuser["Profile"]["gender"],
                             "university_number": superuser["Profile"][
                                 "university_number"
                             ],
+                            "image": join(
+                                "images",
+                                get_model_name_from_class(Profile),
+                                f"{str(superuser_instance.id)}.png",
+                            ),
                             "is_graduate": superuser["Profile"]["is_graduate"],
                             "currency": Currency.objects.get(
                                 pk=superuser["Profile"]["currency"]
@@ -91,6 +77,8 @@ class Command(BaseCommand):
                             "contact_info": superuser["Profile"]["contact_info"],
                         },
                     )
+                    profile.birth_date_property = superuser["Profile"]["birth_date"]
+                    profile.save()
                     self.stdout.write(
                         self.style.SUCCESS(
                             f"Successfully  Create Super User Profile with Name > {superuser['username']}"
@@ -106,8 +94,9 @@ class Command(BaseCommand):
                     try:
                         UserAlbum.objects.create(
                             user=superuser_instance,
-                            photo=join(
-                                superusers_albums_images_directory,
+                            image=join(
+                                "images",
+                                get_model_name_from_class(UserAlbum),
                                 f"{superuser_instance.id}",
                                 f"{id}.png",
                             ),
@@ -129,4 +118,5 @@ class Command(BaseCommand):
                         f"Failed Create Super User with Name > {superuser['username']} , \n \t Error is: \t \t{e}"
                     )
                 )
+                raise
         self.stdout.write(self.style.WARNING("Finish Initial Super Users Load Data"))

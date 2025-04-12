@@ -10,7 +10,7 @@ from rest_framework.permissions import IsAuthenticated
 
 import django_filters.rest_framework
 
-from Api.restAPI.permissions import IsAdminOrReadOnlyForUser
+from Api.permissions import IsAdminOrReadOnlyForUser
 from Category.models import Category
 from .serializers import CategorySerializer
 

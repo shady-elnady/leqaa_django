@@ -1,10 +1,10 @@
 from django.core.management.base import BaseCommand
-from django.conf import settings
-from os.path import join, exists
-from os import makedirs
+from datetime import datetime
+from os.path import join
 
+from App.tools.get_model_name import get_model_name_from_class
 from Currency.models import Currency
-from Locale.models import Language
+from Language.models import Language
 from User.models import User, UserAlbum, Profile
 from User.utils.enums import USERS_TYPES, TITLES, GENDERS
 
@@ -16,29 +16,17 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.WARNING(f"Start {self.help}"))
 
-        IMAGES_ROOT = join(settings.MEDIA_ROOT, "images")
-
-        lecturers_albums_images_directory = join(
-            IMAGES_ROOT, "Users Albums", "Lecturers"
-        )
-        if not exists(lecturers_albums_images_directory):
-            makedirs(lecturers_albums_images_directory)
-
-        lecturers_profile_images_directory = join(IMAGES_ROOT, "Avatars", "Lecturers")
-        if not exists(lecturers_profile_images_directory):
-            makedirs(lecturers_profile_images_directory)
-
         users = [
             {
-                "username": "Lecturer",
+                "username": "المحاضر",
                 "user_type": USERS_TYPES.Lecturer,
                 "email": "lecturer@g.com",
                 "mobile": "+201011111111",
                 "password": "password",
                 "Profile": {
-                    "full_name": "أحمد محمود محمد",
+                    "full_name": "المحاضر الأول",
                     "national_id": "11116111511111",
-                    "birth_date": None,
+                    "birth_date": datetime(1981, 5, 11),
                     "title": TITLES.Doctor,
                     "gender": GENDERS.MALE,
                     "university_number": "11116111511111",
@@ -68,13 +56,9 @@ class Command(BaseCommand):
                     )
                 )
                 try:
-                    Profile.objects.update_or_create(
+                    profile, _ = Profile.objects.update_or_create(
                         user=user_instance,
                         defaults={
-                            "avatar": join(
-                                lecturers_profile_images_directory,
-                                f"{user_instance.id}.png",
-                            ),
                             "national_id": user["Profile"]["national_id"],
                             "full_name": user["Profile"]["full_name"],
                             "birth_date": user["Profile"]["birth_date"],
@@ -82,6 +66,11 @@ class Command(BaseCommand):
                             "gender": user["Profile"]["gender"],
                             "university_number": user["Profile"]["university_number"],
                             "is_graduate": user["Profile"]["is_graduate"],
+                            "image": join(
+                                "images",
+                                get_model_name_from_class(Profile),
+                                f"{user_instance.id}.png",
+                            ),
                             "currency": Currency.objects.get(
                                 pk=user["Profile"]["currency"]
                             ),
@@ -91,6 +80,8 @@ class Command(BaseCommand):
                             "contact_info": user["Profile"]["contact_info"],
                         },
                     )
+                    profile.birth_date_property = user["Profile"]["birth_date"]
+                    profile.save()
                     self.stdout.write(
                         self.style.SUCCESS(
                             f"Successfully  Create Lecturer Profile with Name > {user['username']}"
@@ -106,8 +97,9 @@ class Command(BaseCommand):
                     try:
                         UserAlbum.objects.create(
                             user=user_instance,
-                            photo=join(
-                                lecturers_albums_images_directory,
+                            image=join(
+                                "images",
+                                get_model_name_from_class(UserAlbum),
                                 f"{user_instance.id}",
                                 f"{id}.png",
                             ),

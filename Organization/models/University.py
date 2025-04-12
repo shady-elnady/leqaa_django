@@ -1,20 +1,31 @@
 from django.db.models import EmailField
-from django.utils.translation import gettext_lazy as _
 
-from User.utils.usereMessages import UserMessages
-from Utils.models.BaseModel import BaseLogoModel
-from Locale.models.BaseTranslationModel import BaseTranslationModel
+from App.models import BaseImageModel
+from App.messages import ModelsMessages, FieldsMessages
+from Language.models.BaseTranslationModel import BaseTranslationModel
 
 # Create your models here.
 
 
-class University(BaseTranslationModel, BaseLogoModel):
+class University(BaseTranslationModel, BaseImageModel):
     email = EmailField(
         unique=True,
-        error_messages={"unique": UserMessages.EMAIL_UNIQUE_VALIDATION},
-        verbose_name=_("E-mail"),
+        verbose_name=FieldsMessages.EMAIL,
     )
 
+    #############################################################
+    ######################### Image Filed  ######################
+    #############################################################
+    @property
+    def logo(self):
+        return self.image
+
+    @logo.setter
+    def logo(self, value):
+        self.image = value
+
+    #############################################################
+
     class Meta:
-        verbose_name = _("UniversityType")
-        verbose_name_plural = _("University Types")
+        verbose_name = ModelsMessages.UNIVERSITY
+        verbose_name_plural = ModelsMessages.UNIVERSITIES

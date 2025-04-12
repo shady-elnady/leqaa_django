@@ -1,21 +1,34 @@
 from django.db.models import ForeignKey, CASCADE
-from django.utils.translation import gettext_lazy as _
 
-from Locale.models.BaseTranslationModel import BaseTranslationModel
+from App.models import BaseImageModel
+from App.messages import ModelsMessages
+from Language.models.BaseTranslationModel import BaseTranslationModel
 from .University import University
-from Utils.models.BaseModel import BaseLogoModel
 
 # Create your models here.
 
 
-class College(BaseTranslationModel, BaseLogoModel):
+class College(BaseTranslationModel, BaseImageModel):
     university = ForeignKey(
         University,
         on_delete=CASCADE,
-        related_name=_("Colleges"),
-        verbose_name=_("University"),
+        related_name="Colleges",
+        verbose_name=ModelsMessages.UNIVERSITY,
     )
 
+    #############################################################
+    ######################### Image Filed  ######################
+    #############################################################
+    @property
+    def logo(self):
+        return self.image
+
+    @logo.setter
+    def logo(self, value):
+        self.image = value
+
+    #############################################################
+
     class Meta:
-        verbose_name = _("College")
-        verbose_name_plural = _("Colleges")
+        verbose_name = ModelsMessages.COLLEGE
+        verbose_name_plural = ModelsMessages.COLLEGES

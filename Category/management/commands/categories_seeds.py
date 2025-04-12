@@ -3,6 +3,7 @@ from django.conf import settings
 from os.path import join, exists
 from os import makedirs
 
+from App.tools import get_model_name_from_class
 from Category.models import Category
 
 
@@ -14,91 +15,95 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.WARNING(f"Start {self.help}"))
 
-        IMAGES_ROOT = join(settings.MEDIA_ROOT, "images")
-
-        categories_images_directory = join(IMAGES_ROOT, "Categories")
-        if not exists(categories_images_directory):
-            makedirs(categories_images_directory)
-
+        if not exists(
+            join(settings.MEDIA_ROOT, "images", get_model_name_from_class(Category))
+        ):
+            makedirs(
+                join(
+                    settings.MEDIA_ROOT,
+                    "images",
+                    get_model_name_from_class(Category),
+                )
+            )
         categories = [
             {
                 "name": "Agriculture",
                 "translations": {
-                    "en-US": "Agriculture",
-                    "ar-AS": "الزراعه",
-                    "ar-EG": "الزراعه",
-                    "fr-FR": "Agriculture",
-                    "tr-TR": "Tarım",
+                    "en_US": "Agriculture",
+                    "ar_AS": "الزراعه",
+                    "ar_EG": "الزراعه",
+                    "fr_FR": "Agriculture",
+                    "tr_TR": "Tarım",
                 },
             },
             {
                 "name": "Law",
                 "translations": {
-                    "en-US": "Law",
-                    "ar-AS": "القانون",
-                    "ar-EG": "القانون",
-                    "fr-FR": "la Loi",
-                    "tr-TR": "Huku",
+                    "en_US": "Law",
+                    "ar_AS": "القانون",
+                    "ar_EG": "القانون",
+                    "fr_FR": "la Loi",
+                    "tr_TR": "Huku",
                 },
             },
             {
                 "name": "Engineering",
                 "translations": {
-                    "en-US": "Engineering",
-                    "ar-AS": "الهندسه",
-                    "ar-EG": "الهندسه",
-                    "fr-FR": "Ingénierie",
-                    "tr-TR": "Mühendislik",
+                    "en_US": "Engineering",
+                    "ar_AS": "الهندسه",
+                    "ar_EG": "الهندسه",
+                    "fr_FR": "Ingénierie",
+                    "tr_TR": "Mühendislik",
                 },
             },
             {
                 "name": "Sports",
                 "translations": {
-                    "en-US": "Sports",
-                    "ar-AS": "الرياضه",
-                    "ar-EG": "الرياضه",
-                    "fr-FR": "Sportif",
-                    "tr-TR": "Spor",
+                    "en_US": "Sports",
+                    "ar_AS": "الرياضه",
+                    "ar_EG": "الرياضه",
+                    "fr_FR": "Sportif",
+                    "tr_TR": "Spor",
                 },
             },
             {
                 "name": "Technology",
                 "translations": {
-                    "en-US": "Technology",
-                    "ar-AS": "التكنولوجيا",
-                    "ar-EG": "التكنولوجيا",
-                    "fr-FR": "Technologie",
-                    "tr-TR": "Teknoloji",
+                    "en_US": "Technology",
+                    "ar_AS": "التكنولوجيا",
+                    "ar_EG": "التكنولوجيا",
+                    "fr_FR": "Technologie",
+                    "tr_TR": "Teknoloji",
                 },
             },
             {
                 "name": "Entrepreneurship",
                 "translations": {
-                    "en-US": "Entrepreneurship",
-                    "ar-AS": "ريادة أعمال",
-                    "ar-EG": "ريادة أعمال",
-                    "fr-FR": "Entrepreneuriat",
-                    "tr-TR": "Girişimcilik",
+                    "en_US": "Entrepreneurship",
+                    "ar_AS": "ريادة أعمال",
+                    "ar_EG": "ريادة أعمال",
+                    "fr_FR": "Entrepreneuriat",
+                    "tr_TR": "Girişimcilik",
                 },
             },
             {
                 "name": "Science",
                 "translations": {
-                    "en-US": "Science",
-                    "ar-AS": "العلوم",
-                    "ar-EG": "العلوم",
-                    "fr-FR": "les Sciences",
-                    "tr-TR": "Bilim",
+                    "en_US": "Science",
+                    "ar_AS": "العلوم",
+                    "ar_EG": "العلوم",
+                    "fr_FR": "les Sciences",
+                    "tr_TR": "Bilim",
                 },
             },
             {
                 "name": "Health",
                 "translations": {
-                    "en-US": "Health",
-                    "ar-AS": "الصحه",
-                    "ar-EG": "الصحه",
-                    "fr-FR": "Santé",
-                    "tr-TR": "Sağlık",
+                    "en_US": "Health",
+                    "ar_AS": "الصحه",
+                    "ar_EG": "الصحه",
+                    "fr_FR": "Santé",
+                    "tr_TR": "Sağlık",
                 },
             },
         ]
@@ -107,7 +112,11 @@ class Command(BaseCommand):
             try:
                 Category.objects.create(
                     name=category["name"],
-                    image=join(categories_images_directory, f"{category_id}.png"),
+                    image=join(
+                        "images",
+                        get_model_name_from_class(Category),
+                        f"{category_id}.png",
+                    ),
                     translations=category["translations"],
                 )
                 self.stdout.write(

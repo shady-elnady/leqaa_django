@@ -1,32 +1,50 @@
 from django.urls import path
-from .restAPI import (
-    EMailVerifyAPIView,
+from Api.views import (
     LogInAPIView,
     LogOutAPIView,
-    CustomAuthToken,
-    PasswordReset,
-    ResetPasswordAPI,
+    PasswordResetAPIView,
+    ForgotPasswordAPIView,
+    VeifyEmailByOTPAPIView,
+    MobileVerificationAPIView,
+    VerifyEmailByURLAPIView,
 )
 
-# from rest_framework.authtoken import views
+from Firebase.api import FirebaseLogInByIdTokenAPIView
 
 app_name = "Api"
 
 urlpatterns = [
-    path("email-verify/", EMailVerifyAPIView.as_view(), name="apiEmailVerify"),
-    path("log-in/", LogInAPIView.as_view(), name="apiLogIn"),
-    path("log-out/", LogOutAPIView.as_view(), name="apiLogOut"),
-    # path("token-auth/", views.obtain_auth_token, name="tokenAuth"),
-    path("token-auth/", CustomAuthToken.as_view(), name="tokenAuth"),
+    path("log-in/", LogInAPIView.as_view(), name="api_log_in"),
+    path(
+        "firebase-log-in-by-id-token/",
+        FirebaseLogInByIdTokenAPIView.as_view(),
+        name="firebase_log_in_by_id_token",
+    ),
+    path(
+        "verify-email-by-otp/",
+        VeifyEmailByOTPAPIView.as_view(),
+        name="verify_email_by_otp",
+    ),
+    path(
+        "verify-email-by-url/",
+        VerifyEmailByURLAPIView.as_view(),
+        name="verify_email_by_url",
+    ),
+    path(
+        "mobile-verification/",
+        MobileVerificationAPIView.as_view(),
+        name="verify_mobile",
+    ),
+    path("log-out/", LogOutAPIView.as_view(), name="api_log_out"),
     path(
         "forgot-password",
-        PasswordReset.as_view(),
-        name="forgotPassword",
+        ForgotPasswordAPIView.as_view(),
+        name="forgot_password",
     ),
     path(
         "password-reset/<str:encoded_pk>/<str:token>/",
-        ResetPasswordAPI.as_view(),
-        name="resetPassword",
+        PasswordResetAPIView.as_view(),
+        name="password_reset",
     ),
 ]
 

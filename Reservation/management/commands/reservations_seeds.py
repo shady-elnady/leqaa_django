@@ -18,7 +18,7 @@ class Command(BaseCommand):
             {
                 "user": 1,
                 "event": 1,
-                "reservation_status": RESERVATION_STATUS.InitialzationReservation,
+                "reservation_status": RESERVATION_STATUS.InitializationReservation,
                 "rating": 4.5,
                 "canceled_reason": None,
                 "comment": "comment",

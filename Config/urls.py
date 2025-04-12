@@ -18,16 +18,15 @@ Including another URLconf
 from django import get_version
 from django.contrib import admin
 from django.urls import path, include  # , re_path
-from django.utils.translation import gettext_lazy as _  # noqa: F401
 from django.conf.urls.i18n import i18n_patterns
 from django.views.i18n import JavaScriptCatalog
 from django.views.decorators.cache import cache_page
 from django.conf.urls.static import static
 from django.conf import settings
-import debug_toolbar
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+import debug_toolbar
 
-from Api.restAPI.routes.router import router
+from Api.routes import router
 
 
 api_version = "v1"
@@ -37,15 +36,24 @@ urlpatterns = [
         f"{api_version}/i18n/", include("django.conf.urls.i18n")
     ),  # for Multi Languages & Translation
     # Rest_Fram_Work
+    path("", include("event_master.urls", namespace="event_master")),
+    path("event/", include("Event.urls", namespace="Event")),
     path("api/", include("Api.urls", namespace="Api")),
     path(
         "api/",
         include(router.urls),
     ),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
+    path("user/", include("User.urls", namespace="User")),
+    path("api/notification/", include("Notification.urls", namespace="Notification")),
 ]
 
 urlpatterns += i18n_patterns(
+    # # Admin
+    path("admin/", admin.site.urls),
+    # # Dashboard Custom
+    # path("", include("admin_berry.urls")),
+    # path("admin_berry/", include("admin_berry.urls", namespace="admin_berry")),
     path(
         "jsi18n/",
         cache_page(86400, key_prefix="jsi18n-%s" % get_version())(
@@ -55,19 +63,16 @@ urlpatterns += i18n_patterns(
     ),
     # path("", include("django.contrib.auth.urls")), # include all auth views
     # path("", include("Logs.urls", namespace="Logs")),
-    path("", include("User.urls", namespace="User")),
     # path(
     #     "templated_email",
     #     include("templated_email.urls", namespace="templated_email"),
     # ),
-    # Admin
-    path("admin/", admin.site.urls),
-    # debug toolbar URLS
+    # # debug toolbar URLS
     path("__debug__/", include(debug_toolbar.urls)),
+    # prefix_default_language=False,  # Don't prefix default language URLs
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += staticfiles_urlpatterns()
 
 

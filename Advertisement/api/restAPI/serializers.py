@@ -12,7 +12,7 @@ class AdvertisementSerializer(HyperlinkedModelSerializer):
             "url",
             "id",
             "title",
-            "url",
+            "advertisement_url",
             "description",
             "image",
             "created_at",

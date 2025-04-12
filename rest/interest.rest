@@ -8,8 +8,8 @@ Content-Type: application/json
 Accept-Language: en
 
 {
-    "email": "s@s.com",
-    "password": "shady123456789"
+    "email": "superuser@g.com",
+    "password": "password"
 }
 
 > {%
@@ -22,12 +22,12 @@ Accept-Language: en
 ###
 # @name GetAllUserInterests
 GET http://127.0.0.1:8000/api/user/my-interests/
-Authorization: Token e1e9a29bb197299157f210169cee2b800622de9f
+Authorization: Token {{ authToken }}
 
 ###
 # @name GetOneUserInterest
 GET http://127.0.0.1:8000/api/user/my-interests/5
-Authorization: Token e1e9a29bb197299157f210169cee2b800622de9f
+Authorization: Token {{ authToken }}
 
 ###
 # @name AddToUserInterests
@@ -35,7 +35,7 @@ POST http://127.0.0.1:8000/api/user/my-interests/
 Content-Type: application/json
 Accept: application/json
 Accept-Language: en
-Authorization: Token e1e9a29bb197299157f210169cee2b800622de9f
+Authorization: Token {{ authToken }}
 
 {
   "category": "http://127.0.0.1:8000/api/categories/2/",
@@ -47,7 +47,7 @@ PUT http://127.0.0.1:8000/api/user/my-interests/6/
 Content-Type: application/json
 Accept: application/json
 Accept-Language: en
-Authorization: Token e1e9a29bb197299157f210169cee2b800622de9f
+Authorization: Token {{ authToken }}
 
 {
   "category": "http://127.0.0.1:8000/api/categories/6/",
@@ -59,7 +59,7 @@ DELETE http://127.0.0.1:8000/api/user/my-interests/6/
 Content-Type: application/json
 Accept: application/json
 Accept-Language: en
-Authorization: Token e1e9a29bb197299157f210169cee2b800622de9f
+Authorization: Token {{ authToken }}
 
 
 ###

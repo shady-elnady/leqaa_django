@@ -1,0 +1,41 @@
+/* Import variables first */
+@import url('./vars.css');
+
+/* Apply variables to key elements */
+#header {
+    background: var(--header-bg) !important;
+}
+
+.module h2,
+.selector-chosen h2 {
+    background: var(--primary) !important;
+}
+
+a:link,
+a:visited {
+    color: var(--link-color);
+}
+
+.button,
+input[type="submit"] {
+    background: var(--primary);
+}
+
+.button.default {
+    background: var(--accent);
+}
+
+/* Change the logo */
+#header #branding h1 img {
+    height: 40px;
+    /* Adjust size */
+    width: auto;
+    content: url('/static/event_master/assets/img/logo/logo2_footer.png');
+    /* Your logo path */
+}
+
+/* Optional: Hide the default "Django Administration" text */
+#header #branding h1 {
+    color: transparent;
+    font-size: 0;
+}

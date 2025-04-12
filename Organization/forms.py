@@ -19,7 +19,7 @@ class CollegeAdminForm(ModelForm):
         fields = [
             "id",
             "name",
-            "logo",
+            "image",
             "university",
             "translations",
         ]
@@ -31,7 +31,7 @@ class UniversityAdminForm(ModelForm):
         fields = [
             "id",
             "name",
-            "logo",
+            "image",
             "email",
             "translations",
         ]

@@ -2,9 +2,9 @@ from django.db.models import (
     ForeignKey,
     CASCADE,
 )
-from django.utils.translation import gettext_lazy as _
 
-from Utils.models.BaseModel import BaseModel
+from App.models.base_models import BaseModel
+from App.messages import ModelsMessages
 from User.models import User
 from Event.models import Event
 
@@ -15,14 +15,14 @@ class Favorite(BaseModel):
     user = ForeignKey(
         User,
         on_delete=CASCADE,
-        related_name=_("Favorites"),
-        verbose_name=_("User"),
+        related_name="Favorites",
+        verbose_name=ModelsMessages.USER,
     )
     event = ForeignKey(
         Event,
         on_delete=CASCADE,
-        related_name=_("Favorites"),
-        verbose_name=_("Event"),
+        related_name="Favorites",
+        verbose_name=ModelsMessages.EVENT,
     )
 
     def __str__(self) -> str:
@@ -32,5 +32,5 @@ class Favorite(BaseModel):
         return f"{self.pk}- {self.user.username}({self.event.title})"
 
     class Meta:
-        verbose_name = _("Favorite")
-        verbose_name_plural = _("Favorites")
+        verbose_name = ModelsMessages.FAVORITE
+        verbose_name_plural = ModelsMessages.FAVORITES

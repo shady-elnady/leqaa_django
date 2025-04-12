@@ -1,17 +1,15 @@
-from rest_framework.authtoken.models import Token
-from django.db.models.signals import post_save
 from django.dispatch import receiver
-from django.template.loader import render_to_string
-from django.core.mail import send_mail
-from django.conf import settings
+from django.db.models.signals import post_save
+from rest_framework.authtoken.models import Token
 
 from User.models import User, Profile, Lecturer, Student
 from User.utils.enums import USERS_TYPES
+from App.helpers import send_my_email
 
 
 ## Signal to Create Profile for each new User
 @receiver(post_save, sender=User)
-def create_signal(sender, instance: User, created: bool, **kwargs):
+def create_user_profile_signal(sender, instance: "User", created: bool, **kwargs):
     if created:
         Token.objects.create(user=instance)
 
@@ -20,45 +18,22 @@ def create_signal(sender, instance: User, created: bool, **kwargs):
         elif instance.user_type == USERS_TYPES.Lecturer:
             Lecturer.objects.create(user=instance)
 
-        if not hasattr(instance, "Profile"):
-            Profile.objects.create(user=instance)
-            instance.Profile.save()
+        # Save Profile if Not Exist
+        Profile.objects.create(user=instance)
+        instance.Profile.save()
 
-        if not instance.email_verified_at:
-
-            message = instance.otp
-            # Add the message to render_to_string to use it in template
-            notice_html = render_to_string("emails/verify-email.html", {"otp": message})
-
-            send_mail(
+        if instance.email and not instance.email_verified_at:
+            send_my_email(
                 subject="Verify Your E-Mail",
-                message=message,
+                plain_message=instance.otp,
                 recipient_list=[instance.email],
-                from_email=settings.EMAIL_HOST_USER,
-                fail_silently=False,
-                html_message=notice_html,
+                template_name="emails/verify-email.html",
+                context={
+                    "otp": instance.otp,
+                    "verification_url": instance.get_email_verification_url(),  # Removed request
+                    "our_facebook_account_ulr": "https://www.facebook.com/",
+                    "our_twitter_account_ulr": "https://x.com/i/flow/login",
+                    "our_instagram_account_ulr ": "https://www.instagram.com/accounts/login/?hl=en",
+                    "our_linkedin_account_ulr  ": "https://www.linkedin.com/feed/",
+                },
             )
-
-
-"""
-
-    from django.core.mail import EmailMultiAlternatives, get_connection
-
-    # By default fail_silently is already False
-    connection = get_connection(fail_silently=False)
-
-    message = "A curated message based on the design the customer purchased."
-    notice_html = render_to_string('MY_app/email-template.html', { "message": message })
-    subject = 'Your New Design Confirmation'
-
-    email = EmailMultiAlternatives(
-        subject=subject,
-        body=message,
-        from_email=from_email
-        to=recipient_list,
-        connection=connection
-    )
-    email.attach_alternative(notice_html, "text/html")
-    email.send()
-
-"""

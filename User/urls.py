@@ -1,5 +1,7 @@
 from django.urls import path
 
+from . import views
+
 
 app_name = "User"
 
@@ -12,6 +14,8 @@ urlpatterns = [
     #     StudentRegistrationView.as_view(),
     #     name="student-registration",
     # ),
+    # path("api/fire-log-in/", views.login_view, name="login"),
+    path("fire-log-in/", views.login_page, name="login_page"),  # for the html page
 ]
 
 

@@ -1,12 +1,13 @@
 from django.core.management.base import BaseCommand
-from django.conf import settings
-from os.path import join, exists
-from os import makedirs
+from datetime import datetime
+from os.path import join
 
-from User.models import User, UserAlbum, Profile
+from App.tools import get_model_name_from_class
+from Category.models import Category
+from User.models import User, UserAlbum, Profile, Interest
 from User.utils.enums import USERS_TYPES, TITLES, GENDERS
 from Currency.models import Currency
-from Locale.models import Language
+from Language.models import Language
 
 
 class Command(BaseCommand):
@@ -16,27 +17,17 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.WARNING(f"Start {self.help}"))
 
-        IMAGES_ROOT = join(settings.MEDIA_ROOT, "images")
-
-        students_albums_images_directory = join(IMAGES_ROOT, "Users Albums", "Students")
-        if not exists(students_albums_images_directory):
-            makedirs(students_albums_images_directory)
-
-        students_profile_images_directory = join(IMAGES_ROOT, "Avatars", "Students")
-        if not exists(students_profile_images_directory):
-            makedirs(students_profile_images_directory)
-
         users = [
             {
-                "username": "Student",
+                "username": "طالب",
                 "user_type": USERS_TYPES.Student,
                 "email": "student@g.com",
                 "mobile": "+201022222222",
-                "password": "password",
+                "password": "password12345678",
                 "Profile": {
-                    "full_name": "طارق أحمد محمود الجيد",
+                    "full_name": "الطالب الأول",
                     "national_id": "22222222422222",
-                    "birth_date": None,
+                    "birth_date": datetime(1982, 5, 11),
                     "title": TITLES.Student,
                     "gender": GENDERS.MALE,
                     "university_number": "22222222422222",
@@ -49,6 +40,10 @@ class Command(BaseCommand):
                         "lng": 4.33333,
                     },
                 },
+                "interesting_notifiable_categories": [
+                    1,
+                    2,
+                ],
             },
         ]
         for user in users:
@@ -65,14 +60,12 @@ class Command(BaseCommand):
                         f"Successfully  Create User with Name > {user['username']}"
                     )
                 )
+
+                ##################################### User Profile ########################################
                 try:
-                    Profile.objects.update_or_create(
+                    profile, _ = Profile.objects.update_or_create(
                         user=user_instance,
                         defaults={
-                            "avatar": join(
-                                students_profile_images_directory,
-                                f"{user_instance.id}.png",
-                            ),
                             "full_name": user["Profile"]["full_name"],
                             "national_id": user["Profile"]["national_id"],
                             "birth_date": user["Profile"]["birth_date"],
@@ -80,6 +73,11 @@ class Command(BaseCommand):
                             "gender": user["Profile"]["gender"],
                             "university_number": user["Profile"]["university_number"],
                             "is_graduate": user["Profile"]["is_graduate"],
+                            "image": join(
+                                "images",
+                                get_model_name_from_class(Profile),
+                                f"{str(user_instance.uid)}.png",
+                            ),
                             "currency": Currency.objects.get(
                                 pk=user["Profile"]["currency"]
                             ),
@@ -89,6 +87,9 @@ class Command(BaseCommand):
                             "contact_info": user["Profile"]["contact_info"],
                         },
                     )
+                    profile.birth_date_property = user["Profile"]["birth_date"]
+                    profile.save()
+
                     self.stdout.write(
                         self.style.SUCCESS(
                             f"Successfully  Create Student Profile with Name > {user['username']}"
@@ -100,12 +101,36 @@ class Command(BaseCommand):
                             f"Failed Create Student Profile with Name > {user['username']} , \n \t Error is: \t \t{e}"
                         )
                     )
+                ##################################### interesting_notifiable_categories ########################################
+                for category_id in user["interesting_notifiable_categories"]:
+                    try:
+                        Interest.objects.update_or_create(
+                            user=user_instance,
+                            defaults={
+                                "category": Category.objects.get(pk=category_id),
+                                "is_notifiable": True,
+                            },
+                        )
+                        self.stdout.write(
+                            self.style.SUCCESS(
+                                f"Successfully  Create Student Interest with Name > {user['username']}"
+                            )
+                        )
+                    except Exception as e:
+                        self.stdout.write(
+                            self.style.ERROR(
+                                f"Failed Create Student Interest with Name > {user['username']} , \n \t Error is: \t \t{e}"
+                            )
+                        )
+
+                ##################################### User Album ########################################
                 for id in range(1, 3):
                     try:
                         UserAlbum.objects.create(
                             user=user_instance,
-                            photo=join(
-                                students_albums_images_directory,
+                            image=join(
+                                "images",
+                                get_model_name_from_class(UserAlbum),
                                 f"{user_instance.id}",
                                 f"{id}.png",
                             ),

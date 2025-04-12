@@ -2,7 +2,7 @@ from rest_framework.serializers import HyperlinkedModelSerializer, SerializerMet
 from django.utils.translation import get_language
 
 from Currency.models import Currency
-from Locale.api.restAPI.base.serializer import BaseTranslationsSerializer
+from Language.api.restAPI.base.serializer import BaseTranslationsSerializer
 
 # Serializers define the API representation.
 

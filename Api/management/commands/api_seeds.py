@@ -6,10 +6,14 @@ class Command(BaseCommand):
     help = "Creates initial models"
     commands = [
         ## Base Commands
+        "clearsessions",
         "cleanproject_seeds",
+        "clean_fire_storage_seeds",
+        "clean_fire_users_seeds",
         "makemigrations",
         "migrate",
-        "collectstatic",
+        # "collectstatic",
+        "collectstatic --noinput --clear",
         ## Load Data Commands
         "languages_seeds",
         "currencies_seeds",

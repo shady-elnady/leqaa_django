@@ -1,0 +1,3032 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-10 21:50+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Arabic (Egypt) <ar_EG@li.org>\n"
+"Language: ar_EG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+msgid "Your old password was entered incorrectly. Please enter it again."
+msgstr "كلمة المرور القديمة التي أدخلتها غير صحيحة. يرجى إدخالها مرة أخرى."
+
+msgid "Invalid value"
+msgstr "قيمة غير صالحة"
+
+msgid "This URL is Post Request To Register "
+msgstr "هذا الرابط هو طلب POST للتسجيل"
+
+msgid "Database or Temporary authentication system issue"
+msgstr "مشكلة في قاعدة البيانات أو نظام المصادقة المؤقت"
+
+msgid ""
+"User Registered successfully. Verification Code sent to (Mobile ~ E-Mail)."
+msgstr "تم تسجيل المستخدم بنجاح. تم إرسال رمز التحقق إلى (الجوال ~ البريد الإلكتروني)."
+
+msgid "Registration Failed "
+msgstr "فشل التسجيل"
+
+msgid "Invalid registration Data"
+msgstr "بيانات تسجيل غير صالحة"
+
+msgid "User Already Exists"
+msgstr "المستخدم موجود بالفعل"
+
+msgid ""
+"Registration complete but verification email failed. Please contact support."
+msgstr "تم التسجيل ولكن فشل إرسال بريد التحقق. يرجى الاتصال بالدعم."
+
+msgid "Sign In Successfully."
+msgstr "تم تسجيل الدخول بنجاح."
+
+msgid "Failed Sign In.Error is >> "
+msgstr "فشل تسجيل الدخول. الخطأ هو >> "
+
+msgid "Account Not Found."
+msgstr "الحساب غير موجود."
+
+msgid "Incorrect Password"
+msgstr "كلمة مرور غير صحيحة"
+
+msgid "Please Verfy Your Account before logging in."
+msgstr "يرجى التحقق من حسابك قبل تسجيل الدخول."
+
+msgid "Sign Out Successfully."
+msgstr "تم تسجيل الخروج بنجاح."
+
+msgid "Error occurred during logout"
+msgstr "حدث خطأ أثناء تسجيل الخروج"
+
+msgid "Password Reset E-Mail sent if account exists"
+msgstr "تم إرسال بريد إعادة تعيين كلمة المرور إذا كان الحساب موجودًا"
+
+msgid "Failed Reset Password .Error is >> "
+msgstr "فشل إعادة تعيين كلمة المرور. الخطأ هو >> "
+
+msgid "Passwords do not match"
+msgstr "كلمات المرور غير متطابقة"
+
+msgid "Invalid Password Reset link"
+msgstr "رابط إعادة تعيين كلمة المرور غير صالح"
+
+msgid "Token Invalid or Expired"
+msgstr "الرمز غير صالح أو منتهي الصلاحية"
+
+msgid "Password Reset Successfully."
+msgstr "تم إعادة تعيين كلمة المرور بنجاح."
+
+msgid "Password Reset failed"
+msgstr "فشل إعادة تعيين كلمة المرور"
+
+msgid "Password must be at least 8 characters"
+msgstr "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل"
+
+msgid "Password must contain at least one number"
+msgstr "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل"
+
+msgid "Password must contain at least one uppercase letter"
+msgstr "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل"
+
+msgid "Invalid Credentials Error"
+msgstr "خطأ في بيانات الاعتماد غير الصالحة"
+
+msgid "Email verified successfully"
+msgstr "تم التحقق من البريد الإلكتروني بنجاح"
+
+msgid "Invalid verification code"
+msgstr "رمز تحقق غير صالح"
+
+msgid "Error verifying email"
+msgstr "خطأ في التحقق من البريد الإلكتروني"
+
+msgid "Validation error"
+msgstr "خطأ في التحقق"
+
+msgid "Verification code has expired"
+msgstr "انتهت صلاحية رمز التحقق"
+
+msgid "Email is already verified"
+msgstr "تم التحقق من البريد الإلكتروني بالفعل"
+
+msgid "Mobile verified successfully"
+msgstr "تم التحقق من الجوال بنجاح"
+
+msgid "Mobile must include country code (+XX...)"
+msgstr "يجب أن يتضمن رقم الجوال رمز الدولة (+XX...)"
+
+msgid "Invalid verification token"
+msgstr "رمز تحقق غير صالح"
+
+msgid "Mobile verification failed"
+msgstr "فشل التحقق من الجوال"
+
+msgid "This mobile number is already associated with another account"
+msgstr "رقم الجوال هذا مرتبط بالفعل بحساب آخر"
+
+msgid "Try Again"
+msgstr "حاول مرة أخرى"
+
+msgid "Correct"
+msgstr "صحيح"
+
+msgid "Topic Subscription"
+msgstr "اشتراك في الموضوع"
+
+msgid "Permission Denied"
+msgstr "تم رفض الإذن"
+
+msgid "Firebase User"
+msgstr "مستخدم Firebase"
+
+msgid "Firebase Admin"
+msgstr "مسؤول Firebase"
+
+msgid "Firebase authentication error"
+msgstr "خطأ في مصادقة Firebase"
+
+msgid "Firebase Image URL"
+msgstr "رابط صورة Firebase"
+
+msgid "Claims"
+msgstr "مطالبات"
+
+msgid "System temporarily unavailable. Please try again later."
+msgstr "النظام غير متاح مؤقتًا. يرجى المحاولة مرة أخرى لاحقًا."
+
+msgid "Error revoking Firebase session"
+msgstr "خطأ في إلغاء جلسة Firebase"
+
+msgid "Resource already exists"
+msgstr "الموجود موجود بالفعل"
+
+msgid "Resource not found"
+msgstr "الموجود غير موجود"
+
+msgid "Invalid argument provided"
+msgstr "تم تقديم وسيطة غير صالحة"
+
+msgid "Firebase operation Error: "
+msgstr "خطأ في عملية Firebase: "
+
+msgid "An unexpected error occurred: "
+msgstr "حدث خطأ غير متوقع: "
+
+msgid "Firebase configuration missing"
+msgstr "إعدادات Firebase مفقودة"
+
+msgid "Firebase initialization failed"
+msgstr "فشل تهيئة Firebase"
+
+msgid "Email already in use"
+msgstr "البريد الإلكتروني مستخدم بالفعل"
+
+msgid "Phone number already in use"
+msgstr "رقم الهاتف مستخدم بالفعل"
+
+msgid "Invalid token audience"
+msgstr "جمهور الرمز غير صالح"
+
+msgid "Pyrebase"
+msgstr "Pyrebase"
+
+msgid "Firebase communication error"
+msgstr "خطأ في اتصال Firebase"
+
+msgid "Firebase operation failed"
+msgstr "فشلت عملية Firebase"
+
+msgid "Invalid email address"
+msgstr "عنوان بريد إلكتروني غير صالح"
+
+msgid "Invalid password"
+msgstr "كلمة مرور غير صالحة"
+
+msgid "Authentication failed"
+msgstr "فشل المصادقة"
+
+msgid "Not Found"
+msgstr "غير موجود"
+
+msgid "Unknown error"
+msgstr "خطأ غير معروف"
+
+msgid "Success"
+msgstr "نجاح"
+
+msgid "it is Required,must be Set."
+msgstr "هذا مطلوب، يجب تعيينه."
+
+msgid "Admin"
+msgstr "مسؤول"
+
+msgid "Admins"
+msgstr "مسؤولون"
+
+msgid "Super User"
+msgstr "مستخدم فائق"
+
+msgid "Super Users"
+msgstr "مستخدمون فائقون"
+
+msgid "Student"
+msgstr "طالب"
+
+msgid "Students"
+msgstr "طلاب"
+
+msgid "Lecturer"
+msgstr "محاضر"
+
+msgid "Lecturers"
+msgstr "محاضرون"
+
+msgid "College"
+msgstr "كلية"
+
+msgid "Colleges"
+msgstr "كليات"
+
+msgid "Staff"
+msgstr "موظفون"
+
+msgid "Doctor"
+msgstr "طبيب"
+
+msgid "Engineer"
+msgstr "مهندس"
+
+msgid "Professor"
+msgstr "أستاذ"
+
+msgid "Teacher"
+msgstr "معلم"
+
+msgid "Teachers"
+msgstr "معلمون"
+
+msgid "Male"
+msgstr "ذكر"
+
+msgid "Female"
+msgstr "أنثى"
+
+msgid "Virgin"
+msgstr "عذراء"
+
+msgid "Bachelor"
+msgstr "عازب"
+
+msgid "Married"
+msgstr "متزوج"
+
+msgid "Widower"
+msgstr "أرمل"
+
+msgid "Divorde"
+msgstr "مطلق"
+
+msgid "English"
+msgstr "الإنجليزية"
+
+msgid "Arabic"
+msgstr "العربية"
+
+msgid "Arabic Egypt"
+msgstr "العربية المصرية"
+
+msgid "French"
+msgstr "الفرنسية"
+
+msgid "Turkish"
+msgstr "التركية"
+
+msgid "Taluk"
+msgstr "تالوك"
+
+msgid "Village"
+msgstr "قرية"
+
+msgid "District"
+msgstr "حي"
+
+msgid "Manor"
+msgstr "قصر"
+
+msgid "Residential Quarter"
+msgstr "حي سكني"
+
+msgid "Housing"
+msgstr "سكن"
+
+msgid "Feudalism"
+msgstr "إقطاعية"
+
+msgid "Region"
+msgstr "منطقة"
+
+msgid "Africa"
+msgstr "أفريقيا"
+
+msgid "Asia"
+msgstr "آسيا"
+
+msgid "Europe"
+msgstr "أوروبا"
+
+msgid "North America"
+msgstr "أمريكا الشمالية"
+
+msgid "Oceania"
+msgstr "أوقيانوسيا"
+
+msgid "South America"
+msgstr "أمريكا الجنوبية"
+
+msgid "Antarctica"
+msgstr "أنتاركتيكا"
+
+msgid "Saturday"
+msgstr "السبت"
+
+msgid "Sunday"
+msgstr "الأحد"
+
+msgid "Monday"
+msgstr "الاثنين"
+
+msgid "Tuesday"
+msgstr "الثلاثاء"
+
+msgid "Wednesday"
+msgstr "الأربعاء"
+
+msgid "Thursday"
+msgstr "الخميس"
+
+msgid "Friday"
+msgstr "الجمعة"
+
+msgid "Laboratory"
+msgstr "مختبر"
+
+msgid "Main Laboratory"
+msgstr "المختبر الرئيسي"
+
+msgid "Association"
+msgstr "جمعية"
+
+msgid "Dispensary"
+msgstr "صيدلية"
+
+msgid "Scientific Company"
+msgstr "شركة علمية"
+
+msgid "Pharmaceutical Company"
+msgstr "شركة أدوية"
+
+msgid "Supplier"
+msgstr "مورد"
+
+msgid "Dental Clinic"
+msgstr "عيادة أسنان"
+
+msgid "Private Clinic"
+msgstr "عيادة خاصة"
+
+msgid "Grocery Store"
+msgstr "بقالة"
+
+msgid "Bookstore"
+msgstr "متجر كتب"
+
+msgid "Coffee"
+msgstr "قهوة"
+
+msgid "Bakery"
+msgstr "مخبز"
+
+msgid "Delicatessen"
+msgstr "لحوم"
+
+msgid "School"
+msgstr "مدرسة"
+
+msgid "Café"
+msgstr "مقهى"
+
+msgid "Laundromat"
+msgstr "مغسلة"
+
+msgid "Hotel"
+msgstr "فندق"
+
+msgid "Butcher"
+msgstr "جزار"
+
+msgid "Supermarket"
+msgstr "سوبر ماركت"
+
+msgid "Gift Shop"
+msgstr "متجر هدايا"
+
+msgid "Flower Shop"
+msgstr "متجر زهور"
+
+msgid "Sporting Goods Store"
+msgstr "متجر مستلزمات رياضية"
+
+msgid "Electronics Store"
+msgstr "متجر إلكترونيات"
+
+msgid "Barber"
+msgstr "حلاق"
+
+msgid "Pharmacy"
+msgstr "صيدلية"
+
+msgid "Medical Facility"
+msgstr "منشأة طبية"
+
+msgid "Mobile Network Company"
+msgstr "شركة شبكة محمول"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "Same Day"
+msgstr "نفس اليوم"
+
+msgid "Next Day"
+msgstr "اليوم التالي"
+
+msgid "After 2 Days"
+msgstr "بعد يومين"
+
+msgid "After 4 Days"
+msgstr "بعد 4 أيام"
+
+msgid "After 10 Days"
+msgstr "بعد 10 أيام"
+
+msgid "After Week"
+msgstr "بعد أسبوع"
+
+msgid "After Two Weeks"
+msgstr "بعد أسبوعين"
+
+msgid "After Month"
+msgstr "بعد شهر"
+
+msgid "Imported Products"
+msgstr "منتجات مستوردة"
+
+msgid "Exported Products"
+msgstr "منتجات مصدرة"
+
+msgid "Android"
+msgstr "أندرويد"
+
+msgid "iOS"
+msgstr "iOS"
+
+msgid "Windows"
+msgstr "ويندوز"
+
+msgid "Linux"
+msgstr "لينكس"
+
+msgid "Web Browser"
+msgstr "متصفح ويب"
+
+msgid "Mobile"
+msgstr "محمول"
+
+msgid "Tablet"
+msgstr "تابلت"
+
+msgid "Laptop"
+msgstr "لاب توب"
+
+msgid "Mac"
+msgstr "ماك"
+
+msgid "Upload"
+msgstr "رفع"
+
+msgid "Download"
+msgstr "تنزيل"
+
+msgid "Parent"
+msgstr "والد"
+
+msgid "Children"
+msgstr "أطفال"
+
+msgid "Create"
+msgstr "إنشاء"
+
+msgid "Update"
+msgstr "تحديث"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "GET"
+msgstr "GET"
+
+msgid "POST"
+msgstr "POST"
+
+msgid "PUT"
+msgstr "PUT"
+
+msgid "PATCH"
+msgstr "PATCH"
+
+msgid "Sign In"
+msgstr "تسجيل الدخول"
+
+msgid "Log In"
+msgstr "تسجيل الدخول"
+
+msgid "Sign Out"
+msgstr "تسجيل الخروج"
+
+msgid "Register"
+msgstr "تسجيل"
+
+msgid "All Event"
+msgstr "كل الأحداث"
+
+msgid "Each Student"
+msgstr "كل طالب"
+
+msgid "Enlist"
+msgstr "تجنيد"
+
+msgid "Completely Free"
+msgstr "مجاني بالكامل"
+
+msgid "Partially Paid"
+msgstr "مدفوع جزئيًا"
+
+msgid "Completely Paid"
+msgstr "مدفوع بالكامل"
+
+msgid "On Line"
+msgstr "عبر الإنترنت"
+
+msgid "Off Line"
+msgstr "غير متصل"
+
+msgid "Any"
+msgstr "أي"
+
+msgid "Initialization Reservation"
+msgstr "حجز مبدئي"
+
+msgid "Canceled Reservation"
+msgstr "حجز ملغى"
+
+msgid "Confirmed Reservation"
+msgstr "حجز مؤكد"
+
+msgid "Hold Reservation"
+msgstr "حجز معلق"
+
+msgid "Monetary"
+msgstr "نقدي"
+
+msgid "Credit Card"
+msgstr "بطاقة ائتمان"
+
+msgid "Bank Transfer"
+msgstr "تحويل بنكي"
+
+msgid "Check"
+msgstr "شيك"
+
+msgid "Money Transfer"
+msgstr "تحويل أموال"
+
+msgid "Mobile Cash"
+msgstr "نقد محمول"
+
+msgid "Paid"
+msgstr "مدفوع"
+
+msgid "Pay later"
+msgstr "ادفع لاحقًا"
+
+msgid "Revenues"
+msgstr "إيرادات"
+
+msgid "Expenses"
+msgstr "مصروفات"
+
+msgid "Debts"
+msgstr "ديون"
+
+msgid "Dues"
+msgstr "مستحقات"
+
+msgid "Translation"
+msgstr "ترجمة"
+
+msgid "Translations"
+msgstr "ترجمات"
+
+msgid "Name"
+msgstr "اسم"
+
+msgid "User Name"
+msgstr "اسم المستخدم"
+
+msgid "Password"
+msgstr "كلمة المرور"
+
+msgid "Password Confirmation"
+msgstr "تأكيد كلمة المرور"
+
+msgid "National ID"
+msgstr "الهوية الوطنية"
+
+msgid "Flag"
+msgstr "علم"
+
+msgid "Emoji"
+msgstr "إيموجي"
+
+msgid "Success Status"
+msgstr "حالة النجاح"
+
+msgid "Created At"
+msgstr "تم الإنشاء في"
+
+msgid "Last Update"
+msgstr "آخر تحديث"
+
+msgid "Barcode"
+msgstr "باركود"
+
+msgid "Photo URL"
+msgstr "رابط الصورة"
+
+msgid "Native Name"
+msgstr "الاسم الأصلي"
+
+msgid "URL"
+msgstr "رابط"
+
+msgid "IP Address"
+msgstr "عنوان IP"
+
+msgid "Content Type"
+msgstr "نوع المحتوى"
+
+msgid "Content Types"
+msgstr "أنواع المحتوى"
+
+msgid "Token"
+msgstr "رمز"
+
+msgid "ID"
+msgstr "معرف"
+
+msgid "UID"
+msgstr "المعرف الفريد"
+
+msgid "File"
+msgstr "ملف"
+
+msgid "Document"
+msgstr "وثيقة"
+
+msgid "Image"
+msgstr "صورة"
+
+msgid "Logo"
+msgstr "شعار"
+
+msgid "Photo"
+msgstr "صورة فوتوغرافية"
+
+msgid "Avatar"
+msgstr "صورة رمزية"
+
+msgid "Audio"
+msgstr "صوت"
+
+msgid "Vedio"
+msgstr "فيديو"
+
+msgid "Latitude"
+msgstr "خط العرض"
+
+msgid "Longitude"
+msgstr "خط الطول"
+
+msgid "Location"
+msgstr "موقع"
+
+msgid "Continent Name"
+msgstr "اسم القارة"
+
+msgid "Continents"
+msgstr "القارات"
+
+msgid "Code"
+msgstr "رمز"
+
+msgid "Capital"
+msgstr "عاصمة"
+
+msgid "Telphone"
+msgstr "هاتف"
+
+msgid "Telphone Code"
+msgstr "رمز الهاتف"
+
+msgid "Time Zones"
+msgstr "المناطق الزمنية"
+
+msgid "State Type"
+msgstr "نوع الولاية"
+
+msgid "State Types"
+msgstr "أنواع الولايات"
+
+msgid "Postal Code"
+msgstr "الرمز البريدي"
+
+msgid "Telephone Code"
+msgstr "رمز الهاتف"
+
+msgid "ISO Code"
+msgstr "رمز ISO"
+
+msgid "Symbol"
+msgstr "رمز"
+
+msgid "Order"
+msgstr "طلب"
+
+msgid "Advertisement URL"
+msgstr "رابط الإعلان"
+
+msgid "Exchange to Currency"
+msgstr "تحويل إلى عملة"
+
+msgid "Rate"
+msgstr "معدل"
+
+msgid "Rating"
+msgstr "تقييم"
+
+msgid "Exchange Rates"
+msgstr "أسعار الصرف"
+
+msgid "Title"
+msgstr "عنوان"
+
+msgid "Description"
+msgstr "وصف"
+
+msgid "Short Description"
+msgstr "وصف مختصر"
+
+msgid "Complete Description"
+msgstr "وصف كامل"
+
+msgid "Start Date Time"
+msgstr "تاريخ ووقت البدء"
+
+msgid "End Date Time"
+msgstr "تاريخ ووقت الانتهاء"
+
+msgid "Language ISO Code"
+msgstr "رمز اللغة ISO"
+
+msgid "Bidirectional Status"
+msgstr "حالة ثنائية الاتجاه"
+
+msgid "Application Support Status"
+msgstr "حالة دعم التطبيق"
+
+msgid "Organizer"
+msgstr "منظم"
+
+msgid "on|Off Line"
+msgstr "متصل|غير متصل"
+
+msgid "Hall"
+msgstr "قاعة"
+
+msgid "Lecturer Financial Dues"
+msgstr "المستحقات المالية للمحاضر"
+
+msgid "Lecturer Financial System"
+msgstr "النظام المالي للمحاضر"
+
+msgid "Registration link"
+msgstr "رابط التسجيل"
+
+msgid "Event Paid Status"
+msgstr "حالة الدفع للحدث"
+
+msgid "Affiliated To"
+msgstr "تابع لـ"
+
+msgid "Details"
+msgstr "تفاصيل"
+
+msgid "Address"
+msgstr "عنوان"
+
+msgid "Payment Method Type"
+msgstr "نوع طريقة الدفع"
+
+msgid "Payment Status Type"
+msgstr "نوع حالة الدفع"
+
+msgid "Transactor"
+msgstr "المتعامل"
+
+msgid "Transaction Status"
+msgstr "حالة المعاملة"
+
+msgid "Transaction Statuses"
+msgstr "حالات المعاملات"
+
+msgid "Transaction Type"
+msgstr "نوع المعاملة"
+
+msgid "Transaction Types"
+msgstr "أنواع المعاملات"
+
+msgid "Transaction Method"
+msgstr "طريقة المعاملة"
+
+msgid "Transaction Methods"
+msgstr "طرق المعاملات"
+
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
+
+msgid "Notified Days"
+msgstr "أيام الإخطار"
+
+msgid "Reference Number"
+msgstr "رقم المرجع"
+
+msgid "Bank Deposit Date"
+msgstr "تاريخ إيداع البنك"
+
+msgid "Bank Name"
+msgstr "اسم البنك"
+
+msgid "Comment"
+msgstr "تعليق"
+
+msgid "Total Required Amount"
+msgstr "المبلغ المطلوب الإجمالي"
+
+msgid "Amount"
+msgstr "مبلغ"
+
+msgid "Canceled Reason"
+msgstr "سبب الإلغاء"
+
+msgid "Staff Status"
+msgstr "حالة الموظف"
+
+msgid "Admin Status"
+msgstr "حالة المسؤول"
+
+msgid "Super User Status"
+msgstr "حالة المستخدم المتميز"
+
+msgid "Blocked Status"
+msgstr "حالة الحظر"
+
+msgid "Phone Number"
+msgstr "رقم الهاتف"
+
+msgid "Mobile Number"
+msgstr "رقم المحمول"
+
+msgid "Mobile Verified At"
+msgstr "تم التحقق من المحمول في"
+
+msgid "User Type"
+msgstr "نوع المستخدم"
+
+msgid "E-Mail"
+msgstr "البريد الإلكتروني"
+
+msgid "E-Mail Verified At"
+msgstr "تم التحقق من البريد الإلكتروني في"
+
+msgid "OTP Key"
+msgstr "مفتاح OTP"
+
+msgid "Specialized to Category"
+msgstr "متخصص في الفئة"
+
+msgid "Interesting  Notifiable Categories"
+msgstr "فئات الإشعارات المثيرة للاهتمام"
+
+msgid " Notifiable Status"
+msgstr "حالة الإشعار"
+
+msgid "Favorite Events"
+msgstr "الأحداث المفضلة"
+
+msgid "University Number"
+msgstr "رقم الجامعة"
+
+msgid "Day"
+msgstr "يوم"
+
+msgid "Month"
+msgstr "شهر"
+
+msgid "Year"
+msgstr "سنة"
+
+msgid "Graduate STATUS"
+msgstr "حالة الخريج"
+
+msgid "Contact Info"
+msgstr "معلومات الاتصال"
+
+msgid "Full Name"
+msgstr "الاسم الكامل"
+
+msgid "FCM Device Token"
+msgstr "رمز جهاز FCM"
+
+msgid "Activity Status"
+msgstr "حالة النشاط"
+
+msgid "Birth Date"
+msgstr "تاريخ الميلاد"
+
+msgid "Gender"
+msgstr "الجنس"
+
+msgid "Last Login"
+msgstr "آخر تسجيل دخول"
+
+msgid "Firebase UID"
+msgstr "المعرف الفريد في Firebase"
+
+msgid "Block List"
+msgstr "قائمة الحظر"
+
+msgid "Block Lists"
+msgstr "قوائم الحظر"
+
+msgid "Country"
+msgstr "دولة"
+
+msgid "Country Code"
+msgstr "رمز الدولة"
+
+msgid "Countries"
+msgstr "الدول"
+
+msgid "Governorate"
+msgstr "محافظة"
+
+msgid "Governorates"
+msgstr "المحافظات"
+
+msgid "City"
+msgstr "مدينة"
+
+msgid "Cities"
+msgstr "المدن"
+
+msgid "State"
+msgstr "ولاية"
+
+msgid "States"
+msgstr "الولايات"
+
+msgid "Locality"
+msgstr "مكان"
+
+msgid "Localities"
+msgstr "الأماكن"
+
+msgid "Street"
+msgstr "شارع"
+
+msgid "Streets"
+msgstr "الشوارع"
+
+msgid "Addresses"
+msgstr "عناوين"
+
+msgid "Locations"
+msgstr "مواقع"
+
+msgid "Advertisement"
+msgstr "إعلان"
+
+msgid "Advertisements"
+msgstr "إعلانات"
+
+msgid "Category"
+msgstr "فئة"
+
+msgid "Categories"
+msgstr "فئات"
+
+msgid "Chat"
+msgstr "دردشة"
+
+msgid "Chats"
+msgstr "دردشات"
+
+msgid "Currency"
+msgstr "عملة"
+
+msgid "Currencies"
+msgstr "عملات"
+
+msgid "Currency Exchange Rate"
+msgstr "سعر صرف العملة"
+
+msgid "Currency Exchange Rates"
+msgstr "أسعار صرف العملات"
+
+msgid "Event"
+msgstr "حدث"
+
+msgid "Events"
+msgstr "أحداث"
+
+msgid "Event Type"
+msgstr "نوع الحدث"
+
+msgid "Event Types"
+msgstr "أنواع الأحداث"
+
+msgid "Event Album"
+msgstr "ألبوم الحدث"
+
+msgid "Event Albums"
+msgstr "ألبومات الأحداث"
+
+msgid "Event Master"
+msgstr "سيد الحدث"
+
+msgid "Event Masters"
+msgstr "سادة الأحداث"
+
+msgid "Favorite"
+msgstr "مفضل"
+
+msgid "Favorites"
+msgstr "المفضلة"
+
+msgid "Firebase"
+msgstr "Firebase"
+
+msgid "Language"
+msgstr "لغة"
+
+msgid "Languages"
+msgstr "لغات"
+
+msgid "Locale"
+msgstr "لغة محلية"
+
+msgid "Locales"
+msgstr "لغات محلية"
+
+msgid "Log"
+msgstr "سجل"
+
+msgid "Logs"
+msgstr "سجلات"
+
+msgid "Notification"
+msgstr "إشعار"
+
+msgid "Notifications"
+msgstr "إشعارات"
+
+msgid "Organization"
+msgstr "منظمة"
+
+msgid "Organizations"
+msgstr "منظمات"
+
+msgid "Organization Type"
+msgstr "نوع المنظمة"
+
+msgid "Organization Types"
+msgstr "أنواع المنظمات"
+
+msgid "University"
+msgstr "جامعة"
+
+msgid "Universities"
+msgstr "جامعات"
+
+msgid "Payment"
+msgstr "دفع"
+
+msgid "Payments"
+msgstr "مدفوعات"
+
+msgid "Payment Method"
+msgstr "طريقة الدفع"
+
+msgid "Payment Methods"
+msgstr "طرق الدفع"
+
+msgid "Payment Status"
+msgstr "حالة الدفع"
+
+msgid "Payment Statuses"
+msgstr "حالات الدفع"
+
+msgid "Transaction"
+msgstr "معاملة"
+
+msgid "Transactions"
+msgstr "معاملات"
+
+msgid "Reservation"
+msgstr "حجز"
+
+msgid "Reservation Status"
+msgstr "حالة الحجز"
+
+msgid "Reservations"
+msgstr "حجوزات"
+
+msgid "Developer"
+msgstr "مطور"
+
+msgid "Developers"
+msgstr "مطورون"
+
+msgid "User"
+msgstr "مستخدم"
+
+msgid "Users"
+msgstr "مستخدمون"
+
+msgid "User Album"
+msgstr "ألبوم المستخدم"
+
+msgid "User Albums"
+msgstr "ألبومات المستخدمين"
+
+msgid "Profile"
+msgstr "ملف شخصي"
+
+msgid "Profiles"
+msgstr "ملفات شخصية"
+
+msgid "Interest"
+msgstr "اهتمام"
+
+msgid "Interests"
+msgstr "اهتمامات"
+
+msgid "❌"
+msgstr "❌"
+
+msgid "Governorate Telephone Code must be from 1 t 3 digits allowed. ❌"
+msgstr "يجب أن يكون رمز هاتف المحافظة من 1 إلى 3 أرقام مسموح بها. ❌"
+
+msgid ""
+"❌ Enter valid Mobile.Like (+20 10 123 4567|+20101234567|+20-10-123-4567)"
+msgstr "❌ أدخل رقم محمول صالح. مثل (+20 10 123 4567|+20101234567|+20-10-123-4567)"
+
+msgid "❌ Mobile is Used. choose Another"
+msgstr "❌ رقم المحمول مستخدم. اختر آخر"
+
+msgid "❌ Mobile Number is Required"
+msgstr "❌ رقم المحمول مطلوب"
+
+msgid ""
+"❌ Enter valid Phone.Like +91 98765 43210  | +1 415 555 1234 | +44 20 7946 "
+"0958 | +49 176 1234 5678 | +81 90 1234 5678 | +61 412 345 678 | +33 6 12 34 "
+"56 78 | 971501234567 | 65-6123-4567 | 852.5123.4567"
+msgstr ""
+"❌ أدخل رقم هاتف صالح. مثل +91 98765 43210  | +1 415 555 1234 | +44 20 7946 "
+"0958 | +49 176 1234 5678 | +81 90 1234 5678 | +61 412 345 678 | +33 6 12 34 "
+"56 78 | 971501234567 | 65-6123-4567 | 852.5123.4567"
+
+msgid "❌ User Name is Used. Choose Another"
+msgstr "❌ اسم المستخدم مستخدم. اختر آخر"
+
+msgid "❌ E-Mail is Used. Choose Another"
+msgstr "❌ البريد الإلكتروني مستخدم. اختر آخر"
+
+msgid ""
+"❌ Invalid Password, it must contain one or more Upper Case Char, one or "
+"more Lower Case Char, one or more from [@, $ ,!, %, *, ?, &]; between 8 to "
+"32 Chars"
+msgstr ""
+"❌ كلمة مرور غير صالحة، يجب أن تحتوي على حرف كبير واحد أو أكثر، حرف صغير واحد أو أكثر، "
+"واحد أو أكثر من [@، $، !، %، *، ؟، &]؛ بين 8 إلى 32 حرفًا"
+
+msgid ""
+"❌ Invalid mobile format. ℹ️ Examples: \n"
+"• +201012345678 (Egypt)\n"
+"• +966501234567 (Saudi)\n"
+"• +971501234567 (UAE)\n"
+"⚠️ Include country code, no spaces or special chars"
+msgstr ""
+"❌ تنسيق المحمول غير صالح. ℹ️ أمثلة: \n"
+"• +201012345678 (مصر)\n"
+"• +966501234567 (السعودية)\n"
+"• +971501234567 (الإمارات)\n"
+"⚠️ قم بتضمين رمز الدولة، بدون مسافات أو أحرف خاصة"
+
+msgid ""
+"❌ Mobile already registered\n"
+" ⚠️ Use password recovery or try another number"
+msgstr ""
+"❌ رقم المحمول مسجل بالفعل\n"
+" ⚠️ استخدم استعادة كلمة المرور أو جرب رقمًا آخر"
+
+msgid ""
+"❌ Mobile number required\n"
+" ℹ️ Needed for account verification"
+msgstr ""
+"❌ رقم المحمول مطلوب\n"
+" ℹ️ مطلوب للتحقق من الحساب"
+
+msgid ""
+"❌ Invalid verification code\n"
+" ⚠️ Check SMS and enter {} -digit code"
+msgstr ""
+"❌ رمز التحقق غير صالح\n"
+" ⚠️ تحقق من الرسالة النصية وأدخل رمزًا مكونًا من {} أرقام"
+
+msgid ""
+"❌ Invalid code length\n"
+" ℹ️ Enter a {}-digit code sent to your E-Mail"
+msgstr ""
+"❌ طول الرمز غير صالح\n"
+" ℹ️ أدخل رمزًا مكونًا من {} أرقام تم إرساله إلى بريدك الإلكتروني"
+
+msgid ""
+"❌ Code expired\n"
+" ℹ️ Request new code (valid for 10 mins)"
+msgstr ""
+"❌ انتهت صلاحية الرمز\n"
+" ℹ️ اطلب رمزًا جديدًا (صالح لمدة 10 دقائق)"
+
+msgid ""
+"❌ Invalid national ID\n"
+"⚠️ Must be 14 digits (Egypt) or your country's standard format"
+msgstr ""
+"❌ رقم الهوية الوطنية غير صالح\n"
+"⚠️ يجب أن يكون 14 رقمًا (مصر) أو بالتنسيق القياسي لبلدك"
+
+msgid ""
+"❌ ID already registered\n"
+" ⚠️ Contact support if this is your ID"
+msgstr ""
+"❌ الرقم مسجل بالفعل\n"
+" ⚠️ اتصل بالدعم إذا كان هذا هو رقمك"
+
+msgid ""
+"❌ Weak password\n"
+"✅ Requirements:\n"
+"- 8-32 characters\n"
+"- Upper + lowercase\n"
+"- Number (123)\n"
+"- Symbol (@$!%*?&)"
+msgstr ""
+"❌ كلمة مرور ضعيفة\n"
+"✅ المتطلبات:\n"
+"- 8-32 حرفًا\n"
+"- أحرف كبيرة وصغيرة\n"
+"- أرقام (123)\n"
+"- رموز (@$!%*?&)"
+
+msgid ""
+"❌ Username unavailable\n"
+" ℹ️ Try adding numbers (ahmed123)"
+msgstr ""
+"❌ اسم المستخدم غير متاح\n"
+" ℹ️ حاول إضافة أرقام (ahmed123)"
+
+msgid ""
+"❌ Email already registered\n"
+" ⚠️ Use password recovery if this is yours"
+msgstr ""
+"❌ البريد الإلكتروني مسجل بالفعل\n"
+" ⚠️ استخدم استعادة كلمة المرور إذا كان هذا بريدك"
+
+msgid ""
+"❌ Invalid email format\n"
+" ℹ️ Example: user@example.com"
+msgstr ""
+"❌ تنسيق البريد الإلكتروني غير صالح\n"
+" ℹ️ مثال: user@example.com"
+
+msgid ""
+"❌ Invalid country code\n"
+" ℹ️ Must be 1-3 digits (20 for Egypt)"
+msgstr ""
+"❌ رمز الدولة غير صالح\n"
+" ℹ️ يجب أن يكون من 1-3 أرقام (20 لمصر)"
+
+msgid ""
+"❌ Invalid region code\n"
+" ℹ️ Example: 02 for Cairo, 03 for Alexandria"
+msgstr ""
+"❌ رمز المنطقة غير صالح\n"
+" ℹ️ مثال: 02 للقاهرة، 03 للإسكندرية"
+
+msgid ""
+"❌ Required field missing\n"
+" ⚠️ Please complete all marked fields"
+msgstr ""
+"❌ حقل مطلوب مفقود\n"
+" ⚠️ يرجى استكمال جميع الحقول المحددة"
+
+msgid ""
+"❌ Invalid selection\n"
+" ℹ️ Choose from available options"
+msgstr ""
+"❌ اختيار غير صالح\n"
+" ℹ️ اختر من الخيارات المتاحة"
+
+msgid ""
+"✅ All inputs valid\n"
+" ℹ️ You may proceed"
+msgstr ""
+"✅ جميع المدخلات صالحة\n"
+" ℹ️ يمكنك المتابعة"
+
+msgid "Run the selected action"
+msgstr "تنفيذ الإجراء المحدد"
+
+msgid "Go"
+msgstr "انتقل"
+
+msgid "Click here to select the objects across all pages"
+msgstr "انقر هنا لتحديد الكائنات عبر جميع الصفحات"
+
+#, python-format
+msgid ""
+"\n"
+"                            Select all %(total_count)s %(module_name)s"
+msgstr ""
+"\n"
+"                            تحديد كل %(total_count)s %(module_name)s"
+
+msgid "Clear selection"
+msgstr "مسح التحديد"
+
+msgid ""
+"First, enter a username and password. Then, you'll be able to edit more user "
+"options."
+msgstr "أولاً، أدخل اسم مستخدم وكلمة مرور. ثم ستتمكن من تعديل المزيد من خيارات المستخدم."
+
+msgid "Enter a username and password."
+msgstr "أدخل اسم مستخدم وكلمة مرور."
+
+msgid "Change password"
+msgstr "تغيير كلمة المرور"
+
+#, python-format
+msgid ""
+"\n"
+"                            Enter a new password for the user\n"
+"                            <strong>%(username)s</strong>.\n"
+"                        "
+msgstr ""
+"\n"
+"                            أدخل كلمة مرور جديدة للمستخدم\n"
+"                            <strong>%(username)s</strong>.\n"
+"                        "
+
+msgid "Change my password"
+msgstr "تغيير كلمة المرور الخاصة بي"
+
+msgid "Please correct the error below."
+msgstr "يرجى تصحيح الخطأ أدناه."
+
+msgid "Please correct the errors below."
+msgstr "يرجى تصحيح الأخطاء أدناه."
+
+#, python-format
+msgid ""
+"Add\n"
+"                                %(name)s"
+msgstr ""
+"إضافة\n"
+"                                %(name)s"
+
+#, python-format
+msgid "Add %(name)s"
+msgstr "إضافة %(name)s"
+
+msgid "History"
+msgstr "السجل"
+
+msgid "View on site"
+msgstr "عرض على الموقع"
+
+msgid "Filter"
+msgstr "تصفية"
+
+msgid "Remove from sorting"
+msgstr "إزالة من الفرز"
+
+#, python-format
+msgid "Sorting priority: %(priority_number)s"
+msgstr "أولوية الفرز: %(priority_number)s"
+
+msgid "Toggle sorting"
+msgstr "تبديل الفرز"
+
+#, python-format
+msgid ""
+"\n"
+"                                        Deleting the %(object_name)s "
+"'%(escaped_object)s' would result in deleting\n"
+"                                        related objects, but your account "
+"doesn't have permission to delete the\n"
+"                                        following types of objects:\n"
+"                                    "
+msgstr ""
+"\n"
+"                                        حذف %(object_name)s '%(escaped_object)s' سيؤدي إلى حذف\n"
+"                                        الكائنات المرتبطة، ولكن حسابك لا يملك الصلاحية لحذف\n"
+"                                        أنواع الكائنات التالية:\n"
+"                                    "
+
+#, python-format
+msgid ""
+"\n"
+"                                        Deleting the %(object_name)s ' "
+"%(escaped_object)s' would require deleting\n"
+"                                        the following protected related "
+"objects:\n"
+"                                    "
+msgstr ""
+"\n"
+"                                        حذف %(object_name)s '%(escaped_object)s' يتطلب حذف\n"
+"                                        الكائنات المرتبطة المحمية التالية:\n"
+"                                    "
+
+#, python-format
+msgid ""
+"\n"
+"                                        Are you sure you want to delete the "
+"%(object_name)s \"%(escaped_object)s\"?\n"
+"                                        All of the following related items "
+"will be deleted:\n"
+"                                    "
+msgstr ""
+"\n"
+"                                        هل أنت متأكد أنك تريد حذف %(object_name)s \"%(escaped_object)s\"؟\n"
+"                                        سيتم حذف جميع العناصر المرتبطة التالية:\n"
+"                                    "
+
+msgid "Objects"
+msgstr "الكائنات"
+
+msgid "Yes, I'm sure"
+msgstr "نعم، أنا متأكد"
+
+msgid "No, take me back"
+msgstr "لا، أرجعني للخلف"
+
+msgid "Delete multiple objects"
+msgstr "حذف كائنات متعددة"
+
+#, python-format
+msgid ""
+"\n"
+"                                        Deleting the selected "
+"%(objects_name)s would result in deleting related\n"
+"                                        objects, but your account doesn't "
+"have permission to delete the following\n"
+"                                        types of objects:\n"
+"                                    "
+msgstr ""
+"\n"
+"                                        حذف %(objects_name)s المحددة سيؤدي إلى حذف\n"
+"                                        الكائنات المرتبطة، ولكن حسابك لا يملك الصلاحية لحذف\n"
+"                                        أنواع الكائنات التالية:\n"
+"                                    "
+
+#, python-format
+msgid ""
+"\n"
+"                                        Deleting the selected "
+"%(objects_name)s would require deleting the\n"
+"                                        following protected related "
+"objects:\n"
+"                                    "
+msgstr ""
+"\n"
+"                                        حذف %(objects_name)s المحددة يتطلب حذف\n"
+"                                        الكائنات المرتبطة المحمية التالية:\n"
+"                                    "
+
+#, python-format
+msgid ""
+"\n"
+"                                        Are you sure you want to delete the "
+"selected %(objects_name)s? All of the\n"
+"                                        following objects and their related "
+"items will be deleted:\n"
+"                                    "
+msgstr ""
+"\n"
+"                                        هل أنت متأكد أنك تريد حذف %(objects_name)s المحددة؟\n"
+"                                        سيتم حذف جميع الكائنات والعناصر المرتبطة التالية:\n"
+"                                    "
+
+msgid "Change"
+msgstr "تغيير"
+
+msgid "View"
+msgstr "عرض"
+
+msgid "Delete?"
+msgstr "حذف؟"
+
+#, python-format
+msgid " By %(filter_title)s "
+msgstr " بواسطة %(filter_title)s "
+
+msgid "Summary"
+msgstr "ملخص"
+
+msgid ""
+"Something's wrong with your database installation. Make sure the appropriate "
+"database tables have been created, and make sure the database is readable by "
+"the appropriate user."
+msgstr ""
+"هناك خطأ في تثبيت قاعدة البيانات الخاصة بك. تأكد من إنشاء الجداول المناسبة، "
+"وتأكد من أن قاعدة البيانات قابلة للقراءة من قبل المستخدم المناسب."
+
+msgid "Action"
+msgstr "إجراء"
+
+msgid "Date/time"
+msgstr "التاريخ/الوقت"
+
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
+msgstr ""
+"هذا الكائن ليس لديه سجل تغييرات. على الأرجح لم يتم إضافته عبر موقع الإدارة هذا."
+
+msgid "Show all"
+msgstr "عرض الكل"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Search"
+msgstr "بحث"
+
+#, python-format
+msgid ""
+"\n"
+"                                    %(counter)s result\n"
+"                                "
+msgid_plural ""
+"\n"
+"                                    %(counter)s results\n"
+"                                "
+msgstr[0] ""
+"\n"
+"                                    %(counter)s نتيجة\n"
+"                                "
+msgstr[1] ""
+"\n"
+"                                    %(counter)s نتائج\n"
+"                                "
+
+#, python-format
+msgid ""
+"\n"
+"                                    %(full_result_count)s total\n"
+"                                "
+msgstr ""
+"\n"
+"                                    %(full_result_count)s الإجمالي\n"
+"                                "
+
+msgid "Save as new"
+msgstr "حفظ كجديد"
+
+msgid "Save and add another"
+msgstr "حفظ وإضافة آخر"
+
+msgid "Save and continue editing"
+msgstr "حفظ ومتابعة التحرير"
+
+msgid "Save and view"
+msgstr "حفظ وعرض"
+
+msgid "Close"
+msgstr "إغلاق"
+
+msgid "Log in"
+msgstr "تسجيل الدخول"
+
+msgid "Thanks for spending some quality time with the Web site today."
+msgstr "شكرًا لقضاء بعض الوقت المميز على الموقع اليوم."
+
+msgid "Log in again"
+msgstr "تسجيل الدخول مرة أخرى"
+
+msgid "Documentation"
+msgstr "توثيق"
+
+msgid "Log out"
+msgstr "تسجيل الخروج"
+
+msgid "Password change"
+msgstr "تغيير كلمة المرور"
+
+msgid "Your password was changed."
+msgstr "تم تغيير كلمة المرور الخاصة بك."
+
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+"من فضلك أدخل كلمة المرور القديمة لأسباب أمنية، ثم أدخل كلمة المرور الجديدة "
+"مرتين للتأكد من كتابتها بشكل صحيح."
+
+msgid "About Us"
+msgstr "معلومات عنا"
+
+msgid ""
+"Heaven frucvitful doesn't cover lesser dvsays appear creeping seasons so "
+"behold."
+msgstr "الجنة المثمرة لا تغطي الأيام الأقل زحفًا، فانظر."
+
+msgid "Phone"
+msgstr "هاتف"
+
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+msgid "Important Link"
+msgstr "رابط مهم"
+
+msgid "View Project"
+msgstr "عرض المشروع"
+
+msgid "Contact Us"
+msgstr "اتصل بنا"
+
+msgid "Testimonial"
+msgstr "شهادة"
+
+msgid "Proparties"
+msgstr "خصائص"
+
+msgid "Support"
+msgstr "الدعم"
+
+msgid "Newsletter"
+msgstr "النشرة الإخبارية"
+
+msgid "Heaven fruitful doesn't over lesser in days. Appear creeping."
+msgstr "الجنة المثمرة لا تزيد عن الأقل في الأيام. تظهر زاحفة."
+
+msgid "Email Address"
+msgstr "عنوان البريد الإلكتروني"
+
+msgid "Home"
+msgstr "الصفحة الرئيسية"
+
+msgid "About"
+msgstr "حول"
+
+msgid "Spakers"
+msgstr "المتحدثون"
+
+msgid "Schedule"
+msgstr "الجدول الزمني"
+
+msgid "Blog"
+msgstr "مدونة"
+
+msgid "Blog Details"
+msgstr "تفاصيل المدونة"
+
+msgid "Contact"
+msgstr "اتصال"
+
+msgid "Elements"
+msgstr "عناصر"
+
+msgid "Join"
+msgstr "انضم"
+
+msgid "Wasla"
+msgstr "وصلة"
+
+msgid "Login with Google"
+msgstr "تسجيل الدخول باستخدام جوجل"
+
+msgid "Login with Mobile"
+msgstr "تسجيل الدخول باستخدام الهاتف"
+
+msgid "Send Code"
+msgstr "إرسال الرمز"
+
+msgid "Login canceled by user."
+msgstr "تم إلغاء تسجيل الدخول من قبل المستخدم."
+
+msgid "Google login error"
+msgstr "خطأ في تسجيل الدخول عبر جوجل"
+
+msgid "Enter verification code"
+msgstr "أدخل رمز التحقق"
+
+msgid "Phone login error"
+msgstr "خطأ في تسجيل الدخول عبر الهاتف"
+
+msgid "Login successful!"
+msgstr "تم تسجيل الدخول بنجاح!"
+
+msgid "Login failed"
+msgstr "فشل تسجيل الدخول"
+
+msgid "Network error"
+msgstr "خطأ في الشبكة"
+
+msgid "Skip to main content"
+msgstr "انتقل إلى المحتوى الرئيسي"
+
+msgid "Welcome,"
+msgstr "مرحبًا،"
+
+msgid "View site"
+msgstr "عرض الموقع"
+
+msgid "Breadcrumbs"
+msgstr "التنقل"
+
+msgid "Django site admin"
+msgstr "إدارة موقع Django"
+
+msgid "Django administration"
+msgstr "إدارة Django"
+
+msgid "Toggle navigation"
+msgstr "تبديل التنقل"
+
+msgid "Sidebar"
+msgstr "الشريط الجانبي"
+
+msgid "Start typing to filter…"
+msgstr "ابدأ الكتابة للتصفية…"
+
+msgid "Filter navigation items"
+msgstr "تصفية عناصر التنقل"
+
+msgid "Select Locale"
+msgstr "اختيار اللغة"
+
+#, python-brace-format
+msgid "{editor}: Editing failed"
+msgstr "{editor}: فشل التحرير"
+
+#, python-brace-format
+msgid "{editor}: Editing failed: {e}"
+msgstr "{editor}: فشل التحرير: {e}"
+
+msgid "Aborted!"
+msgstr "تم الإلغاء!"
+
+#, python-brace-format
+msgid "(Deprecated) {text}"
+msgstr "(مهمل) {text}"
+
+msgid "Options"
+msgstr "خيارات"
+
+#, python-brace-format
+msgid "Got unexpected extra argument ({args})"
+msgid_plural "Got unexpected extra arguments ({args})"
+msgstr[0] "حصل على وسيط إضافي غير متوقع ({args})"
+msgstr[1] "حصل على وسائط إضافية غير متوقعة ({args})"
+
+msgid "DeprecationWarning: The command {name!r} is deprecated."
+msgstr "تحذير الإهمال: الأمر {name!r} مهمل."
+
+msgid "Commands"
+msgstr "أوامر"
+
+msgid "Missing command."
+msgstr "الأمر مفقود."
+
+msgid "No such command {name!r}."
+msgstr "لا يوجد مثل هذا الأمر {name!r}."
+
+msgid "Value must be an iterable."
+msgstr "يجب أن تكون القيمة قابلة للتكرار."
+
+#, python-brace-format
+msgid "Takes {nargs} values but 1 was given."
+msgid_plural "Takes {nargs} values but {len} were given."
+msgstr[0] "يأخذ {nargs} قيم ولكن تم إعطاء 1."
+msgstr[1] "يأخذ {nargs} قيم ولكن تم إعطاء {len}."
+
+#, python-brace-format
+msgid "env var: {var}"
+msgstr "متغير البيئة: {var}"
+
+msgid "(dynamic)"
+msgstr "(ديناميكي)"
+
+#, python-brace-format
+msgid "default: {default}"
+msgstr "افتراضي: {default}"
+
+msgid "required"
+msgstr "مطلوب"
+
+#, python-format
+msgid "%(prog)s, version %(version)s"
+msgstr "%(prog)s، الإصدار %(version)s"
+
+msgid "Show the version and exit."
+msgstr "عرض الإصدار والخروج."
+
+msgid "Show this message and exit."
+msgstr "عرض هذه الرسالة والخروج."
+
+#, python-brace-format
+msgid "Error: {message}"
+msgstr "خطأ: {message}"
+
+#, python-brace-format
+msgid "Try '{command} {option}' for help."
+msgstr "جرب '{command} {option}' للمساعدة."
+
+#, python-brace-format
+msgid "Invalid value: {message}"
+msgstr "قيمة غير صالحة: {message}"
+
+#, python-brace-format
+msgid "Invalid value for {param_hint}: {message}"
+msgstr "قيمة غير صالحة لـ {param_hint}: {message}"
+
+msgid "Missing argument"
+msgstr "وسيط مفقود"
+
+msgid "Missing option"
+msgstr "خيار مفقود"
+
+msgid "Missing parameter"
+msgstr "معامل مفقود"
+
+#, python-brace-format
+msgid "Missing {param_type}"
+msgstr "مفقود {param_type}"
+
+#, python-brace-format
+msgid "Missing parameter: {param_name}"
+msgstr "معامل مفقود: {param_name}"
+
+#, python-brace-format
+msgid "No such option: {name}"
+msgstr "لا يوجد مثل هذا الخيار: {name}"
+
+#, python-brace-format
+msgid "Did you mean {possibility}?"
+msgid_plural "(Possible options: {possibilities})"
+msgstr[0] "هل تقصد {possibility}؟"
+msgstr[1] "(خيارات محتملة: {possibilities})"
+
+msgid "unknown error"
+msgstr "خطأ غير معروف"
+
+msgid "Could not open file {filename!r}: {message}"
+msgstr "تعذر فتح الملف {filename!r}: {message}"
+
+msgid "Argument {name!r} takes {nargs} values."
+msgstr "الوسيط {name!r} يأخذ {nargs} قيم."
+
+msgid "Option {name!r} does not take a value."
+msgstr "الخيار {name!r} لا يأخذ قيمة."
+
+msgid "Option {name!r} requires an argument."
+msgid_plural "Option {name!r} requires {nargs} arguments."
+msgstr[0] "الخيار {name!r} يتطلب وسيطًا."
+msgstr[1] "الخيار {name!r} يتطلب {nargs} وسائط."
+
+msgid "Shell completion is not supported for Bash versions older than 4.4."
+msgstr "إكمال shell غير مدعوم لإصدارات Bash الأقدم من 4.4."
+
+msgid "Couldn't detect Bash version, shell completion is not supported."
+msgstr "تعذر اكتشاف إصدار Bash، إكمال shell غير مدعوم."
+
+msgid "Repeat for confirmation"
+msgstr "كرر للتأكيد"
+
+msgid "Error: The value you entered was invalid."
+msgstr "خطأ: القيمة التي أدخلتها غير صالحة."
+
+#, python-brace-format
+msgid "Error: {e.message}"
+msgstr "خطأ: {e.message}"
+
+msgid "Error: The two entered values do not match."
+msgstr "خطأ: القيمتان المدخلتان غير متطابقتين."
+
+msgid "Error: invalid input"
+msgstr "خطأ: إدخال غير صالح"
+
+msgid "Press any key to continue..."
+msgstr "اضغط على أي مفتاح للمتابعة..."
+
+#, python-brace-format
+msgid ""
+"Choose from:\n"
+"\t{choices}"
+msgstr ""
+"اختر من:\n"
+"\t{choices}"
+
+msgid "{value!r} is not {choice}."
+msgid_plural "{value!r} is not one of {choices}."
+msgstr[0] "{value!r} ليس {choice}."
+msgstr[1] "{value!r} ليس واحدًا من {choices}."
+
+msgid "{value!r} does not match the format {format}."
+msgid_plural "{value!r} does not match the formats {formats}."
+msgstr[0] "{value!r} لا يتطابق مع التنسيق {format}."
+msgstr[1] "{value!r} لا يتطابق مع التنسيقات {formats}."
+
+msgid "{value!r} is not a valid {number_type}."
+msgstr "{value!r} ليس {number_type} صالحًا."
+
+#, python-brace-format
+msgid "{value} is not in the range {range}."
+msgstr "{value} ليس في النطاق {range}."
+
+msgid "{value!r} is not a valid boolean."
+msgstr "{value!r} ليس قيمة منطقية صالحة."
+
+msgid "{value!r} is not a valid UUID."
+msgstr "{value!r} ليس UUID صالحًا."
+
+msgid "file"
+msgstr "ملف"
+
+msgid "directory"
+msgstr "مجلد"
+
+msgid "path"
+msgstr "مسار"
+
+msgid "{name} {filename!r} does not exist."
+msgstr "{name} {filename!r} غير موجود."
+
+msgid "{name} {filename!r} is a file."
+msgstr "{name} {filename!r} هو ملف."
+
+msgid "{name} {filename!r} is a directory."
+msgstr "{name} {filename!r} هو مجلد."
+
+msgid "{name} {filename!r} is not readable."
+msgstr "{name} {filename!r} غير قابل للقراءة."
+
+msgid "{name} {filename!r} is not writable."
+msgstr "{name} {filename!r} غير قابل للكتابة."
+
+msgid "{name} {filename!r} is not executable."
+msgstr "{name} {filename!r} غير قابل للتنفيذ."
+
+#, python-brace-format
+msgid "{len_type} values are required, but {len_value} was given."
+msgid_plural "{len_type} values are required, but {len_value} were given."
+msgstr[0] "مطلوب {len_type} قيم، ولكن تم إعطاء {len_value}."
+msgstr[1] "مطلوب {len_type} قيم، ولكن تم إعطاء {len_value}."
+
+msgid "Messages"
+msgstr "رسائل"
+
+msgid "Site Maps"
+msgstr "خرائط الموقع"
+
+msgid "Static Files"
+msgstr "ملفات ثابتة"
+
+msgid "Syndication"
+msgstr "توزيع"
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+msgid "…"
+msgstr "…"
+
+msgid "That page number is not an integer"
+msgstr "رقم الصفحة هذا ليس عددًا صحيحًا"
+
+msgid "That page number is less than 1"
+msgstr "رقم الصفحة هذا أقل من 1"
+
+msgid "That page contains no results"
+msgstr "هذه الصفحة لا تحتوي على نتائج"
+
+msgid "Enter a valid value."
+msgstr "أدخل قيمة صالحة."
+
+msgid "Enter a valid domain name."
+msgstr "أدخل اسم نطاق صالح."
+
+msgid "Enter a valid URL."
+msgstr "أدخل عنوان URL صالح."
+
+msgid "Enter a valid integer."
+msgstr "أدخل عددًا صحيحًا صالحًا."
+
+msgid "Enter a valid email address."
+msgstr "أدخل عنوان بريد إلكتروني صالح."
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr "أدخل “slug” صالحًا يتكون من أحرف وأرقام وشرطات سفلية أو شرطات."
+
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr "أدخل “slug” صالحًا يتكون من أحرف Unicode وأرقام وشرطات سفلية أو شرطات."
+
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr "أدخل عنوان %(protocol)s صالحًا."
+
+msgid "IPv4"
+msgstr "IPv4"
+
+msgid "IPv6"
+msgstr "IPv6"
+
+msgid "IPv4 or IPv6"
+msgstr "IPv4 أو IPv6"
+
+msgid "Enter only digits separated by commas."
+msgstr "أدخل أرقامًا فقط مفصولة بفواصل."
+
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr "تأكد من أن هذه القيمة هي %(limit_value)s (هي %(show_value)s)."
+
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr "تأكد من أن هذه القيمة أقل من أو تساوي %(limit_value)s."
+
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr "تأكد من أن هذه القيمة أكبر من أو تساوي %(limit_value)s."
+
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr "تأكد من أن هذه القيمة مضاعف لحجم الخطوة %(limit_value)s."
+
+#, python-format
+msgid ""
+"Ensure this value is a multiple of step size %(limit_value)s, starting from "
+"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr ""
+"تأكد من أن هذه القيمة مضاعف لحجم الخطوة %(limit_value)s، بدءًا من %(offset)s، "
+"مثل %(offset)s، %(valid_value1)s، %(valid_value2)s، وهكذا."
+
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+"تأكد من أن هذه القيمة تحتوي على %(limit_value)d حرف على الأقل (تحتوي على "
+"%(show_value)d)."
+msgstr[1] ""
+"تأكد من أن هذه القيمة تحتوي على %(limit_value)d أحرف على الأقل (تحتوي على "
+"%(show_value)d)."
+
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+"تأكد من أن هذه القيمة تحتوي على %(limit_value)d حرف كحد أقصى (تحتوي على "
+"%(show_value)d)."
+msgstr[1] ""
+"تأكد من أن هذه القيمة تحتوي على %(limit_value)d أحرف كحد أقصى (تحتوي على "
+"%(show_value)d)."
+
+msgid "Enter a number."
+msgstr "أدخل رقمًا."
+
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] "تأكد من عدم وجود أكثر من %(max)s رقم في المجموع."
+msgstr[1] "تأكد من عدم وجود أكثر من %(max)s أرقام في المجموع."
+
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] "تأكد من عدم وجود أكثر من %(max)s منزلة عشرية."
+msgstr[1] "تأكد من عدم وجود أكثر من %(max)s منازل عشرية."
+
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] "تأكد من عدم وجود أكثر من %(max)s رقم قبل الفاصلة العشرية."
+msgstr[1] "تأكد من عدم وجود أكثر من %(max)s أرقام قبل الفاصلة العشرية."
+
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+"امتداد الملف “%(extension)s” غير مسموح به. الامتدادات المسموح بها هي: "
+"%(allowed_extensions)s."
+
+msgid "Null characters are not allowed."
+msgstr "الأحرف الفارغة غير مسموح بها."
+
+msgid "and"
+msgstr "و"
+
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr "%(model_name)s مع %(field_labels)s موجود بالفعل."
+
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr "تم انتهاك القيد “%(name)s”."
+
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr "القيمة %(value)r ليست خيارًا صالحًا."
+
+msgid "This field cannot be null."
+msgstr "هذا الحقل لا يمكن أن يكون فارغًا."
+
+msgid "This field cannot be blank."
+msgstr "هذا الحقل لا يمكن أن يكون فارغًا."
+
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr "%(model_name)s مع %(field_label)s موجود بالفعل."
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+"%(field_label)s يجب أن يكون فريدًا لـ %(date_field_label)s %(lookup_type)s."
+
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr "حقل من النوع: %(field_type)s"
+
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr "قيمة “%(value)s” يجب أن تكون إما True أو False."
+
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr "قيمة “%(value)s” يجب أن تكون إما True أو False أو None."
+
+msgid "Boolean (Either True or False)"
+msgstr "منطقي (إما True أو False)"
+
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr "سلسلة (حتى %(max_length)s)"
+
+msgid "String (unlimited)"
+msgstr "سلسلة (غير محدودة)"
+
+msgid "Comma-separated integers"
+msgstr "أعداد صحيحة مفصولة بفواصل"
+
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr "قيمة “%(value)s” لها تنسيق تاريخ غير صالح. يجب أن تكون بتنسيق YYYY-MM-DD."
+
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr "قيمة “%(value)s” لها التنسيق الصحيح (YYYY-MM-DD) ولكنها تاريخ غير صالح."
+
+msgid "Date (without time)"
+msgstr "تاريخ (بدون وقت)"
+
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+"قيمة “%(value)s” لها تنسيق غير صالح. يجب أن تكون بتنسيق YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ]."
+
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+"قيمة “%(value)s” لها التنسيق الصحيح (YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]) "
+"ولكنها تاريخ/وقت غير صالح."
+
+msgid "Date (with time)"
+msgstr "تاريخ (مع وقت)"
+
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr "قيمة “%(value)s” يجب أن تكون عددًا عشريًا."
+
+msgid "Decimal number"
+msgstr "عدد عشري"
+
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
+"uuuuuu] format."
+msgstr ""
+"قيمة “%(value)s” لها تنسيق غير صالح. يجب أن تكون بتنسيق [DD] [[HH:]MM:]ss[."
+"uuuuuu]."
+
+msgid "Duration"
+msgstr "مدة"
+
+msgid "Email address"
+msgstr "عنوان البريد الإلكتروني"
+
+msgid "File path"
+msgstr "مسار الملف"
+
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr "قيمة “%(value)s” يجب أن تكون عددًا عشريًا."
+
+msgid "Floating point number"
+msgstr "عدد عشري"
+
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr "قيمة “%(value)s” يجب أن تكون عددًا صحيحًا."
+
+msgid "Integer"
+msgstr "عدد صحيح"
+
+msgid "Big (8 byte) integer"
+msgstr "عدد صحيح كبير (8 بايت)"
+
+msgid "Small integer"
+msgstr "عدد صحيح صغير"
+
+msgid "IPv4 address"
+msgstr "عنوان IPv4"
+
+msgid "IP address"
+msgstr "عنوان IP"
+
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr "قيمة “%(value)s” يجب أن تكون إما None أو True أو False."
+
+msgid "Boolean (Either True, False or None)"
+msgstr "منطقي (إما True أو False أو None)"
+
+msgid "Positive big integer"
+msgstr "عدد صحيح موجب كبير"
+
+msgid "Positive integer"
+msgstr "عدد صحيح موجب"
+
+msgid "Positive small integer"
+msgstr "عدد صحيح موجب صغير"
+
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr "Slug (حتى %(max_length)s)"
+
+msgid "Text"
+msgstr "نص"
+
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr "قيمة “%(value)s” لها تنسيق غير صالح. يجب أن تكون بتنسيق HH:MM[:ss[.uuuuuu]]."
+
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+"قيمة “%(value)s” لها التنسيق الصحيح (HH:MM[:ss[.uuuuuu]]) ولكنها وقت غير صالح."
+
+msgid "Time"
+msgstr "وقت"
+
+msgid "Raw binary data"
+msgstr "بيانات ثنائية خام"
+
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr "“%(value)s” ليس UUID صالحًا."
+
+msgid "Universally unique identifier"
+msgstr "معرف فريد عالميًا"
+
+msgid "A JSON object"
+msgstr "كائن JSON"
+
+msgid "Value must be valid JSON."
+msgstr "يجب أن تكون القيمة JSON صالحة."
+
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr "نسخة %(model)s مع %(field)s %(value)r غير موجودة."
+
+msgid "Foreign Key (type determined by related field)"
+msgstr "مفتاح خارجي (النوع محدد بواسطة الحقل المرتبط)"
+
+msgid "One-to-one relationship"
+msgstr "علاقة واحد لواحد"
+
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr "علاقة %(from)s-%(to)s"
+
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr "علاقات %(from)s-%(to)s"
+
+msgid "Many-to-many relationship"
+msgstr "علاقة كثير إلى كثير"
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+msgid ":?.!"
+msgstr ":؟.!"
+
+msgid "This field is required."
+msgstr "هذا الحقل مطلوب."
+
+msgid "Enter a whole number."
+msgstr "أدخل عددًا صحيحًا."
+
+msgid "Enter a valid date."
+msgstr "أدخل تاريخًا صالحًا."
+
+msgid "Enter a valid time."
+msgstr "أدخل وقتًا صالحًا."
+
+msgid "Enter a valid date/time."
+msgstr "أدخل تاريخًا/وقتًا صالحًا."
+
+msgid "Enter a valid duration."
+msgstr "أدخل مدة صالحة."
+
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr "يجب أن يكون عدد الأيام بين {min_days} و {max_days}."
+
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr "لم يتم إرسال أي ملف. تحقق من نوع الترميز في النموذج."
+
+msgid "No file was submitted."
+msgstr "لم يتم إرسال أي ملف."
+
+msgid "The submitted file is empty."
+msgstr "الملف المرفوع فارغ."
+
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] "تأكد من أن اسم الملف يحتوي على %(max)d حرف كحد أقصى (يحتوي على %(length)d)."
+msgstr[1] "تأكد من أن اسم الملف يحتوي على %(max)d أحرف كحد أقصى (يحتوي على %(length)d)."
+
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr "من فضلك إما أن ترفع ملفًا أو تختار خانة الإزالة، وليس الاثنين معًا."
+
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr "ارفع صورة صالحة. الملف الذي رفعته إما ليس صورة أو صورة تالفة."
+
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr "اختر خيارًا صالحًا. %(value)s ليس واحدًا من الخيارات المتاحة."
+
+msgid "Enter a list of values."
+msgstr "أدخل قائمة من القيم."
+
+msgid "Enter a complete value."
+msgstr "أدخل قيمة كاملة."
+
+msgid "Enter a valid UUID."
+msgstr "أدخل UUID صالحًا."
+
+msgid "Enter a valid JSON."
+msgstr "أدخل JSON صالحًا."
+
+#. Translators: This is the default suffix added to form field labels
+msgid ":"
+msgstr ":"
+
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr "(حقل مخفي %(name)s) %(error)s"
+
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+"بيانات ManagementForm مفقودة أو تم العبث بها. الحقول المفقودة: %(field_names)s. "
+"قد تحتاج إلى تقديم تقرير خطأ إذا استمرت المشكلة."
+
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] "من فضلك أرسل %(num)d نموذجًا كحد أقصى."
+msgstr[1] "من فضلك أرسل %(num)d نموذجًا كحد أقصى."
+
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] "من فضلك أرسل %(num)d نموذجًا على الأقل."
+msgstr[1] "من فضلك أرسل %(num)d نموذجًا على الأقل."
+
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr "من فضلك صحح البيانات المكررة لـ %(field)s."
+
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr "من فضلك صحح البيانات المكررة لـ %(field)s، والتي يجب أن تكون فريدة."
+
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+"من فضلك صحح البيانات المكررة لـ %(field_name)s والتي يجب أن تكون فريدة لـ "
+"%(lookup)s في %(date_field)s."
+
+msgid "Please correct the duplicate values below."
+msgstr "من فضلك صحح القيم المكررة أدناه."
+
+msgid "The inline value did not match the parent instance."
+msgstr "القيمة المضمنة لا تتطابق مع النسخة الأصلية."
+
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr "اختر خيارًا صالحًا. هذا الخيار ليس واحدًا من الخيارات المتاحة."
+
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr "“%(pk)s” ليست قيمة صالحة."
+
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+"%(datetime)s لا يمكن تفسيره في المنطقة الزمنية %(current_timezone)s؛ قد يكون "
+"غامضًا أو غير موجود."
+
+msgid "Clear"
+msgstr "مسح"
+
+msgid "Currently"
+msgstr "حاليًا"
+
+msgid "Unknown"
+msgstr "غير معروف"
+
+msgid "Yes"
+msgstr "نعم"
+
+msgid "No"
+msgstr "لا"
+
+#. Translators: Please do not add spaces around commas.
+msgid "yes,no,maybe"
+msgstr "نعم،لا،ربما"
+
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] "%(size)d بايت"
+msgstr[1] "%(size)d بايت"
+
+#, python-format
+msgid "%s KB"
+msgstr "%s كيلوبايت"
+
+#, python-format
+msgid "%s MB"
+msgstr "%s ميجابايت"
+
+#, python-format
+msgid "%s GB"
+msgstr "%s جيجابايت"
+
+#, python-format
+msgid "%s TB"
+msgstr "%s تيرابايت"
+
+#, python-format
+msgid "%s PB"
+msgstr "%s بيتابايت"
+
+msgid "p.m."
+msgstr "م"
+
+msgid "a.m."
+msgstr "ص"
+
+msgid "PM"
+msgstr "م"
+
+msgid "AM"
+msgstr "ص"
+
+msgid "midnight"
+msgstr "منتصف الليل"
+
+msgid "noon"
+msgstr "ظهر"
+
+msgid "Mon"
+msgstr "الاثنين"
+
+msgid "Tue"
+msgstr "الثلاثاء"
+
+msgid "Wed"
+msgstr "الأربعاء"
+
+msgid "Thu"
+msgstr "الخميس"
+
+msgid "Fri"
+msgstr "الجمعة"
+
+msgid "Sat"
+msgstr "السبت"
+
+msgid "Sun"
+msgstr "الأحد"
+
+msgid "January"
+msgstr "يناير"
+
+msgid "February"
+msgstr "فبراير"
+
+msgid "March"
+msgstr "مارس"
+
+msgid "April"
+msgstr "أبريل"
+
+msgid "May"
+msgstr "مايو"
+
+msgid "June"
+msgstr "يونيو"
+
+msgid "July"
+msgstr "يوليو"
+
+msgid "August"
+msgstr "أغسطس"
+
+msgid "September"
+msgstr "سبتمبر"
+
+msgid "October"
+msgstr "أكتوبر"
+
+msgid "November"
+msgstr "نوفمبر"
+
+msgid "December"
+msgstr "ديسمبر"
+
+msgid "jan"
+msgstr "يناير"
+
+msgid "feb"
+msgstr "فبراير"
+
+msgid "mar"
+msgstr "مارس"
+
+msgid "apr"
+msgstr "أبريل"
+
+msgid "may"
+msgstr "مايو"
+
+msgid "jun"
+msgstr "يونيو"
+
+msgid "jul"
+msgstr "يوليو"
+
+msgid "aug"
+msgstr "أغسطس"
+
+msgid "sep"
+msgstr "سبتمبر"
+
+msgid "oct"
+msgstr "أكتوبر"
+
+msgid "nov"
+msgstr "نوفمبر"
+
+msgid "dec"
+msgstr "ديسمبر"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "يناير"
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "فبراير"
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "مارس"
+
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "أبريل"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "مايو"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "يونيو"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "يوليو"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "أغسطس"
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "سبتمبر"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "أكتوبر"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "نوفمبر"
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "ديسمبر"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "يناير"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "فبراير"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "مارس"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "أبريل"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "مايو"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "يونيو"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "يوليو"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "أغسطس"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "سبتمبر"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "أكتوبر"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "نوفمبر"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "ديسمبر"
+
+msgid "This is not a valid IPv6 address."
+msgstr "هذا ليس عنوان IPv6 صالحًا."
+
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr "%(truncated_text)s…"
+
+msgid "or"
+msgstr "أو"
+
+#. Translators: This string is used as a separator between list elements
+msgid ", "
+msgstr "، "
+
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] "%(num)d سنة"
+msgstr[1] "%(num)d سنوات"
+
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] "%(num)d شهر"
+msgstr[1] "%(num)d أشهر"
+
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] "%(num)d أسبوع"
+msgstr[1] "%(num)d أسابيع"
+
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] "%(num)d يوم"
+msgstr[1] "%(num)d أيام"
+
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] "%(num)d ساعة"
+msgstr[1] "%(num)d ساعات"
+
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] "%(num)d دقيقة"
+msgstr[1] "%(num)d دقائق"
+
+msgid "Forbidden"
+msgstr "ممنوع"
+
+msgid "CSRF verification failed. Request aborted."
+msgstr "فشل التحقق من CSRF. تم إلغاء الطلب."
+
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+"ترى هذه الرسالة لأن هذا الموقع الآمن يتطلب إرسال “رأس Referer” من متصفحك، ولكن "
+"لم يتم إرسال أي شيء. هذا الرأس مطلوب لأسباب أمنية، لضمان عدم اختراق متصفحك من "
+"قبل أطراف ثالثة."
+
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+"إذا كنت قد قمت بتعطيل رؤوس “Referer” في متصفحك، يرجى إعادة تمكينها، على الأقل "
+"لهذا الموقع، أو لاتصالات HTTPS، أو لطلبات “same-origin”."
+
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+"إذا كنت تستخدم وسم <meta name=\"referrer\" content=\"no-referrer\"> أو تضمن "
+"رأس “Referrer-Policy: no-referrer”، يرجى إزالته. حماية CSRF تتطلب رأس "
+"“Referer” للتحقق الصارم من المرجع. إذا كنت مهتمًا بالخصوصية، استخدم بدائل مثل "
+"<a rel=\"noreferrer\" …> للروابط إلى مواقع خارجية."
+
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+"ترى هذه الرسالة لأن هذا الموقع يتطلب ملف تعريف ارتباط CSRF عند إرسال النماذج. "
+"هذا الملف مطلوب لأسباب أمنية، لضمان عدم اختراق متصفحك من قبل أطراف ثالثة."
+
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+"إذا كنت قد قمت بتعطيل ملفات تعريف الارتباط في متصفحك، يرجى إعادة تمكينها، على "
+"الأقل لهذا الموقع، أو لطلبات “same-origin”."
+
+msgid "More information is available with DEBUG=True."
+msgstr "معلومات إضافية متاحة مع DEBUG=True."
+
+msgid "No year specified"
+msgstr "لم يتم تحديد سنة"
+
+msgid "Date out of range"
+msgstr "التاريخ خارج النطاق"
+
+msgid "No month specified"
+msgstr "لم يتم تحديد شهر"
+
+msgid "No day specified"
+msgstr "لم يتم تحديد يوم"
+
+msgid "No week specified"
+msgstr "لم يتم تحديد أسبوع"
+
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr "لا توجد %(verbose_name_plural)s متاحة"
+
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+"%(verbose_name_plural)s المستقبلية غير متاحة لأن %(class_name)s.allow_future "
+"هي False."
+
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr "سلسلة التاريخ “%(datestr)s” غير صالحة بالتنسيق “%(format)s”"
+
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr "لم يتم العثور على %(verbose_name)s مطابق للاستعلام"
+
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr "الصفحة ليست “آخر”، ولا يمكن تحويلها إلى عدد صحيح."
+
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr "صفحة غير صالحة (%(page_number)s): %(message)s"
+
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr "قائمة فارغة و “%(class_name)s.allow_empty” هي False."
+
+msgid "Directory indexes are not allowed here."
+msgstr "فهارس الدليل غير مسموح بها هنا."
+
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr "“%(path)s” غير موجود"
+
+#, python-format
+msgid "Index of %(directory)s"
+msgstr "فهرس %(directory)s"
+
+msgid "The install worked successfully! Congratulations!"
+msgstr "تم التثبيت بنجاح! تهانينا!"
+
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/4.2/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+"عرض <a href=\"https://docs.djangoproject.com/en/4.2/releases/\" "
+"target=\"_blank\" rel=\"noopener\">ملاحظات الإصدار</a> لـ Django %(version)s"
+
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr ""
+"ترى هذه الصفحة لأن <a href=\"https://docs.djangoproject.com/en/%(version)s/ref/"
+"settings/#debug\" target=\"_blank\" rel=\"noopener\">DEBUG=True</a> موجود في "
+"ملف الإعدادات الخاص بك ولم تقم بتكوين أي عناوين URL."
+
+msgid "Django Documentation"
+msgstr "توثيق Django"
+
+msgid "Topics, references, &amp; how-to’s"
+msgstr "موضوعات، مراجع، وإرشادات"
+
+msgid "Tutorial: A Polling App"
+msgstr "درس تعليمي: تطبيق استطلاع رأي"
+
+msgid "Get started with Django"
+msgstr "ابدأ مع Django"
+
+msgid "Django Community"
+msgstr "مجتمع Django"
+
+msgid "Connect, get help, or contribute"
+msgstr "تواصل، احصل على مساعدة، أو ساهم"
+
+#, python-format
+msgid "Content purported to be compressed with %s but failed to decompress."
+msgstr "المحتوى من المفترض أن يكون مضغوطًا بـ %s ولكن فشل في فك الضغط."
+
+#, python-format
+msgid "Unsupported value for qop: %s."
+msgstr "قيمة غير مدعومة لـ qop: %s."
+
+#, python-format
+msgid "Unsupported value for algorithm: %s."
+msgstr "قيمة غير مدعومة لـ algorithm: %s."
+
+msgid "The challenge doesn't contain a server nonce, or this one is empty."
+msgstr "التحدي لا يحتوي على nonce خادم، أو هذا فارغ."
+
+#, python-format
+msgid "Unsupported value for pw-algorithm: %s."
+msgstr "قيمة غير مدعومة لـ pw-algorithm: %s."
+
+msgid "Redirected but the response is missing a Location: header."
+msgstr "تم التوجيه ولكن الاستجابة تفتقد رأس Location:."
+
+#, python-format
+msgid "Attempting to connect to qpid with SASL mechanism %s"
+msgstr "محاولة الاتصال بـ qpid مع آلية SASL %s"
+
+#, python-format
+msgid "Connected to qpid with SASL mechanism %s"
+msgstr "تم الاتصال بـ qpid مع آلية SASL %s"
+
+#, python-format
+msgid "Unable to connect to qpid with SASL mechanism %s"
+msgstr "غير قادر على الاتصال بـ qpid مع آلية SASL %s"

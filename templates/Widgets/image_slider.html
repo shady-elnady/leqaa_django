@@ -1,0 +1,36 @@
+{% comment %} {% if widget.is_initial %}{{ widget.initial_text }}: <a href="{{ widget.value.url }}">{{ widget.value }}</a>{% if not widget.required %}
+<input type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}"{% if widget.attrs.disabled %} disabled{% endif %}{% if widget.attrs.checked %} checked{% endif %}>
+<label for="{{ widget.checkbox_id }}">{{ widget.clear_checkbox_label }}</label>{% endif %}<br>
+{{ widget.input_text }}:{% endif %}
+<input type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
+
+{% comment %}
+{% load i18n %}
+{% load l10n %}
+{% load static %} <div>
+  <div id="custom-image-slider-{{ name }}-{{ id }}">
+    {% if value %}
+      <img src="{{ MEDIA_URL }}{{ value }}" alt="Current Image" />
+    {% else %}
+      <p>No image selected.</p>
+    {% endif %}
+    <input type="file" id="input-{{ name }}-{{ id }}" 
+    {% include "django/forms/widgets/attrs.html" %}
+    />
+  </div>
+
+  <script>
+    document.getElementById('input-{{ name }}-{{ id }}').addEventListener('change', function (event) {
+      const file = event.target.files[0]
+      if (file) {
+        const reader = new FileReader()
+        reader.onload = function (e) {
+          document.querySelector('#custom-image-slider-{{ name }}-{{ id }} img').src = e.target.result
+          console.log(e.target);
+          document.querySelector('#custom-image-slider-{{ name }}-{{ id }} img').value = e.target
+        }
+        reader.readAsDataURL(file)
+      }
+    })
+  </script>
+</div> {% endcomment %} {% endcomment %}

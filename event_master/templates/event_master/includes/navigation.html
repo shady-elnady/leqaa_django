@@ -1,0 +1,69 @@
+{% load i18n static %}
+
+<!-- [ Header Topbar ] start -->
+<header>
+  <!-- ? Header Start -->
+  <div class="header-area">
+    <div class="main-header header-sticky">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <!-- Logo -->
+          <div class="col-xl-2 col-lg-2 col-md-1">
+            <div class="logo">
+              <a href="{% url 'event_master:Home' %}"><img class="logo-img" src="{% static 'event_master/assets/img/logo/light_logo.png' %}" alt="" /></a>
+            </div>
+          </div>
+          <div class="col-xl-10 col-lg-10 col-md-10">
+            <div class="menu-main d-flex align-items-center justify-content-end">
+              <!-- Main-menu -->
+              <div class="main-menu f-right d-none d-lg-block">
+                <nav aria-label="Main Navigation">
+                  <ul id="navigation">
+                    <li class="{% if request.resolver_match.view_name == 'event_master:Home' %}active{% endif %} ">
+                      <a href="{% url 'event_master:Home' %}">{% translate 'Home' %}</a>
+                    </li>
+                    <li class="{% if request.resolver_match.view_name == 'event_master:About' %}active{% endif %} ">
+                      <a href="{% url 'event_master:About' %}">{% translate 'About' %}</a>
+                    </li>
+                    <li class="{% if request.resolver_match.view_name == 'event_master:Spakers' %}active{% endif %} ">
+                      <a href="{% url 'event_master:Spakers' %}">{% translate 'Spakers' %}</a>
+                    </li>
+                    <li class="{% if request.resolver_match.view_name == 'event_master:Schedule' %}active{% endif %} ">
+                      <a href="{% url 'event_master:Schedule' %}">{% translate 'Schedule' %}</a>
+                    </li>
+                    <li class="{% if request.resolver_match.view_name == 'event_master:Blog' %}active{% endif %} ">
+                      <a href="{% url 'event_master:Blog' %}">{% translate 'Blog' %}</a>
+                      <ul class="submenu">
+                        <li class="{% if request.resolver_match.view_name == 'event_master:Blog' %}active{% endif %} ">
+                          <a href="{% url 'event_master:Blog' %}">{% translate 'Blog' %}</a>
+                        </li>
+                        <li class="{% if request.resolver_match.view_name == 'event_master:BlogDetails' %}active{% endif %} ">
+                          <a href="{% url 'event_master:BlogDetails' %}">{% translate 'Blog Details' %}</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="{% if request.resolver_match.view_name == 'event_master:Contact' %}active{% endif %} ">
+                      <a href="{% url 'event_master:Contact' %}">{% translate 'Contact' %}</a>
+                    </li>
+                    <li class="{% if request.resolver_match.view_name == 'event_master:Elements' %}active{% endif %} ">
+                      <a href="{% url 'event_master:Elements' %}">{% translate 'Elements' %}</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="header-right-btn f-right d-none d-lg-block ml-30">
+                <a href="{% url 'admin:index' %}" class="btn header-btn">{% translate 'Dashboard' %}</a>
+              </div>
+            </div>
+          </div>
+          <!-- Mobile Menu -->
+          <div class="col-12">
+            <div class="mobile_menu d-block d-lg-none"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Header End -->
+</header>
+<!-- [ Header ] end -->

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+  <head>
+    <title>Firebase Login</title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      .container {
+        width: 300px;
+        margin: 50px auto;
+      }
+      button {
+        padding: 10px;
+        cursor: pointer;
+      }
+      #phone-container {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button id="google-login">{% trans 'Login with Google' %}</button>
+      <button id="phone-button">{% trans 'Login with Mobile' %}</button>
+      <div id="phone-container">
+        <input type="text" id="phone-number" placeholder="Phone Number" />
+        <div id="recaptcha-container"></div>
+        <button id="phone-login">{% trans 'Send Code' %}</button>
+      </div>
+      <div id="message"></div>
+    </div>
+
+    <script>
+      // Initialize Firebase (replace with your config)
+      const firebaseConfig = {
+        apiKey: 'AIzaSyAOQD6hoK5ECzMxFHdItTLceLKvu72PYz0',
+        authDomain: 'healthy-unit.firebaseapp.com',
+        databaseURL: 'https://healthy-unit-default-rtdb.firebaseio.com',
+        projectId: 'healthy-unit',
+        storageBucket: 'healthy-unit.appspot.com',
+        messagingSenderId: '590929307616',
+        appId: '1:590929307616:web:6603091065034b52332d85',
+        measurementId: 'G-3K32G8VXVT'
+      }
+      
+      firebase.initializeApp(firebaseConfig)
+      const auth = firebase.auth()
+      
+      document.getElementById('google-login').addEventListener('click', () => {
+        const provider = new firebase.auth.GoogleAuthProvider()
+        firebase
+          .auth()
+          .signInWithPopup(provider)
+          .then((result) => {
+            console.log(`Result >> ${result}`)
+            const user = result.user
+            user.getIdToken().then((idToken) => {
+              sendTokenToDjango(idToken)
+            })
+          })
+          .catch((error) => {
+            console.log(`Error >> ${error}`)
+            if (error.code === 'auth/popup-closed-by-user') {
+              document.getElementById('message').textContent = "{% trans 'Login canceled by user.' %}"
+            } else {
+              document.getElementById('message').textContent = "{% trans 'Google login error' %}: " + error.message
+            }
+          })
+      })
+      
+      document.getElementById('phone-button').addEventListener('click', () => {
+        document.getElementById('phone-container').style.display = 'block'
+        window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+          size: 'invisible',
+          callback: (response) => {
+            // reCAPTCHA solved, allow signInWithPhoneNumber.
+          }
+        })
+      })
+      
+      document.getElementById('phone-login').addEventListener('click', () => {
+        let phoneNumber = document.getElementById('phone-number').value
+        phoneAuth(phoneNumber, window.recaptchaVerifier)
+      })
+      
+      function phoneAuth(phoneNumber, appVerifier) {
+        firebase
+          .auth()
+          .signInWithPhoneNumber(phoneNumber, appVerifier)
+          .then((confirmationResult) => {
+            let code = prompt("{% trans 'Enter verification code' %}: ")
+            confirmationResult
+              .confirm(code)
+              .then((result) => {
+                let user = result.user
+                user.getIdToken().then((idToken) => {
+                  sendTokenToDjango(idToken)
+                })
+              })
+              .catch((error) => {
+                document.getElementById('message').textContent = "{% trans 'Phone login error' %}: " + error.message
+              })
+          })
+          .catch((error) => {
+            document.getElementById('message').textContent = "{% trans 'Phone login error' %}: " + error.message
+          })
+      }
+      
+      function getCookie(name) {
+        let cookieValue = null
+        if (document.cookie && document.cookie !== '') {
+          const cookies = document.cookie.split(';')
+          for (const cookie of cookies) {
+            const trimmedCookie = cookie.trim()
+            if (trimmedCookie.substring(0, name.length + 1) === name + '=') {
+              cookieValue = decodeURIComponent(trimmedCookie.substring(name.length + 1))
+              break
+            }
+          }
+        }
+        return cookieValue
+      }
+      
+      function sendTokenToDjango(idToken) {
+        console.log(`sendTokenToDjango id Token >${idToken}`)
+        const baseUrl = window.location.origin // Gets the current domain (e.g., http://localhost:8000)
+        const csrftoken = getCookie('csrftoken') // Get the CSRF token
+        const url = `${baseUrl}/api/firebase-log-in/`
+        fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrftoken // Include the CSRF token
+          },
+          body: JSON.stringify({ id_token: idToken })
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(`sendTokenToDjango Then data >${data}`)
+            if (data.token) {
+              localStorage.setItem('authToken', data.token)
+              document.getElementById('message').textContent = "{% trans 'Login successful!' %}"
+              // Redirect or handle successful login
+            } else {
+              document.getElementById('message').textContent = "{% trans 'Login failed' %}: " + data.error
+            }
+          })
+          .catch((error) => {
+            document.getElementById('message').textContent = "{% trans 'Network error' %}: " + error.message
+          })
+      }
+    </script>
+  </body>
+</html>

@@ -1,9 +1,11 @@
 from django.core.management.base import BaseCommand
 from django.core.management import call_command
+from django.conf import settings
+from os.path import join, exists
+from os import makedirs
 
-# from django.conf import settings
-# from os.path import join, exists
-# from os import makedirs
+from App.tools.get_model_name import get_model_name_from_class
+from User.models import UserAlbum, Profile
 
 
 class Command(BaseCommand):
@@ -11,13 +13,22 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
+        if not exists(
+            join(settings.MEDIA_ROOT, "images", get_model_name_from_class(Profile))
+        ):
+            makedirs(
+                join(settings.MEDIA_ROOT, "images", get_model_name_from_class(Profile))
+            )
+        if not exists(
+            join(settings.MEDIA_ROOT, "images", get_model_name_from_class(UserAlbum))
+        ):
+            makedirs(
+                join(
+                    settings.MEDIA_ROOT, "images", get_model_name_from_class(UserAlbum)
+                )
+            )
+
         self.stdout.write(self.style.WARNING(f"Start {self.help}"))
-
-        # IMAGES_ROOT = join(settings.MEDIA_ROOT, "images")
-
-        # users_images_directory = join(IMAGES_ROOT, "Users")
-        # if not exists(users_images_directory):
-        #     makedirs(users_images_directory)
 
         commands = [
             "superusers_seeds",

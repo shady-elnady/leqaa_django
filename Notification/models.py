@@ -2,11 +2,11 @@ from django.db.models import (
     ForeignKey,
     CASCADE,
 )
-from django.utils.translation import gettext_lazy as _
 
-from Utils.models.BaseModel import BaseModel
+from App.models import BaseModel
+from App.messages import ModelsMessages
 from User.models import User
-from Event.models import Event
+from Category.models import Category
 
 # Create your model
 
@@ -15,22 +15,22 @@ class Notification(BaseModel):
     user = ForeignKey(
         User,
         on_delete=CASCADE,
-        related_name=_("Notifications"),
-        verbose_name=_("User"),
+        related_name="Notifications",
+        verbose_name=ModelsMessages.USER,
     )
-    event = ForeignKey(
-        Event,
+    category = ForeignKey(
+        Category,
         on_delete=CASCADE,
-        related_name=_("Notifications"),
-        verbose_name=_("Event"),
+        related_name="Notifications",
+        verbose_name=ModelsMessages.CATEGORY,
     )
 
     def __str__(self) -> str:
-        return f"{self.pk}-{self.user.username}({self.event.title})"
+        return f"{self.pk}-{self.user.username}({self.category.name})"
 
     def __decode__(self) -> str:
-        return f"{self.pk}- {self.user.username}({self.event.title})"
+        return f"{self.pk}- {self.user.username}({self.category.name})"
 
     class Meta:
-        verbose_name = _("Notification")
-        verbose_name_plural = _("Notifications")
+        verbose_name = ModelsMessages.NOTIFICATION
+        verbose_name_plural = ModelsMessages.NOTIFICATIONS
