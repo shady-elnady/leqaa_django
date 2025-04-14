@@ -74,7 +74,15 @@ class Country(BaseTranslationModel, BaseImageModel):
     #############################################################
     @property
     def flag(self):
-        return self.image
+        if self.image:
+            return self.image.url
+        if self.firebase_image_url:
+            return self.firebase_image_url
+        return f"https://flagsapi.com/{self.country_code.upper()}/shiny/64.png"
+
+    @flag.setter
+    def flag(self, value):
+        return self.image.url
 
     @flag.setter
     def flag(self, value):

@@ -1,6 +1,12 @@
 from rest_framework.serializers import (
     HyperlinkedModelSerializer,
+    Serializer,
+    ModelSerializer,
+    ValidationError,
+    CharField,
 )
+from django.contrib.auth.password_validation import validate_password
+
 
 from Category.api import CategorySerializer
 from Organization.api import CollegeSerializer, UniversitySerializer
@@ -134,3 +140,37 @@ class ProfileSerializer(HyperlinkedModelSerializer):
             "created_at",
             "last_updated",
         ]
+        extra_kwargs = {"user": {"read_only": True}}
+
+    def create(self, validated_data):
+        # Get the user from context (set in the view)
+        user = self.context["user"]
+        # Create profile for the user
+        return Profile.objects.create(user=user, **validated_data)
+
+
+class PasswordSerializer(Serializer):
+    password = CharField(write_only=True, required=True, validators=[validate_password])
+    confirm_password = CharField(write_only=True, required=True)
+
+    def validate(self, attrs):
+        if attrs["password"] != attrs["confirm_password"]:
+            raise ValidationError("Passwords don't match")
+        return attrs
+
+
+class UserDetailsSerializer(ModelSerializer):
+    profile = ProfileSerializer(read_only=True)
+
+    class Meta:
+        model = User
+        fields = [
+            "id",
+            "username",
+            "email",
+            "mobile",
+            "is_active",
+            "email_verified_at",
+            "profile",  # Nested profile data
+        ]
+        read_only_fields = fields  # All fields are read-only

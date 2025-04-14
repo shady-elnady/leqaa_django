@@ -18,11 +18,11 @@ class Command(BaseCommand):
                 "postal_code": "12333",
                 "state_type": StateTypes.VILLAGE,
                 "translations": {
-                    "en_US": "State 1",
-                    "ar_EG": "ولاية 1",
-                    "ar_AS": "ولاية 1",
-                    "fr_FR": "État 1",
-                    "tr_TR": "Durum 1",
+                    "en-us": "State 1",
+                    "ar-eg": "ولاية 1",
+                    "ar-as": "ولاية 1",
+                    "fr-fr": "État 1",
+                    "tr-tr": "Durum 1",
                 },
             },
         ]

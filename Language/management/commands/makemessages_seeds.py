@@ -21,10 +21,8 @@ class Command(BaseCommand):
             self.style.MIGRATE_HEADING("Starting translation file generation")
         )
 
-        if not hasattr(settings, "REGIONAL_LANGUAGES"):
-            self.stdout.write(
-                self.style.ERROR("REGIONAL_LANGUAGES not defined in settings")
-            )
+        if not hasattr(settings, "LANGUAGES"):
+            self.stdout.write(self.style.ERROR("LANGUAGES not defined in settings"))
             return
 
         # Create locale directory if needed
@@ -37,28 +35,28 @@ class Command(BaseCommand):
 
         # Process all variants
         success_count = 0
-        for base_lang, variants in settings.REGIONAL_LANGUAGES.items():
-            for variant in variants:
-                try:
-                    call_command(
-                        "makemessages",
-                        locale=[variant],
-                        ignore=options["ignore"],
-                        no_location=True,  # Cleaner PO files
-                        no_obsolete=True,  # Remove obsolete strings
-                        verbosity=options["verbosity"],
+        for locale in settings.LANGUAGES:
+            lang, _, country = locale[0].partition("-")
+            locale_code = f"{lang}_{country.upper()}"
+            try:
+                call_command(
+                    "makemessages",
+                    locale=[locale_code],
+                    ignore=options["ignore"],
+                    no_location=True,  # Cleaner PO files
+                    no_obsolete=True,  # Remove obsolete strings
+                    verbosity=options["verbosity"],
+                )
+                success_count += 1
+                self.stdout.write(
+                    self.style.SUCCESS(f" ✓ Processing Locale for {locale_code}")
+                )
+            except Exception as e:
+                self.stdout.write(
+                    self.style.NOTICE(
+                        f" ✗ Processing Locale for {locale_code},\n \t Error: {str(e)}"
                     )
-                    success_count += 1
-                    self.stdout.write(
-                        self.style.SUCCESS(f" ✓ Processing Locale for {variant}")
-                    )
-                except Exception as e:
-                    self.stdout.write(
-                        self.style.NOTICE(
-                            f" ✗ Processing Locale for {variant},\n \t Error: {str(e)}"
-                        )
-                    )
-
+                )
         # Summary
         self.stdout.write(
             "\n"

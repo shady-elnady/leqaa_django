@@ -27,24 +27,6 @@ from Currency.models import Currency
 from .User import User
 
 
-class AgeModel(Model):
-    day = PositiveSmallIntegerField(
-        default=0,
-        verbose_name=FieldsMessages.DAY,
-    )
-    month = PositiveSmallIntegerField(
-        default=0,
-        verbose_name=FieldsMessages.MONTH,
-    )
-    year = PositiveSmallIntegerField(
-        default=0,
-        verbose_name=FieldsMessages.YEAR,
-    )
-
-    class Meta:
-        abstract = True
-
-
 class Profile(BaseModel, BaseImageModel):
     user = OneToOneField(
         User,
@@ -131,7 +113,7 @@ class Profile(BaseModel, BaseImageModel):
     @property
     def avatar(self):
         return (
-            self.image
+            self.image.url
             if self.image
             else join("Images", "Profile", "default_avatar.png")
         )
@@ -211,11 +193,11 @@ class Profile(BaseModel, BaseImageModel):
             else:
                 month += 1
             age_months += 1
-        return AgeModel(
-            year=age_years,
-            month=age_months,
-            day=age_days,
-        )
+        return {  # Return dict instead of AgeModel instance
+            "years": age_years,
+            "months": age_months,
+            "days": age_days,
+        }
 
     def __str__(self) -> str:
         return f"Profile-> {self.user.username}"

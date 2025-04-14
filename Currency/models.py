@@ -1,5 +1,4 @@
 from django.db.models import CharField, FloatField, ManyToManyField, ForeignKey, CASCADE
-from django.utils.translation import get_language, to_locale
 
 from App.messages import ModelsMessages, FieldsMessages
 from App.models import BaseModel
@@ -25,11 +24,6 @@ class Currency(BaseTranslationModel):
         through="CurrencyExchangeRate",
         verbose_name=FieldsMessages.EXCHANGE_RATES,
     )
-
-    @property
-    def translated_name(self) -> str:
-        trans = self.translations[to_locale(get_language())]
-        return trans if trans else self.name
 
     class Meta:
         verbose_name = ModelsMessages.CURRENCY

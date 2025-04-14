@@ -8,7 +8,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework.throttling import AnonRateThrottle
 from django.contrib.auth import login
 from django.utils import timezone
-from django.db import IntegrityError, DatabaseError
+from django.db import DatabaseError
 import logging
 
 from Api.exceptions import (
@@ -29,8 +29,9 @@ logger = logging.getLogger(__name__)
 class LoginThrottle(AnonRateThrottle):
     """Custom throttle for login endpoint (5 attempts/hour per email)"""
 
-    scope = "login"
-    rate = "5/hour"
+    scope = (
+        "api_log_in"  # Matches the setting in REST_FRAMEWORK['DEFAULT_THROTTLE_RATES']
+    )
 
     def get_cache_key(self, request, view):
         if request.method == "POST" and "email" in request.data:
@@ -66,7 +67,7 @@ class LogInSerializer(ModelSerializer):
 class LogInAPIView(APIView):
     """
     Authenticates users and returns an auth token.
-    Throttles: 5 attempts/hour per email
+    Throttles: 5 attempts/hour per email (configured in settings)
     """
 
     serializer_class = LogInSerializer
@@ -94,7 +95,6 @@ class LogInAPIView(APIView):
             )
 
         except UnverifiedAccountException as e:
-            # Return the verification URL in the response
             return Response(
                 {
                     "success": False,
@@ -104,10 +104,8 @@ class LogInAPIView(APIView):
                 },
                 status=status.HTTP_403_FORBIDDEN,
             )
-
         except ValidationException:
-            raise ValidationException(errors=serializer.errors)
-
+            raise  # Re-raise as is
         except Exception as e:
             logger.critical(
                 "Unexpected login error",
@@ -123,10 +121,9 @@ class LogInAPIView(APIView):
     def _authenticate_user(self, email: str, password: str, request) -> Response:
         """Core authentication logic with proper error handling"""
         try:
-            user: "User" = self._get_user(email)
-            self._validate_credentials(user, password)
+            user = self._get_user(email)
+            self._validate_credentials(user, password, request)
             self._check_account_verification(user, request)
-
             token = self._get_or_update_token(user)
             self._activate_user_if_needed(user)
             self._create_session(request, user)
@@ -144,7 +141,7 @@ class LogInAPIView(APIView):
                 data={
                     "token": token.key,
                     "user": {
-                        "id": user.encoded_uid(),
+                        "id": user.encoded_uid,
                         "email": user.email,
                         "is_active": user.is_active,
                     },
@@ -152,10 +149,8 @@ class LogInAPIView(APIView):
                 message=AuthMessages.LOGIN_SUCCESS,
                 status_code=status.HTTP_200_OK,
             )
-
         except (NotFoundException, AuthenticationException, UnverifiedAccountException):
-            raise  # Re-raise custom exceptions
-
+            raise
         except DatabaseError as e:
             logger.error(
                 "Database error during authentication",
@@ -163,7 +158,6 @@ class LogInAPIView(APIView):
                 extra={"email": email, "error": str(e)},
             )
             raise DatabaseException(message=AuthMessages.DATABASE_ERROR)
-
         except Exception as e:
             logger.error(
                 "Authentication processing error",
@@ -174,19 +168,16 @@ class LogInAPIView(APIView):
 
     def _get_user(self, email: str) -> "User":
         """Retrieve user with validation"""
-        user: "User" = User.objects.filter(email__iexact=email).first()
+        user = User.objects.filter(email__iexact=email).first()
         if not user:
             logger.warning(
                 "Login attempt for non-existent user",
-                extra={
-                    "email": email,
-                    "attempt": self._get_throttle_attempts(self.request),
-                },
+                extra={"email": email},
             )
             raise NotFoundException(message=AuthMessages.USER_NOT_FOUND)
         return user
 
-    def _validate_credentials(self, user: "User", password: str):
+    def _validate_credentials(self, user: "User", password: str, request):
         """Verify user password"""
         if not user.check_password(password):
             logger.warning(
@@ -194,13 +185,13 @@ class LogInAPIView(APIView):
                 extra={
                     "user_id": user.id,
                     "email": user.email,
-                    "attempt": self._get_throttle_attempts(self.request),
+                    "attempt": self._get_throttle_attempts(request),
                 },
             )
             raise AuthenticationException(message=AuthMessages.PASSWORD_WRONG)
 
     def _check_account_verification(self, user: "User", request):
-        """Check if account is verified, return verification URL if not"""
+        """Check if account is verified"""
         if not user.email_verified_at:
             logger.warning(
                 "Attempt to login with unverified account",
@@ -238,5 +229,5 @@ class LogInAPIView(APIView):
     def _get_throttle_attempts(self, request) -> int:
         """Get current throttle attempt count"""
         throttle = LoginThrottle()
-        throttle.request = request
-        return throttle.get_throttle_attempts()
+        throttle.request = request  # Use the passed request parameter
+        return throttle.num_requests  # More direct way to get attempts

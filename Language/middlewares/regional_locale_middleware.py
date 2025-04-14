@@ -14,32 +14,42 @@ class RegionalLocaleMiddleware:
     def __call__(self, request):
         request_language = self._get_request_language(request)
         regional_lang = self._get_regional_variant(request_language)
-
         self._activate_language(request, regional_lang)
         response = self.get_response(request)
         self._set_language_cookie(response, regional_lang)
         self._print_info(request)
-
         return response
 
     def _validate_settings(self):
         """Validate required regional language settings."""
-        if not hasattr(settings, "REGIONAL_LANGUAGES"):
+        if not hasattr(settings, "LANGUAGES"):
             raise ImproperlyConfigured(
                 "REGIONAL_LANGUAGES setting is required for RegionalLocaleMiddleware"
             )
-
         # Verify all regional variants have base languages defined
-        for base_lang, variants in settings.REGIONAL_LANGUAGES.items():
-            if base_lang not in dict(settings.LANGUAGES):
+        for base_lang in settings.LANGUAGES:
+            if base_lang not in settings.LANGUAGES:
                 raise ImproperlyConfigured(
                     f"Base language '{base_lang}' from REGIONAL_LANGUAGES not found in LANGUAGES setting"
                 )
 
-            if not variants:
-                raise ImproperlyConfigured(
-                    f"No variants defined for base language '{base_lang}' in REGIONAL_LANGUAGES"
-                )
+    # # Old Code
+    # def _validate_settings(self):
+    #     """Validate required regional language settings."""
+    #     if not hasattr(settings, "REGIONAL_LANGUAGES"):
+    #         raise ImproperlyConfigured(
+    #             "REGIONAL_LANGUAGES setting is required for RegionalLocaleMiddleware"
+    #         )
+    #     # Verify all regional variants have base languages defined
+    #     for base_lang, variants in settings.REGIONAL_LANGUAGES.items():
+    #         if base_lang not in dict(settings.LANGUAGES):
+    #             raise ImproperlyConfigured(
+    #                 f"Base language '{base_lang}' from REGIONAL_LANGUAGES not found in LANGUAGES setting"
+    #             )
+    #         if not variants:
+    #             raise ImproperlyConfigured(
+    #                 f"No variants defined for base language '{base_lang}' in REGIONAL_LANGUAGES"
+    #             )
 
     def _get_request_language(self, request):
         """Get language from request with proper fallback order."""
@@ -73,24 +83,31 @@ class RegionalLocaleMiddleware:
     def _get_regional_variant(self, language_code: Optional[str] = None) -> str:
         """Get the appropriate regional variant for the language."""
         if not language_code:
-            return settings.REGIONAL_LANGUAGES.get(settings.LANGUAGE_CODE)[0]
-
-        # Normalize the input (handle both en-US and en_US)
-        base_lang = language_code.replace("-", "_").split("_")[0].lower()
-
+            return settings.LANGUAGE_CODE
         # Check if we have regional variants for this language
-        if base_lang in settings.REGIONAL_LANGUAGES:
-            variants = settings.REGIONAL_LANGUAGES[base_lang]
-
-            # Try to find exact match first (case insensitive)
-            for variant in variants:
-                if language_code.replace("-", "_").lower() == variant.lower():
-                    return variant
-
+        if language_code in settings.LANGUAGES:
             # Return first variant as default
-            return variants[0]
+            return language_code
 
-        return settings.REGIONAL_LANGUAGES.get(settings.LANGUAGE_CODE)[0]
+        return settings.LANGUAGE_CODE
+
+    # # Old Code
+    # def _get_regional_variant(self, language_code: Optional[str] = None) -> str:
+    #     """Get the appropriate regional variant for the language."""
+    #     if not language_code:
+    #         return settings.REGIONAL_LANGUAGES.get(settings.LANGUAGE_CODE)[0]
+    #     # Normalize the input (handle both en-US and en_US)
+    #     base_lang = language_code.replace("-", "_").split("_")[0].lower()
+    #     # Check if we have regional variants for this language
+    #     if base_lang in settings.REGIONAL_LANGUAGES:
+    #         variants = settings.REGIONAL_LANGUAGES[base_lang]
+    #         # Try to find exact match first (case insensitive)
+    #         for variant in variants:
+    #             if language_code.replace("-", "_").lower() == variant.lower():
+    #                 return variant
+    #         # Return first variant as default
+    #         return variants[0]
+    #     return settings.REGIONAL_LANGUAGES.get(settings.LANGUAGE_CODE)[0]
 
     def _normalize_language(self, language_code: Optional[str] = None) -> str:
         """Ensure consistent language code format."""

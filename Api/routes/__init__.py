@@ -61,7 +61,7 @@ router.register(r"cities", CityViewSet, basename="city")
 router.register(r"localities", LocalityViewSet, basename="locality")
 router.register(r"states", StateViewSet, basename="state")
 router.register(r"streets", StreetViewSet, basename="street")
-router.register(r"locations", LocationViewSet, basename="locations")
+router.register(r"locations", LocationViewSet, basename="location")
 # User
 router.register(r"users", UserViewSet, basename="user")
 router.register(r"students", StudentViewSet, basename="student")

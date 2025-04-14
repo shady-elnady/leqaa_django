@@ -18,7 +18,7 @@ def fetch_supported_locales():
                 "language_code": locale.language.language_iso_code,
                 "language_is_bidir": locale.is_bidirectional,
                 "locale_code": locale.locale_code,
-                "locale_flag": locale.locale_flag.url,
+                "locale_flag": locale.locale_flag,
             }
             for locale in Locale.objects.filter(is_app_suport=True)
         ]

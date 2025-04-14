@@ -33,8 +33,8 @@ class CountrySerializer(HyperlinkedModelSerializer):
             "continent",
             "capital",
             "flag_emoji",
-            "flag",  # Add this to include the flag field
-            "firebase_image_url",  # Include this if you want the Firebase URL too
+            # "flag",  # Add this to include the flag field
+            # "firebase_image_url",  # Include this if you want the Firebase URL too
             "currency",
             "language",
             "tel_code",
@@ -142,8 +142,8 @@ class LocalitySerializer(HyperlinkedModelSerializer):
 
 
 class LocationSerializer(HyperlinkedModelSerializer):
-    locality = LocalitySerializer(many=False)
-    street = StreetSerializer(many=False)
+    # locality = LocalitySerializer(many=False)
+    # street = StreetSerializer(many=False)
 
     class Meta:
         model = Location
@@ -161,3 +161,4 @@ class LocationSerializer(HyperlinkedModelSerializer):
             "created_at",
             "last_updated",
         ]
+        extra_kwargs = {"url": {"view_name": "location-detail", "lookup_field": "pk"}}

@@ -15,11 +15,11 @@ class Command(BaseCommand):
                 "name": "Street 1",
                 "state": 1,
                 "translations": {
-                    "en_US": "Street 1",
-                    "ar_EG": "شارع 1",
-                    "ar_AS": "شارع 1",
-                    "fr_FR": "Rue 1",
-                    "tr_TR": "Sokak 1",
+                    "en-us": "Street 1",
+                    "ar-eg": "شارع 1",
+                    "ar-as": "شارع 1",
+                    "fr-fr": "Rue 1",
+                    "tr-tr": "Sokak 1",
                 },
             },
         ]

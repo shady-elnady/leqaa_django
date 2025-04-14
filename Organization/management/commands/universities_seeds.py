@@ -28,11 +28,11 @@ class Command(BaseCommand):
                 "name": "Mansoura University",
                 "email": 1,
                 "translations": {
-                    "ar_AS": "جامعه المنصوره",
-                    "ar_EG": "جامعه المنصوره",
-                    "en_US": "Mansoura University",
-                    "fr_FR": "Université de Mansourah",
-                    "tr_TR": "Mansoura Üniversitesi",
+                    "ar-as": "جامعه المنصوره",
+                    "ar-eg": "جامعه المنصوره",
+                    "en-us": "Mansoura University",
+                    "fr-fr": "Université de Mansourah",
+                    "tr-tr": "Mansoura Üniversitesi",
                 },
             },
         ]

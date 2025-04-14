@@ -188,6 +188,12 @@ class BaseNativeModel(BaseNameModel):
         verbose_name=FieldsMessages.NATIVE_NAME,
     )
 
+    def __str__(self) -> str:
+        return f"{self.native_name}"
+
+    def __decode__(self) -> str:
+        return f"{self.native_name}"
+
     class Meta:
         abstract = True
 

@@ -1,1265 +1,1284 @@
-# Copyright (C) YIL PAKETİN TELİF HAKKI SAHİBİ
-# Bu dosya, PAKET paketiyle aynı lisansla dağıtılır.
-# İLK YAZAR <E-POSTA@ADRES>, YIL.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PAKET VERSİYONU\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-10 21:50+0200\n"
-"PO-Revision-Date: YIL-AY-GÜN SAAT+DİLİM\n"
-"Last-Translator: TAM AD <E-POSTA@ADRES>\n"
-"Language-Team: DİL <LL@li.org>\n"
+"POT-Creation-Date: 2025-04-14 16:28+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
+msgid "Email Verification Error"
+msgstr ""
+
+msgid "Email Verification Failed"
+msgstr ""
+
+msgid "We encountered an issue while verifying your email address"
+msgstr ""
+
+msgid "Email Verified Successfully"
+msgstr ""
+
+msgid ""
+"Your email address has been successfully verified. You can now enjoy all "
+"features of our platform"
+msgstr ""
+
+msgid "You can now"
+msgstr ""
+
+msgid "log in"
+msgstr ""
+
+msgid "to your account"
+msgstr ""
+
+msgid "Continue to Login"
+msgstr ""
+
 msgid "Your old password was entered incorrectly. Please enter it again."
-msgstr "Eski şifreniz yanlış girildi. Lütfen tekrar girin."
+msgstr ""
 
 msgid "Invalid value"
-msgstr "Geçersiz değer"
+msgstr ""
 
 msgid "This URL is Post Request To Register "
-msgstr "Bu URL, Kayıt İçin Post İsteğidir"
+msgstr ""
 
 msgid "Database or Temporary authentication system issue"
-msgstr "Veritabanı veya Geçici kimlik doğrulama sistemi sorunu"
+msgstr ""
 
 msgid ""
 "User Registered successfully. Verification Code sent to (Mobile ~ E-Mail)."
 msgstr ""
-"Kullanıcı başarıyla kaydedildi. Doğrulama Kodu (Mobil ~ E-Posta) adresine "
-"gönderildi."
 
 msgid "Registration Failed "
-msgstr "Kayıt Başarısız "
+msgstr ""
 
 msgid "Invalid registration Data"
-msgstr "Geçersiz kayıt verisi"
+msgstr ""
 
 msgid "User Already Exists"
-msgstr "Kullanıcı Zaten Var"
+msgstr ""
 
 msgid ""
 "Registration complete but verification email failed. Please contact support."
 msgstr ""
-"Kayıt tamamlandı ancak doğrulama e-postası gönderilemedi. Lütfen destekle "
-"iletişime geçin."
 
 msgid "Sign In Successfully."
-msgstr "Başarıyla Giriş Yapıldı."
+msgstr ""
 
 msgid "Failed Sign In.Error is >> "
-msgstr "Giriş Başarısız. Hata >> "
+msgstr ""
 
 msgid "Account Not Found."
-msgstr "Hesap Bulunamadı."
+msgstr ""
 
 msgid "Incorrect Password"
-msgstr "Yanlış Şifre"
+msgstr ""
 
 msgid "Please Verfy Your Account before logging in."
-msgstr "Giriş yapmadan önce lütfen hesabınızı doğrulayın."
+msgstr ""
 
 msgid "Sign Out Successfully."
-msgstr "Başarıyla Çıkış Yapıldı."
+msgstr ""
 
 msgid "Error occurred during logout"
-msgstr "Çıkış sırasında hata oluştu"
+msgstr ""
 
 msgid "Password Reset E-Mail sent if account exists"
-msgstr "Hesap varsa Şifre Sıfırlama E-Postası gönderildi"
+msgstr ""
 
 msgid "Failed Reset Password .Error is >> "
-msgstr "Şifre Sıfırlama Başarısız. Hata >> "
+msgstr ""
 
 msgid "Passwords do not match"
-msgstr "Şifreler eşleşmiyor"
+msgstr ""
 
 msgid "Invalid Password Reset link"
-msgstr "Geçersiz Şifre Sıfırlama bağlantısı"
+msgstr ""
 
 msgid "Token Invalid or Expired"
-msgstr "Token Geçersiz veya Süresi Dolmuş"
+msgstr ""
 
 msgid "Password Reset Successfully."
-msgstr "Şifre Başarıyla Sıfırlandı."
+msgstr ""
 
 msgid "Password Reset failed"
-msgstr "Şifre Sıfırlama başarısız"
+msgstr ""
 
 msgid "Password must be at least 8 characters"
-msgstr "Şifre en az 8 karakter olmalıdır"
+msgstr ""
 
 msgid "Password must contain at least one number"
-msgstr "Şifre en az bir rakam içermelidir"
+msgstr ""
 
 msgid "Password must contain at least one uppercase letter"
-msgstr "Şifre en az bir büyük harf içermelidir"
+msgstr ""
 
 msgid "Invalid Credentials Error"
-msgstr "Geçersiz Kimlik Bilgileri Hatası"
+msgstr ""
 
 msgid "Email verified successfully"
-msgstr "E-posta başarıyla doğrulandı"
+msgstr ""
 
 msgid "Invalid verification code"
-msgstr "Geçersiz doğrulama kodu"
+msgstr ""
 
 msgid "Error verifying email"
-msgstr "E-posta doğrulama hatası"
+msgstr ""
 
 msgid "Validation error"
-msgstr "Doğrulama hatası"
+msgstr ""
 
 msgid "Verification code has expired"
-msgstr "Doğrulama kodunun süresi doldu"
+msgstr ""
 
 msgid "Email is already verified"
-msgstr "E-posta zaten doğrulanmış"
+msgstr ""
 
 msgid "Mobile verified successfully"
-msgstr "Mobil başarıyla doğrulandı"
+msgstr ""
 
 msgid "Mobile must include country code (+XX...)"
-msgstr "Mobil ülke kodunu içermelidir (+XX...)"
+msgstr ""
 
 msgid "Invalid verification token"
-msgstr "Geçersiz doğrulama tokenı"
+msgstr ""
 
 msgid "Mobile verification failed"
-msgstr "Mobil doğrulama başarısız"
+msgstr ""
 
 msgid "This mobile number is already associated with another account"
-msgstr "Bu mobil numara zaten başka bir hesap ile ilişkilendirilmiş"
+msgstr ""
 
 msgid "Try Again"
-msgstr "Tekrar Deneyin"
+msgstr ""
 
 msgid "Correct"
-msgstr "Doğru"
+msgstr ""
 
 msgid "Topic Subscription"
-msgstr "Konu Aboneliği"
+msgstr ""
 
 msgid "Permission Denied"
-msgstr "İzin Reddedildi"
+msgstr ""
 
 msgid "Firebase User"
-msgstr "Firebase Kullanıcısı"
+msgstr ""
 
 msgid "Firebase Admin"
-msgstr "Firebase Yöneticisi"
+msgstr ""
 
 msgid "Firebase authentication error"
-msgstr "Firebase kimlik doğrulama hatası"
+msgstr ""
 
 msgid "Firebase Image URL"
-msgstr "Firebase Resim URL'si"
+msgstr ""
 
 msgid "Claims"
-msgstr "Talep Edilenler"
+msgstr ""
 
 msgid "System temporarily unavailable. Please try again later."
-msgstr "Sistem geçici olarak kullanılamıyor. Lütfen daha sonra tekrar deneyin."
+msgstr ""
 
 msgid "Error revoking Firebase session"
-msgstr "Firebase oturumu iptal edilirken hata oluştu"
+msgstr ""
 
 msgid "Resource already exists"
-msgstr "Kaynak zaten var"
+msgstr ""
 
 msgid "Resource not found"
-msgstr "Kaynak bulunamadı"
+msgstr ""
 
 msgid "Invalid argument provided"
-msgstr "Geçersiz argüman sağlandı"
+msgstr ""
 
 msgid "Firebase operation Error: "
-msgstr "Firebase işlem Hatası: "
+msgstr ""
 
 msgid "An unexpected error occurred: "
-msgstr "Beklenmeyen bir hata oluştu: "
+msgstr ""
 
 msgid "Firebase configuration missing"
-msgstr "Firebase yapılandırması eksik"
+msgstr ""
 
 msgid "Firebase initialization failed"
-msgstr "Firebase başlatma başarısız"
+msgstr ""
 
 msgid "Email already in use"
-msgstr "E-posta zaten kullanımda"
+msgstr ""
 
 msgid "Phone number already in use"
-msgstr "Telefon numarası zaten kullanımda"
+msgstr ""
 
 msgid "Invalid token audience"
-msgstr "Geçersiz token alıcısı"
+msgstr ""
 
 msgid "Pyrebase"
-msgstr "Pyrebase"
+msgstr ""
 
 msgid "Firebase communication error"
-msgstr "Firebase iletişim hatası"
+msgstr ""
 
 msgid "Firebase operation failed"
-msgstr "Firebase işlemi başarısız"
+msgstr ""
 
 msgid "Invalid email address"
-msgstr "Geçersiz e-posta adresi"
+msgstr ""
 
 msgid "Invalid password"
-msgstr "Geçersiz şifre"
+msgstr ""
 
 msgid "Authentication failed"
-msgstr "Kimlik doğrulama başarısız"
+msgstr ""
 
 msgid "Not Found"
-msgstr "Bulunamadı"
+msgstr ""
 
 msgid "Unknown error"
-msgstr "Bilinmeyen hata"
+msgstr ""
 
 msgid "Success"
-msgstr "Başarı"
+msgstr ""
 
 msgid "it is Required,must be Set."
-msgstr "Gereklidir, ayarlanmalıdır."
+msgstr ""
 
 msgid "Admin"
-msgstr "Yönetici"
+msgstr ""
 
 msgid "Admins"
-msgstr "Yöneticiler"
+msgstr ""
 
 msgid "Super User"
-msgstr "Süper Kullanıcı"
+msgstr ""
 
 msgid "Super Users"
-msgstr "Süper Kullanıcılar"
+msgstr ""
 
 msgid "Student"
-msgstr "Öğrenci"
+msgstr ""
 
 msgid "Students"
-msgstr "Öğrenciler"
+msgstr ""
 
 msgid "Lecturer"
-msgstr "Öğretim Görevlisi"
+msgstr ""
 
 msgid "Lecturers"
-msgstr "Öğretim Görevlileri"
+msgstr ""
 
 msgid "College"
-msgstr "Kolej"
+msgstr ""
 
 msgid "Colleges"
-msgstr "Kolejler"
+msgstr ""
 
 msgid "Staff"
-msgstr "Personel"
+msgstr ""
 
 msgid "Doctor"
-msgstr "Doktor"
+msgstr ""
 
 msgid "Engineer"
-msgstr "Mühendis"
+msgstr ""
 
 msgid "Professor"
-msgstr "Profesör"
+msgstr ""
 
 msgid "Teacher"
-msgstr "Öğretmen"
+msgstr ""
 
 msgid "Teachers"
-msgstr "Öğretmenler"
+msgstr ""
 
 msgid "Male"
-msgstr "Erkek"
+msgstr ""
 
 msgid "Female"
-msgstr "Kadın"
+msgstr ""
 
 msgid "Virgin"
-msgstr "Bekâr"
+msgstr ""
 
 msgid "Bachelor"
-msgstr "Bekâr"
+msgstr ""
 
 msgid "Married"
-msgstr "Evli"
+msgstr ""
 
 msgid "Widower"
-msgstr "Dul"
+msgstr ""
 
 msgid "Divorde"
-msgstr "Boşanmış"
+msgstr ""
 
 msgid "English"
-msgstr "İngilizce"
+msgstr ""
 
 msgid "Arabic"
-msgstr "Arapça"
+msgstr ""
 
 msgid "Arabic Egypt"
-msgstr "Mısır Arapçası"
+msgstr ""
 
 msgid "French"
-msgstr "Fransızca"
+msgstr ""
 
 msgid "Turkish"
-msgstr "Türkçe"
+msgstr ""
 
 msgid "Taluk"
-msgstr "Bucak"
+msgstr ""
 
 msgid "Village"
-msgstr "Köy"
+msgstr ""
 
 msgid "District"
-msgstr "İlçe"
+msgstr ""
 
 msgid "Manor"
-msgstr "Malikane"
+msgstr ""
 
 msgid "Residential Quarter"
-msgstr "Konut Mahallesi"
+msgstr ""
 
 msgid "Housing"
-msgstr "Konut"
+msgstr ""
 
 msgid "Feudalism"
-msgstr "Feodalizm"
+msgstr ""
 
 msgid "Region"
-msgstr "Bölge"
+msgstr ""
 
 msgid "Africa"
-msgstr "Afrika"
+msgstr ""
 
 msgid "Asia"
-msgstr "Asya"
+msgstr ""
 
 msgid "Europe"
-msgstr "Avrupa"
+msgstr ""
 
 msgid "North America"
-msgstr "Kuzey Amerika"
+msgstr ""
 
 msgid "Oceania"
-msgstr "Okyanusya"
+msgstr ""
 
 msgid "South America"
-msgstr "Güney Amerika"
+msgstr ""
 
 msgid "Antarctica"
-msgstr "Antarktika"
+msgstr ""
 
 msgid "Saturday"
-msgstr "Cumartesi"
+msgstr ""
 
 msgid "Sunday"
-msgstr "Pazar"
+msgstr ""
 
 msgid "Monday"
-msgstr "Pazartesi"
+msgstr ""
 
 msgid "Tuesday"
-msgstr "Salı"
+msgstr ""
 
 msgid "Wednesday"
-msgstr "Çarşamba"
+msgstr ""
 
 msgid "Thursday"
-msgstr "Perşembe"
+msgstr ""
 
 msgid "Friday"
-msgstr "Cuma"
+msgstr ""
 
 msgid "Laboratory"
-msgstr "Laboratuvar"
+msgstr ""
 
 msgid "Main Laboratory"
-msgstr "Ana Laboratuvar"
+msgstr ""
 
 msgid "Association"
-msgstr "Dernek"
+msgstr ""
 
 msgid "Dispensary"
-msgstr "Dispanser"
+msgstr ""
 
 msgid "Scientific Company"
-msgstr "Bilimsel Şirket"
+msgstr ""
 
 msgid "Pharmaceutical Company"
-msgstr "İlaç Şirketi"
+msgstr ""
 
 msgid "Supplier"
-msgstr "Tedarikçi"
+msgstr ""
 
 msgid "Dental Clinic"
-msgstr "Diş Kliniği"
+msgstr ""
 
 msgid "Private Clinic"
-msgstr "Özel Kliniği"
+msgstr ""
 
 msgid "Grocery Store"
-msgstr "Bakkal"
+msgstr ""
 
 msgid "Bookstore"
-msgstr "Kitapçı"
+msgstr ""
 
 msgid "Coffee"
-msgstr "Kahve"
+msgstr ""
 
 msgid "Bakery"
-msgstr "Fırın"
+msgstr ""
 
 msgid "Delicatessen"
-msgstr "Şarküteri"
+msgstr ""
 
 msgid "School"
-msgstr "Okul"
+msgstr ""
 
 msgid "Café"
-msgstr "Kafe"
+msgstr ""
 
 msgid "Laundromat"
-msgstr "Çamaşırhane"
+msgstr ""
 
 msgid "Hotel"
-msgstr "Otel"
+msgstr ""
 
 msgid "Butcher"
-msgstr "Kasap"
+msgstr ""
 
 msgid "Supermarket"
-msgstr "Süpermarket"
+msgstr ""
 
 msgid "Gift Shop"
-msgstr "Hediyelik Eşya Dükkanı"
+msgstr ""
 
 msgid "Flower Shop"
-msgstr "Çiçekçi"
+msgstr ""
 
 msgid "Sporting Goods Store"
-msgstr "Spor Malzemeleri Mağazası"
+msgstr ""
 
 msgid "Electronics Store"
-msgstr "Elektronik Mağazası"
+msgstr ""
 
 msgid "Barber"
-msgstr "Berber"
+msgstr ""
 
 msgid "Pharmacy"
-msgstr "Eczane"
+msgstr ""
 
 msgid "Medical Facility"
-msgstr "Tıbbi Tesis"
+msgstr ""
 
 msgid "Mobile Network Company"
-msgstr "Mobil Ağ Şirketi"
+msgstr ""
 
 msgid "1"
-msgstr "1"
+msgstr ""
 
 msgid "2"
-msgstr "2"
+msgstr ""
 
 msgid "3"
-msgstr "3"
+msgstr ""
 
 msgid "Same Day"
-msgstr "Aynı Gün"
+msgstr ""
 
 msgid "Next Day"
-msgstr "Ertesi Gün"
+msgstr ""
 
 msgid "After 2 Days"
-msgstr "2 Gün Sonra"
+msgstr ""
 
 msgid "After 4 Days"
-msgstr "4 Gün Sonra"
+msgstr ""
 
 msgid "After 10 Days"
-msgstr "10 Gün Sonra"
+msgstr ""
 
 msgid "After Week"
-msgstr "Bir Hafta Sonra"
+msgstr ""
 
 msgid "After Two Weeks"
-msgstr "İki Hafta Sonra"
+msgstr ""
 
 msgid "After Month"
-msgstr "Bir Ay Sonra"
+msgstr ""
 
 msgid "Imported Products"
-msgstr "İthal Ürünler"
+msgstr ""
 
 msgid "Exported Products"
-msgstr "İhraç Ürünler"
+msgstr ""
 
 msgid "Android"
-msgstr "Android"
+msgstr ""
 
 msgid "iOS"
-msgstr "iOS"
+msgstr ""
 
 msgid "Windows"
-msgstr "Windows"
+msgstr ""
 
 msgid "Linux"
-msgstr "Linux"
+msgstr ""
 
 msgid "Web Browser"
-msgstr "Web Tarayıcı"
+msgstr ""
 
 msgid "Mobile"
-msgstr "Mobil"
+msgstr ""
 
 msgid "Tablet"
-msgstr "Tablet"
+msgstr ""
 
 msgid "Laptop"
-msgstr "Dizüstü Bilgisayar"
+msgstr ""
 
 msgid "Mac"
-msgstr "Mac"
+msgstr ""
 
 msgid "Upload"
-msgstr "Yükle"
+msgstr ""
 
 msgid "Download"
-msgstr "İndir"
+msgstr ""
 
 msgid "Parent"
-msgstr "Ebeveyn"
+msgstr ""
 
 msgid "Children"
-msgstr "Çocuklar"
+msgstr ""
 
 msgid "Create"
-msgstr "Oluştur"
+msgstr ""
 
 msgid "Update"
-msgstr "Güncelle"
+msgstr ""
 
 msgid "Delete"
-msgstr "Sil"
+msgstr ""
 
 msgid "GET"
-msgstr "GET"
+msgstr ""
 
 msgid "POST"
-msgstr "POST"
+msgstr ""
 
 msgid "PUT"
-msgstr "PUT"
+msgstr ""
 
 msgid "PATCH"
-msgstr "PATCH"
+msgstr ""
 
 msgid "Sign In"
-msgstr "Giriş Yap"
+msgstr ""
 
 msgid "Log In"
-msgstr "Giriş Yap"
+msgstr ""
 
 msgid "Sign Out"
-msgstr "Çıkış Yap"
+msgstr ""
 
 msgid "Register"
-msgstr "Kayıt Ol"
+msgstr ""
 
 msgid "All Event"
-msgstr "Tüm Etkinlik"
+msgstr ""
 
 msgid "Each Student"
-msgstr "Her Öğrenci"
+msgstr ""
 
 msgid "Enlist"
-msgstr "Kayıt Ol"
+msgstr ""
 
 msgid "Completely Free"
-msgstr "Tamamen Ücretsiz"
+msgstr ""
 
 msgid "Partially Paid"
-msgstr "Kısmen Ödenmiş"
+msgstr ""
 
 msgid "Completely Paid"
-msgstr "Tamamen Ödenmiş"
+msgstr ""
 
 msgid "On Line"
-msgstr "Çevrimiçi"
+msgstr ""
 
 msgid "Off Line"
-msgstr "Çevrimdışı"
+msgstr ""
 
 msgid "Any"
-msgstr "Herhangi"
+msgstr ""
 
 msgid "Initialization Reservation"
-msgstr "Başlatma Rezervasyonu"
+msgstr ""
 
 msgid "Canceled Reservation"
-msgstr "İptal Edilen Rezervasyon"
+msgstr ""
 
 msgid "Confirmed Reservation"
-msgstr "Onaylanan Rezervasyon"
+msgstr ""
 
 msgid "Hold Reservation"
-msgstr "Beklemede Rezervasyon"
+msgstr ""
 
 msgid "Monetary"
-msgstr "Parasal"
+msgstr ""
 
 msgid "Credit Card"
-msgstr "Kredi Kartı"
+msgstr ""
 
 msgid "Bank Transfer"
-msgstr "Banka Transferi"
+msgstr ""
 
 msgid "Check"
-msgstr "Çek"
+msgstr ""
 
 msgid "Money Transfer"
-msgstr "Para Transferi"
+msgstr ""
 
 msgid "Mobile Cash"
-msgstr "Mobil Nakit"
+msgstr ""
 
 msgid "Paid"
-msgstr "Ödendi"
+msgstr ""
 
 msgid "Pay later"
-msgstr "Sonra öde"
+msgstr ""
 
 msgid "Revenues"
-msgstr "Gelirler"
+msgstr ""
 
 msgid "Expenses"
-msgstr "Giderler"
+msgstr ""
 
 msgid "Debts"
-msgstr "Borçlar"
+msgstr ""
 
 msgid "Dues"
-msgstr "Aidatlar"
+msgstr ""
 
 msgid "Translation"
-msgstr "Çeviri"
+msgstr ""
 
 msgid "Translations"
-msgstr "Çeviriler"
+msgstr ""
 
 msgid "Name"
-msgstr "Ad"
+msgstr ""
 
 msgid "User Name"
-msgstr "Kullanıcı Adı"
+msgstr ""
 
 msgid "Password"
-msgstr "Şifre"
+msgstr ""
 
 msgid "Password Confirmation"
-msgstr "Şifre Onayı"
+msgstr ""
 
 msgid "National ID"
-msgstr "Kimlik Numarası"
+msgstr ""
 
 msgid "Flag"
-msgstr "Bayrak"
+msgstr ""
 
 msgid "Emoji"
-msgstr "Emoji"
+msgstr ""
 
 msgid "Success Status"
-msgstr "Başarı Durumu"
+msgstr ""
 
 msgid "Created At"
-msgstr "Oluşturulma Tarihi"
+msgstr ""
 
 msgid "Last Update"
-msgstr "Son Güncelleme"
+msgstr ""
 
 msgid "Barcode"
-msgstr "Barkod"
+msgstr ""
 
 msgid "Photo URL"
-msgstr "Fotoğraf URL'si"
+msgstr ""
 
 msgid "Native Name"
-msgstr "Yerel Ad"
+msgstr ""
 
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 msgid "IP Address"
-msgstr "IP Adresi"
+msgstr ""
 
 msgid "Content Type"
-msgstr "İçerik Türü"
+msgstr ""
 
 msgid "Content Types"
-msgstr "İçerik Türleri"
+msgstr ""
 
 msgid "Token"
-msgstr "Token"
+msgstr ""
 
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 msgid "UID"
-msgstr "UID"
+msgstr ""
 
 msgid "File"
-msgstr "Dosya"
+msgstr ""
 
 msgid "Document"
-msgstr "Belge"
+msgstr ""
 
 msgid "Image"
-msgstr "Resim"
+msgstr ""
 
 msgid "Logo"
-msgstr "Logo"
+msgstr ""
 
 msgid "Photo"
-msgstr "Fotoğraf"
+msgstr ""
 
 msgid "Avatar"
-msgstr "Avatar"
+msgstr ""
 
 msgid "Audio"
-msgstr "Ses"
+msgstr ""
 
 msgid "Vedio"
-msgstr "Video"
+msgstr ""
 
 msgid "Latitude"
-msgstr "Enlem"
+msgstr ""
 
 msgid "Longitude"
-msgstr "Boylam"
+msgstr ""
 
 msgid "Location"
-msgstr "Konum"
+msgstr ""
 
 msgid "Continent Name"
-msgstr "Kıta Adı"
+msgstr ""
 
 msgid "Continents"
-msgstr "Kıtalar"
+msgstr ""
 
 msgid "Code"
-msgstr "Kod"
+msgstr ""
 
 msgid "Capital"
-msgstr "Başkent"
+msgstr ""
 
 msgid "Telphone"
-msgstr "Telefon"
+msgstr ""
 
 msgid "Telphone Code"
-msgstr "Telefon Kodu"
+msgstr ""
 
 msgid "Time Zones"
-msgstr "Saat Dilimleri"
+msgstr ""
 
 msgid "State Type"
-msgstr "Eyalet Türü"
+msgstr ""
 
 msgid "State Types"
-msgstr "Eyalet Türleri"
+msgstr ""
 
 msgid "Postal Code"
-msgstr "Posta Kodu"
+msgstr ""
 
 msgid "Telephone Code"
-msgstr "Telefon Kodu"
+msgstr ""
 
 msgid "ISO Code"
-msgstr "ISO Kodu"
+msgstr ""
 
 msgid "Symbol"
-msgstr "Sembol"
+msgstr ""
 
 msgid "Order"
-msgstr "Sipariş"
+msgstr ""
 
 msgid "Advertisement URL"
-msgstr "Reklam URL'si"
+msgstr ""
 
 msgid "Exchange to Currency"
-msgstr "Para Birimine Çevir"
+msgstr ""
 
 msgid "Rate"
-msgstr "Oran"
+msgstr ""
 
 msgid "Rating"
-msgstr "Değerlendirme"
+msgstr ""
 
 msgid "Exchange Rates"
-msgstr "Döviz Kurları"
+msgstr ""
 
 msgid "Title"
-msgstr "Başlık"
+msgstr ""
 
 msgid "Description"
-msgstr "Açıklama"
+msgstr ""
 
 msgid "Short Description"
-msgstr "Kısa Açıklama"
+msgstr ""
 
 msgid "Complete Description"
-msgstr "Tam Açıklama"
+msgstr ""
 
 msgid "Start Date Time"
-msgstr "Başlangıç Tarihi Saati"
+msgstr ""
 
 msgid "End Date Time"
-msgstr "Bitiş Tarihi Saati"
+msgstr ""
 
 msgid "Language ISO Code"
-msgstr "Dil ISO Kodu"
+msgstr ""
 
 msgid "Bidirectional Status"
-msgstr "Çift Yönlü Durum"
+msgstr ""
 
 msgid "Application Support Status"
-msgstr "Uygulama Desteği Durumu"
+msgstr ""
 
 msgid "Organizer"
-msgstr "Organizatör"
+msgstr ""
 
 msgid "on|Off Line"
-msgstr "Çevrimiçi|Çevrimdışı"
+msgstr ""
 
 msgid "Hall"
-msgstr "Salon"
+msgstr ""
 
 msgid "Lecturer Financial Dues"
-msgstr "Öğretim Görevlisi Mali Aidatları"
+msgstr ""
 
 msgid "Lecturer Financial System"
-msgstr "Öğretim Görevlisi Mali Sistemi"
+msgstr ""
 
 msgid "Registration link"
-msgstr "Kayıt bağlantısı"
+msgstr ""
 
 msgid "Event Paid Status"
-msgstr "Etkinlik Ödeme Durumu"
+msgstr ""
 
 msgid "Affiliated To"
-msgstr "Bağlı Olduğu"
+msgstr ""
 
 msgid "Details"
-msgstr "Detaylar"
+msgstr ""
 
 msgid "Address"
-msgstr "Adres"
+msgstr ""
 
 msgid "Payment Method Type"
-msgstr "Ödeme Yöntemi Türü"
+msgstr ""
 
 msgid "Payment Status Type"
-msgstr "Ödeme Durumu Türü"
+msgstr ""
 
 msgid "Transactor"
-msgstr "İşlem Yapan"
+msgstr ""
 
 msgid "Transaction Status"
-msgstr "İşlem Durumu"
+msgstr ""
 
 msgid "Transaction Statuses"
-msgstr "İşlem Durumları"
+msgstr ""
 
 msgid "Transaction Type"
-msgstr "İşlem Türü"
+msgstr ""
 
 msgid "Transaction Types"
-msgstr "İşlem Türleri"
+msgstr ""
 
 msgid "Transaction Method"
-msgstr "İşlem Yöntemi"
+msgstr ""
 
 msgid "Transaction Methods"
-msgstr "İşlem Yöntemleri"
+msgstr ""
 
 msgid "Due Date"
-msgstr "Son Ödeme Tarihi"
+msgstr ""
 
 msgid "Notified Days"
-msgstr "Bildirim Günleri"
+msgstr ""
 
 msgid "Reference Number"
-msgstr "Referans Numarası"
+msgstr ""
 
 msgid "Bank Deposit Date"
-msgstr "Banka Yatırma Tarihi"
+msgstr ""
 
 msgid "Bank Name"
-msgstr "Banka Adı"
+msgstr ""
 
 msgid "Comment"
-msgstr "Yorum"
+msgstr ""
 
 msgid "Total Required Amount"
-msgstr "Toplam Gerekli Tutar"
+msgstr ""
 
 msgid "Amount"
-msgstr "Tutar"
+msgstr ""
 
 msgid "Canceled Reason"
-msgstr "İptal Nedeni"
+msgstr ""
 
 msgid "Staff Status"
-msgstr "Personel Durumu"
+msgstr ""
 
 msgid "Admin Status"
-msgstr "Yönetici Durumu"
+msgstr ""
 
 msgid "Super User Status"
-msgstr "Süper Kullanıcı Durumu"
+msgstr ""
 
 msgid "Blocked Status"
-msgstr "Engellenmiş Durum"
+msgstr ""
 
 msgid "Phone Number"
-msgstr "Telefon Numarası"
+msgstr ""
 
 msgid "Mobile Number"
-msgstr "Mobil Numara"
+msgstr ""
 
 msgid "Mobile Verified At"
-msgstr "Mobil Doğrulama Tarihi"
+msgstr ""
 
 msgid "User Type"
-msgstr "Kullanıcı Türü"
+msgstr ""
 
 msgid "E-Mail"
-msgstr "E-Posta"
+msgstr ""
 
 msgid "E-Mail Verified At"
-msgstr "E-Posta Doğrulama Tarihi"
+msgstr ""
 
 msgid "OTP Key"
-msgstr "OTP Anahtarı"
+msgstr ""
 
 msgid "Specialized to Category"
-msgstr "Kategoriye Özel"
+msgstr ""
 
 msgid "Interesting  Notifiable Categories"
-msgstr "İlgi Çekici Bildirim Kategorileri"
+msgstr ""
 
 msgid " Notifiable Status"
-msgstr "Bildirilebilir Durum"
+msgstr ""
 
 msgid "Favorite Events"
-msgstr "Favori Etkinlikler"
+msgstr ""
 
 msgid "University Number"
-msgstr "Üniversite Numarası"
+msgstr ""
 
 msgid "Day"
-msgstr "Gün"
+msgstr ""
 
 msgid "Month"
-msgstr "Ay"
+msgstr ""
 
 msgid "Year"
-msgstr "Yıl"
+msgstr ""
 
 msgid "Graduate STATUS"
-msgstr "Mezuniyet DURUMU"
+msgstr ""
 
 msgid "Contact Info"
-msgstr "İletişim Bilgileri"
+msgstr ""
 
 msgid "Full Name"
-msgstr "Tam Ad"
+msgstr ""
 
 msgid "FCM Device Token"
-msgstr "FCM Cihaz Tokenı"
+msgstr ""
 
 msgid "Activity Status"
-msgstr "Aktivite Durumu"
+msgstr ""
 
 msgid "Birth Date"
-msgstr "Doğum Tarihi"
+msgstr ""
 
 msgid "Gender"
-msgstr "Cinsiyet"
+msgstr ""
 
 msgid "Last Login"
-msgstr "Son Giriş"
+msgstr ""
 
 msgid "Firebase UID"
-msgstr "Firebase UID"
+msgstr ""
 
 msgid "Block List"
-msgstr "Engelleme Listesi"
+msgstr ""
 
 msgid "Block Lists"
-msgstr "Engelleme Listeleri"
+msgstr ""
 
 msgid "Country"
-msgstr "Ülke"
+msgstr ""
 
 msgid "Country Code"
-msgstr "Ülke Kodu"
+msgstr ""
 
 msgid "Countries"
-msgstr "Ülkeler"
+msgstr ""
 
 msgid "Governorate"
-msgstr "Valilik"
+msgstr ""
 
 msgid "Governorates"
-msgstr "Valilikler"
+msgstr ""
 
 msgid "City"
-msgstr "Şehir"
+msgstr ""
 
 msgid "Cities"
-msgstr "Şehirler"
+msgstr ""
 
 msgid "State"
-msgstr "Eyalet"
+msgstr ""
 
 msgid "States"
-msgstr "Eyaletler"
+msgstr ""
 
 msgid "Locality"
-msgstr "Yerellik"
+msgstr ""
 
 msgid "Localities"
-msgstr "Yerellikler"
+msgstr ""
 
 msgid "Street"
-msgstr "Sokak"
+msgstr ""
 
 msgid "Streets"
-msgstr "Sokaklar"
+msgstr ""
 
 msgid "Addresses"
-msgstr "Adresler"
+msgstr ""
 
 msgid "Locations"
-msgstr "Konumlar"
+msgstr ""
 
 msgid "Advertisement"
-msgstr "Reklam"
+msgstr ""
 
 msgid "Advertisements"
-msgstr "Reklamlar"
+msgstr ""
 
 msgid "Category"
-msgstr "Kategori"
+msgstr ""
 
 msgid "Categories"
-msgstr "Kategoriler"
+msgstr ""
 
 msgid "Chat"
-msgstr "Sohbet"
+msgstr ""
 
 msgid "Chats"
-msgstr "Sohbetler"
+msgstr ""
 
 msgid "Currency"
-msgstr "Para Birimi"
+msgstr ""
 
 msgid "Currencies"
-msgstr "Para Birimleri"
+msgstr ""
 
 msgid "Currency Exchange Rate"
-msgstr "Döviz Kuru"
+msgstr ""
 
 msgid "Currency Exchange Rates"
-msgstr "Döviz Kurları"
+msgstr ""
 
 msgid "Event"
-msgstr "Etkinlik"
+msgstr ""
 
 msgid "Events"
-msgstr "Etkinlikler"
+msgstr ""
 
 msgid "Event Type"
-msgstr "Etkinlik Türü"
+msgstr ""
 
 msgid "Event Types"
-msgstr "Etkinlik Türleri"
+msgstr ""
 
 msgid "Event Album"
-msgstr "Etkinlik Albümü"
+msgstr ""
 
 msgid "Event Albums"
-msgstr "Etkinlik Albümleri"
+msgstr ""
 
 msgid "Event Master"
-msgstr "Etkinlik Yöneticisi"
+msgstr ""
 
 msgid "Event Masters"
-msgstr "Etkinlik Yöneticileri"
+msgstr ""
 
 msgid "Favorite"
-msgstr "Favori"
+msgstr ""
 
 msgid "Favorites"
-msgstr "Favoriler"
+msgstr ""
 
 msgid "Firebase"
-msgstr "Firebase"
+msgstr ""
 
 msgid "Language"
-msgstr "Dil"
+msgstr ""
 
 msgid "Languages"
-msgstr "Diller"
+msgstr ""
 
 msgid "Locale"
-msgstr "Yerel"
+msgstr ""
 
 msgid "Locales"
-msgstr "Yereller"
+msgstr ""
 
 msgid "Log"
-msgstr "Günlük"
+msgstr ""
 
 msgid "Logs"
-msgstr "Günlükler"
+msgstr ""
 
 msgid "Notification"
-msgstr "Bildirim"
+msgstr ""
 
 msgid "Notifications"
-msgstr "Bildirimler"
+msgstr ""
 
 msgid "Organization"
-msgstr "Organizasyon"
+msgstr ""
 
 msgid "Organizations"
-msgstr "Organizasyonlar"
+msgstr ""
 
 msgid "Organization Type"
-msgstr "Organizasyon Türü"
+msgstr ""
 
 msgid "Organization Types"
-msgstr "Organizasyon Türleri"
+msgstr ""
 
 msgid "University"
-msgstr "Üniversite"
+msgstr ""
 
 msgid "Universities"
-msgstr "Üniversiteler"
+msgstr ""
 
 msgid "Payment"
-msgstr "Ödeme"
+msgstr ""
 
 msgid "Payments"
-msgstr "Ödemeler"
+msgstr ""
 
 msgid "Payment Method"
-msgstr "Ödeme Yöntemi"
+msgstr ""
 
 msgid "Payment Methods"
-msgstr "Ödeme Yöntemleri"
+msgstr ""
 
 msgid "Payment Status"
-msgstr "Ödeme Durumu"
+msgstr ""
 
 msgid "Payment Statuses"
-msgstr "Ödeme Durumları"
+msgstr ""
 
 msgid "Transaction"
-msgstr "İşlem"
+msgstr ""
 
 msgid "Transactions"
-msgstr "İşlemler"
+msgstr ""
 
 msgid "Reservation"
-msgstr "Rezervasyon"
+msgstr ""
 
 msgid "Reservation Status"
-msgstr "Rezervasyon Durumu"
+msgstr ""
 
 msgid "Reservations"
-msgstr "Rezervasyonlar"
+msgstr ""
 
 msgid "Developer"
-msgstr "Geliştirici"
+msgstr ""
 
 msgid "Developers"
-msgstr "Geliştiriciler"
+msgstr ""
 
 msgid "User"
-msgstr "Kullanıcı"
+msgstr ""
 
 msgid "Users"
-msgstr "Kullanıcılar"
+msgstr ""
 
 msgid "User Album"
-msgstr "Kullanıcı Albümü"
+msgstr ""
 
 msgid "User Albums"
-msgstr "Kullanıcı Albümleri"
+msgstr ""
 
 msgid "Profile"
-msgstr "Profil"
+msgstr ""
 
 msgid "Profiles"
-msgstr "Profiller"
+msgstr ""
 
 msgid "Interest"
-msgstr "İlgi Alanı"
+msgstr ""
 
 msgid "Interests"
-msgstr "İlgi Alanları"
+msgstr ""
 
 msgid "❌"
-msgstr "❌"
-
-msgid ""
-"Governorate Telephone Code must be from 1 t 3 digits allowed. ❌"
 msgstr ""
-"Valilik Telefon Kodu 1 ila 3 basamaklı olmalıdır. ❌"
+
+msgid "Governorate Telephone Code must be from 1 t 3 digits allowed. ❌"
+msgstr ""
 
 msgid ""
 "❌ Enter valid Mobile.Like (+20 10 123 4567|+20101234567|+20-10-123-4567)"
 msgstr ""
-"❌ Geçerli bir Mobil numara girin. Örneğin: (+20 10 123 4567|+20101234567|+20-10-123-4567)"
 
 msgid "❌ Mobile is Used. choose Another"
-msgstr "❌ Mobil numara kullanımda. Başka bir tane seçin"
+msgstr ""
 
 msgid "❌ Mobile Number is Required"
-msgstr "❌ Mobil numara gereklidir"
+msgstr ""
 
 msgid ""
 "❌ Enter valid Phone.Like +91 98765 43210  | +1 415 555 1234 | +44 20 7946 "
 "0958 | +49 176 1234 5678 | +81 90 1234 5678 | +61 412 345 678 | +33 6 12 34 "
 "56 78 | 971501234567 | 65-6123-4567 | 852.5123.4567"
 msgstr ""
-"❌ Geçerli bir Telefon numarası girin. Örneğin: +91 98765 43210  | +1 415 555 1234 | +44 20 7946 "
-"0958 | +49 176 1234 5678 | +81 90 1234 5678 | +61 412 345 678 | +33 6 12 34 "
-"56 78 | 971501234567 | 65-6123-4567 | 852.5123.4567"
 
 msgid "❌ User Name is Used. Choose Another"
-msgstr "❌ Kullanıcı adı kullanımda. Başka bir tane seçin"
+msgstr ""
 
 msgid "❌ E-Mail is Used. Choose Another"
-msgstr "❌ E-posta kullanımda. Başka bir tane seçin"
+msgstr ""
 
 msgid ""
 "❌ Invalid Password, it must contain one or more Upper Case Char, one or "
 "more Lower Case Char, one or more from [@, $ ,!, %, *, ?, &]; between 8 to "
 "32 Chars"
 msgstr ""
-"❌ Geçersiz Şifre, en az bir büyük harf, bir küçük harf, [@, $ ,!, %, *, ?, &] karakterlerinden birini içermeli; 8 ila 32 karakter arasında olmalıdır"
 
 msgid ""
 "❌ Invalid mobile format. ℹ️ Examples: \n"
@@ -1268,60 +1287,41 @@ msgid ""
 "• +971501234567 (UAE)\n"
 "⚠️ Include country code, no spaces or special chars"
 msgstr ""
-"❌ Geçersiz mobil format. ℹ️ Örnekler: \n"
-"• +201012345678 (Mısır)\n"
-"• +966501234567 (Suudi)\n"
-"• +971501234567 (BAE)\n"
-"⚠️ Ülke kodunu dahil edin, boşluk veya özel karakter kullanmayın"
 
 msgid ""
 "❌ Mobile already registered\n"
 " ⚠️ Use password recovery or try another number"
 msgstr ""
-"❌ Mobil numara zaten kayıtlı\n"
-" ⚠️ Şifre kurtarma kullanın veya başka bir numara deneyin"
 
 msgid ""
 "❌ Mobile number required\n"
 " ℹ️ Needed for account verification"
 msgstr ""
-"❌ Mobil numara gereklidir\n"
-" ℹ️ Hesap doğrulama için gereklidir"
 
 msgid ""
 "❌ Invalid verification code\n"
 " ⚠️ Check SMS and enter {} -digit code"
 msgstr ""
-"❌ Geçersiz doğrulama kodu\n"
-" ⚠️ SMS'i kontrol edin ve {} -basamaklı kodu girin"
 
 msgid ""
 "❌ Invalid code length\n"
 " ℹ️ Enter a {}-digit code sent to your E-Mail"
 msgstr ""
-"❌ Geçersiz kod uzunluğu\n"
-" ℹ️ E-Posta adresinize gönderilen {}-basamaklı kodu girin"
 
 msgid ""
 "❌ Code expired\n"
 " ℹ️ Request new code (valid for 10 mins)"
 msgstr ""
-"❌ Kodun süresi doldu\n"
-" ℹ️ Yeni kod isteyin (10 dakika geçerli)"
 
 msgid ""
 "❌ Invalid national ID\n"
 "⚠️ Must be 14 digits (Egypt) or your country's standard format"
 msgstr ""
-"❌ Geçersiz kimlik numarası\n"
-"⚠️ 14 basamaklı olmalıdır (Mısır) veya ülkenizin standart formatında olmalıdır"
 
 msgid ""
 "❌ ID already registered\n"
 " ⚠️ Contact support if this is your ID"
 msgstr ""
-"❌ Kimlik numarası zaten kayıtlı\n"
-" ⚠️ Bu sizin kimlik numaranız ise destekle iletişime geçin"
 
 msgid ""
 "❌ Weak password\n"
@@ -1331,99 +1331,85 @@ msgid ""
 "- Number (123)\n"
 "- Symbol (@$!%*?&)"
 msgstr ""
-"❌ Zayıf şifre\n"
-"✅ Gereksinimler:\n"
-"- 8-32 karakter\n"
-"- Büyük + küçük harf\n"
-"- Rakam (123)\n"
-"- Sembol (@$!%*?&)"
 
 msgid ""
 "❌ Username unavailable\n"
 " ℹ️ Try adding numbers (ahmed123)"
 msgstr ""
-"❌ Kullanıcı adı kullanılamaz\n"
-" ℹ️ Rakam eklemeyi deneyin (ahmed123)"
 
 msgid ""
 "❌ Email already registered\n"
 " ⚠️ Use password recovery if this is yours"
 msgstr ""
-"❌ E-posta zaten kayıtlı\n"
-" ⚠️ Bu sizin e-postanız ise şifre kurtarma kullanın"
 
 msgid ""
 "❌ Invalid email format\n"
 " ℹ️ Example: user@example.com"
 msgstr ""
-"❌ Geçersiz e-posta formatı\n"
-" ℹ️ Örnek: user@example.com"
 
 msgid ""
 "❌ Invalid country code\n"
 " ℹ️ Must be 1-3 digits (20 for Egypt)"
 msgstr ""
-"❌ Geçersiz ülke kodu\n"
-" ℹ️ 1-3 basamaklı olmalıdır (Mısır için 20)"
 
 msgid ""
 "❌ Invalid region code\n"
 " ℹ️ Example: 02 for Cairo, 03 for Alexandria"
 msgstr ""
-"❌ Geçersiz bölge kodu\n"
-" ℹ️ Örnek: Kahire için 02, İskenderiye için 03"
 
 msgid ""
 "❌ Required field missing\n"
 " ⚠️ Please complete all marked fields"
 msgstr ""
-"❌ Gerekli alan eksik\n"
-" ⚠️ Lütfen tüm işaretli alanları doldurun"
+
+msgid ""
+"❌ Invalid User Type \n"
+" ℹ️ Choose from available options"
+msgstr ""
 
 msgid ""
 "❌ Invalid selection\n"
 " ℹ️ Choose from available options"
 msgstr ""
-"❌ Geçersiz seçim\n"
-" ℹ️ Mevcut seçeneklerden birini seçin"
 
 msgid ""
 "✅ All inputs valid\n"
 " ℹ️ You may proceed"
 msgstr ""
-"✅ Tüm girdiler geçerli\n"
-" ℹ️ Devam edebilirsiniz"
+
+msgid ""
+"❌ Permission denied\n"
+" ⚠️ You don't have access to this resource"
+msgstr ""
 
 msgid "Run the selected action"
-msgstr "Seçilen eylemi çalıştır"
+msgstr ""
 
 msgid "Go"
-msgstr "Git"
+msgstr ""
 
 msgid "Click here to select the objects across all pages"
-msgstr "Tüm sayfalardaki nesneleri seçmek için buraya tıklayın"
+msgstr ""
 
 #, python-format
 msgid ""
 "\n"
 "                            Select all %(total_count)s %(module_name)s"
 msgstr ""
-"\n"
-"                            Tüm %(total_count)s %(module_name)s seç"
 
 msgid "Clear selection"
-msgstr "Seçimi temizle"
+msgstr ""
 
 msgid ""
 "First, enter a username and password. Then, you'll be able to edit more user "
 "options."
-msgstr "Önce bir kullanıcı adı ve şifre girin. Daha sonra daha fazla kullanıcı seçeneğini düzenleyebilirsiniz."
+msgstr ""
 
 msgid "Enter a username and password."
-msgstr "Bir kullanıcı adı ve şifre girin."
+msgstr ""
 
 msgid "Change password"
-msgstr "Şifre değiştir"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -1432,49 +1418,44 @@ msgid ""
 "                            <strong>%(username)s</strong>.\n"
 "                        "
 msgstr ""
-"\n"
-"                            <strong>%(username)s</strong> kullanıcısı için yeni bir şifre girin.\n"
-"                        "
 
 msgid "Change my password"
-msgstr "Şifremi değiştir"
+msgstr ""
 
 msgid "Please correct the error below."
-msgstr "Lütfen aşağıdaki hatayı düzeltin."
+msgstr ""
 
 msgid "Please correct the errors below."
-msgstr "Lütfen aşağıdaki hataları düzeltin."
+msgstr ""
 
 #, python-format
 msgid ""
 "Add\n"
 "                                %(name)s"
 msgstr ""
-"Ekle\n"
-"                                %(name)s"
 
 #, python-format
 msgid "Add %(name)s"
-msgstr "%(name)s ekle"
+msgstr ""
 
 msgid "History"
-msgstr "Geçmiş"
+msgstr ""
 
 msgid "View on site"
-msgstr "Sitede görüntüle"
+msgstr ""
 
 msgid "Filter"
-msgstr "Filtre"
+msgstr ""
 
 msgid "Remove from sorting"
-msgstr "Sıralamadan kaldır"
+msgstr ""
 
 #, python-format
 msgid "Sorting priority: %(priority_number)s"
-msgstr "Sıralama önceliği: %(priority_number)s"
+msgstr ""
 
 msgid "Toggle sorting"
-msgstr "Sıralamayı değiştir"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -1486,9 +1467,6 @@ msgid ""
 "                                        following types of objects:\n"
 "                                    "
 msgstr ""
-"\n"
-"                                        %(object_name)s '%(escaped_object)s' silmek, ilişkili nesnelerin de silinmesine neden olacak, ancak hesabınız aşağıdaki türdeki nesneleri silme iznine sahip değil:\n"
-"                                    "
 
 #, python-format
 msgid ""
@@ -1499,9 +1477,6 @@ msgid ""
 "objects:\n"
 "                                    "
 msgstr ""
-"\n"
-"                                        %(object_name)s '%(escaped_object)s' silmek, aşağıdaki korumalı ilişkili nesnelerin de silinmesini gerektirir:\n"
-"                                    "
 
 #, python-format
 msgid ""
@@ -1512,22 +1487,18 @@ msgid ""
 "will be deleted:\n"
 "                                    "
 msgstr ""
-"\n"
-"                                        %(object_name)s \"%(escaped_object)s\" silmek istediğinizden emin misiniz?\n"
-"                                        Aşağıdaki tüm ilişkili öğeler silinecektir:\n"
-"                                    "
 
 msgid "Objects"
-msgstr "Nesneler"
+msgstr ""
 
 msgid "Yes, I'm sure"
-msgstr "Evet, eminim"
+msgstr ""
 
 msgid "No, take me back"
-msgstr "Hayır, geri dön"
+msgstr ""
 
 msgid "Delete multiple objects"
-msgstr "Birden fazla nesneyi sil"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -1539,9 +1510,6 @@ msgid ""
 "                                        types of objects:\n"
 "                                    "
 msgstr ""
-"\n"
-"                                        Seçili %(objects_name)s silmek, ilişkili nesnelerin de silinmesine neden olacak, ancak hesabınız aşağıdaki türdeki nesneleri silme iznine sahip değil:\n"
-"                                    "
 
 #, python-format
 msgid ""
@@ -1552,9 +1520,6 @@ msgid ""
 "objects:\n"
 "                                    "
 msgstr ""
-"\n"
-"                                        Seçili %(objects_name)s silmek, aşağıdaki korumalı ilişkili nesnelerin de silinmesini gerektirir:\n"
-"                                    "
 
 #, python-format
 msgid ""
@@ -1565,12 +1530,239 @@ msgid ""
 "items will be deleted:\n"
 "                                    "
 msgstr ""
-"\n"
-"                                        Seçili %(objects_name)s silmek istediğinizden emin misiniz? Aşağıdaki tüm nesneler ve ilişkili öğeler silinecektir:\n"
-"                                    "
 
 msgid "Change"
-msgstr "Değiştir"
+msgstr ""
 
 msgid "View"
-msgstr "Görüntüle"
+msgstr ""
+
+msgid "Delete?"
+msgstr ""
+
+#, python-format
+msgid " By %(filter_title)s "
+msgstr ""
+
+msgid "Summary"
+msgstr ""
+
+msgid ""
+"Something's wrong with your database installation. Make sure the appropriate "
+"database tables have been created, and make sure the database is readable by "
+"the appropriate user."
+msgstr ""
+
+msgid "Action"
+msgstr ""
+
+msgid "Date/time"
+msgstr ""
+
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
+msgstr ""
+
+msgid "Show all"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+#, python-format
+msgid ""
+"\n"
+"                                    %(counter)s result\n"
+"                                "
+msgid_plural ""
+"\n"
+"                                    %(counter)s results\n"
+"                                "
+msgstr[0] ""
+msgstr[1] ""
+
+#, python-format
+msgid ""
+"\n"
+"                                    %(full_result_count)s total\n"
+"                                "
+msgstr ""
+
+msgid "Save as new"
+msgstr ""
+
+msgid "Save and add another"
+msgstr ""
+
+msgid "Save and continue editing"
+msgstr ""
+
+msgid "Save and view"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Log in"
+msgstr ""
+
+msgid "Thanks for spending some quality time with the Web site today."
+msgstr ""
+
+msgid "Log in again"
+msgstr ""
+
+msgid "Documentation"
+msgstr ""
+
+msgid "Log out"
+msgstr ""
+
+msgid "Password change"
+msgstr ""
+
+msgid "Your password was changed."
+msgstr ""
+
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+
+msgid "About Us"
+msgstr ""
+
+msgid ""
+"Heaven frucvitful doesn't cover lesser dvsays appear creeping seasons so "
+"behold."
+msgstr ""
+
+msgid "Phone"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Important Link"
+msgstr ""
+
+msgid "View Project"
+msgstr ""
+
+msgid "Contact Us"
+msgstr ""
+
+msgid "Testimonial"
+msgstr ""
+
+msgid "Proparties"
+msgstr ""
+
+msgid "Support"
+msgstr ""
+
+msgid "Newsletter"
+msgstr ""
+
+msgid "Heaven fruitful doesn't over lesser in days. Appear creeping."
+msgstr ""
+
+msgid "Email Address"
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+msgid "Spakers"
+msgstr ""
+
+msgid "Schedule"
+msgstr ""
+
+msgid "Blog"
+msgstr ""
+
+msgid "Blog Details"
+msgstr ""
+
+msgid "Contact"
+msgstr ""
+
+msgid "Elements"
+msgstr ""
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "Wasla"
+msgstr ""
+
+msgid "Login with Google"
+msgstr ""
+
+msgid "Login with Mobile"
+msgstr ""
+
+msgid "Send Code"
+msgstr ""
+
+msgid "Login canceled by user."
+msgstr ""
+
+msgid "Google login error"
+msgstr ""
+
+msgid "Enter verification code"
+msgstr ""
+
+msgid "Phone login error"
+msgstr ""
+
+msgid "Login successful!"
+msgstr ""
+
+msgid "Login failed"
+msgstr ""
+
+msgid "Network error"
+msgstr ""
+
+msgid "Skip to main content"
+msgstr ""
+
+msgid "Welcome,"
+msgstr ""
+
+msgid "View site"
+msgstr ""
+
+msgid "Breadcrumbs"
+msgstr ""
+
+msgid "Django site admin"
+msgstr ""
+
+msgid "Django administration"
+msgstr ""
+
+msgid "Toggle navigation"
+msgstr ""
+
+msgid "Sidebar"
+msgstr ""
+
+msgid "Start typing to filter…"
+msgstr ""
+
+msgid "Filter navigation items"
+msgstr ""
+
+msgid "Select Locale"
+msgstr ""

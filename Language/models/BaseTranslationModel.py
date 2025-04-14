@@ -1,5 +1,5 @@
 from django.db.models import JSONField
-from django.utils.translation import get_language, to_locale
+from django.utils.translation import get_language
 
 from App.models import BaseNameModel
 from App.messages import ModelsMessages
@@ -16,8 +16,14 @@ class BaseTranslationModel(BaseNameModel):
 
     @property
     def translated_name(self) -> str:
-        trans = self.translations[to_locale(get_language()).replace("_", "-")]
+        trans = getattr(self.translations, get_language(), None)
         return trans if trans else self.name
+
+    def __str__(self) -> str:
+        return f"{self.translated_name}"
+
+    def __decode__(self) -> str:
+        return f"{self.translated_name}"
 
     class Meta:
         abstract = True

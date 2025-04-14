@@ -1,0 +1,82 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% translate 'Email Verification Error' %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </head>
+  <body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full text-center">
+      <div class="text-red-500 text-6xl mb-4">
+        <i class="fas fa-exclamation-circle"></i>
+      </div>
+
+      <h1 class="text-2xl font-bold text-gray-800 mb-2" id="error-title">{% translate 'Email Verification Failed' %}</h1>
+
+      <p class="text-gray-600 mb-6" id="error-description">
+        {% translate 'We encountered an issue while verifying your email address' %}.
+      </p>
+
+      <div class="bg-red-50 p-4 rounded-lg mb-6 text-left" id="specific-error">
+        <!-- Dynamic content will be inserted here -->
+      </div>
+
+      <div class="space-y-3">
+        <a href="/resend-verification" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg inline-block transition duration-200"><i class="fas fa-paper-plane mr-2"></i> Resend Verification Email</a>
+        <a href="/contact-support" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-4 rounded-lg inline-block transition duration-200"><i class="fas fa-headset mr-2"></i> Contact Support</a>
+      </div>
+    </div>
+
+    <script>
+      // Parse URL parameters to show specific error
+      const urlParams = new URLSearchParams(window.location.search)
+      const error = urlParams.get('error')
+      const errorContainer = document.getElementById('specific-error')
+      
+      const errorMessages = {
+        token_expired: {
+          title: 'Verification Link Expired',
+          description: 'This verification link has expired. Please request a new one.',
+          action: 'We have sent a new verification email to your address.'
+        },
+        invalid_token: {
+          title: 'Invalid Verification Link',
+          description: 'The verification link is invalid or corrupted.',
+          action: 'Please request a new verification email.'
+        },
+        validation_error: {
+          title: 'Validation Error',
+          description: "We couldn't validate your verification request.",
+          action: 'Please try again or contact support.'
+        },
+        server_error: {
+          title: 'Server Error',
+          description: 'We encountered an unexpected error.',
+          action: 'Our team has been notified. Please try again later.'
+        }
+      }
+      
+      if (error && errorMessages[error]) {
+        document.getElementById('error-title').textContent = errorMessages[error].title
+        document.getElementById('error-description').textContent = errorMessages[error].description
+      
+        errorContainer.innerHTML = `
+                                              <p class="text-sm text-red-800">
+                                                  <i class="fas fa-exclamation-triangle mr-2"></i>
+                                                  ${errorMessages[error].action}
+                                              </p>
+                                          `
+      } else {
+        errorContainer.innerHTML = `
+                                              <p class="text-sm text-red-800">
+                                                  <i class="fas fa-exclamation-triangle mr-2"></i>
+                                                  Unknown error occurred. Please contact support.
+                                              </p>
+                                          `
+      }
+    </script>
+  </body>
+</html>

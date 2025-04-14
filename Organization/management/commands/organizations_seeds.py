@@ -51,11 +51,11 @@ class Command(BaseCommand):
                 "university": 1,
                 "affiliated_to": None,
                 # "translations": {
-                #     "ar_AS": "اسره الثقافه",
-                #     "ar_EG": "اسره الثقافه",
-                #     "en_US": "Family of Culture",
-                #     "fr_FR": "Famille culturelle",
-                #     "tr_TR": "Kültür Ailesi",
+                #     "ar-as": "اسره الثقافه",
+                #     "ar-eg": "اسره الثقافه",
+                #     "en-us": "Family of Culture",
+                #     "fr-fr": "Famille culturelle",
+                #     "tr-tr": "Kültür Ailesi",
                 # },
             },
             {
@@ -64,11 +64,11 @@ class Command(BaseCommand):
                 "university": 1,
                 "affiliated_to": None,
                 # "translations": {
-                #     "ar_AS": "أسره النور",
-                #     "ar_EG": "أسره النور",
-                #     "en_US": "The light Family",
-                #     "fr_FR": "La lumière l'a capturé",
-                #     "tr_TR": "Işık ailesi",
+                #     "ar-as": "أسره النور",
+                #     "ar-eg": "أسره النور",
+                #     "en-us": "The light Family",
+                #     "fr-fr": "La lumière l'a capturé",
+                #     "tr-tr": "Işık ailesi",
                 # },
             },
             {
@@ -77,8 +77,8 @@ class Command(BaseCommand):
                 "university": 1,
                 "affiliated_to": None,
                 # "translations": {
-                #     "ar_AS": "مركز الإبداع الرقمي",
-                #     "ar_EG": "مركز الإبداع الرقمي",
+                #     "ar-as": "مركز الإبداع الرقمي",
+                #     "ar-eg": "مركز الإبداع الرقمي",
                 # },
             },
         ]

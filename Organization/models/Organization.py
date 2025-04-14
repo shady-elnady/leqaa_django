@@ -35,7 +35,7 @@ class Organization(BaseNameModel, BaseImageModel):
     #############################################################
     @property
     def logo(self):
-        return self.image
+        return self.image.url
 
     @logo.setter
     def logo(self, value):

@@ -64,6 +64,7 @@ class CollegeSerializer(HyperlinkedModelSerializer):
             "logo",
             "university",
             "translations",
+            "translated_name",
             "created_at",
             "last_updated",
         ]

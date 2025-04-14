@@ -15,11 +15,11 @@ class Command(BaseCommand):
                 "name": "Locality 1",
                 "state": 1,
                 "translations": {
-                    "en_US": "Locality 1",
-                    "ar_EG": "محليه 1",
-                    "ar_AS": "محليه 1",
-                    "fr_FR": "Localité 1",
-                    "tr_TR": "Yerellik 1",
+                    "en-us": "Locality 1",
+                    "ar-eg": "محليه 1",
+                    "ar-as": "محليه 1",
+                    "fr-fr": "Localité 1",
+                    "tr-tr": "Yerellik 1",
                 },
             },
         ]

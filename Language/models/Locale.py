@@ -27,7 +27,7 @@ class Locale(BaseModel):
 
     @property
     def locale_code(self) -> str:
-        return f"{self.language.language_iso_code}_{self.country.country_code}"
+        return f"{self.language.language_iso_code}-{self.country.country_code.lower()}"
 
     @property
     def language_native_name(self) -> str:
@@ -39,13 +39,13 @@ class Locale(BaseModel):
 
     @property
     def locale_flag(self) -> str:
-        return self.country.image
+        return self.country.flag
 
     def __str__(self) -> str:
-        return f"{self.language.language_iso_code}-{self.country.country_code}"
+        return f"{self.language.language_iso_code}-{self.country.country_code.upper()}"
 
     def __decode__(self) -> str:
-        return f"{self.language.language_iso_code}-{self.country.country_code}"
+        return f"{self.language.language_iso_code}-{self.country.country_code.upper()}"
 
     class Meta:
         verbose_name = ModelsMessages.LOCALE

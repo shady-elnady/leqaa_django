@@ -11,7 +11,6 @@
     const dropdownBtn = document.getElementById("dropdown-btn");
     const dropdownContent = document.getElementById("dropdown-content");
     window.locales = [];
-    
 
     {% for appLocale in app_locales %}
       window.locales.push({
@@ -24,7 +23,7 @@
       {% endfor %}
       setSelectedLocale(
         window.locales.find(
-          locale => locale.locale_code.toLowerCase() === `{{ LANGUAGE_CODE }}`.replace('-', '_').toLowerCase(),
+          locale => locale.locale_code.toLowerCase() === `{{ LANGUAGE_CODE }}`.toLowerCase(),
           ),
       );
 
@@ -46,7 +45,7 @@
         langName = appLocale.language_name;
       }
 
-      flagURL = getFlagSrc(appLocale.locale_code.split('_')[1], appLocale.locale_flag);
+      flagURL = getFlagSrc(appLocale.locale_code.split('-')[1], appLocale.locale_flag);
 
       dropdownContent.innerHTML = "";
   
@@ -64,7 +63,7 @@
           otherLangName = otherAppLocale.language_name;
         }
         
-        otherFlagURL = getFlagSrc(otherAppLocale.locale_code.split('_')[1], otherAppLocale.locale_flag);
+        otherFlagURL = getFlagSrc(otherAppLocale.locale_code.split('-')[1], otherAppLocale.locale_flag);
       
         const listEl = document.createElement("li");
         listEl.innerHTML = `${otherLangName}<img src="${otherFlagURL}" />`;

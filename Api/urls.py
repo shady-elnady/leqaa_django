@@ -8,6 +8,7 @@ from Api.views import (
     MobileVerificationAPIView,
     VerifyEmailByURLAPIView,
 )
+from django.views.generic import TemplateView
 
 from Firebase.api import FirebaseLogInByIdTokenAPIView
 
@@ -45,6 +46,16 @@ urlpatterns = [
         "password-reset/<str:encoded_pk>/<str:token>/",
         PasswordResetAPIView.as_view(),
         name="password_reset",
+    ),
+    path(
+        "email-verified-success/",
+        TemplateView.as_view(template_name="Api/email_verified_success.html"),
+        name="email_verified_success",
+    ),
+    path(
+        "email-verification-error/",
+        TemplateView.as_view(template_name="Api/email_verification_error.html"),
+        name="email_verification_error",
     ),
 ]
 

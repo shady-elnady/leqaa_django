@@ -127,7 +127,14 @@ class ValidationMessages:
         "❌ Required field missing\n ⚠️ Please complete all marked fields"
     )
 
+    USER_TYPE_INVALID_VALIDATION_MESSAGE = _(
+        "❌ Invalid User Type \n ℹ️ Choose from available options"
+    )
     INVALID_CHOICE = _("❌ Invalid selection\n ℹ️ Choose from available options")
 
     # ==================== Success Messages ====================
     VALIDATION_OK = _("✅ All inputs valid\n ℹ️ You may proceed")
+
+    PERMISSION_ERROR = _(
+        "❌ Permission denied\n ⚠️ You don't have access to this resource"
+    )

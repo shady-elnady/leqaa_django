@@ -13,7 +13,7 @@ class Command(BaseCommand):
         "makemigrations",
         "migrate",
         # "collectstatic",
-        "collectstatic --noinput --clear",
+        "collectstatic",
         ## Load Data Commands
         "languages_seeds",
         "currencies_seeds",

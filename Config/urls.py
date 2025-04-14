@@ -36,15 +36,13 @@ urlpatterns = [
         f"{api_version}/i18n/", include("django.conf.urls.i18n")
     ),  # for Multi Languages & Translation
     # Rest_Fram_Work
-    path("", include("event_master.urls", namespace="event_master")),
-    path("event/", include("Event.urls", namespace="Event")),
-    path("api/", include("Api.urls", namespace="Api")),
     path(
         "api/",
         include(router.urls),
     ),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
-    path("user/", include("User.urls", namespace="User")),
+    # API
+    path("api/", include("Api.urls", namespace="Api")),
     path("api/notification/", include("Notification.urls", namespace="Notification")),
 ]
 
@@ -54,6 +52,9 @@ urlpatterns += i18n_patterns(
     # # Dashboard Custom
     # path("", include("admin_berry.urls")),
     # path("admin_berry/", include("admin_berry.urls", namespace="admin_berry")),
+    path("", include("event_master.urls", namespace="event_master")),
+    path("event/", include("Event.urls", namespace="Event")),
+    path("user/", include("User.urls", namespace="User")),
     path(
         "jsi18n/",
         cache_page(86400, key_prefix="jsi18n-%s" % get_version())(

@@ -60,6 +60,23 @@ class EventTypeViewSet(ModelViewSet):
 #         model = Event
 #         fields = ["category__in", "category__id"]
 
+# class EventFilter(filters.FilterSet):
+#     categories = filters.ModelMultipleChoiceFilter(
+#         field_name='category',
+#         queryset=Category.objects.all(),
+#         label='Filter by categories (multiple allowed)'
+#     )
+
+#     location = filters.ModelChoiceFilter(
+#         field_name='location',
+#         queryset=Location.objects.all(),
+#         label='Filter by location'
+#     )
+
+#     class Meta:
+#         model = Event
+#         fields = ['categories', 'location', 'event_type', 'university', 'college']
+
 
 class EventViewSet(ModelViewSet):
     queryset = Event.objects.all()
@@ -75,6 +92,10 @@ class EventViewSet(ModelViewSet):
         SearchFilter,  # http://example.com/api/users?search=russell
         filters.DjangoFilterBackend,
     )
+    filterset_fields = {
+        "category": ["exact", "in"],  # 'in' allows multiple values
+        "location": ["exact"],
+    }
     # filterset_class = EventFilter
     ordering_fields = ("id", "created_at", "last_updated")
     search_fields = ["title"]

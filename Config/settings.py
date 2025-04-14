@@ -112,14 +112,6 @@ EMAIL_SUBJECT_PREFIX = "[Wasla]"
 
 PASSWORD_RESET_TIMEOUT = 86400  # 24 hours in seconds
 
-ALLOWED_HOSTS = [
-    # "*",
-    "localhost",
-    "127.0.0.1",
-    "Shady.pythonanywhere.com",
-    "shadyElNady.pythonanywhere.com",
-]
-
 APPEND_SLASH = True
 
 ## Application definition
@@ -181,6 +173,21 @@ INSTALLED_APPS = [
 
 SITE_ID = 1  # Should match your Site object in admin
 
+# الإعدادات المخصصة للتحقق من البريد
+EMAIL_VERIFICATION_DOMAIN = "shadyElNady.pythonanywhere.com"  # استبدلها بدومينك الحقيقي
+EMAIL_VERIFICATION_URL_PROTOCOL = (
+    "http" if DEBUG else "https"
+)  # استخدم http في بيئة التطوير و https في الإنتاج
+DEFAULT_VERIFICATION_URL = f"{EMAIL_VERIFICATION_URL_PROTOCOL}://{EMAIL_VERIFICATION_DOMAIN}/api/verify-email-by-url"  # رابط احتياطي
+
+ALLOWED_HOSTS = [
+    # "*",
+    "localhost",
+    "127.0.0.1",
+    EMAIL_VERIFICATION_DOMAIN,
+]
+
+
 USE_HTTPS = False
 
 INTERNAL_IPS = [
@@ -194,8 +201,6 @@ SECURE_SSL_REDIRECT = False  # Disable HTTPS redirect
 SESSION_COOKIE_SECURE = False  # Allow session cookies over HTTP
 CSRF_COOKIE_SECURE = False  # Allow CSRF cookies over HTTP
 
-if DEBUG:
-    EMAIL_VERIFICATION_URL_PROTOCOL = "http"
 
 # # settings for https
 # SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
@@ -215,7 +220,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "Language.middlewares.regional_locale_middleware.RegionalLocaleMiddleware",  # Add your custom middlewarefor App Locale
+    # "Language.middlewares.regional_locale_middleware.RegionalLocaleMiddleware",  # Add your custom middlewarefor App Locale
 ]
 
 
@@ -293,34 +298,41 @@ TIME_ZONE = "UTC"
 
 USE_I18N = True
 
-USE_L10N = True
-
 USE_TZ = True
 
-# Supported Languages
-LANGUAGES = [
-    ("ar", ChoicesMessages.ARABIC),  # Base Arabic code
-    ("en", ChoicesMessages.ENGLISH),
-    ("fr", ChoicesMessages.FRENCH),
-    ("tr", ChoicesMessages.TURKISH),
+# Formatting
+USE_L10N = True
+
+# Locale-specific formats
+FORMAT_MODULE_PATH = [
+    "Language.formats",  # Create this module
 ]
 
-# Default language must be from LANGUAGES
-LANGUAGE_CODE = "ar"
+# Supported languages
+LANGUAGES = [
+    ("ar-as", ChoicesMessages.ARABIC),
+    ("ar-eg", ChoicesMessages.ARABIC_EGYPT),
+    ("en-us", ChoicesMessages.ENGLISH),
+    ("fr-fr", ChoicesMessages.FRENCH),
+    ("tr-tr", ChoicesMessages.TURKISH),
+]
 
-# Custom setting for your regional variants
-REGIONAL_LANGUAGES = {
-    "ar": ["ar_AS", "ar_EG"],  # Arabic variants
-    "en": ["en_US"],  # English variants
-    "fr": ["fr_FR"],  # French variants
-    "tr": ["tr_TR"],  # Turkish variants
+FALLBACK_LANGUAGE_CHAINS = {
+    "ar-as": ["ar", "en"],
+    "ar-eg": ["ar", "en"],
+    "fr-fr": ["fr", "en"],
+    "tr-tr": ["tr", "en"],
 }
+
+# Default language must be from LANGUAGES
+LANGUAGE_CODE = "ar-as"  # Default language
 
 # True for right-to-left languages like Arabic, and to False otherwise
 # LANGUAGE_BIDI = False
 # Languages using BiDi (right-to-left) layout
 LANGUAGES_BIDI = [
-    "ar",
+    "ar-as",
+    "ar-eg",
 ]
 
 LOCALE_PATH = join(ASSETS_DIR, "locales")
@@ -335,14 +347,14 @@ if not hasattr(settings, "APP_LOCALES"):
     APP_LOCALES = {
         "is_set": False,
         "data": None,
-        # "en_US": {
+        # "en-us": {
         #     "is_bidi": False,
         #     "code": "en",
         #     "flag": "",
         #     "name": "English",
         #     "native_name": "English",
         # },
-        # "ar_EG": {
+        # "ar-eg": {
         #     "is_bidi": True,
         #     "code": "ar",
         #     "flag": "",
@@ -411,9 +423,9 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.IsAuthenticated",
     ],
     "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.TokenAuthentication",
         "rest_framework.authentication.BasicAuthentication",
-        "rest_framework.authentication.SessionAuthentication",
         # "Firebase.api.restAPI.authentication.FirebaseAuthentication",  # Custom fireBase Authentiction
     ],
     "DEFAULT_THROTTLE_CLASSES": [
@@ -421,7 +433,7 @@ REST_FRAMEWORK = {
     ],
     "DEFAULT_THROTTLE_RATES": {
         "anon": "100/day",  # Global anonymous rate limit
-        "api_log_in": "5/hour",  # Specific to login endpoint
+        "api_log_in": "10/hour",  # Specific to login endpoint
         "firebase_log_in_by_id_token": "10/hour",  # For Firebase token authentication
         "password_reset": "3/hour",
         "forgot_password": "4/hour",

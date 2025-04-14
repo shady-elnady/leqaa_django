@@ -27,11 +27,11 @@ class Command(BaseCommand):
                 "name": "College of Commerce",
                 "university": 1,
                 "translations": {
-                    "ar_AS": "كليه تجاره",
-                    "ar_EG": "كليه تجاره",
-                    "en_US": "College of Commerce",
-                    "fr_FR": "Collège de Commerce",
-                    "tr_TR": "Ticaret Koleji",
+                    "ar-as": "كليه تجاره",
+                    "ar-eg": "كليه تجاره",
+                    "en-us": "College of Commerce",
+                    "fr-fr": "Collège de Commerce",
+                    "tr-tr": "Ticaret Koleji",
                 },
             },
         ]

@@ -55,7 +55,7 @@ class EventSerializer(HyperlinkedModelSerializer):
     # university = UniversitySerializer(many=False, read_only=True)
     # EventPhotosAlbum = EventAlbumSerializer(many=True)
     # Reservations = ReservationSerializer(many=True, read_only=True)
-    location = LocationSerializer(many=False, read_only=True)
+    # location = LocationSerializer(many=False, read_only=True)
     start_date_time = DateTimeDRFField()
     end_date_time = DateTimeDRFField()
 

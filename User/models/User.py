@@ -255,28 +255,34 @@ class User(
         if not self.otp:
             self.otp = self.generate_OTP()
 
-    def get_email_verification_url(self, request: Optional["HttpRequest"] = None):
+    # ==================== E-Mail Verification URL ====================
+    def get_email_verification_url(
+        self, request: Optional["HttpRequest"] = None
+    ) -> str:
         """
-        Generate email verification URL with token
-        Example: https://example.com/verify-email-by-url?token=abc123
+        Generate email verification URL with token using request.build_absolute_uri()
+        Example: https://yourdomain.com/api/verify-email-by-url/?token=abc123
         """
         try:
-            token = (
-                self.generate_verification_token()
-            )  # Implement your token generation
+            token = self.generate_verification_token()
 
+            # Use request.build_absolute_uri() if request is available
             if request:
-                current_site = get_current_site(request)
-            else:
-                from django.contrib.sites.models import Site
+                base_url = request.build_absolute_uri(
+                    reverse("Api:verify_email_by_url")
+                )
+                return f"{base_url}?token={token}"
 
-                current_site = Site.objects.get_current()
+            # Fallback for cases without request (e.g., celery tasks)
+            from django.contrib.sites.models import Site
 
             protocol = getattr(settings, "EMAIL_VERIFICATION_URL_PROTOCOL", "https")
-            return f"{protocol}://{current_site.domain}{reverse('Api:verify_email_by_url')}?token={token}"
+            domain = Site.objects.get_current().domain
+            return f"{protocol}://{domain}{reverse('Api:verify_email_by_url')}?token={token}"
+
         except Exception as e:
-            logger.error(f"Failed to generate verification URL: {e}")
-            return ""  # or some default URL
+            logger.error(f"Failed to generate verification URL: {e}", exc_info=True)
+            return getattr(settings, "DEFAULT_VERIFICATION_URL", "")
 
     # ==================== Type Hint Properties ====================
 

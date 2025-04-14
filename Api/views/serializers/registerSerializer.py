@@ -8,7 +8,7 @@ from django.contrib.auth.password_validation import validate_password
 from rest_framework.validators import UniqueValidator
 
 from App.validators import RegexValidators
-from App.messages import ValidationMessages, ModelsMessages
+from App.messages import ValidationMessages, AuthMessages
 from User.utils.enums import USERS_TYPES
 from User.models.User import User
 
@@ -57,12 +57,22 @@ class RegisterSerializer(ModelSerializer):
     )
 
     def create(self, validated_data) -> "User":
+        user_type = getattr(validated_data, "user_type", None)
+        if user_type and user_type not in USERS_TYPES.choices:
+            raise ValueError(ValidationMessages.USER_TYPE_INVALID_VALIDATION_MESSAGE)
+        if user_type and user_type in [
+            USERS_TYPES.Staff,
+            USERS_TYPES.Admin,
+            USERS_TYPES.SuperUser,
+            USERS_TYPES.Developer,
+        ]:
+            raise ValueError(ValidationMessages.PERMISSION_ERROR)
         user: User = User.objects.create_user(**validated_data)
         return user
 
     def to_representation(self, instance: User):
         representation = super().to_representation(instance)
-        representation["message"] = ModelsMessages.REGISTER_SUCCESS
+        representation["message"] = AuthMessages.REGISTER_SUCCESS
         return representation
 
     class Meta:
