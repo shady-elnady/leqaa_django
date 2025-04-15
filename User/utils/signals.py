@@ -23,14 +23,17 @@ def create_user_profile_signal(sender, instance: "User", created: bool, **kwargs
         instance.Profile.save()
 
         if instance.email and not instance.email_verified_at:
+            from Event.models import Event
+
             send_my_email(
                 subject="Verify Your E-Mail",
                 plain_message=instance.otp,
                 recipient_list=[instance.email],
-                template_name="emails/verify-email.html",
+                template_name="emails/wasla_verfiy_email.html",
                 context={
+                    "events": Event.objects.all()[:2],
                     "otp": instance.otp,
-                    "verification_url": instance.get_email_verification_url(),  # Removed request
+                    "verification_url": instance.get_email_verification_url(),
                     "our_facebook_account_ulr": "https://www.facebook.com/",
                     "our_twitter_account_ulr": "https://x.com/i/flow/login",
                     "our_instagram_account_ulr ": "https://www.instagram.com/accounts/login/?hl=en",

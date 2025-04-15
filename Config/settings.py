@@ -10,11 +10,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 from os.path import join, exists, dirname  # noqa: F401
 from os import makedirs
+from django.apps import apps
 import django
+
 from django.urls import reverse_lazy  # noqa: F401
+
 from App.messages import ChoicesMessages
 from Firebase.helpers import FirebaseAdminHelper
 
@@ -84,7 +88,7 @@ except Exception as e:
 SECRET_KEY = "django-insecure-51v+!c+^ay(#p^)i#r5vg#00us2c@$2^7@frouj!n94j&-s%k="
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "True") == "True"
 #######################################################################################
 ##################################     User   #########################################
 #######################################################################################
@@ -174,17 +178,22 @@ INSTALLED_APPS = [
 SITE_ID = 1  # Should match your Site object in admin
 
 # الإعدادات المخصصة للتحقق من البريد
-EMAIL_VERIFICATION_DOMAIN = "shadyElNady.pythonanywhere.com"  # استبدلها بدومينك الحقيقي
-EMAIL_VERIFICATION_URL_PROTOCOL = (
+SITE_DOMAIN = os.getenv("SITE_DOMAIN", "localhost:8000" if DEBUG else "shady.com")
+
+SITE_NAME = os.getenv("SITE_NAME", "Local Dev Site" if DEBUG else "Shady Site")
+
+URL_PROTOCOL = (
     "http" if DEBUG else "https"
 )  # استخدم http في بيئة التطوير و https في الإنتاج
-DEFAULT_VERIFICATION_URL = f"{EMAIL_VERIFICATION_URL_PROTOCOL}://{EMAIL_VERIFICATION_DOMAIN}/api/verify-email-by-url"  # رابط احتياطي
+DEFAULT_VERIFICATION_URL = (
+    f"{URL_PROTOCOL}://{SITE_DOMAIN}/api/verify-email-by-url"  # رابط احتياطي
+)
 
 ALLOWED_HOSTS = [
     # "*",
     "localhost",
     "127.0.0.1",
-    EMAIL_VERIFICATION_DOMAIN,
+    SITE_DOMAIN,
 ]
 
 
@@ -392,7 +401,7 @@ MEDIA_ROOT = join(ASSETS_DIR, "media")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-OTP_CHARACTER_LENGTH = 6  # Length of the OTP code
+OTP_CHARACTER_LENGTH = 4  # Length of the OTP code
 
 
 #######################################################################################
@@ -612,6 +621,14 @@ LOGGING = {
         },
     },
 }
+
+
 #######################################################################################
-##################################   Locale   #########################################
+#################################   SITE DOMAIN   #####################################
+#######################################################################################
+# settings.py (at the end)
+
+
+#######################################################################################
+#################################   SITE DOMAIN   #####################################
 #######################################################################################

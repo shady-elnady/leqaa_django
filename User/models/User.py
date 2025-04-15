@@ -276,7 +276,7 @@ class User(
             # Fallback for cases without request (e.g., celery tasks)
             from django.contrib.sites.models import Site
 
-            protocol = getattr(settings, "EMAIL_VERIFICATION_URL_PROTOCOL", "https")
+            protocol = getattr(settings, "URL_PROTOCOL", "https")
             domain = Site.objects.get_current().domain
             return f"{protocol}://{domain}{reverse('Api:verify_email_by_url')}?token={token}"
 
@@ -332,7 +332,7 @@ class User(
         return urlsafe_base64_encode(force_bytes(self.uid))
 
     @property
-    def change_otp(self):
+    def change_otp(self) -> str:
         """change OTP and saves it to the user's otp field."""
         self.otp = self.generate_OTP()
         self.save()
@@ -398,7 +398,8 @@ class User(
             string.digits
         )  # You can add string.ascii_letters for alphanumeric OTP
         return "".join(
-            random.choice(characters) for _ in range(settings.OTP_CHARACTER_LENGTH)
+            random.choice(characters)
+            for _ in range(getattr(settings, "OTP_CHARACTER_LENGTH", 4))
         )
 
     def __str__(self) -> str:

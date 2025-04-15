@@ -28,4 +28,4 @@ def email(request):
         "our_linkedin_account_ulr  ": "https://www.linkedin.com/feed/",
         "events": events,
     }
-    return render(request, r"emails/wasla-verfiy-email.html", context=context)
+    return render(request, r"emails/wasla_verfiy_email.html", context=context)

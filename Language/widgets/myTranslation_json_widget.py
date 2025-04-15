@@ -16,7 +16,7 @@ class MyTranslationWidget(Widget):
     #         )
     #     }
 
-    template_name = "widgets/myTranslation_json_widget.html"
+    template_name = "Language/widgets/myTranslation_json_widget.html"
 
     def __init__(
         self,

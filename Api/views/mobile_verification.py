@@ -8,6 +8,7 @@ from rest_framework.generics import GenericAPIView
 from firebase_admin import auth, exceptions as firebase_exceptions
 from django.db import DatabaseError, IntegrityError
 from django.core.exceptions import ValidationError as DjangoValidationError
+from rest_framework.throttling import AnonRateThrottle
 import logging
 
 from Api.exceptions import (
@@ -17,12 +18,27 @@ from Api.exceptions import (
     ServerException,
     FirebaseException,
 )
-from Api.views.log_in import LoginThrottle
 from App.messages import AuthMessages
 from Firebase.helpers import FirebaseAdminHelper
 from User.models import User
 
 logger = logging.getLogger(__name__)
+
+
+class LoginThrottle(AnonRateThrottle):
+    """Custom throttle for login endpoint (5 attempts/hour per email)"""
+
+    scope = (
+        "api_log_in"  # Matches the setting in REST_FRAMEWORK['DEFAULT_THROTTLE_RATES']
+    )
+
+    def get_cache_key(self, request, view):
+        if request.method == "POST" and "email" in request.data:
+            return self.cache_format % {
+                "scope": self.scope,
+                "ident": request.data["email"].lower().strip(),  # Normalized email
+            }
+        return None
 
 
 class MobileVerificationSerializer(Serializer):

@@ -1,149 +1,36 @@
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-from rest_framework import status
-from django.db import IntegrityError
+from rest_framework import status, serializers
+from django.utils.translation import gettext_lazy as _
 
-from Api.permissions import RegisterPermission
-from Api.exceptions import (
-    SuccessResponse,
-    ValidationException,
-    DatabaseException,
-    ServerException,
-    SendEmailException,
-    FirebaseException,
-)
-from App.messages import AuthMessages
 from User.models import User
-from .serializers import RegisterSerializer
-import logging
+from .serializers.registerSerializer import RegisterSerializer
 
-logger = logging.getLogger(__name__)
+# Create your views here.
 
 
 class RegisterViewSet(ModelViewSet):
-    """
-    User registration endpoint with comprehensive error handling
-    """
-
-    queryset = User.objects.none()  # Empty queryset since we only need create
+    queryset = User.objects.all()
     serializer_class = RegisterSerializer
-    permission_classes = [RegisterPermission]
-    http_method_names = ["post"]  # Only allow POST for registration
+    permission_classes = [AllowAny]
 
     def create(self, request, *args, **kwargs) -> Response:
-        """
-        Handle user registration with proper exception handling
-        """
         serializer = self.get_serializer(data=request.data)
-
-        try:
-            # Validate input data
-            if not serializer.is_valid():
-                raise ValidationException(
-                    errors=serializer.errors,
-                    message=AuthMessages.REGISTER_VALIDATION_ERROR,
-                )
-
-            # Create user
-            user = self.perform_create(serializer)
-
-            # Successful registration
-            logger.info(f"New user registered: {user.email}")
-            return SuccessResponse.create(
-                data=serializer.data,
-                message=AuthMessages.REGISTER_SUCCESS,
-                status_code=status.HTTP_201_CREATED,
-            )
-
-        except IntegrityError as e:
-            logger.warning(
-                f"Duplicate registration attempt for email: {serializer.initial_data.get('email')}",
-                exc_info=True,
-                extra={"email": serializer.initial_data.get("email"), "error": str(e)},
-            )
-            raise DatabaseException(
-                message=AuthMessages.REGISTER_DUPLICATE,
-                data={"email": serializer.initial_data.get("email")},
-                status_code=status.HTTP_409_CONFLICT,
-            )
-
-        except ValidationException as e:
-            # Re-raise explicitly caught validation exceptions
-            logger.warning(
-                f"Registration validation failed: {str(e)}",
-                exc_info=True,
-                extra={
-                    "errors": e.errors,
-                    "email": serializer.initial_data.get("email"),
-                },
-            )
-            raise
-
-        except SendEmailException as e:
-            # Handle email sending failures separately
-            logger.error(
-                f"Verification email failed to send: {str(e)}",
-                exc_info=True,
-                extra={"email": serializer.initial_data.get("email")},
-            )
-            raise DatabaseException(
-                message=AuthMessages.REGISTER_SUCCESS_BUT_EMAIL_FAILED,
-                data={
-                    "email": serializer.initial_data.get("email"),
-                    "warning": "User created but verification email failed",
-                },
-                status_code=status.HTTP_201_CREATED,
-            )
-
-        except FirebaseException as e:
-            # Handle Firebase integration errors
-            logger.critical(
-                "Firebase integration failure during registration",
-                exc_info=True,
-                extra={"error": str(e)},
-            )
-            raise ServerException(
-                message=AuthMessages.FIREBASE_INTEGRATION_ERROR,
-                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            )
-
-        except Exception as e:
-            # Catch-all for unexpected errors
-            logger.critical(
-                f"Unexpected registration error: {str(e)}",
-                exc_info=True,
-                extra={
-                    "email": serializer.initial_data.get("email"),
-                    "error_type": type(e).__name__,
-                },
-            )
-            raise ServerException(
-                message=f"{AuthMessages.REGISTER_FAILED}: {str(e)}",
-                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            )
-
-    def perform_create(self, serializer) -> User:
-        """Save the user instance and return it"""
-        return serializer.save()
-
-    def list(self, request, *args, **kwargs):
-        raise ValidationException(
-            message=AuthMessages.POST_URL_ONLY,
-            status_code=status.HTTP_405_METHOD_NOT_ALLOWED,
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)  # noqa: F841
+        return Response(
+            {
+                "data": serializer.data,
+                "success": True,
+                "message": "User created successfully. You Can LogIN now",
+                "status": status.HTTP_201_CREATED,
+            },
+            status=status.HTTP_201_CREATED,
         )
 
-    def retrieve(self, request, *args, **kwargs):
-        raise ValidationException(
-            message=AuthMessages.POST_URL_ONLY,
-            status_code=status.HTTP_405_METHOD_NOT_ALLOWED,
+    def get_queryset(self):
+        raise serializers.ValidationError(
+            _("This URL is Post Request To Register "),
         )
-
-    # Override all other disallowed methods
-    def update(self, request, *args, **kwargs):
-        return self.list(request, *args, **kwargs)
-
-    def partial_update(self, request, *args, **kwargs):
-        return self.list(request, *args, **kwargs)
-
-    def destroy(self, request, *args, **kwargs):
-        return self.list(request, *args, **kwargs)

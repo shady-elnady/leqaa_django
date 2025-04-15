@@ -7,15 +7,17 @@ from Api.views import (
     VeifyEmailByOTPAPIView,
     MobileVerificationAPIView,
     VerifyEmailByURLAPIView,
+    OTPResetPasswordAPIView,
 )
 from django.views.generic import TemplateView
+from django.views.decorators.csrf import csrf_exempt
 
 from Firebase.api import FirebaseLogInByIdTokenAPIView
 
 app_name = "Api"
 
 urlpatterns = [
-    path("log-in/", LogInAPIView.as_view(), name="api_log_in"),
+    path("log-in/", csrf_exempt(LogInAPIView.as_view()), name="api_log_in"),
     path(
         "firebase-log-in-by-id-token/",
         FirebaseLogInByIdTokenAPIView.as_view(),
@@ -40,12 +42,17 @@ urlpatterns = [
     path(
         "forgot-password",
         ForgotPasswordAPIView.as_view(),
-        name="forgot_password",
+        name="api_forgot_password",
+    ),
+    path(
+        "otp-reset-password",
+        OTPResetPasswordAPIView.as_view(),
+        name="otp_reset_password",
     ),
     path(
         "password-reset/<str:encoded_pk>/<str:token>/",
         PasswordResetAPIView.as_view(),
-        name="password_reset",
+        name="api_password_reset",
     ),
     path(
         "email-verified-success/",

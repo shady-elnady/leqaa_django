@@ -63,7 +63,7 @@ Authorization: Token {{ authToken }}
 
 
 ###
-GET {{$dotenv apiBaseUrl}}/api/user/my-interests/
+GET {{$dotenv API_BASE_URL}}/api/user/my-interests/
 Content-Type: application/json
 Accept: application/json
 Accept-Language: en
